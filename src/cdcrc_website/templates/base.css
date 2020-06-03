@@ -84,3 +84,27 @@ a.header-link:active {
   .custom-dropdown:hover .custom-dropdown-content {
     display: block;
   }
+
+  /* FOOTER -------------------------*/
+
+  .panel-footer {
+    margin-top: 30px;
+    padding-top: 35 px;
+    padding-bottom: 30 px;
+    background-color:slateblue;
+    border-top:0;
+    color: white;
+  }
+  .panel-footer div.row{
+    margin-bottom: 35px;
+  }
+  #contact, #links ,#about{
+    line-height : 2;
+  }
+  #contact > span, #links > span , #about > span {
+    font-size:1.5em;
+    text-align: center;
+  }
+  #links > a:link{
+    color:white
+  }
