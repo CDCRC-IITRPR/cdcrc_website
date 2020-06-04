@@ -22,6 +22,7 @@ import info.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('info/', include('info.urls')),
+    path('team/', include('team.urls')),
 
     path('', info.views. home, name='home' )
 
