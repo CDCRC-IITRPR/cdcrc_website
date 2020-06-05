@@ -37,6 +37,7 @@
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
+ </style> 
 
 {% endblock %}
 {% block body_content %}
@@ -76,13 +77,17 @@
 
 					<!-- Tab content -->
 					<div id="News" class="tabcontent">
-						<h3>News</h3>
-						<p>London is the capital city of England.</p>
+						{% for news in news %}
+						<h3>{{news.title}}</h3>
+						<p>{{news.brief}}</p>
+						{% endfor %}
 					</div>
 
 					<div id="Events" class="tabcontent">
-						<h3>Events</h3>
-						<p>Paris is the capital of France.</p>
+					{% for events in events %}
+						<h3>{{events.title}}</h3>
+						<p>{{events.brief}}</p>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -114,9 +119,8 @@
 						<span class="sr-only">Next</span>
 					</a>
 				</div>
-				<!-- </div> -->
 			</div>
-		</div>
+				<!-- bootstrap card with row name myCarousel as row 1-->
 
 {% endblock %}
 <!-- 
