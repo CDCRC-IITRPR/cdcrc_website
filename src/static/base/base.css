@@ -21,7 +21,11 @@ a.header-link:active {
     overflow: hidden;
     background-color: rgb(77, 118, 210);
   }
-  
+
+.fot-white{
+  color: white;
+}
+
 .custom-navbar a {
   float: left;
   font-size: 16px;
@@ -113,5 +117,5 @@ a.header-link:active {
 #cdcrc_logo{
   margin:0.5rem;
   height: 7rem;
-  width: 6rem;
+  width: 5rem;
 }
