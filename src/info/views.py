@@ -10,3 +10,12 @@ def home(request):
 
 def contacts(request):
     return render(request, 'info/contacts.html')
+
+
+def news_detail(request, pk):    
+    news = News.objects.get(pk=pk)    
+    return render(request,'info/news_detail.html', {'news': news})
+
+def events_detail(request, pk):
+    events = Events.objects.get(pk=pk)
+    return render(request,'info/events_detail.html',{'events':events})
