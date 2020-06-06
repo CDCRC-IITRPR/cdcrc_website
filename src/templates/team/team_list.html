@@ -5,7 +5,7 @@
 {% block head_content %}
     <title>CDCRC  IIT Ropar | Team</title>
     <link href="{% static 'team/css/team_list.css' %}"  rel="stylesheet" type="text/css"/>
-    <link href="{% static 'team_css/team_list.css' %}"  rel="stylesheet" type="text/css"/>
+    <!-- <link href="{% static 'team_css/team_list.css' %}"  rel="stylesheet" type="text/css"/> -->
 {% endblock %}
 
 
@@ -13,6 +13,8 @@
 <div class="title1">
 <h1 class= "title_text">Our Team</h1>
 </div>
+<div class="container-fluid">
+<div class="row justify-content-center">
 <table class="content-table">
     <thead>
       <tr>
@@ -129,5 +131,7 @@
       </tr>
     </tbody>
   </table>
+</div>
+</div>
 
 {% endblock %}
