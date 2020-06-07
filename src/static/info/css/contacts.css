@@ -48,10 +48,10 @@ a.header-link:hover {
 a.header-link:active {
     color: white !important;
 }
-
+/* 
 .custom-navbar {
     overflow: hidden;
-    background-color: rgb(77, 118, 210);
+    background-color: rgb(34, 76, 169);
   }
   
   .custom-navbar a {
@@ -111,15 +111,15 @@ a.header-link:active {
     color: white;
     text-decoration: none;
 
-  }
+  } */
   .contact{
     height:275px;
     padding: 0% 6% 0% 6%;
     background-color:rgb(239, 239, 248);
   }
-  .custom-dropdown:hover .custom-dropdown-content {
+  /* .custom-dropdown:hover .custom-dropdown-content {
     display: block;
-  }
+  } */
   .zoom {
     /* padding: 50px; */
     /* background-color: green; */
