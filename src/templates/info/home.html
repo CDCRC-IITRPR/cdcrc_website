@@ -9,6 +9,7 @@
 	<meta name="keywords"
 		content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
 	<link rel="shortcut icon" href="../favicon.ico">
+	
 	<!-- <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css" /> -->
 	<link href="{% static 'info/css/index.css' %}" rel="stylesheet" type="text/css" />
 	<!-- <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
@@ -37,6 +38,21 @@
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript"> 
+        $(window).load(function() { 
+            $(".carousel .carousel-item").each(function() { 
+                var i = $(this).next(); 
+                i.length || (i = $(this).siblings(":first")), 
+                  i.children(":first-child").clone().appendTo($(this)); 
+                
+                for (var n = 0; n < 3; n++)(i = i.next()).length || 
+                  (i = $(this).siblings(":first")), 
+                  i.children(":first-child").clone().appendTo($(this)) 
+            }) 
+        }); 
+    </script> 
+
  </style> 
 
 {% endblock %}
@@ -68,7 +84,7 @@
 					Lorem
 					Ipsum.
 				</div>
-				<div class="col-6 border" style="background-color:slategray;">
+				<div class="col-6 border row-event">
 					<!-- Tab links -->
 					<div class="tab row border">
 						<button class="tablinks" onclick="openCity(event, 'News')">News</button>
@@ -77,19 +93,48 @@
 
 					<!-- Tab content -->
 					<div id="News" class="tabcontent">
+					<ul style="list-style-type:square">
 						{% for news in news %}
-						<a href="{% url 'news-detail' news.pk %}"><h3>{{news.title}}</h3></a>
+						<li><a href="{% url 'news-detail' news.pk %}"><h4>{{news.title}}</h4></a></li>
 						<p>{{news.brief}}</p>
 						{% endfor %}
 					</div>
 
 					<div id="Events" class="tabcontent">
+					<ul style="list-style-type:square">
 					{% for events in events %}
-						<a href="{% url 'events-detail' events.pk %}"><h3>{{events.title}}</h3></a>
+						<li><a href="{% url 'events-detail' events.pk %}"><h4>{{events.title}}</h4></a></li>
 						<p>{{events.brief}}</p>
 						{% endfor %}
 					</div>
 				</div>
+			</div>
+		<div class="container-fluid">
+				<img src="{% static 'info/images/director.PNG' %}" class="director">
+				<h2>From Director's Desk</h2>
+				The Indian Institute of Technology Ropar is one of the eight new IITs set up by the
+Government of India in the year 2008 with a view to expand the access to the high quality
+technical education for young bright minds of India. The first batch of students graduated
+with a B.Tech. degree in July 2012. In the last eleven year, IIT Ropar has established the
+required infrastructure; including our permanent campus spread over 500 acres on the
+bank of river Sutlej. Our highly qualified faculty members with vast international exposure
+and state-of-the-art laboratories for the hands-on experience, ensures that our students
+receive the best technical education. At IIT Ropar, students are exposed to the most modern
+and up-to-date curriculum in accordance with the Washington Accord, contemporary
+developments in various disciplines of engineering/science and internship experience in
+both national & international companies/institutes of repute. In addition, we have well
+established Career Development & Corporate Relations Centre (CDCRC) to take care of the
+professional development of the students by providing them in-house training in business
+communications, soft-skills, guiding them towards best national & international internships
+and jobs available and act as a communication channel between Industry & IIT Ropar to
+have a result oriented Industry-Academia collaboration. Undoubtedly, the hard work done
+in the recent past has started reaping awards. For 2019, under National Institute Ranking
+Framework by Ministry of Human Resource Development, IIT Ropar stood 29th in the
+engineering category and 21st in QS World University, India Ranking. With this background,
+I whole-heartedly invite your organization to IIT Ropar Campus for the recruitment of our
+B.Tech, M.Tech, MS (Research), M.Sc. and Ph.D. graduates. I am sure you will be able to
+recognize the availability of choice of bright & talented students with requisite skills that
+can solve your challenging engineering problems and add value to your organization.
 			</div>
 			
 			<div class="row justify-content-center" style="background-color: rgb(226, 221, 200) ;">
@@ -101,13 +146,13 @@
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="{% static 'info/images/DJI_0054.jpg' %}" class="d-block w-100" alt="a1">
+							<img src="{% static 'info/images/director.PNG' %}" class="img-responsive" alt="a1">
 						</div>
 						<div class="carousel-item">
-							<img src="{% static 'info/images/DJI_0054.jpg' %}" class="d-block w-100" alt="a2">
+							<img src="{% static 'info/images/google.png' %}" class="img-responsive" alt="a2">
 						</div>
 						<div class="carousel-item">
-							<img src="{% static 'info/images/DJI_0054.jpg' %}" class="d-block w-100" alt="a3">
+							<img src="{% static 'info/images/goldman.png' %}" class="img-responsive" alt="a3">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

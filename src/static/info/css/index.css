@@ -111,10 +111,9 @@
     text-align: center;
   }
   .carousel-item img{
-    height:200px;
-    width:300px;
-    padding-left: 100px;
-    padding-right: 100px;
+    height:80px;
+    width:250px;
+    /*margin-left: 2%;*/
   }
   /* .custom-navbar {
     overflow: hidden;
@@ -190,3 +189,11 @@
   /* .custom-dropdown:hover .custom-dropdown-content {
     display: block;
   } */
+  .director{
+    float:left;
+    margin-right: 1%;
+    margin-top: 5.5%;
+  }
+  .row-event{
+    background-color: rgb(226, 221, 200);
+  }
