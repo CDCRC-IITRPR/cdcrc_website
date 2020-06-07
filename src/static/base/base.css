@@ -1,3 +1,8 @@
+#cdcrc_logo{
+  margin:0.5rem;
+  height: 7rem;
+  width: 5rem;
+}
 a.header-link:link {
     color: white !important;
 }
@@ -94,8 +99,8 @@ a.header-link:active {
 .panel-footer {
   /* margin-top: 30px; */
   /* padding-top: 35 px; */
-  padding-bottom: 30 px;
-  background-color:slateblue;
+  padding-bottom: 10px;
+  background-color:#232f3e;
   border-top:0;
   color: black;
 }
@@ -114,8 +119,3 @@ a.header-link:active {
 }
 
 
-#cdcrc_logo{
-  margin:0.5rem;
-  height: 7rem;
-  width: 5rem;
-}
