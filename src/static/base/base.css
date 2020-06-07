@@ -24,7 +24,7 @@ a.header-link:active {
 
 .custom-navbar {
     overflow: hidden;
-    background-color: rgb(77, 118, 210);
+    background-color: rgb(34, 76, 169);
   }
 
 .fot-white{
@@ -32,6 +32,7 @@ a.header-link:active {
 }
 
 .custom-navbar a {
+  background-color: rgb(34, 76, 169);
   float: left;
   font-size: 16px;
   color: white;
@@ -62,7 +63,7 @@ a.header-link:active {
 }
 
 .custom-navbar a:hover, .custom-dropdown:hover .custom-dropbtn {
-  background-color: rgb(77, 118, 180);
+  background-color: rgb(34, 76, 169);
 }
 
 .custom-dropdown-content {
@@ -70,13 +71,13 @@ a.header-link:active {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(77, 118, 210, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(34, 76, 169, 0.2);
   z-index: 1;
 }
 
 .custom-dropdown-content a {
   float: none;
-  color: rgb(77, 118, 210);
+  color: rgb(34, 76, 169);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -84,7 +85,7 @@ a.header-link:active {
 }
 
 .custom-dropdown-content a:hover {
-  background-color: rgb(77, 118, 180);
+  background-color: rgb(34, 76, 169);
   color: white;
   text-decoration: none;
 
