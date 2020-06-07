@@ -15,7 +15,7 @@
 }
   
 .content-table thead tr{
-    background-color: #009879;
+    background-color: #458af3;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -34,10 +34,10 @@
 }
   
 .content-table tbody tr:last-of-type{
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid;
 }
   
 .content-table tbody tr:nth-of-type(odd){ 
     /* font-weight: bold; */
-    color: #009879;
+    /* color: #009879; */
 }
