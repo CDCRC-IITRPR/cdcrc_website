@@ -2,6 +2,7 @@
 {% load static %}
 
 
+
 {% block head_content %}
     <title>CDCRC  IIT Ropar | Team</title>
     <link href="{% static 'team/css/team_list.css' %}"  rel="stylesheet" type="text/css"/>
@@ -38,6 +39,18 @@
         <td>2018EEB1155@iitrpr.ac.in</td>
         <td>9879794505</td>
       </tr>
+      {% for member in teams.all %}
+      <tr >
+        <td>2</td>
+        <td>{{member.profile.name}}</td>
+        <td>{{member.designation}}</td>
+        <td>{{member.profile.Branch}}</td>
+        <td>{{member.profile.Course}}</td>
+        <td>{{member.profile.year}}</td>
+        <td>{{member.profile.phone}}</td>
+        <td>{{member.profile.email}}</td>
+      </tr>
+      {% endfor %}
       <tr >
         <td>2</td>
         <td>Immadi Pruthvi Tej</td>
