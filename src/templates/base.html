@@ -58,7 +58,11 @@
 			<div class="col-md-2">
 				<br>
 				<span>Mob: +91-9878795299</span><br>
-				<span>placement@iitrpr.ac.in</span>
+				<span>placement@iitrpr.ac.in</span><br>
+				{% if user.is_authenticated %}
+				<span>You are logged in as {{request.user.username}}</span>
+				<a href={% url 'logout' %}>logout</a>
+				{% endif %}
 			</div>
 		</div>
 	</div>
