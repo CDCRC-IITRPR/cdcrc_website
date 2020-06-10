@@ -11,6 +11,8 @@ def home(request):
 def contacts(request):
     return render(request, 'info/contacts.html')
 
+def for_recruiters(request):
+    return render(request, 'info/for_recruiters.html')
 
 def news_detail(request, pk):    
     news = News.objects.get(pk=pk)    

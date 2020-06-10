@@ -71,13 +71,15 @@
 			<a href="{% url 'home' %}">Home</a>
 			<a href="#news">News</a>
 			<div class="custom-dropdown">
-				<button class="custom-dropbtn">Dropdown
+				<button class="custom-dropbtn">
+					<!-- <a href="{% url 'for_recruiters' %}"> -->
+					For Recruiters
 					<i class="fa fa-caret-down"></i>
 				</button>
 				<div class="custom-dropdown-content">
-					<a href="#">Link 1</a>
-					<a href="#">Link 2</a>
-					<a href="#">Link 3</a>
+					<a href="{% url 'for_recruiters' %}">Why Recruit?</a>
+					<a href="#">Placement</a>
+					<a href="#">Internship</a>
 				</div>
 			</div>
 			<a href="{% url 'team_list' %}">Team</a>
