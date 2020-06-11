@@ -1,8 +1,8 @@
-console.log('sdfaa');
+// console.log('Welcome');
 
 window.onload = function() {
   document.querySelector('.sidebarMenu').addEventListener('click', el => {
-    console.log(el.target.textContent);
+    // console.log(el.target.textContent);
 
     if(el.target.textContent.toString().includes("Why"))
     {
