@@ -12,6 +12,7 @@
         <li>Confirm Password: {{form.password2}}</li>
     </ul>
     {{form.errors}}
+    Already a user <a href={% url 'login' %}>login</a><br>
     <input type="submit" name="create_recruiter">
 </form>
 {% endblock %}
