@@ -61,7 +61,7 @@
 				<span>placement@iitrpr.ac.in</span><br>
 				{% if user.is_authenticated %}
 				<span>You are logged in as {{request.user.username}}</span>
-				<a href={% url 'logout' %}>logout</a>
+				<a href="{% url 'logout' %}">logout</a>
 				{% endif %}
 			</div>
 		</div>
@@ -71,19 +71,20 @@
 			<a href="{% url 'home' %}">Home</a>
 			<a href="#news">News</a>
 			<div class="custom-dropdown">
-				<button class="custom-dropbtn">
-					<!-- <a href="{% url 'for_recruiters' %}"> -->
-					For Recruiters
+				<button class="custom-dropbtn">Dropdown
 					<i class="fa fa-caret-down"></i>
 				</button>
 				<div class="custom-dropdown-content">
-					<a href="{% url 'for_recruiters' %}">Why Recruit?</a>
-					<a href="#">Placement</a>
-					<a href="#">Internship</a>
+					<a href="{% url 'for_recruiters' %}">LINK</a>
+					<a href="#">LINK</a>
+					<a href="#">LINK</a>
+					<a href="#">LINK</a>
+					
 				</div>
 			</div>
 			<a href="{% url 'team_list' %}">Team</a>
 			<a href="{% url 'contacts' %}">Contact Us</a>
+			<a href="{% url 'for_recruiters' %}">For Recruiters</a>
 		</div>
 	</section>
 	{% block body_content %}

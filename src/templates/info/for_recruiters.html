@@ -3,7 +3,7 @@
 
 {% block head_content %}
 {% comment %} css file for contacts.html {% endcomment %}
-<script src="{% static 'info/js/for_recruiters.js' %}"></script>
+<script type="text/javascript" src="{% static 'info/js/for_recruiters.js' %}"></script>
 <link href="{% static 'info/css/for_recruiters.css' %}" rel="stylesheet" type="text/css" />
 <title>CDCRC IIT Ropar</title>
 {% endblock %}
@@ -13,7 +13,7 @@
     <div class="mainContainer container-fluid">
         <div class="row">
             <div class="col-lg-3">
-                <!-- <div class="sidebarMenu"> -->
+                <div class="sidebarMenu">
                     <div id="leftSidecssmenu">
                         <ul>
                             <li class="active"><a href="#">Why Recruit?</a>
@@ -30,17 +30,17 @@
                             </li>
                             <li>
                                 <ul style="display: none;">
-                                    <li style="margin: 0px; padding: 0px;"><a href="#">Under Graduate (UG)</a></li>
-                                    <li style="margin: 0px; padding: 0px;"><a href="#">Post Graduate (PG)</a></li>
+                                    <li style="margin: 0px; padding: 0px;"><a target="_blank" href="http://www.iitrpr.ac.in/ug-courses">Under Graduate (UG)</a></li>
+                                    <li style="margin: 0px; padding: 0px;"><a target="_blank" href="http://www.iitrpr.ac.in/pg-courses">Post Graduate (PG)</a></li>
                                 </ul>
                             </li>
-                            <li class=""><a href="#">Brochures</a></li>
+                            <li class=""><a target="_blank" href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">Placement Brochure</a></li>
                             <li class=""><a href="#">FAQs</a></li>
                         </ul>
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 txt-box">
                 <h2>Why Recruit?</h2>
 
 
