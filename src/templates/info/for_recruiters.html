@@ -20,8 +20,11 @@
                             </li>    
                             <li class=""><a href="#">Placement</a></li>
                             <li class=""><a href="#">Internship</a></li>
-                            <li class=""><a href="#">Company
-                                Registration Link</a></li>
+                            {% if user.is_authenticated %}
+                            <li class=""><a href="#">My Profile</a></li>
+                            {% else %}
+                            <li class=""><a href="{% url 'login' %}">Company Registration or Login Link</a></li>
+                            {% endif %}
                             <li class="cur-btn"><a> Our Curriculum
                                 <div class="curriculum-btn">
                                     <i class="fa fa-caret-down"></i>

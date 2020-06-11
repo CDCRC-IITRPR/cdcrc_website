@@ -5,6 +5,8 @@
 <form method="POST" actions="">
     {% csrf_token %}
     {{form.as_p}}
+    Not registered before!!!!<br>
+    <a href={% url 'register' %}>Register</a><br>
     {% for message in messages %}
     <p>{{message}}</p>
     {% endfor %}
