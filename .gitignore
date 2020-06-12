@@ -5,6 +5,12 @@ venv
 src/creds.json
 
 ### Django ###
+src/profiles/migrations/**
+src/info/migrations/**
+src/profiles/migrations/**
+src/recruiter/migrations/**
+src/team/migrations/**
+
 *.log
 *.pot
 *.pyc
@@ -139,3 +145,4 @@ dmypy.json
 .pyre/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
+.gitignore
