@@ -5,11 +5,10 @@ venv
 src/creds.json
 
 ### Django ###
-info/migrations/0001_initial.py
-src/info/migrations/**
-src/profiles/migrations/**
-src/recruiter/migrations/**
-src/team/migrations/**
+# src/info/migrations/**
+# src/profiles/migrations/**
+# src/recruiter/migrations/**
+# src/team/migrations/**
 
 *.log
 *.pot
