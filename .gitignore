@@ -9,7 +9,7 @@ src/info/migrations/**
 src/profiles/migrations/**
 src/recruiter/migrations/**
 src/team/migrations/**
-
+# src/internal/migrations/**
 *.log
 *.pot
 *.pyc
