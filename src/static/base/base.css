@@ -43,53 +43,53 @@ a.header-link:active {
     text-decoration: none;
 }
 
-.custom-dropdown {
+.custom-dropdown, .custom-dropdown .custom-dropdown-content .custom-dropdown {
   float: left;
   overflow: hidden;
 }
 
-.custom-dropdown .custom-dropbtn {
+.custom-dropdown .custom-dropbtn , .custom-dropdown .custom-dropdown-content .custom-dropdown .custom-dropbtn {
   font-size: 16px;  
   border: none;
   outline: none;
   color: white;
   padding: 14px 16px;
-  background-color: inherit;
+  background-color:  rgb(34, 76, 169);
   font-family: inherit;
   margin: 0;
 }
 
-.custom-navbar a:hover, .custom-dropdown:hover .custom-dropbtn {
+.custom-navbar a:hover, .custom-dropdown:hover .custom-dropbtn,.custom-dropdown:hover .custom-dropdown-content .custom-dropdown:hover .custom-dropbtn {
   /* background-color: rgb(34, 76, 169); */
   background-color:rgb(77, 118, 210);
 }
 
-.custom-dropdown-content {
+.custom-dropdown-content, .custom-dropdown-content .custom-dropdown .custom-dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color:rgb(34, 76, 169);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(130, 145, 175, 0.2);
   z-index: 1;
 }
 
-.custom-dropdown-content a {
+.custom-dropdown-content a, .custom-dropdown-content .custom-dropdown .custom-dropdown-content a {
   float: none;
   color: rgb(255, 255, 255);
-  padding: 12px 16px;
+  padding: 8px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
 }
 
-.custom-dropdown-content a:hover {
+.custom-dropdown-content a:hover, .custom-dropdown-content .custom-dropdown .custom-dropdown-content a:hover {
   background-color:rgb(77, 118, 210);
   color: white;
   text-decoration: none;
 
 }
 
-.custom-dropdown:hover .custom-dropdown-content {
+.custom-dropdown:hover .custom-dropdown-content , .custom-dropdown:hover .custom-dropdown-content .custom-dropdown:hover .custom-dropdown-content  {
   display: block;
 }
 

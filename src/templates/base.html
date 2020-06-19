@@ -37,7 +37,7 @@
 		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
 
-
+	<script type="text/javascript" src="{% static 'base/base.js' %}"></script>
 
 	{% block head_content %}
 
@@ -71,20 +71,31 @@
 			<a href="{% url 'home' %}">Home</a>
 			<a href="#news">News</a>
 			<div class="custom-dropdown">
-				<button class="custom-dropbtn">Dropdown
+				<button class="custom-dropbtn">For Recruiters
 					<i class="fa fa-caret-down"></i>
 				</button>
 				<div class="custom-dropdown-content">
-					<a href="{% url 'for_recruiters' %}">LINK</a>
-					<a href="#">LINK</a>
-					<a href="#">LINK</a>
-					<a href="#">LINK</a>
-					
+					<a href="{% url 'for_recruiters/0' %}">Why Recruit</a>
+					<a href="{% url 'for_recruiters/1' %}">Placements</a>
+					<a href="{% url 'for_recruiters/2' %}">Internships</a>
+					<a href="{% url 'login' %}">Company Registration or Login Link</a>
+
+					<!-- <ul style="display: block;">
+						<li style="margin: 0px; padding: 0px;"><a target="_blank"
+								href="http://www.iitrpr.ac.in/ug-courses">Under Graduate (UG)</a></li>
+						<li style="margin: 0px; padding: 0px;"><a target="_blank"
+								href="http://www.iitrpr.ac.in/pg-courses">Post Graduate (PG)</a></li>
+					</ul> -->
+					<a target="_blank"
+						href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">Placement
+						Brochure</a>
+					<a href="{% url 'for_recruiters/3' %}">FAQs</a>
+					<a href="{% url 'for_recruiters/0' %}">More</a>
 				</div>
 			</div>
 			<a href="{% url 'team_list' %}">Team</a>
 			<a href="{% url 'contacts' %}">Contact Us</a>
-			<a href="{% url 'for_recruiters' %}">For Recruiters</a>
+			<!-- <a href=""></a>  -->
 		</div>
 	</section>
 	{% block body_content %}
@@ -98,7 +109,7 @@
 <div class="row justify-content-center">
 	<footer class="panel-footer" style="background-color:#232f3e;">
 
-		<div class="footer" >
+		<div class="footer">
 			<div class="container-fluid mainContainer">
 				<div class="row" style="padding: 3%;">
 					<div class="col-lg-4">
@@ -133,7 +144,7 @@
 			</div>
 			<!-- <hr> -->
 		</div>
-		
+
 		<!-- <div id="social media links">
 				<a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a> -->
 
@@ -148,7 +159,7 @@
 		<hr style="background-color: #4d555d;">
 		<!-- <div class="nav-footer-line"> </div> -->
 		<div class="row justify-content-center">
-			
+
 			<div class="col-1 ">
 				<a href="https://www.facebook.com/iitrpr" target="_blank">
 					<i class="fab fa-facebook-square fa-3x"></i>

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+{% comment %} css file for contacts.html {% endcomment %}
+<script type="text/javascript" src="{% static 'info/js/for_recruiters.js' %}"></script>
+<link href="{% static 'info/css/for_recruiters.css' %}" rel="stylesheet" type="text/css" />
+<title>CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+<section class="bodySectionStart">
+    <div class="mainContainer container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebarMenu">
+                    <div id="leftSidecssmenu">
+                        <ul>
+                            <li class=""><a href="#">Why Recruit?</a>
+                            </li>
+                            <li class=""><a href="#">Placement</a></li>
+                            <li class="active"><a href="#">Internship</a></li>
+                            {% if user.is_authenticated %}
+                            <li class=""><a href="#">My Profile</a></li>
+                            {% else %}
+                            <li class=""><a href="{% url 'login' %}">Company Registration or Login Link</a></li>
+                            {% endif %}
+                            <li class="cur-btn"><a> Our Curriculum
+                                    <div class="curriculum-btn">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <ul style="display: none;">
+                                    <li style="margin: 0px; padding: 0px;"><a target="_blank"
+                                            href="http://www.iitrpr.ac.in/ug-courses">Under Graduate (UG)</a></li>
+                                    <li style="margin: 0px; padding: 0px;"><a target="_blank"
+                                            href="http://www.iitrpr.ac.in/pg-courses">Post Graduate (PG)</a></li>
+                                </ul>
+                            </li>
+                            <li class=""><a target="_blank"
+                                    href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">Placement
+                                    Brochure</a></li>
+                            <li class=""><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 txt-box">
+                <h2>Internship</h2>
+
+
+
+                <p>
+                    <strong>Dear Sir / Ma'am,</strong></p>
+                <p>
+                    <strong>Greetings from IIT Ropar. It is indeed with great pleasure, we cordially invite your
+                        esteemed organization to participate in our Campus Recruitment Programme to consider the
+                        students having their compulsory Internship in summers 2020</strong></p>
+                <p xss="\">
+                    IIT Ropar, the first, the largest and the most diversified among the IITs, has always been the
+                    pacesetter. The alumni of this Institute occupy top positions in business, industry, R&amp;D and
+                    academia in India and abroad. Over and above a rigorous academic schedule, we place a great emphasis
+                    on all-round development of our students. The beautiful campus, far away from the city, provides an
+                    excellent environment for learning. Each and every student is provided with an Internet connection
+                    in his / her hostel room. Quick on the up-take, with good communication and human relations skills
+                    and aware of modern developments, the typical IIT rprian is expected to play a pivotal role in
+                    organizations like yours willing to be internationally competitive in terms of products, services
+                    and technology. At IIT Ropar you would find candidates meeting your requirements in practically
+                    every field of interest to your organization. It will be my pleasure to assist in your recruitment
+                    efforts to meet the challenges ahead.</p>
+                <p>
+                    We have planned the following schedule at IIT Ropar for campus interviews of students eligible for 8
+                    weeks Compulsory Internship in Summers 2019 (during 1st week of May, 2020&nbsp; to middle of July,
+                    2020).</p>
+                <h5>
+                    1. &nbsp;Pre Placement Talks [ PPT ] for Internships : 31st July, 2019 onwards</h5>
+                <p>
+                    The PPTs will be held in two slots each day after the class hours from:&nbsp;<br>
+                    Monday through Friday - 5.30 PM to 6.30 PM and 6.30 PM to 7.30 PM&nbsp;<br>
+                    On Saturdays/Sundays/Holidays, we may have around five slots -- 9.30 AM/11.00 AM/2.30 PM/4.30
+                    PM/6.30 PM</p>
+                <h5>
+                    2. &nbsp;Selection Process for Internship&nbsp;–&nbsp; August 2019&nbsp; onwards</h5>
+                <p>
+                    If you are interested in hiring both Interns and Full Time, you can give a combined PPT followed by
+                    Interns Selection the same day.</p>
+                <p>
+                    If you are interested in making an early PPT - you are most welcome to block a slot + date as early
+                    as you can. This early PPT with interactive session will allow our students to understand the
+                    profile of your esteemed organization, their job profile including job prospects etc. We would
+                    request you to kindly ensure your presence in the campus on the allocated slot and date for the PPT
+                    as otherwise we will be loosing the slot if you make any last moment change in the agreed schedule.
+                </p>
+                <p>
+                    In case your company feels it is inconvenient to visit twice - you are most welcome to carry out the
+                    entire selection process, including PPT, during final placement season on a mutually agreed date.
+                </p>
+                <h5>
+                    3. &nbsp; How to participate :</h5>
+                <p>
+                    If you wish to participate in the Campus Placement and Intern selection process of 2019-20, you need
+                    to register yourself at&nbsp;<a href="https://erp.iitrpr.ac.in/TrainingPlacement/index"
+                        target="_blank">this link</a>.</p>
+                <p>
+                    Looking forward to your response and thanking you in anticipation.</p>
+                <p>
+                    With the warmest regards,&nbsp;</p>
+                <p>
+                    Prof. G P Raja Sekhar&nbsp;<br>
+                    Chairman, Career Development Centre (CDC)</p>
+
+                <p>
+                    UG Curricula:&nbsp;<a target="_blank" href="http://www.iitrpr.ac.in/ug-courses">Link</a>
+                </p>
+                <p>
+                    PG Curricula:&nbsp;<a target="_blank" href="http://www.iitrpr.ac.in/pg-courses">Link</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
