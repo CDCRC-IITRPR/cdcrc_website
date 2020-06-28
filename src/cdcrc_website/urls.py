@@ -18,14 +18,19 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 import info.views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('info/', include('info.urls')),
-    path('team/', include('team.urls')),
-    path('recruiter/',include('django.contrib.auth.urls')),
+    path('internal/', include('internal.urls')),
     path('recruiter/', include('recruiter.urls')),
+<<<<<<< HEAD
     # path('resources/', include('resources.urls')),
     path('', info.views.home, name='home' )
+=======
+    path('accounts/', include('accounts.urls')),
+    path('', info.views.home, name='home')
+>>>>>>> f96e2c5e6ef246977765a5dd9d55a06830aad128
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

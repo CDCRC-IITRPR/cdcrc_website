@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+<title>Internal | Home | CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1>Import contacts from csv</h1>
+            <form method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type='submit' value="Import">
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock %}

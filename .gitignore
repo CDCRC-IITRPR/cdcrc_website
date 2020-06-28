@@ -8,15 +8,16 @@ src/creds.json
 src/info/migrations/**
 src/profiles/migrations/**
 src/recruiter/migrations/**
-src/team/migrations/**
+src/profiles/migrations/**
 src/internal/migrations/**
+src/accounts/migrations/**
 *.log
 *.pot
 *.pyc
 __pycache__/
 local_settings.py
 db.sqlite3
-/media
+src/media
 /static
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
