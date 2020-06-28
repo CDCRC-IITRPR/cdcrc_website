@@ -25,12 +25,7 @@ urlpatterns = [
     path('info/', include('info.urls')),
     path('internal/', include('internal.urls')),
     path('recruiter/', include('recruiter.urls')),
-<<<<<<< HEAD
-    # path('resources/', include('resources.urls')),
-    path('', info.views.home, name='home' )
-=======
     path('accounts/', include('accounts.urls')),
     path('', info.views.home, name='home')
->>>>>>> f96e2c5e6ef246977765a5dd9d55a06830aad128
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
