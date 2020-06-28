@@ -25,6 +25,7 @@ urlpatterns = [
     path('team/', include('team.urls')),
     path('recruiter/',include('django.contrib.auth.urls')),
     path('recruiter/', include('recruiter.urls')),
+    # path('resources/', include('resources.urls')),
     path('', info.views.home, name='home' )
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
