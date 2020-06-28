@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'team',
+    'internal',
     'recruiter',
     'profiles',
     'info',
@@ -136,3 +136,5 @@ MEDIA_URL = '/media/' #this is the url to access media
 
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
+
+TIME_ZONE =  'Asia/Kolkata'

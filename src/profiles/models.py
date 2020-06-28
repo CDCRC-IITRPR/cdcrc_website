@@ -1,15 +1,39 @@
 from django.db import models
-#from team.models import Team
+from django.contrib.auth.models import User
 
 # Create your models here.
-class Profile(models.Model):
-    name = models.CharField(max_length = 30, blank = False, null = False)
-    # profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
-    # designation = models.CharField(max_length = 30)
-    branch = models.CharField(max_length = 30, blank = False, null = False )
-    course = models.CharField(max_length = 10, blank = False, null = False)
-    year = models.IntegerField(default=3, blank = False, null = False)
-    #team_coordinator = models.ForeignKey(Team, on_delete=models.CASCADE)
-    email = models.CharField(max_length = 30, blank = False, null = False)
-    phone = models.CharField(max_length = 10, blank = False, null = False)
+class StudentProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student_profile')
+    entry_number = models.CharField(max_length=12, null=False, blank=False, unique=True)
+    phone = models.CharField(max_length=15, null=True, blank=True)
+    graduating_year = models.IntegerField(null=True, blank=True)
+    
+
+    def __str__(self):
+        return self.user.first_name + " " + self.user.last_name + " " + self.entry_number
+
+
+class TeamMemberProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='team_profile')
+    level = models.IntegerField(null=True, blank=True)
+    phone = models.CharField(max_length=15, null=True, blank=True)
+    domain_choices = [
+        ('sde', 'Software Development'),
+        ('core', 'Core'),
+        ('non-core', 'Non Core'),
+        ('general', 'General')
+    ]
+    domain = models.CharField(max_length=32, choices=domain_choices, null=True, blank=True)
+    category_choices = [
+        ('pg', 'Post Graduate'),
+        ('ug', 'Under Graduate'),
+        ('staff', 'Staff'),
+    ]
+    category = models.CharField(max_length=32, choices=category_choices, null=True, blank=True)
+
+    def __str__(self):
+        return self.user.first_name + " " + self.user.last_name + " " + str(self.level)
+    
+    
+    
     

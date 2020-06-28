@@ -6,7 +6,7 @@
     {% csrf_token %}
     {{form.as_p}}
     Not registered before!!!!<br>
-    <a href={% url 'register' %}>Register</a><br>
+    {% comment %} <a href={% url 'register' %}>Register</a><br> {% endcomment %}
     {% for message in messages %}
     <p>{{message}}</p>
     {% endfor %}
