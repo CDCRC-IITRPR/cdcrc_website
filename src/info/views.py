@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import News,Events
+from info.models import News,Events
+from internal.models import TeamMemberProfile
 # Create your views here.
 def home(request):
     news = News.objects.all()
@@ -33,3 +34,8 @@ def news_detail(request, pk):
 def events_detail(request, pk):
     events = Events.objects.get(pk=pk)
     return render(request,'info/events_detail.html',{'events':events})
+
+def team(request):
+    team_members_all = TeamMemberProfile.objects.all()
+    context = {'team_members': team_members_all}
+    return render(request, 'team/team_list.html', context=context)
