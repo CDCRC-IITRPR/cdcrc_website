@@ -10,7 +10,26 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <h1>This is the internal home page</h1>
+            <br>
+            <div class="jumbotron">
+                <h1>Internal Management System</h1>
+                <br>
+                <h3>Contacts Database</h3>
+                <ul>
+                    <li><a href="{% url 'internal:approved_contacts_list' %}">Approved Contacts List</a></li>
+                    <li><a href="{% url 'internal:unapproved_contacts_list' %}">Contacts Pending Approval</a></li>
+                    <li><a href="{% url 'internal:add_contact' %}">Add Contact</a></li> 
+                    <li><a href="{% url 'internal:import_contacts_from_csv' %}">Import Contacts From CSV</a></li> 
+                </ul>
+                <br>
+                <h3>Issues</h3>
+                <ul>
+                    <li><a href="{% url 'internal:issues_list' %}">View Issues</a></li>
+                    <li><a href="{% url 'internal:create_issue' %}">Create Issue</a></li> 
+                    {% comment %} <li><a></a></li>  {% endcomment %}
+                </ul>
+            </div>
+            <br>
         </div>
         <div class="col-md-1"></div>
     </div>

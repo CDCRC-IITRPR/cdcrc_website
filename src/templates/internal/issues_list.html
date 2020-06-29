@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Issues List | Internal | CDCRC IIT Ropar</title>
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block body_content %}
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <br>
+            <h2>Issues</h2>
+            <br>
+            <table class="table table-striped table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Creator</th>
+                        <th scope="col">Recruiter</th>
+                        <th scope="col">Student Concerned</th>
+                        <th scope="col">Assignees</th>
+                        <th scope="col">Next Deadline</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Priortiy</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for issue in issues %}
+                        <tr>
+                            <td>{{issue.title}}</td>
+                            <td>{{issue.creator}}</td>
+                            <td>{{issue.recruiter}}</td>
+                            {% if issue.student_concerned %}
+                                <td>{{issue.student_concerned}}</td>
+                            {% else %}
+                                <td>General</td>                            
+                            {% endif %}
+                            <td>
+                                {% for assignee in issue.assignees.all %}
+                                    {{ assignee }}
+                                    <br>
+                                {% endfor %}
+                            </td>
+                            <td>{{issue.deadline}}</td>
+                            {% if issue.status == 'open' %}
+                                <td><button class='btn btn-success btn-sm'>OPEN</button></td>
+                            {% else %}
+                                <td><button class='btn btn-danger btn-sm'>CLOSED</button></td>
+                            {% endif %}
+                            {% if issue.priority == 'high' %}
+                                <td><button class='btn btn-danger btn-sm'>HIGH</button></td>
+                            {% elif issue.priority == 'medium' %}
+                                <td><button class='btn btn-warning btn-sm' style='color:white;'>MEDIUM</button></td>
+                            {% else %}
+                                <td><button class='btn btn-danger btn-sm'>LOW</button></td>
+                            {% endif %}
+                            <td><button class='btn btn-primary btn-sm'><a href="{% url 'internal:issue_detail' pk=issue.pk%}">Detail</a></button></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+        
+    </div>
+</div>
+{% endblock %}

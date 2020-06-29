@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Contact Detail | Internal | CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <br>
+            <h2>Internal Contacts Database</h2>
+            <br>
+            <div class="card border-dark mb-3" style="max-width: 100%;">
+                <div class="card-body text-dark">
+                    {% if contact.last_name %}
+                        {% if contact.suffix %}
+                            <div class="card-title"><h5>{{contact.first_name}} {{contact.last_name}}, {{contact.suffix}}</h5></div>
+                        {% else %}
+                            <div class="card-title"><h5>{{contact.first_name}} {{contact.last_name}}</h5></div>
+                        {% endif %}
+                    {% else %}
+                        {% if contact.suffix %}
+                            <div class="card-title"><h5>{{contact.first_name}}, {{contact.suffix}}</h5></div>
+                        {% else %}
+                            <div class="card-title"><h5>{{contact.first_name}}</h5></div>
+                        {% endif %}
+                    {% endif %}
+                    <hr>
+                    <p class="card-text">First Name: {{contact.first_name}}</p>
+                    <p class="card-text">Last Name: {{contact.last_name}}</p>
+                    <p class="card-text">Suffix: {{contact.suffix}}</p>
+                    <p class="card-text">Title: {{contact.job_title}}</p>
+                    <p class="card-text">Phone 1: {{contact.phone_one}}</p>
+                    <p class="card-text">Phone 2: {{contact.phone_two}}</p>
+                    <p class="card-text">Email: {{contact.email}}</p>
+                    <p class="card-text">Recruiter: {{contact.recruiter}}</p>
+                    <p class="card-text">Remark: {{contact.remark}}</p>
+                    <p class="card-text">Approved: {{contact.approved}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        
+    </div>
+</div>
+{% endblock %}

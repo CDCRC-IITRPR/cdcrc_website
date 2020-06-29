@@ -1,5 +1,6 @@
 import csv
 from internal.models import Contact
+from recruiter.models import Recruiter
 from io import TextIOWrapper
 
 class ContactsCSVHandler:
@@ -15,6 +16,8 @@ class ContactsCSVHandler:
         phone_number = phone_number.replace(' ', '')
         phone_number = phone_number.replace('-', '')
         phone_number = phone_number.replace('+', '')
+        if phone_number.startswith('91'):
+            phone_number = phone_number[2:]
 
         return phone_number
 
@@ -30,7 +33,18 @@ class ContactsCSVHandler:
         return None
 
     def check_approval(self, contact_obj):
-        return True
+        similar_first_name_exists = Contact.objects.filter(first_name__iexact=contact_obj['first_name']).exists()
+        recruiter_exists = Recruiter.objects.filter(name__iexact=contact_obj['recruiter']).exists()
+        if similar_first_name_exists==False and recruiter_exists==True:
+            return True
+        else: return False
+
+    def get_recruiter_obj(self, recuiter_name):
+        try:
+            recruiter = Recruiter.objects.get(name=recuiter_name)
+            return recruiter
+        except:
+            return None
 
     
     def import_from_file(self):
@@ -55,7 +69,7 @@ class ContactsCSVHandler:
                     first_name_idx, last_name_idx, suffix_idx, job_title_idx, email_idx, recruiter_idx,
                 ])
                 phone_two_idx = self.get_header_idx_from_key_words(row, ['phone'],  excluded_header_indices=[
-                    first_name_idx, last_name_idx, suffix_idx, job_title_idx, email_idx, recruiter_idx,
+                    first_name_idx, last_name_idx, suffix_idx, job_title_idx, email_idx, recruiter_idx, phone_one_idx
                 ])
 
             else:
@@ -71,6 +85,10 @@ class ContactsCSVHandler:
 
                 print(curr_contact)
 
+                approved = self.check_approval(curr_contact)
+
+                print(approved)
+
                 contact_db_obj = Contact(
                     first_name=curr_contact['first_name'],
                     last_name=curr_contact['last_name'],
@@ -79,7 +97,9 @@ class ContactsCSVHandler:
                     phone_one = curr_contact['phone_one'],
                     phone_two = curr_contact['phone_two'], 
                     email = curr_contact['email'],
-                    approved = self.check_approval(curr_contact),
+                    approved = approved,
+                    recruiter = self.get_recruiter_obj(curr_contact['recruiter'])
                 )
+                
                 contact_db_obj.save()
             
