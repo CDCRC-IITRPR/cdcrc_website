@@ -11,6 +11,7 @@ urlpatterns = [
     path('for_recruiters/1',views.for_recruiters1, name='for_recruiters/1'),
     path('for_recruiters/2',views.for_recruiters2, name='for_recruiters/2'),
     path('for_recruiters/3',views.for_recruiters3, name='for_recruiters/3'),
+    path('resources/',views.resources, name='resources'),
     path('news/news-detail/<int:pk>',views.news_detail, name='news-detail'),
     path('events/events-detail/<int:pk>',views.events_detail, name='events-detail'),
 

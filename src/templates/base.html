@@ -98,6 +98,18 @@
 			<a href="{% url 'internal:home' %}">Internal</a>
 
 			<!-- <a href=""></a>  -->
+			<div class="custom-dropdown">
+				<button class="custom-dropbtn">For Students
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="custom-dropdown-content">
+					<a href="{% url 'resources' %}">Resources</a>
+					<a href="{% url 'resources' %}">Internship Policy</a>
+					<a href="{% url 'resources' %}">Placement Policy</a>
+					<a href="{% url 'resources' %}">FAQs</a>
+					<a href="{% url 'resources' %}">More</a>
+				</div>
+			</div>
 		</div>
 	</section>
 	{% block body_content %}

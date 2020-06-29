@@ -23,6 +23,9 @@ def for_recruiters2(request):
 def for_recruiters3(request):
     return render(request, 'for_recruiters/for_recruiters3.html')
 
+def resources(request):
+    return render(request, 'resources/resources.html')
+
 def news_detail(request, pk):    
     news = News.objects.get(pk=pk)    
     return render(request,'info/news_detail.html', {'news': news})
