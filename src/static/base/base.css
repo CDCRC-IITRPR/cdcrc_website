@@ -7,6 +7,18 @@ a.header-link:link {
     color: white !important;
 }
 
+#info{
+  left: 0px;
+  min-width: 200px;
+  max-width: 90%;
+}
+
+#title{
+  padding-left: 25px;
+  max-width: 90%;
+  left: 0px;
+}
+
 /* visited link */
 a.header-link:visited {
     color: white !important;
