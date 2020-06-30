@@ -4,58 +4,93 @@
 
 
 {% block head_content %}
-    <title>CDCRC  IIT Ropar | Team</title>
-    <link href="{% static 'team/css/team_list.css' %}"  rel="stylesheet" type="text/css"/>
+<title>CDCRC IIT Ropar | Team</title>
+<link href="{% static 'team/css/team_list.css' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 
 {% block body_content %}
-<div class="row" style="padding-top: 20px; padding-bottom: 0px; background-color: #dbe1e6;">
-  <div class="col-md-1"></div>
-  <div class="col-md-10"><h1 >Our Team</h1></div>
-  <div class="col-md-1"></div>
-</div>
-<div class="container-fluid" style="background-color: #dbe1e6;">
-<div class="row justify-content-center">
-<div class="col-md-1"></div>
-<div class="col-md-10">
-<table class="content-table">
-    <thead>
-      <tr style="background-color: #458af3;">
-        <th>#</th>
-        <th>Name</th>
-        <th>Designation</th>
-        <th>Category</th>
-        <th>Mail</th>
-        <th>Phone</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for member in team_members %}
-        <tr >
-          <td>{{ forcounter }}</td>
-          <td>{{member.user.first_name}} {{member.user.last_name}}</td>
-          <td>{{member.designation}}</td>
-          {% if member.category == 'ug' %}
-            <td>UG</td>
-          {% elif member.category == 'pg' %}
-            <td>PG</td>
-          {% else %}
-            <td>{{member.category | title }}</td>
-          {% endif %}
-          
-          <td>{{member.user.email}}</td>
-          <td>{{member.phone}}</td>
-          {% comment %} <td>{{member.profile.phone}}</td>
-          <td>{{member.profile.email}}</td> {% endcomment %}
-        </tr>
-      {% endfor %}
-      
-    </tbody>
-  </table>
+<div class="row justify-content-center"  >
+  <!-- <div class="col-md-1"></div> -->
+  <div class="col-md-9" style=" padding-bottom: 0px; ">
+    <h1 style="text-align: center;background-color: #8e9ba7; margin: 0px 10px 0px 10px;">CENTRAL TEAM</h1>
   </div>
-  <div class="col-md-1"></div>
+  <!-- <div class="col-md-1"></div> -->
 </div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <!-- <div class="col-md-1 mb-2"></div> -->
+    <div class="col-md-3 mb-2">
+      <div class="card card-cascade narrower card-ecommerce">
+        <img src="{% static 'team/images/HOD_TnP.jfif' %}" style="max-width: 100%; height: 300px;">
+        <div class="card-body">
+          <h5>
+            Dr. Dhiraj K Mahajan</h5>
+          <a>Head, Training & Placement</a></div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="card card-cascade narrower card-ecommerce">
+        <img  style="max-width: 100%; height: 300px;" src="{% static 'team/images/HOD_PD.jfif' %}">
+        <div class="card-body">
+          <h5>
+            Dr Asad H. Sahir</h5>
+          <a>Head, Profesional Development
+          </a></div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="card card-cascade narrower card-ecommerce">
+        <img  style="max-width: 100%; height: 300px;" src="{% static 'team/images/HOD_CR.jfif' %}">
+        <div class="card-body">
+          <h5>
+            Dr. Srikant Sekhar Padhee</h5>
+          <a>Head of Cooperate Relations
+          </a></div>
+      </div>
+    </div>
+    <!-- <div class="col-md-2"></div> -->
+  </div>
+  <div class="row justify-content-center" style="background-color: #dbe1e6;">
+    <!-- <div class="col-md-1"></div> -->
+    <div class="col-md-9">
+      <table class="content-table">
+        <thead>
+          <tr style="background-color: #458af3;">
+            <th>#</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Category</th>
+            <th>Mail</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody style="background-color: white">
+          {% for member in team_members %}
+          <tr>
+            <td>{{ forcounter }}</td>
+            <td>{{member.user.first_name}} {{member.user.last_name}}</td>
+            <td>{{member.designation}}</td>
+            {% if member.category == 'ug' %}
+            <td>UG</td>
+            {% elif member.category == 'pg' %}
+            <td>PG</td>
+            {% else %}
+            <td>{{member.category | title }}</td>
+            {% endif %}
+
+            <td>{{member.user.email}}</td>
+            <td>{{member.phone}}</td>
+            {% comment %} <td>{{member.profile.phone}}</td>
+            <td>{{member.profile.email}}</td> {% endcomment %}
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    <!-- <div class="col-md-2"></div> -->
+  </div>
 </div>
 
 {% endblock %}

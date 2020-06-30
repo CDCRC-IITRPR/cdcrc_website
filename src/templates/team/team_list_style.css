@@ -44,3 +44,36 @@ h1{
     font-weight: bold;
     color: #009879;
 }
+
+
+.head-contact-row{
+    padding: 2% 1% 0% 1%; 
+  }
+  .contact{
+    height:275px;
+    padding: 0% 6% 0% 6%;
+    background-color:rgb(239, 239, 248);
+  }
+  .head-contact{
+    padding-top: 10px;
+  }
+  /* .custom-dropdown:hover .custom-dropdown-content {
+    display: block;
+  } */
+  .zoom {
+    /* padding: 50px; */
+    /* background-color: green; */
+    transition: transform .2s;
+    /* width: 200px;
+    margin: 0 auto; */
+    /* height: 200px; */
+  
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    
+    /* z-index:1  */
+  }

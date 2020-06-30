@@ -5,13 +5,13 @@
 }
 .content-table{
     border-collapse: collapse;
-    margin: 11px 0;
+    /* margin: 11px 0; */
     font-size: 0.9em;
     min-width: 400px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    width:95%;
+    width:100%;
 }
   
 .content-table thead tr{
@@ -41,3 +41,38 @@
     /* font-weight: bold; */
     /* color: #009879; */
 }
+.hod-image{
+    max-width: 100%; 
+    height: auto;
+}
+.head-contact-row{
+    padding: 2% 1% 0% 1%; 
+  }
+  .contact{
+    height:275px;
+    padding: 0% 6% 0% 6%;
+    background-color:rgb(239, 239, 248);
+  }
+  .head-contact{
+    padding-top: 10px;
+  }
+  /* .custom-dropdown:hover .custom-dropdown-content {
+    display: block;
+  } */
+  .zoom {
+    /* padding: 50px; */
+    /* background-color: green; */
+    transition: transform .2s;
+    /* width: 200px;
+    margin: 0 auto; */
+    /* height: 200px; */
+  
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    
+    /* z-index:1  */
+  }
