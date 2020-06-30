@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Issue Detail | Internal | CDCRC IIT Ropar</title>
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block body_content %}
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <br>
+            <h2>Issue Detail</h2>
+            <br>
+            <div class="card border-dark mb-3" style="max-width: 100%;">
+                <div class="card-body text-dark">
+                    <div class="card-title">
+                        <div class="row">
+                            <div class="col-md-7"><h5>{{issue.title}}</h5></div>
+                            <div class="col-md-2">
+                                {% if issue.status == 'open' %}
+                                    <button class='btn btn-success btn-sm'>OPEN</button>
+                                {% else %}
+                                    <button class='btn btn-danger btn-sm'>CLOSED</button>
+                                {% endif %}
+                                {% if issue.priority == 'high' %}
+                                    <button class='btn btn-danger btn-sm'>HIGH</button>
+                                {% elif issue.priority == 'medium' %}
+                                    <button class='btn btn-warning btn-sm' style='color:white;'>MEDIUM</button>
+                                {% else %}
+                                    <button class='btn btn-danger btn-sm'>LOW</button>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-1">
+                                {% if issue.status == 'open' %}
+                                    <button class='btn btn-primary btn-sm'><a href="{% url 'internal:create_issue_followup' pk=issue.pk%}">Follow Up</a></button>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-2">
+                                {% if issue.status == 'open' %}
+                                    <form method='post' action="{%url 'internal:close_issue' %}" onsubmit="return confirm('Do you really want to close this issue?');">
+                                            {% csrf_token %}
+                                            <input type='hidden' name='issue_id' value={{issue.pk}}>
+                                            <input type="submit" class="btn btn-primary btn-sm" value="Close">
+                                    </form>
+                                {% else %}
+                                    <form method='post' action="{%url 'internal:open_issue' %}" onsubmit="return confirm('Do you really want to open this issue again?');">
+                                            {% csrf_token %}
+                                            <input type='hidden' name='issue_id' value={{issue.pk}}>
+                                            <input type="submit" class="btn btn-primary btn-sm" value="Open Again">
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-text">Creator: {{issue.creator}}</p>
+                    <p class="card-text">Recruiter: {{issue.recruiter}}</p>
+                    <p class="card-text">Student Concerned: {{issue.student_concerned}}</p>
+                    <p class="card-text">
+                        Assignees:
+                    </p>
+                    <ul>
+                        {% for assignee in issue.assignees.all %}
+                            <li>{{assignee}}</li>
+                        {% endfor %}
+                    </ul>
+                    <p class="card-text">Detail: {{issue.initial_comment}}</p>
+                    <p class="card-text">Deadline: {{issue.deadline}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            {% for followup in followups %}
+                <div class="card border-dark mb-3" style="max-width: 100%;">
+                <div class="card-body text-dark">
+                    <div class="card-title">
+                        <div class="row">
+                            <div class="col-md-12"><h5>Follow Up #{{ forloop.counter }}</h5></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-text">Comment: {{followup.comment}}</p>
+                    <p class="card-text">
+                        Assignees:
+                    </p>
+                    <ul>
+                        {% for assignee in followup.assignees.all %}
+                            <li>{{assignee}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-1"></div>
+</div>
+{% endblock %}

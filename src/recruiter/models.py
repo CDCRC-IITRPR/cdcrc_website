@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Recruiter(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     email=models.EmailField()
     website = models.URLField(max_length=200,null=True)
     address = models.TextField(null=True)

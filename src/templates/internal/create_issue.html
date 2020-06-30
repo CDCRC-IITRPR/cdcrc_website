@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Create Issue | Internal | CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <br>
+            <h1>Issue Follow Up</h1>
+            <hr>
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Create Issue" class="btn btn-primary" style='margin:0 44%;'>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock %}

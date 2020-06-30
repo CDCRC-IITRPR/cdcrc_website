@@ -22,129 +22,35 @@
 <table class="content-table">
     <thead>
       <tr style="background-color: #458af3;">
-        <th>Sr. No.</th>
+        <th>#</th>
         <th>Name</th>
         <th>Designation</th>
-        <th>Branch</th>
-        <th>Course</th>
-        <th>Year</th>
+        <th>Category</th>
         <th>Mail</th>
-        <th>Mobile</th>
+        <th>Phone</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Harshit Malik</td>
-        <td>Head Placement Coordinator (HPC)</td>
-        <td>Computer Science Engineering</td>
-        <td>B.Tech</td>
-        <td>4th Yr</td>
-        <td>2017csb1078@iitrpr.ac.in</td>
-        <td>8587963620</td>
-      </tr>
-      {% for member in teams.all %}
-      <tr >
-        <td>2</td>
-        <td>{{member.profile.name}}</td>
-        <td>{{member.designation}}</td>
-        <td>{{member.profile.Branch}}</td>
-        <td>{{member.profile.Course}}</td>
-        <td>{{member.profile.year}}</td>
-        <td>{{member.profile.phone}}</td>
-        <td>{{member.profile.email}}</td>
-      </tr>
+      {% for member in team_members %}
+        <tr >
+          <td>{{ forcounter }}</td>
+          <td>{{member.user.first_name}} {{member.user.last_name}}</td>
+          <td>{{member.designation}}</td>
+          {% if member.category == 'ug' %}
+            <td>UG</td>
+          {% elif member.category == 'pg' %}
+            <td>PG</td>
+          {% else %}
+            <td>{{member.category | title }}</td>
+          {% endif %}
+          
+          <td>{{member.user.email}}</td>
+          <td>{{member.phone}}</td>
+          {% comment %} <td>{{member.profile.phone}}</td>
+          <td>{{member.profile.email}}</td> {% endcomment %}
+        </tr>
       {% endfor %}
-      <tr >
-        <td>2</td>
-        <td>Vineet Madan</td>
-        <td>Assistant Placement Coordinaotr (APC SDE)</td>
-        <td>Computer Science And Engineering</td>
-        <td>B.Tech</td>
-        <td>4th Yr</td>
-        <td>2017csb1119@iitrpr.ac.in</td>
-        <td>9878795299</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Mohit Sharma</td>
-        <td>Assistant Placement Coordinaotr (APC Core)</td>
-        <td>Mechanical Engineering</td>
-        <td>B.Tech</td>
-        <td>4th Yr</td>
-        <td>2016med1006@iitrpr.ac.in</td>
-        <td>9465059743</td>
-      </tr>
-      <tr >
-        <td>4</td>
-        <td>Radhika</td>
-        <td>Assistant Placement Coordinaotr (APC Non Core)</td>
-        <td>Mechanical Engineering</td>
-        <td>B.Tech</td>
-        <td>4th Yr</td>
-        <td>2017meb1231@iitrpr.ac.in</td>
-        <td>7589330015</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Tarun Garg</td>
-        <td>Internship Coordinator (IC)</td>
-        <td>Electrical Engineering</td>
-        <td>B.Tech</td>
-        <td>3rd Yr</td>
-        <td>2018EEB1188@iitrpr.ac.in</td>
-        <td>9915822322</td>
-      </tr>
-      <tr >
-        <td>6</td>
-        <td>Satvat Jagwani</td>
-        <td>Core Team Member</td>
-        <td>Computer Science And Engineering</td>
-        <td>B.Tech</td>
-        <td>3rd Yr</td>
-        <td>2018CSB1155@iitrpr.ac.in</td>
-        <td>9879794505</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Aman Bansal</td>
-        <td>Core Team Member</td>
-        <td>Computer Science And Engineering</td>
-        <td>B.Tech</td>
-        <td>3rd Yr</td>
-        <td>2018CSB1155@iitrpr.ac.in</td>
-        <td>9879794505</td>
-      </tr>
-      <tr >
-        <td>8</td>
-        <td>Sarvesh Mehtani</td>
-        <td>Core Team Member</td>
-        <td>Computer Science And Engineering</td>
-        <td>B.Tech</td>
-        <td>3rd Yr</td>
-        <td>2018CSB1155@iitrpr.ac.in</td>
-        <td>9879794505</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>Pranav Goyal</td>
-        <td>Core Team Member</td>
-        <td>Computer Science And Engineering</td>
-        <td>B.Tech</td>
-        <td>3rd Yr</td>
-        <td>2018CSB1155@iitrpr.ac.in</td>
-        <td>9879794505</td>
-      </tr>
-      <tr >
-        <td>10</td>
-        <td>Jigar Nilesh Mehta</td>
-        <td>Core Team Member</td>
-        <td>Computer Science And Engineering</td>
-        <td>B.Tech</td>
-        <td>3rd Yr</td>
-        <td>2018CSB1155@iitrpr.ac.in</td>
-        <td>9879794505</td>
-      </tr>
+      
     </tbody>
   </table>
   </div>

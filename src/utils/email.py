@@ -1,2 +1,0 @@
-# class EmailHandler:
-#     sender = None

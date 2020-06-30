@@ -10,7 +10,7 @@ class StudentProfile(models.Model):
     
 
     def __str__(self):
-        return self.user.first_name + " " + self.user.last_name + " " + self.entry_number
+        return self.user.first_name + " " + self.user.last_name
 
 
 class TeamMemberProfile(models.Model):
@@ -28,12 +28,12 @@ class TeamMemberProfile(models.Model):
         ('pg', 'Post Graduate'),
         ('ug', 'Under Graduate'),
         ('staff', 'Staff'),
+        ('faculty', 'Faculty'),
     ]
     category = models.CharField(max_length=32, choices=category_choices, null=True, blank=True)
-
+    designation = models.CharField(max_length=64, null=True, blank=True)
     def __str__(self):
-        return self.user.first_name + " " + self.user.last_name + " " + str(self.level)
-    
+        return self.user.first_name + " " + self.user.last_name
     
     
     
