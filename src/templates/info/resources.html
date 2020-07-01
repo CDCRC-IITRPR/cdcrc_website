@@ -9,76 +9,99 @@
 {% endblock %}
 
 {% block body_content %}
+<style>
+    .resources{
+        height: 200px;
+        width: 300px;
+    }
+    .zoom {
+    /* padding: 50px; */
+    /* background-color: green; */
+    transition: transform .2s;
+    /* width: 200px;
+    margin: 0 auto; */
+    /* height: 200px; */
+
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    
+    /* z-index:1  */
+  }
+</style>
 <section class="bodySectionStart">
     <div class="mainContainer container-fluid">
         <!-- <div class="row"> -->
             <div class="row">
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom" >
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/sde.jfif' %}">
                         <div class="card-body">
                             <h5>
                                 SDE</h5>
                             <a href="http://www.iitkgp.ac.in/department/CY/faculty/cy-raja" target="_blank">LINK</a></div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom">
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/non-core.jfif' %}">
                         <div class="card-body">
                             <h5>
                                 Non-Core</h5>
                             <a href="http://www.iitkgp.ac.in/department/CH/faculty/ch-parag" target="_blank">LINK</a></div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom">
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/ee.jfif' %}">
                         <div class="card-body">
                             <h5>
                                 EE</h5>
                             <a href="http://www.iitkgp.ac.in/department/IM/faculty/im-mj" target="_blank">LINK</a></div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom">
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/mech.jfif' %}">
                         <div class="card-body">
                             <h5>
                                 MECH</h5>
                             <a href="http://www.iitkgp.ac.in/department/IP/faculty/ip-uday" target="_blank">LINK</a></div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom">
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/interview.jfif' %}">
                         <div class="card-body">
                             <h5>
                                 Interviews</h5>
                             <a href="#" target="_blank">LINK</a></div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom">
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/quant.jfif' %}">
                         <div class="card-body">
                             <h5>
                                 Quant</h5>
                             <a href="" target="_blank">LINK</a></div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom">
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/projects.png' %}">
                         <div class="card-body">
                             <h5>
                                 Projects</h5>
                             <a href="#" target="_blank">LINK</a></div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-2">
+                <div class="col-md-3 mb-2 zoom">
                     <div class="card card-cascade narrower card-ecommerce">
-                        <img class="img-fluid" src="https://picsum.photos/200/300">
+                        <img class="img-fluid resources" src="{% static 'info/images/resume.jfif' %}">
                         <div class="card-body">
                             <h5>
                                 Resume</h5>
