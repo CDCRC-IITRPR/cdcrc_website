@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_content %}
+<h1>{{ events.title }}</h1>
+<ul>
+    <li>Venue:{{events.venue}}</li>
+    <li>Date:{{events.date}}</li>
+</ul>
+<p>{{events.body}}</p>
+{% endblock %}
