@@ -1,0 +1,152 @@
+.page-contact {
+  /* padding-bottom: 2%; */
+  background-color: #dbe1e6;
+}
+
+.contact-2{
+  padding: 1%;
+  background-color:rgb(239, 239, 248);
+}
+
+.top{
+  background-color: #dbe1e6; 
+  padding-top: 1%;
+}
+
+.top-link{
+  color: white ;
+}
+
+.head-contact-row{
+  padding: 2% 1% 0% 1%; 
+}
+
+.main-box{
+  background-color: rgb(77, 118, 210);
+  padding-bottom: 3%;
+}
+
+.head-contact{
+  padding-top: 10px;
+}
+
+a.header-link:link {
+    color: white !important;
+}
+
+/* visited link */
+a.header-link:visited {
+    color: white !important;
+}
+
+/* mouse over link */
+a.header-link:hover {
+    color: white !important;
+}
+
+/* selected link */
+a.header-link:active {
+    color: white !important;
+}
+/* 
+.custom-navbar {
+    overflow: hidden;
+    background-color: rgb(34, 76, 169);
+  }
+  
+  .custom-navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .custom-navbar a:hover{
+      color: white;
+      text-decoration: none;
+  }
+  
+  .custom-dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .custom-dropdown .custom-dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .custom-navbar a:hover, .custom-dropdown:hover .custom-dropbtn {
+    background-color: rgb(77, 118, 180);
+  }
+  
+  .custom-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(77, 118, 210, 0.2);
+    z-index: 1;
+  }
+  
+  .custom-dropdown-content a {
+    float: none;
+    color: rgb(77, 118, 210);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .custom-dropdown-content a:hover {
+    background-color: rgb(77, 118, 180);
+    color: white;
+    text-decoration: none;
+
+  } */
+  .contact{
+    height:275px;
+    padding: 0% 6% 0% 6%;
+    background-color:rgb(239, 239, 248);
+  }
+  /* .custom-dropdown:hover .custom-dropdown-content {
+    display: block;
+  } */
+  .zoom {
+    /* padding: 50px; */
+    /* background-color: green; */
+    transition: transform .2s;
+    /* width: 200px;
+    margin: 0 auto; */
+    /* height: 200px; */
+
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    
+    /* z-index:1  */
+  }
+.map-container-6{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:400px;
+}
+.map-container-6 iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
