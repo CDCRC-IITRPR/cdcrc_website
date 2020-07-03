@@ -153,6 +153,8 @@ align-items: center;
   position: relative;
 }
 
+
+
 /* Hide the images by default */
 .mySlides {
   display: none;
@@ -173,6 +175,8 @@ align-items: center;
   user-select: none;
   -webkit-user-select: none;
 }
+
+
 
 /* Position the "next button" to the right */
 .next {
@@ -286,5 +290,3 @@ align-items: center;
 .node h2.title a{
   color: #000;
 }
-
-
