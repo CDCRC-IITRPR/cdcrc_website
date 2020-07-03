@@ -9,6 +9,7 @@
 	<meta name="keywords"
 		content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
 	<link rel="shortcut icon" href="../favicon.ico">
+    
 
 	<style>
 		/* Make the image fully responsive */
@@ -101,6 +102,8 @@
 		}
 	</style> 
 
+	<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+
 {% endblock %}
 
 
@@ -109,11 +112,10 @@
 <div class="container-fluid" style="background-color: white ;">
 	<div class="row">
 		<div class="col-md-12" id="main_panel_home">
-			<h4 style='line-height:20em; color:white; font-weight:bold;' >Welcome to CDCRC IIT Ropar</h4>
+			<button class="btn btn-lg" style="background-color:red; margin-top:10em;"><a href="{% url 'recruiter:guide' %}" style='color:white; font-weight:bold;'>Guide for Recruiters</a></button>
 		</div>
 	</div>
 	<div class="row">
-<<<<<<< HEAD
 		<div class="col-md-6" id="about_iit_ropar">
 			<h3 style="margin-top:1em; color:white;">About IIT Ropar</h3><br>
 			<p style="color:white;">
@@ -125,18 +127,6 @@
 				to recent trends in their chosen domains of study and gain practical experience through a wide variety of activities
 				the institute facilitates in its own campus and arranges for in collaboration with industry and other institutes.
 			</p>
-=======
-		<div class="col-6 border contact" style="background-color: #dadae4;">
-			<span>Why IIT Ropar?</span><br>
-			IIT Ropar has stood above all other IITs for past two years in Time Rankings, and has always been an
-			innovator either in the industry or academia; the alumni of this institute have always made their alma mater
-			proud, with their innovative thoughts and perseverance for the growth of corporations all over the globe.
-			The institute offers a robust academic curriculum, along with a culture of excellence in extra­curricular
-			activities. A typical rprian has always played a pivotal role in the growth of organizations, a habit which
-			is cultivated right here on campus. Our alumni reinforce our belief that whichever be the industry, at IIT
-			Ropar, you will always find candidates meeting, and even exceeding your expectations from a prospective
-			employee.
->>>>>>> 203ddcff44ce98d10df1c5ebabdde35ccbbb899b
 		</div>
 		<div class="col-md-6">
 			<div class="tab row " style="background-color: #4484e4; border: rgb(77, 118, 210);">
