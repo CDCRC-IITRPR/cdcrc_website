@@ -11,6 +11,9 @@ src/recruiter/migrations/**
 src/profiles/migrations/**
 src/internal/migrations/**
 src/accounts/migrations/**
+
+!src/*/migrations/__init__.py
+
 *.log
 *.pot
 *.pyc
