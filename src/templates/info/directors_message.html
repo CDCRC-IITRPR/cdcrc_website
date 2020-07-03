@@ -4,100 +4,118 @@
 {% block head_content %}
     <title>Director's Message | CDCRC IIT Ropar</title>
     <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+
+
+	<style>
+		#directors_message_heading{
+			background-image: url('/static/info/images/symbol_3.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 100% 100%;
+		}
+	</style>
 {% endblock %}
 
 {% block body_content %}
     <div class="container-fluid">
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-4">
-				<img src="{% static 'info/images/DJI_0054.png' %}" alt="Director's Image" style="width:100%;">
+			<div id="directors_message_heading" class="col-md-5">
+				<h1 style="margin-top:2em; color:white;">A Message<br> from the<br> Director's Desk</h1>
 			</div>
-			<div class="col-md-6"></div>
-			<div class="col-md-1"></div>
+			<div class="col-md-7" style="padding:0;">
+				<img style="height:20em; width:100%;" src="{% static 'info/images/director_2.jpg' %}" alt="Director's Image" style="width:100%;">
+			</div>
+
+		</div>
+		<div class="row">
+			{% comment %} <div class="col-md-1"></div> {% endcomment %}
+			<div class="col-md-12" style="background-color:white;">
+				<p style="color:black; padding:1em;" >
+					Dear Friends<br><br>
+					IIT Ropar is on a fascinating path of growth
+					and development. As you are aware, it has
+					already established itself as one of the top
+					technological institutes in the country, but
+					that is just the tip of the iceberg compared
+					to the huge initiatives and progress the
+					institute is making. The institute’s own
+					campus on 500 acres pristine land, on the
+					bank of river Satluj is fast getting ready
+					to be operational. We are going to occupy
+					the first phase of the campus within the
+					next quarter. The institute has increased
+					its student strength from a meager 650 in
+					2015 to over 1100 today which is likely to
+					be increased to 2500 by 2019. <br><br>
+					Our faculty strength has increased during
+					the last two years from 65 to 170.. Apart
+					from existing departments of Computer
+					Science, Electrical Engineering and
+					Mechanical Engineering, we have recently
+					started the department of Civil Engineering
+					and Chemical Engineering. We have expanded
+					our Post Graduate Programmes (M.Tech) to the
+					domains of Mechanical Engineering,
+					Electrical Engineering and Computer Science
+					Engineering. IIT Ropar has got a very strong
+					basic science component with MSc. degrees
+					being taught in Physics, Chemistry and
+					Mathematics department. We have also started
+					MTech programme in Biomedical Engineering
+					offered by Centre for Biomedical Engineering
+					(CBME). PhD programme is one of the major
+					strength of IIT Ropar with approximately 25%
+					of the student strength being PhD research
+					scholars. The research is a major focus of
+					IIT Ropar which is evident from the fact
+					that we have got the highest scientific
+					citations per paper among all the new IITs,
+					which is an indicator of high quality of
+					research done here. <br><br>
+					The excellence in teaching and research
+					comes from the careful choice of faculty
+					members in which IIT Ropar has not made any
+					compromise. It has gone to outreach and
+					fetch scholars from all over the world to
+					enrich its faculty strength and quality.
+					This year, we have introduced the newly
+					designed curriculum which is based on the
+					principle of more hands on experience with
+					strong fundamentals offering more choices to
+					the students and imbibing social and
+					national commitments in them. IIT Ropar has
+					expanded its outreach to industry and the
+					best academic institution in the world by
+					entering into active collaborations with
+					them. Research collaboration is not an
+					additional feather in our cap but an
+					integral part of our growth strategy.
+					<br><br>
+					Recently IIT Ropar has adopted a new mission
+					and vision for the institute according to
+					which we want to become a leader among the
+					institutes established in the new
+					millennium. We have made a stunning
+					beginning but there is a long way to go but
+					I am sure, with the active cooperation of
+					all our stakeholders, students, faculty,
+					staff, employees, collaborators, parents of
+					the students, governmental organizations,
+					media and public at large, we will be able
+					to fulfill the motto of IIT Ropar, <br><br>
+
+					धियो यो नः प्रचोदयात् <br><br>
+					(Deploy our intellect on the right path).
+					<br><br>
+
+					Jai Hind!
+				</p>
+			</div>
+			{% comment %} <div class="col-md-6"></div>
+			<div class="col-md-1"></div> {% endcomment %}
 
 		</div>
 	</div>
 {% endblock %}
 
-{% comment %} <p style="color:black;">
-				Dear Friends<br><br>
-				IIT Ropar is on a fascinating path of growth
-				and development. As you are aware, it has
-				already established itself as one of the top
-				technological institutes in the country, but
-				that is just the tip of the iceberg compared
-				to the huge initiatives and progress the
-				institute is making. The institute’s own
-				campus on 500 acres pristine land, on the
-				bank of river Satluj is fast getting ready
-				to be operational. We are going to occupy
-				the first phase of the campus within the
-				next quarter. The institute has increased
-				its student strength from a meager 650 in
-				2015 to over 1100 today which is likely to
-				be increased to 2500 by 2019. <br><br>
-				Our faculty strength has increased during
-				the last two years from 65 to 170.. Apart
-				from existing departments of Computer
-				Science, Electrical Engineering and
-				Mechanical Engineering, we have recently
-				started the department of Civil Engineering
-				and Chemical Engineering. We have expanded
-				our Post Graduate Programmes (M.Tech) to the
-				domains of Mechanical Engineering,
-				Electrical Engineering and Computer Science
-				Engineering. IIT Ropar has got a very strong
-				basic science component with MSc. degrees
-				being taught in Physics, Chemistry and
-				Mathematics department. We have also started
-				MTech programme in Biomedical Engineering
-				offered by Centre for Biomedical Engineering
-				(CBME). PhD programme is one of the major
-				strength of IIT Ropar with approximately 25%
-				of the student strength being PhD research
-				scholars. The research is a major focus of
-				IIT Ropar which is evident from the fact
-				that we have got the highest scientific
-				citations per paper among all the new IITs,
-				which is an indicator of high quality of
-				research done here. <br><br>
-				The excellence in teaching and research
-				comes from the careful choice of faculty
-				members in which IIT Ropar has not made any
-				compromise. It has gone to outreach and
-				fetch scholars from all over the world to
-				enrich its faculty strength and quality.
-				This year, we have introduced the newly
-				designed curriculum which is based on the
-				principle of more hands on experience with
-				strong fundamentals offering more choices to
-				the students and imbibing social and
-				national commitments in them. IIT Ropar has
-				expanded its outreach to industry and the
-				best academic institution in the world by
-				entering into active collaborations with
-				them. Research collaboration is not an
-				additional feather in our cap but an
-				integral part of our growth strategy.
-				<br><br>
-				Recently IIT Ropar has adopted a new mission
-				and vision for the institute according to
-				which we want to become a leader among the
-				institutes established in the new
-				millennium. We have made a stunning
-				beginning but there is a long way to go but
-				I am sure, with the active cooperation of
-				all our stakeholders, students, faculty,
-				staff, employees, collaborators, parents of
-				the students, governmental organizations,
-				media and public at large, we will be able
-				to fulfill the motto of IIT Ropar, <br><br>
-
-				धियो यो नः प्रचोदयात् <br><br>
-				(Deploy our intellect on the right path).
-				<br><br>
-
-				Jai Hind!
-			</p> {% endcomment %}
 
