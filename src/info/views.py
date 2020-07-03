@@ -39,3 +39,9 @@ def team(request):
     team_members_all = TeamMemberProfile.objects.all()
     context = {'team_members': team_members_all}
     return render(request, 'team/team_list.html', context=context)
+
+def directors_message(request):
+    return render(request, 'info/directors_message.html')
+
+def vision_statement(request):
+    return render(request, 'info/vision_statement.html')

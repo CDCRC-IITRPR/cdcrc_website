@@ -1,0 +1,615 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>JAF | Recruiter | CDCRC IIT Ropar</title>
+    <script>
+
+        function getProfileFormHtml(num){
+            var html = `
+            <div id="profile_label_${num}"> 
+                <div class="row" >
+                    <div class="col-md-1"><h2>#${num}</h2></div>
+                    <div class="col-md-9"></div>
+                    <div class="col-md-2" style='text-align:right;'><button class="btn btn-sm btn-primary" id="hide_profile_${num}_btn">Hide Profile ${num}</button></div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div id="profile_${num}">
+                <div class="form-group row">
+                    <label for="jobProfile${num}Designation" class="col-sm-2 col-form-label"><strong>Designation</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}Designation" name="jobProfile${num}Designation" placeholder="Job Designation">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}Description" class="col-sm-2 col-form-label"><strong>Description</strong></label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="jobProfile${num}Description" name="jobProfile${num}Description" placeholder="Job Description">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}PlaceOfPosting" class="col-sm-2 col-form-label"><strong>Place of Posting</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}PlaceOfPosting" name="jobProfile${num}PlaceOfPosting" placeholder="Place Of Posting">
+                    </div>
+                </div>
+                <br>
+                <h3>Salary Details</h3>
+                <br>
+                <h4>For B.Tech</h4>
+                <div class="form-group row">
+                    <label for="jobProfile${num}salaryBTechCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}salaryBTechCTC" name="jobProfile${num}salaryBTechCTC" placeholder="CTC for B.Tech">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}salaryBTechTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}salaryBTechTakeHome" name="jobProfile${num}salaryBTechTakeHome" placeholder="Take Home Ammount for B.Tech">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}salaryBTechBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}salaryBTechBonus" name="jobProfile${num}salaryBTechBonus" placeholder="Bonus/Perk/Incentive for B.Tech">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}salaryBTechBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}salaryBTechBond" name="jobProfile${num}salaryBTechBond" placeholder="Bond/Service Contract Details for B.Tech">
+                    </div>
+                </div>
+                <br>
+                <h4>For M.Tech</h4>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMTechCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechCTC" name="jobProfile${num}SalaryMTechCTC" placeholder="CTC for M.Tech">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMTechTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechTakeHome" name="jobProfile${num}SalaryMTechTakeHome" placeholder="Take Home Ammount for M.Tech">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMTechBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechBonus" name="jobProfile${num}SalaryMTechBonus" placeholder="Bonus/Perk/Incentive for M.Tech">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMTechBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechBond" name="jobProfile${num}SalaryMTechBond" placeholder="Bond/Service Contract Details for M.Tech">
+                    </div>
+                </div>
+                <br>
+                <h4>For M.Sc</h4>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMScCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScCTC" name="jobProfile${num}SalaryMScCTC" placeholder="CTC for M.Sc">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMScTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScTakeHome" name="jobProfile${num}SalaryMScTakeHome" placeholder="Take Home Ammount for M.Sc">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMScBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScBonus" name="jobProfile${num}SalaryMScBonus" placeholder="Bonus/Perk/Incentive for M.Sc">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryMScBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScBond" name="jobProfile${num}SalaryMScBond" placeholder="Bond/Service Contract Details for M.Sc">
+                    </div>
+                </div>
+                <h4>For Ph.D</h4>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryPhDCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDCTC" name="jobProfile${num}SalaryPhDCTC" placeholder="CTC for Ph.D">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryPhDTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDTakeHome" name="jobProfile${num}SalaryPhDTakeHome" placeholder="Take Home Ammount for Ph.D">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryPhDBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDBonus" name="jobProfile${num}SalaryPhDBonus" placeholder="Bonus/Perk/Incentive for Ph.D">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="jobProfile${num}SalaryPhDBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDBond" name="jobProfile${num}SalaryPhDBond" placeholder="Bond/Service Contract Details for Ph.D">
+                    </div>
+                </div>
+            </div>
+            `
+            return html;
+        }
+
+        var num_profiles = 1;
+        $(document).ready(function(){
+            $(".about").show();
+            $(".contactDetails").hide();
+            $(".jobProfile").hide();
+            $(".selectionProcess").hide();
+            $(".logisticsRequirements").hide();
+            $("#disciplinesInterestedIn").hide();
+            $("#job_profile_form").append(getProfileFormHtml(num_profiles));
+
+
+            $("#aboutPaginate").click(function(){
+                $(".about").show();
+                $(".contactDetails").hide();
+                $(".jobProfile").hide();
+                $(".selectionProcess").hide();
+                $(".logisticsRequirements").hide();
+                $("#disciplinesInterestedIn").hide();
+            });
+
+            $("#contactDetailsPaginate").click(function(){
+                $(".about").hide();
+                $(".contactDetails").show();
+                $(".jobProfile").hide();
+                $(".selectionProcess").hide();
+                $(".logisticsRequirements").hide();
+                $("#disciplinesInterestedIn").hide();
+            });
+
+            $("#jobProfilePaginate").click(function(){
+                $(".about").hide();
+                $(".contactDetails").hide();
+                $(".jobProfile").show();
+                $(".selectionProcess").hide();
+                $(".logisticsRequirements").hide();
+                $("#disciplinesInterestedIn").hide();
+            });
+
+            $("#selectionProcessPaginate").click(function(){
+                $(".about").hide();
+                $(".contactDetails").hide();
+                $(".jobProfile").hide();
+                $(".selectionProcess").show();
+                $(".logisticsRequirements").hide();
+                $("#disciplinesInterestedIn").hide();
+                
+            });
+
+            $("#logisticsRequirementPaginate").click(function(){
+                $(".about").hide();
+                $(".contactDetails").hide();
+                $(".jobProfile").hide();
+                $(".selectionProcess").hide();
+                $(".logisticsRequirements").show();
+                $("#disciplinesInterestedIn").hide();
+            });
+
+            $("#disciplineRequirementsPaginate").click(function(){
+                $(".about").hide();
+                $(".contactDetails").hide();
+                $(".jobProfile").hide();
+                $(".selectionProcess").hide();
+                $(".logisticsRequirements").hide();
+                $("#disciplinesInterestedIn").show();
+            });
+
+            $("#hide_profile_1_btn").click(function(event){
+                event.preventDefault();
+                $("#profile_1").fadeToggle();
+            });
+
+            $("#remove_profile_btn").click(function(event){
+                event.preventDefault();
+                $('#profile_label_'+num_profiles.toString()).remove();
+                $('#profile_'+num_profiles.toString()).remove();
+                num_profiles-=1;
+
+                if(num_profiles===0){
+                    $("#remove_profile_btn").attr("disabled", true);
+                }
+            });
+
+            $("#add_profile_btn").click(function(event){
+                event.preventDefault();
+                let last_profile_num =  num_profiles;
+                num_profiles+=1;
+                var html = getProfileFormHtml(num_profiles);
+                if(last_profile_num===0){
+                    $("#job_profile_form").append(html);
+                }
+                else {
+                    $('#profile_'+last_profile_num.toString()).after(html);
+                }
+                document.getElementById('hide_profile_'+num_profiles.toString()+'_btn').addEventListener("click", function(ev){
+                    ev.preventDefault();
+                    $("#profile_"+num_profiles.toString()).fadeToggle();
+                });
+                $("#remove_profile_btn").attr("disabled", false);
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body_content %}
+    <div class='container-fluid'>
+        <form method='post'>
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style='text-align:center;'>
+                    <br>
+                    <h1>Job Announcement Form</h1>
+                    <br>
+                    <hr>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" >
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center flex-wrap">
+                            <li class="page-item disabled">
+                            {% comment %} <a class="page-link" href="#" tabindex="-1">Previous</a> {% endcomment %}
+                            </li>
+                                <li class="page-item" id="aboutPaginate"><a class="page-link">About</a></li>
+                                <li class="page-item" id="contactDetailsPaginate"><a class="page-link">Contact Details</a></li>
+                                <li class="page-item" id="jobProfilePaginate" ><a class="page-link" >Job Profile</a></li>
+                                <li class="page-item" id="selectionProcessPaginate" ><a class="page-link" >Selection Process</a></li>
+                                <li class="page-item" id="logisticsRequirementPaginate" ><a class="page-link">Logistics Requirement</a></li>
+                                <li class="page-item" id="disciplineRequirementsPaginate" ><a class="page-link">Discipline Requirements</a></li>
+                                <li class="page-item">
+                                {% comment %} <a class="page-link" href="#">Next</a> {% endcomment %}
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row about" style="margin-bottom:1em;" >
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <div class="form-group row">
+                        <label for="companyName" class="col-sm-2 col-form-label"><strong>Organization Name</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Organization Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="companyAddress" class="col-sm-2 col-form-label"><strong>Address</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="companyAddress" name="companyAddress" placeholder="Organization Address">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="companyWebsite" class="col-sm-2 col-form-label"><strong>Website</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="companyWebsite" name="companyWebsite" placeholder="Organization Website">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="companyType" class="col-sm-2 col-form-label"><strong>Type</strong></label>
+                        <div class="col-sm-5">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="type_is_private_sector" class="form-check-input" value="Private Sector">Private Sector
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="type_is_startup" class="form-check-input" value="Startup">Startup
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="type_is_government" class="form-check-input" value="Government">Government
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="type_is_public_sector" class="form-check-input" value="Public Sector">Public Sector
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="type_is_mnc_indian" class="form-check-input" value="Private Sector">Private Sector
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="type_is_mnc_foreign" class="form-check-input" value="Startup">Startup
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="type_other" class="col-sm-2 col-form-label" >Other:</label>
+                                <div class="col-sm-10"  style=" margin-top:5px;">
+                                    <input type="text" class="form-control form-control-sm" name="type_is_other" placeholder="Specify Other Type Here">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label for="companyType" class="col-sm-2 col-form-label"><strong>Sector</strong></label>
+                        <div class="col-sm-5">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="sector_is_analytics" class="form-check-input" value="Analytics">Analytics
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="sector_is_consulting" class="form-check-input" value="Consulting">Consulting
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="sector_is_core" class="form-check-input" value="Core">Core(Technical)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="type_is_public_sector" class="form-check-input" value="Public Sector">Public Sector
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="sector_is_finance" class="form-check-input" value="Finance">Finance
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="sector_is_software" class="form-check-input" value="Software">IT/Software
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="sector_is_management" class="form-check-input" value="Management">Management
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="type_other" class="col-sm-2 col-form-label" >Other:</label>
+                                <div class="col-sm-10"  style=" margin-top:5px;">
+                                    <input type="text" name="sector_is_other" class="form-control form-control-sm"  placeholder="Specify Other Type Here">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row contactDetails" >
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <h3>Head HR Information</h3><br>
+                    <div class="form-group row">
+                        <label for="headHRName" class="col-sm-2 col-form-label"><strong>Name</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="headHRName" name="headHRName" placeholder="Head HR Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="headHREmail" class="col-sm-2 col-form-label"><strong>Email</strong></label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="headHREmail" name="headHREmail" placeholder="Head HR Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="headHRPhoneOne" class="col-sm-2 col-form-label"><strong>Phone One</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="headHRPhoneOne" name="headHRPhoneOne" placeholder="Head HR Phone One">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="headHRPhoneTwo" class="col-sm-2 col-form-label"><strong>Phone Two</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="headHRPhoneOne" name="headHRPhoneTwo" placeholder="Head HR Phone Two">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row contactDetails" >
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <br>
+                    <hr>
+                    <h3>Primary Contact Information</h3><br>
+                    <div class="form-group row">
+                        <label for="secondaryContactName" class="col-sm-2 col-form-label"><strong>Name</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="secondaryContactName" name="secondaryContactName" placeholder="Primary Contact Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="secondaryContactEmail" class="col-sm-2 col-form-label"><strong>Email</strong></label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="secondaryContactEmail" name="secondaryContactEmail" placeholder="Primary Contact Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="secondaryContactPhoneOne" class="col-sm-2 col-form-label"><strong>Phone One</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="secondaryContactPhoneOne" name="secondaryContactPhoneOne" placeholder="Primary Contact Phone One">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="secondaryContactPhoneTwo" class="col-sm-2 col-form-label"><strong>Phone Two</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="secondaryContactPhoneOne" name="secondaryContactPhoneTwo" placeholder="Primary Contact Phone Two">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row contactDetails"  style="margin-bottom:1em;">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <br>
+                    <hr>
+                    <h3>Secondary Contact Information</h3><br>
+                    <div class="form-group row">
+                        <label for="secondaryContactName" class="col-sm-2 col-form-label"><strong>Name</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="secondaryContactName" name="secondaryContactName" placeholder="Secondary Contact Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="secondaryContactEmail" class="col-sm-2 col-form-label"><strong>Email</strong></label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="secondaryContactEmail" name="secondaryContactEmail" placeholder="Secondary Contact Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="secondaryContactPhoneOne" class="col-sm-2 col-form-label"><strong>Phone One</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="secondaryContactPhoneOne" name="secondaryContactPhoneOne" placeholder="Secondary Contact Phone One">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="secondaryContactPhoneTwo" class="col-sm-2 col-form-label"><strong>Phone Two</strong></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="secondaryContactPhoneOne" name="secondaryContactPhoneTwo" placeholder="Secondary Contact Phone Two">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row jobProfile">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <div class="row">
+                        <div class="col-md-3"><h1>Job Profiles</h1></div>
+                        <div class="col-md-5"></div>
+                        <div class="col-md-4" style='text-align:right;'>
+                            <button class="btn btn-sm btn-primary" id="add_profile_btn">Add Profile</button>
+                            <button class="btn btn-sm btn-primary" id="remove_profile_btn">Remove Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row jobProfile" style="margin-bottom:1em;">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" id='job_profile_form' style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;"></div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row selectionProcess" style="margin-bottom:1em;">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <h1>Selection Process</h1><br>
+                    {% for k,v  in selection_process_text_areas.items %}
+                        <div class="form-group row">
+                            <label for="{{k}}" class="col-sm-3 col-form-label"><strong>{{ v.0 }}</strong></label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" id="{{k}}" name="{{k}}" rows="{{v.2}}" placeholder="{{v.1}}"></textarea>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for k, v in selection_process_booleans.items %}
+                        <div class="form-group row">
+                            <label for="{{k}}" class="col-sm-3 col-form-label"><strong>{{v}}</strong></label>
+                            <div class="col-sm-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="{{k}}" id="{{k}}_yes" value="Yes">
+                                    <label class="form-check-label" for="{{k}}_yes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="{{k}}" id="{{k}}_no" value="No" checked>
+                                    <label class="form-check-label" for="{{k}}_no" >No</label>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    {% for k,v in selection_process_text_inputs.items %}
+                        <div class="form-group row">
+                            <label for="{{k}}" class="col-sm-3 col-form-label"><strong>{{v.0}}</strong></label>
+                            <div class="col-sm-9">
+                                <input type='text' class="form-control" id="{{k}}" name="{{k}}" placeholder="{{v.1}}">
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row logisticsRequirements"  style="margin-bottom:1em;">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <h1>Logisitics Requirements</h1>
+                    <br>
+                    <div class="form-group row">
+                        <label for="logistics_requirements" class="col-sm-2 col-form-label"><strong>Logisitics Requirements</strong></label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="logistics_requirements" name="logistics_requirements" rows="10" placeholder="Any logistics requirements like laptops, etc."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row" id="disciplinesInterestedIn"  style="margin-bottom:1em;">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <br>
+                    <h1>Disciplines Interested In</h1>
+                    <br>
+
+                    {% for k, v in disciplines_interested_in.items %}
+                        <div class="form-group row">
+                            <label for="is_{{k}}" class="col-sm-9 col-form-label"><strong>{{v}}</strong></label>
+                            <div class="col-sm-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="is_{{k}}" id="is_{{k}}_yes" value="Yes">
+                                    <label class="form-check-label" for="is_{{k}}_yes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="is_{{k}}" id="is_{{k}}_no" value="No" checked>
+                                    <label class="form-check-label" for="is_{{k}}_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+        </form> 
+    </div>
+{% endblock %}

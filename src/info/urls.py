@@ -15,6 +15,7 @@ urlpatterns = [
     path('team/',views.team, name='team_list'),
     path('news/news-detail/<int:pk>',views.news_detail, name='news-detail'),
     path('events/events-detail/<int:pk>',views.events_detail, name='events-detail'),
-
+    path('directors_message/', views.directors_message, name='directors_message'),
+    path('vision_statement/', views.vision_statement, name='vision_statement'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

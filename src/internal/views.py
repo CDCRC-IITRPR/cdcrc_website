@@ -116,13 +116,22 @@ def create_issue(request):
             issue_obj.save()
 
             mailer = Mailer()
-            
+
+            #send mail alert to the creator of this issue
+            mailer.send_issue_create_alert_to_creator(
+                [request.user.email],
+                request.user.first_name + " " + request.user.last_name,
+                'CDCRC System Alert: ' +issue_obj.title,
+                issue_obj.title,
+                issue_obj.priority.upper(),
+                issue_obj.get_detail_url()
+            )
+            #send mail alert to the assignees
             for assignee in issue_obj.assignees.all():
-                #send alert via mail to the assignees
-                mailer.send_issue_alert(
+                mailer.send_issue_create_alert_to_assignee(
                     [assignee.user.email], 
                     assignee.user.first_name + " " + assignee.user.last_name,
-                    'CDCRC System Alert: Issue Assigned to You',
+                    'CDCRC System Alert: ' +issue_obj.title,
                     issue_obj.title,
                     issue_obj.priority.upper(),
                     issue_obj.get_detail_url()
@@ -139,6 +148,24 @@ def close_issue(request):
         pk = request.POST['issue_id']
         issue = Issue.objects.get(pk=pk)
         issue.status = 'closed'
+        mailer = Mailer()
+        mailer.send_issue_close_alert_to_creator(
+            [issue.creator.user.email], 
+            issue.creator.user.first_name + " " + issue.creator.user.last_name,
+            request.user.first_name + " " + request.user.last_name,
+            'CDCRC System Alert: '+ issue.title,
+            issue.title,
+            issue.get_detail_url()
+        )
+
+        mailer.send_issue_close_alert_to_closer(
+            [issue.creator.user.email], 
+            request.user.first_name + " " + request.user.last_name,
+            'CDCRC System Alert: '+ issue.title,
+            issue.title,
+            issue.get_detail_url()
+        )
+
         issue.save()
 
     return HttpResponseRedirect(reverse('internal:issue_detail', kwargs={'pk': pk}))
@@ -150,6 +177,16 @@ def open_issue(request):
         issue = Issue.objects.get(pk=pk)
         issue.status = 'open'
         issue.save()
+        mailer = Mailer()
+        #send open alert to creator
+        mailer.send_issue_open_alert_to_creator(
+            [issue.creator.user.email], 
+            issue.creator.user.first_name + " " + issue.creator.user.last_name,
+            request.user.first_name + " " + request.user.last_name,
+            'CDCRC System Alert: '+ issue.title,
+            issue.title,
+            issue.get_detail_url()
+        )
 
     return HttpResponseRedirect(reverse('internal:issue_detail', kwargs={'pk': pk}))
 
@@ -167,16 +204,35 @@ def create_issue_followup(request, pk):
 
             mailer = Mailer()
 
+            #alert the assignees
             for assignee in followup_obj.assignees.all():
                 #send alert via mail to the assignees
-                mailer.send_issue_followup_alert(
+                mailer.send_issue_followup_alert_to_assignee(
                     [assignee.user.email], 
                     assignee.user.first_name + " " + assignee.user.last_name,
-                    'CDCRC System Alert: Issue Followup Assigned to You',
+                    'CDCRC System Alert: '+ followup_obj.issue.title,
                     followup_obj.issue.title,
                     followup_obj.comment,
                     followup_obj.get_detail_url(request)
                 )
+            #alert the creator
+            mailer.send_issue_followup_alert_to_creator(
+                [followup_obj.issue.creator.email], 
+                request.user.first_name + " " + request.user.last_name,
+                'CDCRC System Alert: '+ followup_obj.issue.title,
+                followup_obj.issue.title,
+                followup_obj.comment,
+                followup_obj.get_detail_url(request)
+            )
+
+            mailer.send_issue_followup_alert_to_follower(
+                [request.user.email], 
+                request.user.first_name + " " + request.user.last_name,
+                'CDCRC System Alert: '+ followup_obj.issue.title,
+                followup_obj.issue.title,
+                followup_obj.comment,
+                followup_obj.get_detail_url(request)
+            )
 
             return HttpResponseRedirect(reverse('internal:issue_detail', kwargs={'pk':pk}))
     else:

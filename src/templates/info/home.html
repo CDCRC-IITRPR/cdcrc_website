@@ -1,71 +1,105 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head_content %}
-<title>CDCRC IIT Ropar</title>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
-<meta name="keywords"
-	content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
-<link rel="shortcut icon" href="../favicon.ico">
+	<title>CDCRC IIT Ropar</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
+	<meta name="keywords"
+		content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
+	<link rel="shortcut icon" href="../favicon.ico">
 
+	<style>
+		/* Make the image fully responsive */
+		.carousel-inner img {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
 
-<style>
-	/* Make the image fully responsive */
-	.carousel-inner img {
-		width: 100%;
-		height: 100%;
-	}
-</style>
+	<!-- <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css" /> -->
+	<link href="{% static 'info/css/index.css' %}" rel="stylesheet" type="text/css" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+			<script type="text/javascript" src="js/modernizr.custom.46884.js"></script> -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- CSS only -->
+	<link rel="stylesheet" href="http s://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script src="{% static 'info/js/index.js' %}"></script>
+	<script src="{% static 'info/js/index2.js' %}"></script>
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".carousel .carousel-item").each(function () {
+				var i = $(this).next();
+				i.length || (i = $(this).siblings(":first")),
+					i.children(":first-child").clone().appendTo($(this));
 
+				for (var n = 0; n < 3; n++)(i = i.next()).length ||
+					(i = $(this).siblings(":first")),
+					i.children(":first-child").clone().appendTo($(this))
+			})
+		}); 
 
+		$(document).ready(function(){
+			openCity(event, 'News')
+		});
 
-<!-- <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css" /> -->
-<link href="{% static 'info/css/index.css' %}" rel="stylesheet" type="text/css" />
-<!-- <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
-		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script> -->
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- CSS only -->
-<link rel="stylesheet" href="http s://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>
-<script src="{% static 'info/js/index.js' %}"></script>
-<script src="{% static 'info/js/index2.js' %}"></script>
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript">
-	$(window).load(function () {
-		$(".carousel .carousel-item").each(function () {
-			var i = $(this).next();
-			i.length || (i = $(this).siblings(":first")),
-				i.children(":first-child").clone().appendTo($(this));
+	</script>
 
-			for (var n = 0; n < 3; n++)(i = i.next()).length ||
-				(i = $(this).siblings(":first")),
-				i.children(":first-child").clone().appendTo($(this))
-		})
-	}); 
-</script>
+	<style>
+		#about_iit_ropar{
+			background-image: url('/static/info/images/symbol_3.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
 
-</style>
+		#directors_message{
+			background-image: url('/static/info/images/campus_top_front.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+
+		#vision_statement{
+			background-image: url('/static/info/images/campus_grounds.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+
+		#main_panel_home{
+			background-image: url('/static/info/images/campus_main_gate_2.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover; 
+			text-align:center;
+			
+			width:100%;
+			height:35em;
+		}
+	</style> 
 
 {% endblock %}
 
@@ -74,33 +108,29 @@
 
 <div class="container-fluid" style="background-color: white ;">
 	<div class="row">
-		<img src="{% static 'info/images/DJI_0054.jpg' %}" alt="Snow" style="width:100%;">
-		<div class="regist">
-			<h4>Recruiters Registration for Placement</h4><br>
-			<a href="{% url 'recruiter_registration' %}"><button class="btn" style="background-color: red;">Register
-					Now</button></a>
+		<div class="col-md-12" id="main_panel_home">
+			<h4 style='line-height:20em; color:white; font-weight:bold;' >Welcome to CDCRC IIT Ropar</h4>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-6 border contact" style="background-color: cadetblue;">
-			<span>Why IIT Ropar?</span><br>
-			IIT Ropar is the first, the largest and the most diversified among the IITs, and has always been an
-			innovator either in the industry or academia; the alumni of this institute have always made their alma mater
-			proud, with their innovative thoughts and perseverance for the growth of corporations all over the globe.
-			The institute offers a robust academic curriculum, along with a culture of excellence in extra­curricular
-			activities. A typical rprian has always played a pivotal role in the growth of organizations, a habit which
-			is cultivated right here on campus. Our alumni reinforce our belief that whichever be the industry, at IIT
-			Ropar, you will always find candidates meeting, and even exceeding your expectations from a prospective
-			employee.
+		<div class="col-md-6" id="about_iit_ropar">
+			<h3 style="margin-top:1em; color:white;">About IIT Ropar</h3><br>
+			<p style="color:white;">
+				Indian Institute of Technology, Ropar is one of the eight IITs set up by the 
+				Ministry of Human Resource Development (MHRD), Government of India, in 2008 to expand the
+				reach and enhance the quality of technical education in the country. This institute is committed to providing
+				state-of-the-art technical education in a variety of fields and also for facilitating transmission of knowledge
+				in keeping with latest developments in pedagogy. These two areas of focus will enable students to gain exposure
+				to recent trends in their chosen domains of study and gain practical experience through a wide variety of activities
+				the institute facilitates in its own campus and arranges for in collaboration with industry and other institutes.
+			</p>
 		</div>
-		<div class="col-6 border row-event">
-			<!-- Tab links -->
+		<div class="col-md-6">
 			<div class="tab row " style="background-color: #4484e4; border: rgb(77, 118, 210);">
 				<button class="tablinks" onclick="openCity(event, 'News')">News</button>
 				<button class="tablinks" onclick="openCity(event, 'Events')">Events</button>
 			</div>
 
-			<!-- Tab content -->
 			<div id="News" class="tabcontent">
 				<ul style="list-style-type:square">
 					{% for news in news %}
@@ -122,214 +152,85 @@
 			</div>
 		</div>
 	</div>
-	<div class="content-sidebar-wrap"  >
-		<div id="content">
-			<div id="breadcrumbs"></div>
-			<section id="post-content" role="main">
-				<h1 class="page-title">Director's Desk</h1> <span style="text-align:justify">
-					<div class="region region-content">
-						<div id="block-system-main" class="block block-system">
+	{% comment %} directors message starts here {% endcomment %}
+	<div class="row">
+		<div class="col-md-6" id="directors_message">
+			<h3 style="margin-top:1em; color:white;" >The Director's Message</h3>
+			<p style="color:white;">
+				Dear Friends<br><br>
+				IIT Ropar is on a fascinating path of growth
+				and development. As you are aware, it has
+				already established itself as one of the top
+				technological institutes in the country, but
+				that is just the tip of the iceberg compared
+				to the huge initiatives and progress the
+				institute is making. The institute’s own
+				campus on 500 acres pristine land, on the
+				bank of river Satluj is fast getting ready
+				to be operational. We are going to occupy
+				the first phase of the campus within the
+				next quarter. The institute has increased
+				its student strength from a meager 650 in
+				2015 to over 1100 today which is likely to
+				be increased to 2500 by 2019. <br><br>
+				Our faculty strength has increased during
+				the last two years from 65 to 170.. Apart
+				from existing departments of Computer
+				Science, Electrical Engineering and
+				Mechanical Engineering, we have recently
+				started the department of Civil Engineering
+				and Chemical Engineering. We have expanded
+				our Post Graduate Programmes (M.Tech) to the
+				domains of Mechanical Engineering,
+				Electrical Engineering and Computer Science
+				Engineering. IIT Ropar has got a very strong
+				basic science component with MSc. degrees
+				being taught in Physics, Chemistry and
+				Mathematics department. We have also started
+				MTech programme in Biomedical Engineering
+				<br>
+				<a style="color:white; font-weight:bold;" href="{% url 'directors_message' %}">Read More...</a>
+			</p>
+		</div>
 
-
-							<div class="content">
-								<span property="dc:title" content="Director's Desk"
-									class="rdf-meta element-hidden"></span>
-
-
-								<div class="content node-page">
-									<div class="field field-name-body field-type-text-with-summary field-label-hidden">
-										<div class="field-items">
-											<div class="field-item even" property="content:encoded">
-
-
-
-												<div class="container-fluid">
-													<div class="row">
-														<div class="col-md-3 col-sm-4 sidebar1">
-															<div class="col-12">
-
-																<div class="logo">
-																	<img src="{% static 'info/images/director-new-ofc.jpg' %}"
-																		class="img-responsive center-block"
-																		style="height: 200px;width:200px;" alt="Logo">
-																</div>
-															</div>
-															<br>
-															<div class="col-12">
-
-																<div class="left-navigation" style="margin-top: 50% ;">
-																	<ul class="list">
-																		<h5><strong></strong>
-																			<p style="color:#ffffff;">
-																				<strong>From Director Desk</strong></p>
-																		</h5>
-																		<li style="color:#ffffff;">Director Message
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-9 col-sm-8 main-content" >
-															<!--Main content code to be written here -->
-															<div id="home">
-																<h1 >Director Message</h1>
-																<div class="d_img">
-																	<img src="{% static 'info/images/directorsmsg.jfif' %}"
-																		alt="">
-																</div>
-																<div class="d_message_row">
-																	<p class="d_message"
-																		style="font-family: Leelawadee, sans-serif;font-size: 14.3333330154419px;">
-																		Dear Friends<br><br>
-																		IIT Ropar is on a fascinating path of growth
-																		and development. As you are aware, it has
-																		already established itself as one of the top
-																		technological institutes in the country, but
-																		that is just the tip of the iceberg compared
-																		to the huge initiatives and progress the
-																		institute is making. The institute’s own
-																		campus on 500 acres pristine land, on the
-																		bank of river Satluj is fast getting ready
-																		to be operational. We are going to occupy
-																		the first phase of the campus within the
-																		next quarter. The institute has increased
-																		its student strength from a meager 650 in
-																		2015 to over 1100 today which is likely to
-																		be increased to 2500 by 2019. <br><br>
-																		Our faculty strength has increased during
-																		the last two years from 65 to 170.. Apart
-																		from existing departments of Computer
-																		Science, Electrical Engineering and
-																		Mechanical Engineering, we have recently
-																		started the department of Civil Engineering
-																		and Chemical Engineering. We have expanded
-																		our Post Graduate Programmes (M.Tech) to the
-																		domains of Mechanical Engineering,
-																		Electrical Engineering and Computer Science
-																		Engineering. IIT Ropar has got a very strong
-																		basic science component with MSc. degrees
-																		being taught in Physics, Chemistry and
-																		Mathematics department. We have also started
-																		MTech programme in Biomedical Engineering
-																		offered by Centre for Biomedical Engineering
-																		(CBME). PhD programme is one of the major
-																		strength of IIT Ropar with approximately 25%
-																		of the student strength being PhD research
-																		scholars. The research is a major focus of
-																		IIT Ropar which is evident from the fact
-																		that we have got the highest scientific
-																		citations per paper among all the new IITs,
-																		which is an indicator of high quality of
-																		research done here. <br><br>
-																		The excellence in teaching and research
-																		comes from the careful choice of faculty
-																		members in which IIT Ropar has not made any
-																		compromise. It has gone to outreach and
-																		fetch scholars from all over the world to
-																		enrich its faculty strength and quality.
-																		This year, we have introduced the newly
-																		designed curriculum which is based on the
-																		principle of more hands on experience with
-																		strong fundamentals offering more choices to
-																		the students and imbibing social and
-																		national commitments in them. IIT Ropar has
-																		expanded its outreach to industry and the
-																		best academic institution in the world by
-																		entering into active collaborations with
-																		them. Research collaboration is not an
-																		additional feather in our cap but an
-																		integral part of our growth strategy.
-																		<br><br>
-																		Recently IIT Ropar has adopted a new mission
-																		and vision for the institute according to
-																		which we want to become a leader among the
-																		institutes established in the new
-																		millennium. We have made a stunning
-																		beginning but there is a long way to go but
-																		I am sure, with the active cooperation of
-																		all our stakeholders, students, faculty,
-																		staff, employees, collaborators, parents of
-																		the students, governmental organizations,
-																		media and public at large, we will be able
-																		to fulfill the motto of IIT Ropar, <br><br>
-
-																		धियो यो नः प्रचोदयात् <br><br>
-																		(Deploy our intellect on the right path).
-																		<br><br>
-
-																		Jai Hind!
-																	</p>
-																</div>
-															</div>
-
-
-														</div>
-
-														<!--</div>-->
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<footer>
-								</footer>
-
-							</div>
-
-						</div> <!-- /.block -->
-					</div>
-					<!-- /.region -->
-				</span>
-			</section> <!-- /#main -->
+		<div class="col-md-6" id="vision_statement">
+			<h3 style="margin-top:1em; color:white;" >Our Vision Statement</h3>
+			<p style="color:white;">
+				Dear Friends<br><br>
+				IIT Ropar is on a fascinating path of growth
+				and development. As you are aware, it has
+				already established itself as one of the top
+				technological institutes in the country, but
+				that is just the tip of the iceberg compared
+				to the huge initiatives and progress the
+				institute is making. The institute’s own
+				campus on 500 acres pristine land, on the
+				bank of river Satluj is fast getting ready
+				to be operational. We are going to occupy
+				the first phase of the campus within the
+				next quarter. The institute has increased
+				its student strength from a meager 650 in
+				2015 to over 1100 today which is likely to
+				be increased to 2500 by 2019. <br><br>
+				Our faculty strength has increased during
+				the last two years from 65 to 170.. Apart
+				from existing departments of Computer
+				Science, Electrical Engineering and
+				Mechanical Engineering, we have recently
+				started the department of Civil Engineering
+				and Chemical Engineering. We have expanded
+				our Post Graduate Programmes (M.Tech) to the
+				domains of Mechanical Engineering,
+				Electrical Engineering and Computer Science
+				Engineering. IIT Ropar has got a very strong
+				basic science component with MSc. degrees
+				being taught in Physics, Chemistry and
+				Mathematics department. We have also started
+				MTech programme in Biomedical Engineering
+				<br>
+				<a style="color:white; font-weight:bold;" href="{% url 'vision_statement' %}">Read More...</a>
+			</p>
 		</div>
 	</div>
 
-	<div class="row justify-content-center"
-		style="margin-top: 70px;  background-color: rgb(34, 76, 169);color: white;height: 50px;">
-		<h2 class="past-rec-title">Past Recruiters</h2>
-	</div>
-
-	<!-- Container for the image gallery -->
-	<div class="container" style="margin-top: 70px;margin-bottom: 70px;">
-
-		<!-- Full-width images with number text -->
-		<div class="mySlides">
-			<img src="{% static 'info/images/goldman.png' %}" style="width:250px; height:100px;margin-left: 60px;">
-			<img src="{% static 'info/images/goldman.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-			<img src="{% static 'info/images/goldman.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-		</div>
-
-		<div class="mySlides">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 60px;">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-		</div>
-
-		<div class="mySlides">
-			<img src="{% static 'info/images/goldman.png' %}" style="width:250px; height:100px;margin-left: 60px;">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-		</div>
-
-		<div class="mySlides">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 60px;">
-			<img src="{% static 'info/images/goldman.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-		</div>
-
-		<div class="mySlides">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 60px;">
-			<img src="{% static 'info/images/google.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-			<img src="{% static 'info/images/goldman.png' %}" style="width:250px; height:100px;margin-left: 120px;">
-		</div>
-
-		<!-- Next and previous buttons -->
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-	</div>
-	<!-- bootstrap card with row name myCarousel as row 1-->
-
-	{% endblock %}
+{% endblock %}

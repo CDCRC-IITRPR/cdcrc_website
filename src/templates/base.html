@@ -11,9 +11,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	<script
+		src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 		crossorigin="anonymous"></script>
+	{% comment %} <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script> {% endcomment %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 		crossorigin="anonymous"></script>
@@ -69,7 +73,6 @@
 	<section>
 		<div class="custom-navbar">
 			<a href="{% url 'home' %}">Home</a>
-			<a href="#news">News</a>
 			<div class="custom-dropdown">
 				<button class="custom-dropbtn">For Recruiters
 					<i class="fa fa-caret-down"></i>
@@ -95,7 +98,6 @@
 			</div>
 			<a href="{% url 'team_list' %}">Team</a>
 			<a href="{% url 'contacts' %}">Contact Us</a>
-			<a href="{% url 'internal:home' %}">Internal</a>
 			<a href="{% url 'resources' %}">Resources</a>
 			<!-- <a href=""></a>  -->
 
@@ -106,7 +108,7 @@
 
 	{% endblock %}
 </body>
-<br />
+<br>
 
 
 <div class="row justify-content-center">
@@ -116,84 +118,71 @@
 			<div class="container-fluid mainContainer">
 				<div class="row" style="padding: 3%;">
 					<div class="col-lg-4">
+						<h3 class="fot-white">About</h3>
+						<p class="fot-white">
+
+							Career Development and Corporate Relations Center (CDCRC), IIT Ropar aims to guide students to
+							to success in their careers, helps students with Professional Development, Training and Placement. 
+							The Corporate Relations department also engages with Industry for the development of the institute and its students.
+
+						</p>
+					</div>
+					<div class="col-lg-4">
 						<h3 class="fot-white">Address</h3>
 						<p class="fot-white">
 
-							Career Development and Corporate Relations Center,
-							IIT Ropar main campus,
-							Rupnagar, Punjab
+							Career Development and Corporate Relations Center<br>
+							3rd Floor, M. Visvesvaraya Block (East Wing)<br>
+							Indian Institute of Technology Ropar<br>
+							Ropar, Punjab<br>
 							India - 140001
 					</div>
 					<div class="col-lg-4">
 						<h3 class="fot-white">Quick Links</h3>
 
-						<a href="http://www.iitrpr.ac.in/" target="_blank" style="color: white;">IIT Ropar</a>
-						<br><a href="#" target="_blank" style="color: white;">Brochure</a>
-						<br><a href="#" target="_blank" style="color: white;">JAF(Job Announcement Form) </a>
-						<br><a href="" target="_blank" style="color: white;">INF(Internship Announcement Form)</a>
+						<a href="http://www.iitrpr.ac.in/" style="color: white;">IIT Ropar</a>
+						<br><a href="#"  style="color: white;">Brochure</a>
+						<br><a href="#"  style="color: white;">JAF(Job Announcement Form) </a>
+						<br><a href="" style="color: white;">INF(Internship Announcement Form)</a>
+						<br><a href="{% url 'internal:home' %}" style="color: white;">Internal</a>
 
 					</div>
-					<div class="col-lg-4">
-						<h3 class="fot-white">About</h3>
-						<p class="fot-white">
-
-							Career Development Centre (CDC), IIT Ropar aims to guide students to
-							think in
-							terms of careers where they can excel in their inherent potential.
-
-						</p>
-					</div>
+					
 				</div>
 			</div>
 			<!-- <hr> -->
 		</div>
 
-		<!-- <div id="social media links">
-				<a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a> -->
-
 	</footer>
-
 </div>
-<div class="row justify-content-center" style="padding-top: 1%;padding-bottom: 2% ;background-color: #232f3e">>
-	<div class="col-12">
-		<!-- <p style="text-align: center; color: black;">
-			© 2016 Indian Institute of Technology Ropar 
-		</p> -->
-		<hr style="background-color: #4d555d;">
-		<!-- <div class="nav-footer-line"> </div> -->
-		<div class="row justify-content-center">
 
-			<div class="col-1 ">
+<div class="row justify-content-center" style="padding-bottom:1em; background-color: #232f3e">
+		
+			<div class="col-1"  style="text-align:center;"></div>
+			<div class="col-2" style="text-align:center;">
 				<a href="https://www.facebook.com/iitrpr" target="_blank">
-					<i class="fab fa-facebook-square fa-3x"></i>
+					<i class="fab fa-facebook-square fa-3x" style="color:white;"></i>
 				</a>
 			</div>
-			<div class="col-1">
+			<div class="col-2" style="text-align:center;">
 				<a href="mailto:placement@iitrpr.ac.in" target="_blank">
-					<i class="fas fa-envelope-square fa-3x"></i>
+					<i class="fas fa-envelope-square fa-3x" style="color:white;"></i>
 				</a>
 			</div>
-			<div class="col-1">
+			<div class="col-2" style="text-align:center;">
 				<a href="https://www.instagram.com/iitropar/?hl=en" target="_blank">
-					<i class="fab fa-instagram-square fa-3x"></i>
+					<i class="fab fa-instagram-square fa-3x" style="color:white;"></i>
 				</a>
 			</div>
-			<div class="col-1">
+			<div class="col-2" style="text-align:center;">
 				<a href="https://www.linkedin.com/school/iitropar/?originalSubdomain=in" target="_blank">
-					<i class="fab fa-linkedin fa-3x"></i>
+					<i class="fab fa-linkedin fa-3x" style="color:white;"></i>
 				</a>
 			</div>
-			<div class="col-1">
+			<div class="col-2" style="text-align:center;">
 				<a href="https://twitter.com/iitrpr?lang=en" target="_blank">
-					<i class="fab fa-twitter-square fa-3x"></i>
+					<i class="fab fa-twitter-square fa-3x" style="color:white;"></i>
 				</a>
 			</div>
-
-			<!-- <div align="center">&copy; Copyright</div> -->
-		</div>
-	</div>
-
-</div>
-</div>
-
+			<div class="col-1" style="text-align:center;"></div>
 </div>
