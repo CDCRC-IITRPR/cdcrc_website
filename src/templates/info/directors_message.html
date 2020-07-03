@@ -11,7 +11,7 @@
 			background-image: url('/static/info/images/symbol_3.jpg');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
-			background-size: 100% 100%;
+			background-size: cover;
 		}
 	</style>
 {% endblock %}
@@ -20,10 +20,10 @@
     <div class="container-fluid">
 		<div class="row">
 			<div id="directors_message_heading" class="col-md-5">
-				<h1 style="margin-top:2em; color:white;">A Message<br> from the<br> Director's Desk</h1>
+				<h1 style="margin-top:1em; margin-bottom:1em; color:white;">A Message<br> from the<br> Director's Desk</h1>
 			</div>
 			<div class="col-md-7" style="padding:0;">
-				<img style="height:20em; width:100%;" src="{% static 'info/images/director_2.jpg' %}" alt="Director's Image" style="width:100%;">
+				<img style="object-fit:cover;height:20em; width:100%;" src="{% static 'info/images/director_2.jpg' %}" alt="Director's Image" style="width:100%;">
 			</div>
 
 		</div>

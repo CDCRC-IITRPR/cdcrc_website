@@ -289,6 +289,7 @@
             <div class="row about" style="margin-bottom:1em;" >
                 <div class="col-md-1"></div>
                 <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <h1>About the Organization</h1><br>
                     <div class="form-group row">
                         <label for="companyName" class="col-sm-2 col-form-label"><strong>Organization Name</strong></label>
                         <div class="col-sm-10">
@@ -337,12 +338,12 @@
                         <div class="col-sm-5">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" name="type_is_mnc_indian" class="form-check-input" value="Private Sector">Private Sector
+                                    <input type="checkbox" name="type_is_mnc_indian" class="form-check-input" value="MNC (Indian Origin)">MNC (Indian Origin)
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" name="type_is_mnc_foreign" class="form-check-input" value="Startup">Startup
+                                    <input type="checkbox" name="type_is_mnc_foreign" class="form-check-input" value="MNC (Foreign Origin)">MNC (Foreign Origin)
                                 </label>
                             </div>
                             <div class="form-group row">
@@ -410,6 +411,7 @@
             <div class="row contactDetails" >
                 <div class="col-md-1"></div>
                 <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
+                    <h1>Contact Details</h1><br>
                     <h3>Head HR Information</h3><br>
                     <div class="form-group row">
                         <label for="headHRName" class="col-sm-2 col-form-label"><strong>Name</strong></label>
@@ -587,7 +589,6 @@
             <div class="row" id="disciplinesInterestedIn"  style="margin-bottom:1em;">
                 <div class="col-md-1"></div>
                 <div class="col-md-10" style="background-color:#D3D3D3; padding-top:1em; padding-bottom:1em;">
-                    <br>
                     <h1>Disciplines Interested In</h1>
                     <br>
 
@@ -606,6 +607,11 @@
                             </div>
                         </div>
                     {% endfor %}
+                    {% comment %} <br> {% endcomment %}
+                    <div style="width:100%; text-align:center;">
+                        <hr>
+                        <input type="submit" class="btn btn-primary" value="Submit JAF">
+                    </div>
                 </div>
                 <div class="col-md-1"></div>
             </div>

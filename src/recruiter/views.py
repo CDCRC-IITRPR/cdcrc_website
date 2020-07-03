@@ -4,8 +4,9 @@ def guide(request):
     return render(request, 'recruiter/guide.html')
 
 def jaf(request):
-    if request=='POST':
+    if request.method=='POST':
         print("Data Fetched")
+        print(request.POST)
 
     selection_process_booleans = {
         'is_ppt': 'PPT',
