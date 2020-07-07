@@ -147,7 +147,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# End of https://www.toptal.com/developers/gitignore/api/django
-.gitignore
 
 !src/*/migrations/_init_.py
