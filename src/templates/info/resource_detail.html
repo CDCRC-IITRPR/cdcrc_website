@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <link href="{% static 'info/css/for_recruiters.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+    <title>Resource | CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+
+<section class="bodySectionStart">
+    <div class="mainContainer container-fluid">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10" style="background-color:white; padding-top:1rem; padding-bottom:1rem;">
+                <h1>{{resource.title}}</h1>
+                {% if resource.url %}
+                    <a href="{{resource.url}}" style="color:DodgerBlue;">External Link</a>
+                {% endif %}
+                <hr>
+                <p>{{resource.brief|safe}}</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

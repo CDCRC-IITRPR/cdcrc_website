@@ -4,7 +4,7 @@
 {% block head_content %}
     <link href="{% static 'info/css/for_recruiters.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
-    <title>Resources | CDCRC IIT Ropar</title>
+    <title>Resource Categories | CDCRC IIT Ropar</title>
 {% endblock %}
 
 {% block body_content %}
@@ -13,15 +13,15 @@
     <div class="mainContainer container-fluid">
         <div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
             <div class="col-12">
-                <h2 style="padding:1em;">{{category}} Resources</h2>
+                <h2 style="padding:1em;">Resource Categories</h2>
             </div>
         </div>
         <div class="row"><br></div>
         <div class="row">
             <div class="col-12">
-                {% for resource in resources %}
+                {% for category in resource_categories %}
                     <h3 style="padding:0.5rem; color:white; background-color:DodgerBlue;">
-                        <a href="{% url 'info:resource_detail' resource.pk %}">{{resource.title}}</a>
+                        <a href="{% url 'info:resources_by_category' category.0 %}">{{category.1}}</a>
                     </h3>
                 {% endfor %}
             </div>

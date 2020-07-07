@@ -3,54 +3,16 @@
 
 {% block head_content %}
 {% comment %} css file for contacts.html {% endcomment %}
-<script type="text/javascript" src="{% static 'info/js/for_recruiters.js' %}"></script>
+{% comment %} <script type="text/javascript" src="{% static 'info/js/for_recruiters.js' %}"></script> {% endcomment %}
 <link href="{% static 'info/css/for_recruiters.css' %}" rel="stylesheet" type="text/css" />
-<title>CDCRC IIT Ropar</title>
+<title>Why Recruit | CDCRC IIT Ropar</title>
 {% endblock %}
 
 {% block body_content %}
-<section class="bodySectionStart">
-    <div class="mainContainer container-fluid">
+    <div class="container-fluid" style="margin-top:0.5rem;">
+        
         <div class="row">
-            <div class="col-lg-3">
-                <div class="sidebarMenu">
-                    <div id="leftSidecssmenu">
-                        <ul>
-                            <li class="active"><a href="#">Why Recruit?</a>
-                            </li>
-                            <li class=""><a href="#">Placement</a></li>
-                            <li class=""><a href="#">Internship</a></li>
-                            {% if user.is_authenticated %}
-                            <li class=""><a href="#">My Profile</a></li>
-                            {% else %}
-                            <li class=""><a href="{% url 'login' %}">Company Registration or Login Link</a></li>
-                            {% endif %}
-                            <li class="cur-btn"><a> Our Curriculum
-                                    <div class="curriculum-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <ul style="display: none;">
-                                    <li style="margin: 0px; padding: 0px;"><a target="_blank"
-                                            href="http://www.iitrpr.ac.in/sites/default/files/UG%20Handbook%202019-20.pdf">Under
-                                            Graduate (UG)</a></li>
-                                    <li style="margin: 0px; padding: 0px;"><a target="_blank"
-                                            href="http://www.iitrpr.ac.in/sites/default/files/HANDBOOK%2C%20PG%20%282018-19%29.pdf">Post
-                                            Graduate (PG)</a></li>
-                                </ul>
-                            </li>
-                            <li class=""><a target="_blank"
-                                    href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">Placement
-                                    Brochure</a></li>
-                            <li class=""><a href="#">FAQs</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-9 txt-box">
+            <div class="col-md-12">
                 <div class="d_message_row">
                     <p class="d_message" style="font-family: Leelawadee, sans-serif;font-size: 14.3333330154419px;">
                     <h2 style="color: #126aee;">Why Recruit?</h2>
@@ -297,7 +259,6 @@
         </div>
     </div>
     </div>
-</section>
 
 
 {% endblock %}

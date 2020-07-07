@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>JAF Details | Recruiter | CDCRC IIT Ropar</title>
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body_content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div style="background-color:white;" class="col-md-12">
+                <h1>Job Announcement Form</h1>
+                <hr>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="12"><strong>About the Organisation</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Name of the Organisation</td>
+                            <td colspan="4">{{jaf_details.about.aboutCompanyName}}</td>
+                            <td colspan="2">Website of the Organisation</td>
+                            <td colspan="4">{{jaf_details.about.aboutCompanyWebsite}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">Postal Address</td>
+                            <td colspan="6">{{jaf_details.about.aboutCompanyAddress}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><strong>Type of Organisation</strong></td>
+                            <td colspan="6">
+                                {% for k in jaf_details.type_is %}
+                                        {{k}}, 
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><strong>Industry Sector</strong></td>
+                            <td colspan="6">
+                                {% for k in jaf_details.sector_is %}
+                                        {{k}},
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Head HR Details</strong></td>
+                            <td colspan="4"><strong>Primary Contact Details</strong></td>
+                            <td colspan="4"><strong>Secondary Contact Details</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Name: {{jaf_details.hr_info.hr_info_headHRName|default:"NA"}}</td>
+                            <td colspan="4">Name: {{jaf_details.hr_info.hr_info_primaryContactName|default:"NA"}}</td>
+                            <td colspan="4">Name: {{jaf_details.hr_info.hr_info_secondaryContactName|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Email: {{jaf_details.hr_info.hr_info_headHREmail|default:"NA"}}</td>
+                            <td colspan="4">Email: {{jaf_details.hr_info.hr_info_primaryContactEmail|default:"NA"}}</td>
+                            <td colspan="4">Email: {{jaf_details.hr_info.hr_info_secondaryContactEmail|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Phone One: {{jaf_details.hr_info.hr_info_headHRPhoneOne|default:"NA"}}</td>
+                            <td colspan="4">Phone One: {{jaf_details.hr_info.hr_info_primaryContactPhoneOne|default:"NA"}}</td>
+                            <td colspan="4">Phone One: {{jaf_details.hr_info.hr_info_secondaryContactPhoneOne|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Phone Two: {{jaf_details.hr_info.hr_info_headHRPhoneTwo|default:"NA"}}</td>
+                            <td colspan="4">Phone Two: {{jaf_details.hr_info.hr_info_primaryContactPhoneTwo|default:"NA"}}</td>
+                            <td colspan="4">Phone Two: {{jaf_details.hr_info.hr_info_secondaryContactPhoneTwo|default:"NA"}}</td>
+                        </tr>
+                        {% for k, v in jaf_details.job_profiles.items %}
+                                <tr>
+                                    <td colspan="12"><strong>Job Profile #{{k}}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">Designation: {{v.Designation|default:"NA"}}</td>
+                                    <td colspan="4">Description: {{v.Description|default:"NA"}}</td>
+                                    <td colspan="4">Place of Posting: {{v.PlaceOfPosting|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Degree</td>
+                                    <td colspan="3">CTC</td>
+                                    <td colspan="2">Take Home</td>
+                                    <td colspan="2">Bonus</td>
+                                    <td colspan="3">Service Contract/Bond</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">B.Tech</td>
+                                    <td colspan="3">{{v.SalaryBTechCTC|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryBTechTakeHome|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryBTechBonus|default:"NA"}}</td>
+                                    <td colspan="3">{{v.SalaryBTechBond|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">M.Tech</td>
+                                    <td colspan="3">{{v.SalaryMTechCTC|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryMTechTakeHome|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryMTechBonus|default:"NA"}}</td>
+                                    <td colspan="3">{{v.SalaryMTechBond|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">M.Sc</td>
+                                    <td colspan="3">{{v.SalaryMScCTC|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryMScTakeHome|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryMScBonus|default:"NA"}}</td>
+                                    <td colspan="3">{{v.SalaryMScBond|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">PhD</td>
+                                    <td colspan="3">{{v.SalaryPhDCTC|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryPhDTakeHome|default:"NA"}}</td>
+                                    <td colspan="2">{{v.SalaryPhDBonus|default:"NA"}}</td>
+                                    <td colspan="3">{{v.SalaryPhDBond|default:"NA"}}</td>
+                                </tr>
+                        {% endfor %}
+
+                        <tr>
+                            <td colspan="1"><strong>Selection Process</strong></td>
+                            <td colspan="5">
+                                {% for k,v in jaf_details.selection_process.items %}
+                                    {{k}}: {{v}},<br>
+                                {% endfor %}
+                            </td>
+                            <td colspan="1"><strong>Disciplines</strong></td>
+                            <td colspan="5">
+                                {% for k,v in jaf_details.disciplines_interested_in.items %}
+                                    {{k}}: {{v}},<br>
+                                {% endfor %}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><strong>Logistics Requirements</strong></td>
+                            <td colspan="10">{{jaf_details.logistics_requirements}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

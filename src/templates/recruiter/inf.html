@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head_content %}
-    <title>JAF | Recruiter | CDCRC IIT Ropar</title>
+    <title>INF | Recruiter | CDCRC IIT Ropar</title>
     <script>
 
         function getProfileFormHtml(num){
@@ -17,129 +17,92 @@
             <br>
             <br>
             <div id="profile_${num}">
+
                 <div class="form-group row">
-                    <label for="jobProfile${num}Designation" class="col-sm-2 col-form-label"><strong>Designation</strong></label>
+                    <label for="jobProfile${num}_Designation" class="col-sm-2 col-form-label"><strong>Designation</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}Designation" name="jobProfile${num}Designation" placeholder="Job Designation">
+                        <input type="text" class="form-control" id="jobProfile${num}_Designation" name="jobProfile${num}_Designation" placeholder="Job Designation">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}Description" class="col-sm-2 col-form-label"><strong>Description</strong></label>
+                    <label for="jobProfile${num}_Description" class="col-sm-2 col-form-label"><strong>Description</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}Description" name="jobProfile${num}Description" placeholder="Job Description">
+                        <input type="text" class="form-control" id="jobProfile${num}_Description" name="jobProfile${num}_Description" placeholder="Job Description">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}PlaceOfPosting" class="col-sm-2 col-form-label"><strong>Place of Posting</strong></label>
+                    <label for="jobProfile${num}_PlaceOfPosting" class="col-sm-2 col-form-label"><strong>Place of Posting</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}PlaceOfPosting" name="jobProfile${num}PlaceOfPosting" placeholder="Place Of Posting">
-                    </div>
-                </div>
-                <br>
-                <h3>Salary Details</h3>
-                <br>
-                <h4>For B.Tech</h4>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryBTechCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryBTechCTC" name="jobProfile${num}SalaryBTechCTC" placeholder="CTC for B.Tech">
+                        <input type="text" class="form-control" id="jobProfile${num}_PlaceOfPosting" name="jobProfile${num}_PlaceOfPosting" placeholder="Place Of Posting">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}SalaryBTechTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
+                    <label for="jobProfile${num}_2_Month" class="col-sm-2 col-form-label"><strong>2 Month</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryBTechTakeHome" name="jobProfile${num}SalaryBTechTakeHome" placeholder="Take Home Ammount for B.Tech">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jobProfile${num}_2_Month" id="jobProfile${num}_2_Month_yes" value="Yes" checked>
+                            <label class="form-check-label" for="jobProfile${num}_2_Month_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jobProfile${num}_2_Month" id="jobProfile${num}_2_Month_no" value="No">
+                            <label class="form-check-label" for="jobProfile${num}_2_Month_no" >No</label>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}SalaryBTechBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
+                    <label for="jobProfile${num}_6_Month" class="col-sm-2 col-form-label"><strong>6 Month</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryBTechBonus" name="jobProfile${num}SalaryBTechBonus" placeholder="Bonus/Perk/Incentive for B.Tech">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jobProfile${num}_6_Month" id="jobProfile${num}_6_Month_yes" value="Yes" checked>
+                            <label class="form-check-label" for="jobProfile${num}_6_Month_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jobProfile${num}_6_Month" id="jobProfile${num}_6_Month_no" value="No">
+                            <label class="form-check-label" for="jobProfile${num}_6_Month_no">No</label>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}SalaryBTechBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
+                    <label for="jobProfile${num}_JMT" class="col-sm-2 col-form-label"><strong>Joint Master Thesis</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryBTechBond" name="jobProfile${num}SalaryBTechBond" placeholder="Bond/Service Contract Details for B.Tech">
-                    </div>
-                </div>
-                <br>
-                <h4>For M.Tech</h4>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMTechCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechCTC" name="jobProfile${num}SalaryMTechCTC" placeholder="CTC for M.Tech">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMTechTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechTakeHome" name="jobProfile${num}SalaryMTechTakeHome" placeholder="Take Home Ammount for M.Tech">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMTechBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechBonus" name="jobProfile${num}SalaryMTechBonus" placeholder="Bonus/Perk/Incentive for M.Tech">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMTechBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMTechBond" name="jobProfile${num}SalaryMTechBond" placeholder="Bond/Service Contract Details for M.Tech">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jobProfile${num}_JMT" id="jobProfile${num}_JMT_yes" value="Yes" checked>
+                            <label class="form-check-label" for="jobProfile${num}_JMT_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="jobProfile${num}_JMT" id="jobProfile${num}_JMT_no" value="No">
+                            <label class="form-check-label" for="jobProfile${num}_JMT_no" >No</label>
+                        </div>
                     </div>
                 </div>
                 <br>
-                <h4>For M.Sc</h4>
+                <h4>Compensation Details</h4>
+                <br>
                 <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMScCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
+                    <label for="jobProfile${num}_Stipend" class="col-sm-2 col-form-label"><strong>Stipend</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScCTC" name="jobProfile${num}SalaryMScCTC" placeholder="CTC for M.Sc">
+                        <input type="text" class="form-control" id="jobProfile${num}_Stipend" name="jobProfile${num}_Stipend" placeholder="Stipend (per month)">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMScTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
+                    <label for="jobProfile${num}_Bonus_Incentives" class="col-sm-2 col-form-label"><strong>Bonus and Incentives</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScTakeHome" name="jobProfile${num}SalaryMScTakeHome" placeholder="Take Home Ammount for M.Sc">
+                        <input type="text" class="form-control" id="jobProfile${num}_Bonus_Incentives" name="jobProfile${num}_Bonus_Incentives" placeholder="Bonus, Perks and Incentives">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMScBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
+                    <label for="jobProfile${num}_Accomodation_Trip_Fare" class="col-sm-2 col-form-label"><strong>Accomodation/Trip Fare</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScBonus" name="jobProfile${num}SalaryMScBonus" placeholder="Bonus/Perk/Incentive for M.Sc">
+                        <input type="text" class="form-control" id="jobProfile${num}_Accomodation_Trip_Fare" name="jobProfile${num}_Accomodation_Trip_Fare" placeholder="Accomodation and Trip Fare">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="jobProfile${num}SalaryMScBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
+                    <label for="jobProfile${num}_Bond_Service_Conditions" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryMScBond" name="jobProfile${num}SalaryMScBond" placeholder="Bond/Service Contract Details for M.Sc">
+                        <input type="text" class="form-control" id="jobProfile${num}_Bond_Service_Conditions" name="jobProfile${num}_Bond_Service_Conditions" placeholder="Bond/Service Contract Details for B.Tech">
                     </div>
                 </div>
-                <h4>For Ph.D</h4>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryPhDCTC" class="col-sm-2 col-form-label"><strong>CTC</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDCTC" name="jobProfile${num}SalaryPhDCTC" placeholder="CTC for Ph.D">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryPhDTakeHome" class="col-sm-2 col-form-label"><strong>Take Home</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDTakeHome" name="jobProfile${num}SalaryPhDTakeHome" placeholder="Take Home Ammount for Ph.D">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryPhDBonus" class="col-sm-2 col-form-label"><strong>Bonus/Perk/Incentive</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDBonus" name="jobProfile${num}SalaryPhDBonus" placeholder="Bonus/Perk/Incentive for Ph.D">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="jobProfile${num}SalaryPhDBond" class="col-sm-2 col-form-label"><strong>Bond/Service Contract Details</strong></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="jobProfile${num}SalaryPhDBond" name="jobProfile${num}SalaryPhDBond" placeholder="Bond/Service Contract Details for Ph.D">
-                    </div>
-                </div>
+                
             </div>
             `
             return html;
@@ -256,7 +219,7 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10" style='text-align:center;'>
                     <br>
-                    <h1>Job Announcement Form</h1>
+                    <h1>Internship Notification Form</h1>
                     <br>
                     <hr>
                 </div>
@@ -610,7 +573,7 @@
                     {% comment %} <br> {% endcomment %}
                     <div style="width:100%; text-align:center;">
                         <hr>
-                        <input type="submit" class="btn btn-primary" value="Submit JAF">
+                        <input type="submit" class="btn btn-primary" value="Submit INF">
                     </div>
                 </div>
                 <div class="col-md-1"></div>

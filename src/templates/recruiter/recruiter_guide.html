@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Guide | Recruiter | CDCRC IIT Ropar</title>
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        .recruiter_guide_text{
+            font-family: 'Roboto', sans-serif;
+            font-size:1.25em;
+        }
+    </style>
+{% endblock %}
+
+{% block body_content %}
+    <div class="container-fluid" >
+        <div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+            <div class="col-12">
+                <h2 style="padding:1em;">Recruiter Guide</h2>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-sm-1" style="background-color:white; padding-top:0.5rem; text-align:center;">
+                <span class="fa-stack fa-1x" style="color:#A8A8A8; margin:0.2rem;">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <strong class="fa-stack-1x text-primary">1</strong>
+                </span>
+            </div>
+            <div class="col-sm-11" style="background-color:white; padding-top:0.55rem;">
+                <p class="recruiter_guide_text" align="justify">
+                    Welcome to CDCRC IIT Ropar! We look forward to working with your organization.
+                    Contact us on placement@iitrpr.ac.in for any placement or internship related queries or give a call
+                    to any of our team members at any of the numbers mentioned on the <a style="color:DodgerBlue;" href="{% url 'info:student_team' %}">team</a>
+                    page. 
+                </p>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-sm-1" style="background-color:white; padding-top:0.5rem;text-align:center;">
+                <span class="fa-stack fa-1x" style="color:#A8A8A8; margin:0.2rem;">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <strong class="fa-stack-1x text-primary">2</strong>
+                </span>
+            </div>
+            <div class="col-sm-11" style="background-color:white; padding-top:0.55rem;">
+                <p class="recruiter_guide_text" align="justify">
+                    We'll request you to give the details of the profiles that you'll  be recruiting for by filling the
+                    <a style="color:DodgerBlue;" href="{% url 'recruiter:jaf' %}">Job Announcement Form</a> (for placements) and
+                    the <a style="color:DodgerBlue;" href="{% url 'recruiter:jaf' %}">Internship Notification Form (for internships)</a>
+                    to formally kickstart the recruiting process.
+                </p>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-sm-1" style="background-color:white; padding-top:0.5rem;text-align:center;">
+                <span class="fa-stack fa-1x" style="color:#A8A8A8; margin:0.2rem;">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <strong class="fa-stack-1x text-primary">3</strong>
+                </span>
+            </div>
+            <div class="col-sm-11" style="background-color:white; padding-top:0.55rem;">
+                <p class="recruiter_guide_text" align="justify">
+                    Once you have filled the JAF or INF, we will get in touch with you to work out a suitable slot which works for
+                    your organization. Meanwhile, we will quickly collect the data of the students eligible for interviewing for the 
+                    profiles that you have floated.
+                </p>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-sm-1" style="background-color:white; padding-top:0.5rem;text-align:center;">
+                <span class="fa-stack fa-1x" style="color:#A8A8A8; margin:0.2rem;">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <strong class="fa-stack-1x text-primary">4</strong>
+                </span>
+            </div>
+            <div class="col-sm-11" style="background-color:white; padding-top:0.55rem;">
+                <p class="recruiter_guide_text" align="justify">
+                    The recruitment process will be carried out during the agreed upon slot. Given the COVID-19 situation this year,
+                    we are fully geared to conduct all the processes online as per convenience.
+                </p>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-sm-1" style="background-color:white; padding-top:0.5rem;text-align:center;">
+                <span class="fa-stack fa-1x" style="color:#A8A8A8; margin:0.2rem;">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <strong class="fa-stack-1x text-primary">5</strong>
+                </span>
+            </div>
+            <div class="col-sm-11" style="background-color:white; padding-top:0.55rem;">
+                <p class="recruiter_guide_text" align="justify">
+                    Once the students have been selected, we'll help you out with all the onboarding formalities where our is required. 
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

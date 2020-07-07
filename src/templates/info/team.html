@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block head_content %}
+<title>{{title}} | CDCRC IIT Ropar</title>
+<link href="{% static 'team/css/team_list.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block body_content %}
+<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+		<div class="col-12">
+			<h2 style="padding:1em;">{{title}}</h2>
+		</div>
+</div>
+<div class="row"><br></div>
+<div class="container-fluid">
+  
+    {% for member in team_members %}
+
+      {% if forloop.counter0|divisibleby:"4" %}
+        <div class="row justify-content-center">
+      {% endif %}
+    
+          <div class="col-md-3">
+            <div class="card" style="margin-top:0.5rem;margin-bottom:0.5rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{member.user.first_name}} {{member.user.last_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{member.designation}}</h6>
+                <hr>
+                {% if member.user.email %}
+                   <p class="card-text">Email: {{member.user.email}}</p>
+                {% endif %}
+                {% if member.phone %}
+                  <p class="card-text">Phone: {{member.phone}}</p>
+                {% endif %}
+                {% if member.url %}
+                  <a href="#" class="card-link">{{member.url}}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+        {% if forloop.counter0|add:"1"|divisibleby:"4" %}
+          </div>
+        {% endif %}
+
+        {% if forloop.last %}
+          {% for i in team_members_remainder_4 %}
+            <div class="col-md-3"></div>
+          {% endfor %}
+          </div>
+        {% endif %}
+        
+    
+    {% endfor %}
+    <div class="row">
+      <br>
+    </div>
+</div>
+    
+</div>
+
+{% endblock %}

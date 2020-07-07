@@ -1,16 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body_content %}
-<h1>Login</h1>
-<form method="POST" actions="">
-    {% csrf_token %}
-    {{form.as_p}}
-    Not registered before!!!!<br>
-    {% comment %} <a href={% url 'register' %}>Register</a><br> {% endcomment %}
-    {% for message in messages %}
-    <p>{{message}}</p>
-    {% endfor %}
-    <input type="submit" name="create_recruiter">
-</form>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <br>
+            <div class="jumbotron">
+                <h1>Login for Students and Team Members</h1>
+                <hr>
+                <form method="POST" actions="">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="id_username" class="col-sm-2 col-form-label"><strong>Username</strong></label> 
+                        <div class="col-sm-10">
+                            {{ form.username }} 
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="id_password" class="col-sm-2 col-form-label"><strong>Password</strong></label> 
+                        <div class="col-sm-10">
+                            {{ form.password }} 
+                        </div>
+                    </div>  
+                    <br>
+                    <input type="submit" value="Login" style="width:4rem;" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+
 
 {% endblock %}

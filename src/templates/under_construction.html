@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+    <title>Page Under Construction | CDCRC IIT Ropar</title>
+
+    <style>
+        #under_construction{
+			background-image: url('/static/info/images/under_construction.png');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+    </style>
+{% endblock %}
+
+{% block body_content %}
+
+<section class="bodySectionStart">
+    <div class="mainContainer container-fluid" >
+        <div class="row">
+            <div class="col-12">
+                <img style="width:100%;" src="{% static 'info/images/under_construction.png' %}"></img>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

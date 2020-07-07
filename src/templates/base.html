@@ -42,6 +42,8 @@
 
 	<script type="text/javascript" src="{% static 'base/base.js' %}"></script>
 
+	<link rel = "icon" href =  "{% static 'base/cdcrc_logo_small.jpg' %}" type = "image/x-icon"> 
+
 	{% block head_content %}
 
 
@@ -55,50 +57,54 @@
 			<div class="col-md-1" style="padding: 8px 0px 0px 0px;"><img id="cdcrc_logo"
 					src="{% static 'base/cdcrc_logo.png' %}"></div>
 			<div class="col-md-9" id="title">
-				<h1><strong>Career Development and Corporate Relations Center</strong></h1>
-				<h3>Indian Institute of Technology Ropar</h3>
+				<span><h1><strong>Career Development and Corporate Relations Center</strong></h1></span>
+				<span><h3>Indian Institute of Technology Ropar</h3></span>
 			</div>
 			<div class="col-md-2" id="info">
-				<br>
+				{% comment %} <br>
 				<span>Mob: +91-9878795299</span><br>
 				<span>placement@iitrpr.ac.in</span><br>
+				<br>
 				{% if user.is_authenticated %}
 				<span>You are logged in as {{request.user.username}}</span>
 				<a href="{% url 'logout' %}">logout</a>
-				{% endif %}
+				{% endif %} {% endcomment %}
 			</div>
 		</div>
 	</div>
 	<section>
 		<div class="custom-navbar">
-			<a href="{% url 'home' %}">Home</a>
+			<a href="{% url 'info:home' %}">Home</a>
+			<a href="{% url 'info:pd_home' %}">Professional Development</a>
+			<a href="{% url 'info:cr_home' %}">Corporate Relations</a>
 			<div class="custom-dropdown">
 				<button class="custom-dropbtn">For Recruiters
 					<i class="fa fa-caret-down"></i>
 				</button>
 				<div class="custom-dropdown-content">
-					<a href="{% url 'for_recruiters/0' %}">Why Recruit</a>
-					<a href="{% url 'for_recruiters/1' %}">Placements</a>
-					<a href="{% url 'for_recruiters/2' %}">Internships</a>
-					<a href="{% url 'login' %}">Company Registration or Login Link</a>
+					<a href="{% url 'recruiter:why' %}">Why Recruit</a>
+					<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
+					<a href="{% url 'recruiter:jaf' %}">JAF</a>
+					<a href="{% url 'recruiter:inf' %}">INF</a>
 
-					<!-- <ul style="display: block;">
-						<li style="margin: 0px; padding: 0px;"><a target="_blank"
-								href="http://www.iitrpr.ac.in/ug-courses">Under Graduate (UG)</a></li>
-						<li style="margin: 0px; padding: 0px;"><a target="_blank"
-								href="http://www.iitrpr.ac.in/pg-courses">Post Graduate (PG)</a></li>
-					</ul> -->
 					<a target="_blank"
-						href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">Placement
+						href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">
 						Brochure</a>
-					<a href="{% url 'for_recruiters/3' %}">FAQs</a>
-					<a href="{% url 'for_recruiters/0' %}">More</a>
 				</div>
 			</div>
-			<a href="{% url 'team_list' %}">Team</a>
-			<a href="{% url 'contacts' %}">Contact Us</a>
-			<a href="{% url 'resources' %}">Resources</a>
-			<!-- <a href=""></a>  -->
+			<div class="custom-dropdown">
+				<button class="custom-dropbtn">The Team
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="custom-dropdown-content">
+					<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
+					<a href="{% url 'info:student_team' %}">Student Team</a>
+				</div>
+			</div>
+			<a href="{% url 'info:contacts' %}">Contact Us</a>
+			{% if user.is_authenticated %}
+				<a href="{% url 'info:resources' %}">Resources</a>
+			{% endif %}
 
 		</div>
 	</section>

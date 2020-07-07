@@ -1,0 +1,146 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% comment %} bootsrap 4.5.0 {% endcomment %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>INF Details | Recruiter | CDCRC IIT Ropar</title>
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div style="background-color:white;" class="col-md-12">
+                <h1>Internship Notification Form: {{inf_details.about.aboutCompanyName|default:"NA"}}</h1>
+                <hr>
+
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td colspan="12"><strong>About the Organisation</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">Name: {{inf_details.about.aboutCompanyName|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">Website: {{inf_details.about.aboutCompanyWebsite|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">Postal Address: {{inf_details.about.aboutCompanyAddress|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">Time Created: {{inf_details.timestamp|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="12"><strong>Type of Organisation</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">
+                                {% for k in inf_details.type_is %}
+                                        {{k}}, 
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="12"><strong>Industry Sector</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">
+                                {% for k in inf_details.sector_is %}
+                                        {{k}},
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Head HR Details</strong></td>
+                            <td colspan="4"><strong>Primary Contact Details</strong></td>
+                            <td colspan="4"><strong>Secondary Contact Details</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Name: {{inf_details.hr_info.hr_info_headHRName|default:"NA"}}</td>
+                            <td colspan="4">Name: {{inf_details.hr_info.hr_info_primaryContactName|default:"NA"}}</td>
+                            <td colspan="4">Name: {{inf_details.hr_info.hr_info_secondaryContactName|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Email: {{inf_details.hr_info.hr_info_headHREmail|default:"NA"}}</td>
+                            <td colspan="4">Email: {{inf_details.hr_info.hr_info_primaryContactEmail|default:"NA"}}</td>
+                            <td colspan="4">Email: {{inf_details.hr_info.hr_info_secondaryContactEmail|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Phone One: {{inf_details.hr_info.hr_info_headHRPhoneOne|default:"NA"}}</td>
+                            <td colspan="4">Phone One: {{inf_details.hr_info.hr_info_primaryContactPhoneOne|default:"NA"}}</td>
+                            <td colspan="4">Phone One: {{inf_details.hr_info.hr_info_secondaryContactPhoneOne|default:"NA"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Phone Two: {{inf_details.hr_info.hr_info_headHRPhoneTwo|default:"NA"}}</td>
+                            <td colspan="4">Phone Two: {{inf_details.hr_info.hr_info_primaryContactPhoneTwo|default:"NA"}}</td>
+                            <td colspan="4">Phone Two: {{inf_details.hr_info.hr_info_secondaryContactPhoneTwo|default:"NA"}}</td>
+                        </tr>
+                        {% for k, v in inf_details.job_profiles.items %}
+                                <tr>
+                                    <td colspan="12"><strong>Job Profile #{{k}}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">Designation: {{v.Designation|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">Description: {{v.Description|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">Place of Posting: {{v.PlaceOfPosting|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">2 Month: {{v.2_Month|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">6 Month: {{v.6_Month|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">Joint Master Thesis: {{v.JMT|default:"NA"}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Stipend: {{v.Stipend|default:"NA"}}</td>
+                                    <td colspan="3">Bonus/Perks: {{v.Bonus_Incentives|default:"NA"}}</td>
+                                    <td colspan="3">Accomodation/Trip Fare: {{v.Accomodation_Trip_Fare|default:"NA"}}</td>
+                                    <td colspan="3">Bond/Service Conditions: {{v.Bond_Service_Conditions|default:"NA"}}</td>
+                                </tr>
+                                
+                        {% endfor %}
+
+                        <tr>
+                            <td colspan="12"><strong>Selection Process</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">
+                                {% for k,v in inf_details.selection_process.items %}
+                                    {{k}}: {{v|default:"NA"}}<br>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="12"><strong>Disciplines</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">
+                                {% for k,v in inf_details.disciplines_interested_in.items %}
+                                    {{k}}: {{v|default:"NA"}}<br>
+                                {% endfor %}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="12"><strong>Logistics Requirements</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="12">{{inf_details.logistics_requirements}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

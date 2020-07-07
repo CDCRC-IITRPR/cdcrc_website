@@ -3,23 +3,34 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Recruiter(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, unique=True)
-    email=models.EmailField()
+    email=models.EmailField(null=True, blank=True)
     website = models.URLField(max_length=200,null=True)
     address = models.TextField(null=True)
-    logo = models.ImageField(default='someDefault.png',blank=True)
-    organisation_type_choices = [
-        ('Private Sector','Private Sector'),
-        ('Start-up','Start-up'),
-        ('Government','Government'),
-        ('Public Sector','Public Sector'),
-        ('MNC (Indian origin)','MNC (Indian origin)'),
-        ('MNC (Foreign origin)','MNC (Foreign origin)'),
-        ('Others','Others'),
+    logo = models.ImageField(blank=True, null=True)
+    domain_choices = [
+        ('sde','SDE'),
+        ('core','Core'),
+        ('non_core','Non Core'),
     ]
-    organisation_type = models.CharField(max_length=40, choices= organisation_type_choices)
+    domain = models.CharField(max_length=40, choices=domain_choices, null=True, blank=True)
 
     def __str__(self):
         return self.name
 
+
+class JAF(models.Model):
+    recruiter = models.ForeignKey(Recruiter, null=True,  on_delete=models.SET_NULL) #TODO: check the on delete rule here later
+    mongo_id = models.CharField(max_length=1000, null=False, blank=False)
+    timestamp = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.pk) + " " +self.recruiter.name
+
+class INF(models.Model):
+    recruiter = models.ForeignKey(Recruiter, null=True,  on_delete=models.SET_NULL) #TODO: check the on delete rule here later
+    mongo_id = models.CharField(max_length=1000, null=False, blank=False)
+    timestamp = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.pk) + " " +self.recruiter.name
