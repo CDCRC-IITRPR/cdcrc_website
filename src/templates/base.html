@@ -42,7 +42,7 @@
 
 	<script type="text/javascript" src="{% static 'base/base.js' %}"></script>
 
-	<link rel = "icon" href =  "{% static 'base/cdcrc_logo_small.jpg' %}" type = "image/x-icon"> 
+	<link rel="icon" href="{% static 'base/cdcrc_logo_small.jpg' %}" type="image/x-icon">
 
 	{% block head_content %}
 
@@ -57,8 +57,12 @@
 			<div class="col-md-1" style="padding: 8px 0px 0px 0px;"><img id="cdcrc_logo"
 					src="{% static 'base/cdcrc_logo.png' %}"></div>
 			<div class="col-md-9" id="title">
-				<span><h1><strong>Career Development and Corporate Relations Center</strong></h1></span>
-				<span><h3>Indian Institute of Technology Ropar</h3></span>
+				<span>
+					<h1><strong>Career Development and Corporate Relations Center</strong></h1>
+				</span>
+				<span>
+					<h3>Indian Institute of Technology Ropar</h3>
+				</span>
 			</div>
 			<div class="col-md-2" id="info">
 				{% comment %} <br>
@@ -73,40 +77,53 @@
 		</div>
 	</div>
 	<section>
-		<div class="custom-navbar">
-			<a href="{% url 'info:home' %}">Home</a>
-			<a href="{% url 'info:pd_home' %}">Professional Development</a>
-			<a href="{% url 'info:cr_home' %}">Corporate Relations</a>
-			<div class="custom-dropdown">
-				<button class="custom-dropbtn">For Recruiters
-					<i class="fa fa-caret-down"></i>
-				</button>
-				<div class="custom-dropdown-content">
-					<a href="{% url 'recruiter:why' %}">Why Recruit</a>
-					<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
-					<a href="{% url 'recruiter:jaf' %}">JAF</a>
-					<a href="{% url 'recruiter:inf' %}">INF</a>
+		<nav class="navbar navbar-expand-lg" style="background-color:rgb(34, 76, 169); padding: 2px 6px 2px 6px;">
+			<a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon" style="color: white; padding-top: 5px;">Menu</span>
+		</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"> <i class="fas fa-bars fa-1x" style="color: white; padding-top: 5px;"></i></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav custom-navbar">
+					<!-- <div class="custom-navbar"> -->
+					<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
+					<a class="nav-item nav-link" href="{% url 'info:pd_home' %}">Professional Development</a>
+					<a class="nav-item nav-link" href="{% url 'info:cr_home' %}">Corporate Relations</a>
+					<div class="custom-dropdown nav-item" style="text-align: center;">
+						<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">For Recruiters
+							<i class="fa fa-caret-down"></i>
+						</button>
+						<div class="custom-dropdown-content">
+							<a href="{% url 'recruiter:why' %}">Why Recruit</a>
+							<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
+							<a href="{% url 'recruiter:jaf' %}">JAF</a>
+							<a href="{% url 'recruiter:inf' %}">INF</a>
 
-					<a target="_blank"
-						href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">
-						Brochure</a>
+							<a target="_blank"
+								href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">
+								Brochure</a>
+						</div>
+					</div>
+					<div class="custom-dropdown">
+						<button class="custom-dropbtn nav-item nav-link">The Team
+							<i class="fa fa-caret-down"></i>
+						</button>
+						<div class="custom-dropdown-content">
+							<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
+							<a href="{% url 'info:student_team' %}">Student Team</a>
+						</div>
+					</div>
+					<a class="nav-item nav-link" href="{% url 'info:contacts' %}">Contact Us</a>
+					{% if user.is_authenticated %}
+					<a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a>
+					{% endif %}
 				</div>
 			</div>
-			<div class="custom-dropdown">
-				<button class="custom-dropbtn">The Team
-					<i class="fa fa-caret-down"></i>
-				</button>
-				<div class="custom-dropdown-content">
-					<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
-					<a href="{% url 'info:student_team' %}">Student Team</a>
-				</div>
-			</div>
-			<a href="{% url 'info:contacts' %}">Contact Us</a>
-			{% if user.is_authenticated %}
-				<a href="{% url 'info:resources' %}">Resources</a>
-			{% endif %}
-
-		</div>
+			<!-- </div> -->
+		</nav>
 	</section>
 	{% block body_content %}
 
