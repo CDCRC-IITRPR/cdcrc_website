@@ -6,9 +6,7 @@ from utils.login_decorators import team_user_required
 from bson.objectid import ObjectId
 import json 
 from utils.pdf_generator import render_to_pdf
-import pdfkit
-path_wkhtmltopdf = "C:\\Program Files\wkhtmltopdf\\bin\wkhtmltopdf.exe"
-config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
+
 
 def guide(request):
     return render(request, 'recruiter/guide.html')
