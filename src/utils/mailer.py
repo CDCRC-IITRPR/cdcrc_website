@@ -133,7 +133,6 @@ class Mailer:
         self.send_email(to_list, subject, message_body)
 
     def send_issue_followup_alert_to_creator(self, to_list, follower_name, subject, issue_title, followup_comment, issue_detail_url):
-        print(issue_detail_url)
         message_body = """
             <h3>CDCRC System Generated Alert</h3>
             <hr>
@@ -144,4 +143,6 @@ class Mailer:
             <br>""".format(follower_name, issue_title, followup_comment, issue_detail_url)
 
         self.send_email(to_list, subject, message_body)
+
+    
         
