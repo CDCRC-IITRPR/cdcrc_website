@@ -11,10 +11,6 @@ from utils.pdf_generator import render_to_pdf
 def guide(request):
     return render(request, 'recruiter/guide.html')
 
-
-def convert_jaf_obj_to_pdf(jaf_details_obj):
-    pass
-
 @team_user_required
 def jaf_details_pdf(request, pk):
     #mongo connection

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'recruiter',
     'profiles',
     'info',
+    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,7 @@ LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
 
 TIME_ZONE =  'Asia/Kolkata'
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

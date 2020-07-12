@@ -1,5 +1,7 @@
 from django import forms
 from internal.models import Contact, IssueFollowUp, Issue
+from bootstrap_datepicker_plus import DateTimePickerInput
+
 
 class ImportContactsForm(forms.Form):
     contacts_file = forms.FileField() 
@@ -37,7 +39,7 @@ class IssueForm(forms.ModelForm):
             'assignees',
             'priority',
             'initial_comment',
-            'deadline',
+            'next_reminder',
         ]
 
         labels = {
@@ -47,7 +49,7 @@ class IssueForm(forms.ModelForm):
             'assignees': 'Assignees',
             'priority': 'priority',
             'initial_comment': 'Comment',
-            'deadline': 'Deadline'
+            'next_reminder': 'Reminder'
         }
 
         widgets = {
@@ -57,11 +59,17 @@ class IssueForm(forms.ModelForm):
             'assignees': forms.SelectMultiple(attrs={'class': 'form-control'}),
             'priority': forms.Select(attrs={'class': 'form-control'}),
             'initial_comment': forms.Textarea(attrs={'class': 'form-control'}),
-            'deadline': forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control'}),
+            'next_reminder': DateTimePickerInput(),
         }
 
 
 class IssueFollowupForm(forms.ModelForm):
+    next_reminder = forms.DateTimeField(
+        # label="Next Reminder",
+        widget=DateTimePickerInput(),
+        # help_text=password_validation.password_validators_help_text_html(),
+        # localize=True
+    )
     class Meta:
         model = IssueFollowUp
         fields = [
@@ -75,6 +83,5 @@ class IssueFollowupForm(forms.ModelForm):
         widgets = {
             'comment': forms.Textarea(attrs={'class': 'form-control'}),
             'assignees': forms.SelectMultiple(attrs={'class': 'form-control'}),
-            # 'comment_is_public': forms.C(attrs={'class': 'form-control'}),
         }
 

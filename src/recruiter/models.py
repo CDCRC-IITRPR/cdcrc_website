@@ -14,7 +14,7 @@ class Recruiter(models.Model):
         ('non_core','Non Core'),
     ]
     domain = models.CharField(max_length=40, choices=domain_choices, null=True, blank=True)
-
+    visible = models.BooleanField(default=False)
     def __str__(self):
         return self.name
 

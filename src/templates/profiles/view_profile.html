@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title> Profile | CDCRC IIT Ropar</title>
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock head_content %}
+
+{% block body_content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            {% if not user.student_profile_completed %}
+                <div class="alert alert-warning" role="alert">
+                    Your profile is not completed! Please complete it ASAP!
+                </div>
+            {% else %}
+                <div class="alert alert-success" role="alert">
+                    Your profile is complete!
+                </div>
+            {% endif %}
+
+            <div class="card" style="width:100%; padding:0.5rem;">
+                <a href="{% url 'profiles:update_student_profile' %}" style="color:black;"><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Update Profile (for students)</a>
+            </div>
+            
+            <br>
+            {% if user.has_student_profile %}
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">My Profile</h5>
+                        <p class="card-text">Name: {{user.get_user_name|default:"NA"}}</p>
+                        <p class="card-text">Entry Number: {{user.student_profile.entry_number|default:"NA"}}</p>
+                        <p class="card-text">Phone: {{user.student_profile.phone|default:"NA"}}</p>
+                        <p class="card-text">Graduating Year: {{user.student_profile.graduating_year|default:"NA"}}</p>
+
+                    </div>
+                </div>
+                <br>
+            {% endif %}
+            {% if user.is_team_member %}
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">My Team Profile</h5>
+                        {% comment %} <p class="card-text">Name: {{user.team_profile}}</p> {% endcomment %}
+                        <p class="card-text">Designation: {{user.team_profile.designation|default:"NA"}}</p>
+                        
+                        <p class="card-text">Domain: {{user.team_profile.domain|default:"NA"}}</p>
+                        <p class="card-text">Category: {{user.team_profile.category|default:"NA"}}</p>
+                        
+                        <p class="card-text">Phone: {{user.team_profile.phone|default:"NA"}}</p>
+            
+                    </div>
+                </div>
+                <br>
+            {% endif %}
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+{% endblock %}

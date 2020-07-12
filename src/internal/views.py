@@ -8,6 +8,7 @@ from profiles.models import TeamMemberProfile
 from internal.models import Contact, Issue, IssueFollowUp
 from django.urls import reverse
 from utils.mailer import Mailer
+import datetime
 # Create your views here.
 
 @team_user_required
@@ -17,7 +18,6 @@ def internal_home(request):
 
 @team_user_required
 def add_contact(request):
-    # TODO: place a merge check here
     if request.method=='POST':
         form = AddContactForm(request.POST)
         if form.is_valid():
@@ -124,7 +124,7 @@ def create_issue(request):
                 'CDCRC System Alert: ' +issue_obj.title,
                 issue_obj.title,
                 issue_obj.priority.upper(),
-                issue_obj.get_detail_url()
+                issue_obj.get_detail_url(request)
             )
             #send mail alert to the assignees
             for assignee in issue_obj.assignees.all():
@@ -134,7 +134,7 @@ def create_issue(request):
                     'CDCRC System Alert: ' +issue_obj.title,
                     issue_obj.title,
                     issue_obj.priority.upper(),
-                    issue_obj.get_detail_url()
+                    issue_obj.get_detail_url(request)
                 )
 
             return HttpResponseRedirect(reverse('internal:issue_detail',kwargs={'pk':issue_obj.pk}))
@@ -155,7 +155,7 @@ def close_issue(request):
             request.user.first_name + " " + request.user.last_name,
             'CDCRC System Alert: '+ issue.title,
             issue.title,
-            issue.get_detail_url()
+            issue.get_detail_url(request)
         )
 
         mailer.send_issue_close_alert_to_closer(
@@ -163,7 +163,7 @@ def close_issue(request):
             request.user.first_name + " " + request.user.last_name,
             'CDCRC System Alert: '+ issue.title,
             issue.title,
-            issue.get_detail_url()
+            issue.get_detail_url(request)
         )
 
         issue.save()
@@ -185,7 +185,7 @@ def open_issue(request):
             request.user.first_name + " " + request.user.last_name,
             'CDCRC System Alert: '+ issue.title,
             issue.title,
-            issue.get_detail_url()
+            issue.get_detail_url(request)
         )
 
     return HttpResponseRedirect(reverse('internal:issue_detail', kwargs={'pk': pk}))
@@ -195,8 +195,13 @@ def create_issue_followup(request, pk):
     if request.method=='POST':
         form = IssueFollowupForm(request.POST)
         if form.is_valid():
+            next_reminder = datetime.datetime.strptime(request.POST['next_reminder'], '%d/%m/%Y %H:%M').strftime('%Y-%d-%m %H:%M')
+            print(next_reminder)
             followup_obj = form.save(commit=False)
-            followup_obj.issue = Issue.objects.get(pk=pk)
+            issue_obj = Issue.objects.get(pk=pk)
+            followup_obj.issue = issue_obj
+            issue_obj.next_reminder = next_reminder
+            issue_obj.save()
             followup_obj.save()
             for assignee in request.POST.getlist('assignees'):
                 followup_obj.assignees.add(TeamMemberProfile.objects.get(pk=int(assignee)))
@@ -217,7 +222,7 @@ def create_issue_followup(request, pk):
                 )
             #alert the creator
             mailer.send_issue_followup_alert_to_creator(
-                [followup_obj.issue.creator.email], 
+                [followup_obj.issue.creator.user.email], 
                 request.user.first_name + " " + request.user.last_name,
                 'CDCRC System Alert: '+ followup_obj.issue.title,
                 followup_obj.issue.title,

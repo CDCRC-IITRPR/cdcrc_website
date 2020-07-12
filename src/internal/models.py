@@ -2,6 +2,7 @@ from django.db import models
 from profiles.models import TeamMemberProfile, StudentProfile
 from recruiter.models import Recruiter
 from django.urls import reverse
+from django.contrib.sites.shortcuts import get_current_site
 # Create your models here.
 
 
@@ -42,22 +43,26 @@ class Issue(models.Model):
     ]
     priority = models.CharField(max_length=10, choices=issue_priority_choices,  blank=False, null=False)
     initial_comment = models.TextField(blank=False, null=False)
-    deadline = models.DateTimeField(blank=True, null=True)
+    next_reminder = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return self.title
 
-    def get_detail_url(self):
-        return str(reverse('internal:issue_detail', kwargs={'pk': self.pk}))
+    def get_detail_url(self, request):
+        curr_site = get_current_site(request)
+        full_url = "http://"+curr_site.domain+str(reverse('internal:issue_detail', kwargs={'pk': self.pk}))
+        return full_url
 
 class IssueFollowUp(models.Model):
     issue = models.ForeignKey(Issue, null=False, blank = False, on_delete=models.CASCADE, related_name='followups')
     comment = models.TextField(null=False, blank=True)
     followup_time = models.DateTimeField(auto_now=True)
     assignees = models.ManyToManyField(TeamMemberProfile,  related_name='assigned_followups')
+    
 
     def get_detail_url(self, request):
-        full_url = request.build_absolute_uri(str(reverse('internal:issue_detail', kwargs={'pk': self.issue.pk})))
+        curr_site = get_current_site(request)
+        full_url = "http://"+curr_site.domain+str(reverse('internal:issue_detail', kwargs={'pk': self.issue.pk}))
         print(full_url)
         return full_url
 

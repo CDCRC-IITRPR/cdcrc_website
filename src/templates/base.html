@@ -65,15 +65,14 @@
 				</span>
 			</div>
 			<div class="col-md-2" id="info" style="text-align:left;">
-				{% comment %} <br>
-				<span>Mob: +91-9878795299</span><br>
-				<span>placement@iitrpr.ac.in</span><br>
-				<br>{% endcomment %}
 				<br><br>
 				{% if user.is_authenticated %}
 					<span>{{request.user.username}}</span>
 					<br>
+					<a href="{% url 'profiles:view_profile' %}">View Profile</a>
+					<br>
 					<a href="{% url 'logout' %}">Logout</a>
+					<br><br>
 				{% endif %} 
 			</div>
 		</div>

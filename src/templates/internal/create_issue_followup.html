@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% comment %} {% load bootstrap4 %} {% endcomment %}
+           {# Adds date-picker required JS and CSS #}
 
 {% block head_content %}
+{{ form.media }} 
 <title>Issue Follow Up | Internal | CDCRC IIT Ropar</title>
 {% endblock %}
 
@@ -18,6 +21,7 @@
                 {{ form.as_p }}
                 <input type="submit" value="Add Follow Up" class="btn btn-primary" style='margin:0 44%;'>
             </form>
+            <br>
         </div>
         <div class="col-md-1"></div>
     </div>

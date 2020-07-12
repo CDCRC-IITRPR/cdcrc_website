@@ -11,6 +11,7 @@ from django.contrib.auth import login, authenticate
 from django.http import HttpResponse
 from django.db import IntegrityError
 from utils.utils import render_message
+from utils.login_decorators import team_user_required
 
 def signup(request):
     if request.method=='POST':
@@ -78,3 +79,8 @@ def activate(request, uidb64, token):
             'Invlalid Activation Link',
             'The activation link is invalid!'
         )
+
+@team_user_required
+def check_account_status(request):
+    message = str(request.user.get_user_name()) + " " + str(request.user.is_team_member()) + " " + str(request.user.student_profile_completed())
+    return render_message(request, 'User Status', message)

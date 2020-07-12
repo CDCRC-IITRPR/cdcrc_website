@@ -9,7 +9,7 @@ from django.db.models import Q
 def home(request):
     news = News.objects.all()
     events = Events.objects.all()
-    recruiters = Recruiter.objects.all()
+    recruiters = Recruiter.objects.filter(visible=True)
     return render(request, 'info/home.html',{'news':news,'events':events, 'recruiters': recruiters})
 
 def contacts(request):
@@ -41,13 +41,13 @@ def events_detail(request, pk):
 
 
 def faculty_team(request):
-    faculty_team_members = TeamMemberProfile.objects.filter(Q(category='faculty') | Q(category='staff'))
+    faculty_team_members = TeamMemberProfile.objects.filter((Q(category='faculty') | Q(category='staff')) & Q(visible=True))
     members_remainder_4 = faculty_team_members.count()
     context = {'team_members': faculty_team_members, 'team_members_remainder_4': range(1, members_remainder_4+1), 'title': 'Faculty Team'}
     return render(request, 'info/team.html', context=context)
 
 def student_team(request):
-    student_team_members = TeamMemberProfile.objects.filter(Q(category='ug') | Q(category='pg'))
+    student_team_members = TeamMemberProfile.objects.filter((Q(category='ug') | Q(category='pg')) & Q(visible=True))
     members_remainder_4 = student_team_members.count()
     context = {'team_members': student_team_members, 'team_members_remainder_4': range(1, members_remainder_4+1), 'title': 'Student Team'}
     return render(request, 'info/team.html', context=context)
