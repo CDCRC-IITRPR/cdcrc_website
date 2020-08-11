@@ -100,12 +100,11 @@
 						<div class="custom-dropdown-content">
 							<a href="{% url 'recruiter:why' %}">Why Recruit</a>
 							<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
-							<a href="{% url 'recruiter:jaf' %}">JAF</a>
-							<a href="{% url 'recruiter:inf' %}">INF</a>
-
-							<a target="_blank"
-								href="http://www.iitrpr.ac.in/TP/wp-content/uploads/2017/07/placement-brochure-19.7.17.pdf">
-								Brochure</a>
+							<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
+							<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">INF</a>
+							{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
+							{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
+							<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure</a>
 						</div>
 					</div>
 					<div class="custom-dropdown">
@@ -166,9 +165,9 @@
 						<h3 class="fot-white">Quick Links</h3>
 
 						<a href="http://www.iitrpr.ac.in/" style="color: white;">IIT Ropar</a>
-						<br><a href="#" style="color: white;">Brochure</a>
-						<br><a href="#" style="color: white;">JAF(Job Announcement Form) </a>
-						<br><a href="" style="color: white;">INF(Internship Announcement Form)</a>
+						<br><a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
+						<br><a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
+						<br><a href="" style="color: white;">INF</a>
 						<br><a href="{% url 'login' %}">Login</a>
 						<br><a href="{% url 'internal:home' %}" style="color: white;">Internal</a>
 
