@@ -61,5 +61,3 @@ def vision_statement(request):
 def corporate_relations_home(request):
     return render(request, 'under_construction.html')
 
-def professional_development_home(request):
-    return render(request, 'under_construction.html')

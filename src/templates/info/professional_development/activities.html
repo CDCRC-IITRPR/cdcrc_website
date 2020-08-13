@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block head_content %}
+<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+<title>{{title}} | CDCRC IIT Ropar</title>
+{% endblock %}
+
+
+{% block body_content %}
+<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+		<div class="col-12">
+			<h2 style="padding:1em;">{{title}}</h2>
+		</div>
+</div>
+<div class="row"><br></div>
+<div class="container-fluid">
+
+    <div class="row">
+      <div class='col-md-1'></div>
+      <div class='col-md-10'>
+        {% for activity in activities %}
+          <div class="row">
+            <div class="col-md-12" style="background-color:white; padding:2em; text-align:center; margin-top:1em;">
+                <h5 class="card-title">{{activity.title}}</h5>
+                <hr style="margin-bottom:0;">
+            </div>
+        </div>
+        <div class="row" style='background-color:white;  padding-bottom:0.5em; margin-bottom:1em;'>
+            <div class='col-md-4' style="height:20em; text-align:center;">
+                <img src="{{activity.photo.url}}" alt="Activity Image" style="height:100%;">
+            </div>
+            <div class="col-md-8">
+                <div style="width:100%">
+                    <h6 class=" text-muted">{{activity.date}}</h6>
+                    {% autoescape off %}
+                    <p class="card-text">{{activity.brief}}</p>
+                    {% endautoescape %}
+                    <a style="color:grey;" href="{% url 'info:pd_activity_detail' pk=activity.pk %}" >Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class='col-md-1'></div>
+    </div>
+  
+    <div class="row">
+      <br>
+    </div>
+</div>
+    
+</div>
+
+{% endblock %}

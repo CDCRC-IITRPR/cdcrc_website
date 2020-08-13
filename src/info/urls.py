@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
@@ -22,7 +22,7 @@ urlpatterns = [
     path('directors_message/', views.directors_message, name='directors_message'),
     path('vision_statement/', views.vision_statement, name='vision_statement'),
 
-    path('professional_development', views.professional_development_home, name="pd_home"),
-    path('corporate_relations_development', views.corporate_relations_home, name="cr_home"),
-    
+    path('professional_development/', include('info.professional_development.urls')),
+    path('corporate_relations/', include('info.corporate_relations.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

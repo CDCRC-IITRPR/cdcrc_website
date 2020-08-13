@@ -31,4 +31,14 @@ class Resource(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
+class ProfessionalDevelopmentActivity(models.Model):
+    title = models.CharField(max_length=256, null=False, blank=False)
+    brief = models.TextField(null=False, blank=False)
+    detail = models.TextField(null=False, blank=False)
+    photo = models.ImageField()
+    date = models.DateField()
+
+    def __str__(self):
+        return self.title

@@ -91,8 +91,17 @@
 				<div class="navbar-nav custom-navbar">
 					<!-- <div class="custom-navbar"> -->
 					<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
-					<a class="nav-item nav-link" href="{% url 'info:pd_home' %}">Professional Development</a>
-					<a class="nav-item nav-link" href="{% url 'info:cr_home' %}">Corporate Relations</a>
+					{% comment %} <a class="nav-item nav-link" href="{% url 'info:pd_about' %}">Professional Development</a> {% endcomment %}
+					<div class="custom-dropdown nav-item" style="text-align: center;">
+						<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Professional Development
+							<i class="fa fa-caret-down"></i>
+						</button>
+						<div class="custom-dropdown-content">
+							<a href="{% url 'info:pd_about' %}">About</a>
+							<a href="{% url 'info:pd_activities' %}">Activities</a>
+						</div>
+					</div>
+					<a class="nav-item nav-link" href="{% url 'info:cr_about' %}">Corporate Relations</a>
 					<div class="custom-dropdown nav-item" style="text-align: center;">
 						<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">For Recruiters
 							<i class="fa fa-caret-down"></i>
@@ -101,7 +110,7 @@
 							<a href="{% url 'recruiter:why' %}">Why Recruit</a>
 							<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
 							<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
-							<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">INF</a>
+							<a href="{% static 'recruiter/IITRPR_IAF.docx' %}">INF</a>
 							{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
 							{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
 							<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure</a>
@@ -163,19 +172,20 @@
 					</div>
 					<div class="col-lg-4">
 						<h3 class="fot-white">Quick Links</h3>
-
 						<a href="http://www.iitrpr.ac.in/" style="color: white;">IIT Ropar</a>
-						<br><a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
-						<br><a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
-						<br><a href="" style="color: white;">INF</a>
-						<br><a href="{% url 'login' %}">Login</a>
-						<br><a href="{% url 'internal:home' %}" style="color: white;">Internal</a>
-
+						<br><a  style="color: white;" href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
+						<br><a  style="color: white;" href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
+						<br><a  style="color: white;" href="" style="color: white;">INF</a>
+						{% if user.is_authenticated %}
+							<br><a  style="color: white;" href="{% url 'logout' %}">Logout</a>
+						{% else %}
+							<br><a  style="color: white;" href="{% url 'login' %}">Login</a>
+						{%endif%}
+						<br><a style="color: white;" href="{% url 'internal:home' %}" style="color: white;">Internal</a>
 					</div>
 
 				</div>
 			</div>
-			<!-- <hr> -->
 		</div>
 
 	</footer>
@@ -200,7 +210,7 @@
 		</a>
 	</div>
 	<div class="col-2" style="text-align:center;">
-		<a href="https://www.linkedin.com/school/iitropar/?originalSubdomain=in" target="_blank">
+		<a href="https://www.linkedin.com/in/cdcrciitrpr/" target="_blank">
 			<i class="fab fa-linkedin fa-3x" style="color:white;"></i>
 		</a>
 	</div>
