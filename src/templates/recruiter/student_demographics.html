@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+
+<script type="text/javascript" src="{% static 'info/js/demographics.js' %}"></script> 
+<link href="{% static 'info/css/demographics.css' %}" rel="stylesheet" type="text/css" />
+
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+<title>Student Demographics | CDCRC IIT Ropar</title>
+
+{% endblock %}
+
+{% block body_content %}
+    
+    <div class="box">
+        <div class="heading">
+            <h1>Student Demographics</h1>
+        </div>
+        <hr>
+        <div class="ug grad">
+            <div class="subheading">
+                <h3>UG: 247 students graduating in 2021</h3>
+            </div>
+            <div id="chartdiv1">
+              <script>
+                am4core.ready(function() {
+                
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+                // Themes end
+                
+                var chart = am4core.create("chartdiv1", am4charts.PieChart3D);
+                chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+                var students=[]
+                "{% for student in stu %}"
+                  {
+                    "{%  if student.category == 'UG Grad' %}"
+                    {
+                      let student={dept: "{{ student.dept|safe }}",students: " {{ student.students|safe }}"}
+                      students.push(student);
+                    }
+                    "{% endif %}"
+                   }
+                "{% endfor %}"
+                
+
+
+                chart.data = students;
+                
+                var series = chart.series.push(new am4charts.PieSeries3D());
+                series.dataFields.value = "students";
+                series.dataFields.category = "dept";
+                chart.logo.disabled = true;
+                
+                }); // end am4core.ready()
+              </script>
+            </div>
+        </div>
+        <hr>
+        <div class="pg grad">
+            <div class="subheading">
+                <h3>UG: 215 students graduating in 2021</h3>
+            </div>
+            <div id="chartdiv2">
+              <script>
+                am4core.ready(function() {
+                
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+                // Themes end
+                
+                var chart = am4core.create("chartdiv2", am4charts.PieChart3D);
+                chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+                var students=[]
+                "{% for student in stu %}"
+                  {
+                    "{%  if student.category == 'PG Grad' %}"
+                    {
+                      let student={dept: "{{ student.dept|safe }}",students: " {{ student.students|safe }}"}
+                      students.push(student);
+                    }
+                    "{% endif %}"
+                   }
+                "{% endfor %}"
+                
+
+
+                chart.data = students;
+                
+                var series = chart.series.push(new am4charts.PieSeries3D());
+                series.dataFields.value = "students";
+                series.dataFields.category = "dept";
+                chart.logo.disabled = true;
+                
+                }); // end am4core.ready()
+              </script>
+            </div>
+        </div>
+        <hr>
+        <div class="ug intern">
+            <div class="subheading">
+                <h3>UG: 289 students interning in summer of 2021</h3>
+            </div>
+            <div id="chartdiv3">
+                <script>
+                    am4core.ready(function() {
+                    
+                    // Themes begin
+                    am4core.useTheme(am4themes_animated);
+                    // Themes end
+                    
+                    var chart = am4core.create("chartdiv3", am4charts.PieChart3D);
+                    chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+                    var students=[]
+                    "{% for student in stu %}"
+                      {
+                        "{%  if student.category == 'UG Intern' %}"
+                        {
+                          let student={dept: "{{ student.dept|safe }}",students: " {{ student.students|safe }}"}
+                          students.push(student);
+                        }
+                        "{% endif %}"
+                       }
+                    "{% endfor %}"
+                    
+
+
+                    chart.data = students;
+                    
+                    var series = chart.series.push(new am4charts.PieSeries3D());
+                    series.dataFields.value = "students";
+                    series.dataFields.category = "dept";
+                    chart.logo.disabled = true;
+                    
+                    }); // end am4core.ready()
+                </script>
+            </div>
+        </div>
+    </div>
+    
+
+
+{% endblock %}

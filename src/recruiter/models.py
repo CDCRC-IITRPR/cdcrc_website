@@ -34,3 +34,9 @@ class INF(models.Model):
 
     def __str__(self):
         return str(self.pk) + " " +self.recruiter.name
+
+class Studentdata(models.Model):
+    category = models.CharField(max_length=10, unique=False, null=True)
+    dept = models.CharField(max_length=100, unique=False, null=True)
+    students = models.IntegerField(null=True)
+

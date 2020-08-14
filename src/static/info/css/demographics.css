@@ -1,0 +1,25 @@
+.box{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: azure;
+}
+
+.heading{
+    color: #126aee; 
+    text-align: center;
+}
+
+.subheading{
+    text-align: center;
+    color: darkolivegreen;
+}
+
+#chartdiv1, #chartdiv2, #chartdiv3 {
+    width: 100%;
+    height: 500px;
+}

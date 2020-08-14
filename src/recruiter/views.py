@@ -1,11 +1,13 @@
 from django.shortcuts import render,redirect
 from pymongo import MongoClient
-from recruiter.models import Recruiter, JAF, INF
+from recruiter.models import Recruiter, JAF, INF, Studentdata
 from django.http import HttpResponse
 from utils.login_decorators import team_user_required
 from bson.objectid import ObjectId
 import json 
 from utils.pdf_generator import render_to_pdf
+from django.core.serializers.json import DjangoJSONEncoder
+from django.core import serializers
 
 
 def guide(request):
@@ -323,3 +325,7 @@ def why_recruit(request):
 
 def recruiter_guide(request):
     return render(request, 'recruiter/recruiter_guide.html')
+
+def student_demographics(request):
+    student = Studentdata.objects.all()
+    return render(request, 'recruiter/student_demographics.html',{'stu': student})
