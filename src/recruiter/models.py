@@ -15,6 +15,7 @@ class Recruiter(models.Model):
     ]
     domain = models.CharField(max_length=40, choices=domain_choices, null=True, blank=True)
     visible = models.BooleanField(default=False)
+    remark = models.TextField(default='', blank=True, null=True)
     def __str__(self):
         return self.name
 
@@ -35,8 +36,12 @@ class INF(models.Model):
     def __str__(self):
         return str(self.pk) + " " +self.recruiter.name
 
-class Studentdata(models.Model):
-    category = models.CharField(max_length=10, unique=False, null=True)
-    dept = models.CharField(max_length=100, unique=False, null=True)
-    students = models.IntegerField(null=True)
+# class Studentdata(models.Model):
+#     # category_choices = [
+#     #     'UG Grad',
+#     #     '',
+#     # ]
+#     category = models.CharField(max_length=10, unique=False, null=True)
+#     dept = models.CharField(max_length=100, unique=False, null=True)
+#     students = models.IntegerField(null=True)
 

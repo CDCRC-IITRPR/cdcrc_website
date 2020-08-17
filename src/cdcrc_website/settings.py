@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CREDS_PATH = os.path.join(BASE_DIR, 'creds.json')
 
 creds = None
-with open('creds.json') as f:
+with open(CREDS_PATH) as f:
    creds = json.load(f)
 
 # Quick-start development settings - unsuitable for production

@@ -104,9 +104,9 @@
 <div class="container-fluid" style="background-color: white ;">
 	<div class="row">
 		<div class="col-md-12" id="main_panel_home">
-			<button class="btn btn-lg" style="background-color:red; margin-top:10em;"><a
+			{% comment %} <button class="btn btn-lg" style="background-color:red; margin-top:10em;"><a
 					href="{% url 'recruiter:guide' %}" style='color:white; font-weight:bold;'>Guide for
-					Recruiters</a></button>
+					Recruiters</a></button> {% endcomment %}
 		</div>
 	</div>
 	<div class="row">
@@ -173,7 +173,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12" id="directors_message">
+		<div class="col-md-8" id="directors_message">
 			<h3 style="margin-top:1em; color:white;">The Director's Message</h3>
 			<p style="color:white;">
 				Dear Friends<br><br>
@@ -194,10 +194,10 @@
 				be increased to 2500 by 2019. <br><br>
 				Our faculty strength has increased during
 				the last two years from 65 to 170.. Apart
-				from existing departments of Computer
+				 from existing departments of Computer
 				Science, Electrical Engineering and
 				Mechanical Engineering, we have recently
-				started the department of Civil Engineering
+				{% comment %}started the department of Civil Engineering
 				and Chemical Engineering. We have expanded
 				our Post Graduate Programmes (M.Tech) to the
 				domains of Mechanical Engineering,
@@ -206,10 +206,18 @@
 				basic science component with MSc. degrees
 				being taught in Physics, Chemistry and
 				Mathematics department. We have also started
-				MTech programme in Biomedical Engineering
+				MTech programme in Biomedical Engineering {% endcomment %}
 				<br>
 				<a style="color:white; font-weight:bold;" href="{% url 'info:directors_message' %}">Read More...</a>
 			</p>
+		</div>
+
+		<div class="col-md-4" style="background-color:#e3d4d3;">
+			<h2 style="margin-top:1em; line-height: 2.0; ">
+				IIT Ropar is the first IIT to introduce a<br> 6 Month Internship Program
+			</h2>
+			<br><br>
+			{% comment %} <div style="text-align:center;"><a class="btn btn-primary" style="color:white;">Click Here to Know More</a></div> {% endcomment %}
 		</div>
 
 		{% comment %} <div class="col-md-6" id="vision_statement">

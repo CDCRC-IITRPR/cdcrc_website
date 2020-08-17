@@ -109,12 +109,16 @@
 						<div class="custom-dropdown-content">
 							<a href="{% url 'recruiter:why' %}">Why Recruit</a>
 							<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
-							<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
-							<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF</a>
+							<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
+							<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
+							<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;<i class="fa fa-download" aria-hidden="true"></i>
+</a>
+							<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;<i class="fa fa-download" aria-hidden="true"></i>
+</a>
 							{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
 							{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
-							<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure</a>
-							<a href="{% url 'recruiter:demographics' %}">Student Demographics</a>
+							<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+							{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a> {% endcomment %}
 						</div>
 					</div>
 					<div class="custom-dropdown">

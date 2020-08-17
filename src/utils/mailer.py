@@ -3,6 +3,12 @@ import smtplib
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import os
+
+from cdcrc_website.settings import BASE_DIR
+
+
+CREDS_PATH = os.path.join(BASE_DIR, 'creds.json')
 
 class Mailer:
     sender_name = None
@@ -11,7 +17,7 @@ class Mailer:
     server = None
 
     def __init__(self):
-        with open('creds.json', 'r') as f:
+        with open(CREDS_PATH, 'r') as f:
             creds = json.load(f)
             self.sender_name  = creds['SENDER_NAME']
             self.sender_email  = creds['SENDER_EMAIL']

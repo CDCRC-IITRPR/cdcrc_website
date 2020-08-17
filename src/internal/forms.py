@@ -9,7 +9,7 @@ class ImportContactsForm(forms.Form):
 class AddContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['first_name', 'last_name', 'phone_one', 'phone_two', 'email', 'recruiter', 'remark']
+        fields = ['first_name', 'last_name', 'phone_one', 'phone_two', 'email', 'recruiter', 'linkedin_url', 'remark']
         labels = {
             'first_name': 'First Name',
             'last_name': 'Last Name',
@@ -17,6 +17,7 @@ class AddContactForm(forms.ModelForm):
             'phone_two': 'Phone #2',
             'email': 'Email',
             'recruiter': 'Recruiter',
+            'linkedin_url': 'Linkedin URL', 
             'remark': 'Remark',
         }
         widgets = {
@@ -25,6 +26,7 @@ class AddContactForm(forms.ModelForm):
             'phone_one': forms.TextInput(attrs={'class': 'form-control'}),
             'phone_two': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'linkedin_url': forms.TextInput(attrs={'class': 'form-control'}),
             'recruiter': forms.Select(attrs={'class': 'form-control'}),
             'remark': forms.Textarea(attrs={'class': 'form-control'}),
         }

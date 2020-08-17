@@ -41,13 +41,13 @@ def events_detail(request, pk):
 
 
 def faculty_team(request):
-    faculty_team_members = TeamMemberProfile.objects.filter((Q(category='faculty') | Q(category='staff')) & Q(visible=True))
+    faculty_team_members = TeamMemberProfile.objects.filter((Q(category='faculty') | Q(category='staff')) & Q(visible=True)).order_by('-level')
     members_remainder_4 = faculty_team_members.count()
     context = {'team_members': faculty_team_members, 'team_members_remainder_4': range(1, members_remainder_4+1), 'title': 'Faculty Team'}
     return render(request, 'info/team.html', context=context)
 
 def student_team(request):
-    student_team_members = TeamMemberProfile.objects.filter((Q(category='ug') | Q(category='pg')) & Q(visible=True))
+    student_team_members = TeamMemberProfile.objects.filter((Q(category='ug') | Q(category='pg')) & Q(visible=True)).order_by('-level')
     members_remainder_4 = student_team_members.count()
     context = {'team_members': student_team_members, 'team_members_remainder_4': range(1, members_remainder_4+1), 'title': 'Student Team'}
     return render(request, 'info/team.html', context=context)

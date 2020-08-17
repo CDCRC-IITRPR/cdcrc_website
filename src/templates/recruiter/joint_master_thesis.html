@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block head_content %}
+<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+<title>{{title}} | CDCRC IIT Ropar</title>
+{% endblock %}
+
+
+{% block body_content %}
+<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+		<div class="col-12">
+			<h2 style="padding:1em;">{{title}}</h2>
+		</div>
+</div>
+<div class="row"><br></div>
+<div class="container-fluid">
+
+    <div class="row" style="margin-top:1em; margin-bottom:1em;">
+      <div class="col-md-1"></div>
+      <div class="col-md-10" style="background-color:white; padding:1em;">
+        <p>Masters students are eligible to do their thesis work in collaboration with the industry under the Joint Master Program</p>
+        <p>Students can spend upto <strong>1 year in the industry</strong> with approval from their faculty supervisor</p>
+        <p> </p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <br>
+    </div>
+</div>
+    
+</div>
+
+{% endblock %}

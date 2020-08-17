@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from pymongo import MongoClient
-from recruiter.models import Recruiter, JAF, INF, Studentdata
+from recruiter.models import Recruiter, JAF, INF#, Studentdata
 from django.http import HttpResponse
 from utils.login_decorators import team_user_required
 from bson.objectid import ObjectId
@@ -326,6 +326,20 @@ def why_recruit(request):
 def recruiter_guide(request):
     return render(request, 'recruiter/recruiter_guide.html')
 
-def student_demographics(request):
-    student = Studentdata.objects.all()
-    return render(request, 'recruiter/student_demographics.html',{'stu': student})
+# def student_demographics(request):
+#     student = Studentdata.objects.all()
+#     return render(request, 'recruiter/student_demographics.html',{'stu': student})
+
+def six_month_internship(request):
+    context = {
+        'title': '6 Month Internship'
+    }
+    return render(request, 'recruiter/six_month_internship.html', context=context)
+
+def joint_master_thesis(request):
+    context = {
+        'title': 'Joint Master Thesis'
+    }
+    return render(request, 'recruiter/joint_master_thesis.html', context=context)
+
+

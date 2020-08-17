@@ -39,12 +39,14 @@ class ContactsCSVHandler:
             return True
         else: return False
 
-    def get_recruiter_obj(self, recuiter_name):
+    def get_recruiter_obj(self, recruiter_name):
         try:
-            recruiter = Recruiter.objects.get(name=recuiter_name)
+            recruiter = Recruiter.objects.get(name=recruiter_name)
             return recruiter
         except:
-            return None
+            recruiter = Recruiter(name=recruiter_name)
+            recruiter.save()
+            return recruiter
 
     
     def import_from_file(self):
@@ -72,6 +74,10 @@ class ContactsCSVHandler:
                     first_name_idx, last_name_idx, suffix_idx, job_title_idx, email_idx, recruiter_idx, phone_one_idx
                 ])
 
+                linkedin_idx = self.get_header_idx_from_key_words(row, ['linkedin'],  excluded_header_indices=[
+                    first_name_idx, last_name_idx, suffix_idx, job_title_idx, email_idx, recruiter_idx, phone_one_idx, phone_two_idx
+                ])
+
             else:
                 curr_contact = {}
                 curr_contact['first_name'] = row[first_name_idx] if first_name_idx!=None else  None
@@ -82,12 +88,10 @@ class ContactsCSVHandler:
                 curr_contact['recruiter'] = row[recruiter_idx] if recruiter_idx!=None else  None
                 curr_contact['phone_one'] = self.clean_phone_number(row[phone_one_idx]) if phone_one_idx!=None else  None
                 curr_contact['phone_two'] = self.clean_phone_number(row[phone_two_idx]) if phone_two_idx!=None else  None
+                curr_contact['linkedin_url'] = row[linkedin_idx] if linkedin_idx!=None else None 
 
-                print(curr_contact)
 
                 approved = self.check_approval(curr_contact)
-
-                print(approved)
 
                 contact_db_obj = Contact(
                     first_name=curr_contact['first_name'],
@@ -98,7 +102,8 @@ class ContactsCSVHandler:
                     phone_two = curr_contact['phone_two'], 
                     email = curr_contact['email'],
                     approved = approved,
-                    recruiter = self.get_recruiter_obj(curr_contact['recruiter'])
+                    linkedin_url = curr_contact['linkedin_url'],
+                    recruiter = self.get_recruiter_obj(curr_contact['recruiter']),
                 )
                 
                 contact_db_obj.save()

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recruiter, JAF, INF, Studentdata #,JobOpportunity,InternshipOpportunity
+from .models import Recruiter, JAF, INF #Studentdata #,JobOpportunity,InternshipOpportunity
 # Register your models here.
 
 
@@ -19,9 +19,9 @@ admin.site.register(Recruiter, RecruiterAdmin)
 admin.site.register(JAF)
 admin.site.register(INF)
 
-from import_export.admin import ImportExportModelAdmin
+# from import_export.admin import ImportExportModelAdmin
 from django.contrib import admin
 
-@admin.register(Studentdata)
-class StudentdataAdmin(ImportExportModelAdmin):
-    pass
+# @admin.register(Studentdata)
+# class StudentdataAdmin(ImportExportModelAdmin):
+#     pass

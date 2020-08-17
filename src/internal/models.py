@@ -16,6 +16,7 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254, null=True, blank=True)
     recruiter = models.ForeignKey(Recruiter, on_delete=models.SET_NULL, null=True, blank=True, related_name='recruiter_contacts')
     remark = models.CharField(max_length=512, null=True, blank=True)
+    linkedin_url = models.URLField(null=True, blank=True)
     approved = models.BooleanField(default=False)
     
 

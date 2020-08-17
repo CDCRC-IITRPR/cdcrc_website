@@ -19,6 +19,10 @@ urlpatterns = [
     # path('inf_details_simple_html/<int:pk>/', views.inf_details_simple_html, name='inf_details_simple_html'),
     path('why/',views.why_recruit, name='why'),
     path('recruiter_guide/',views.recruiter_guide, name='guide'),
-    path('demographics/',views.student_demographics,name='demographics')
+    # path('demographics/',views.student_demographics,name='demographics'), 
+    path('six_month_internship/',views.six_month_internship, name='six_month_internship'), 
+    path('joint_master_thesis/',views.joint_master_thesis, name='joint_master_thesis'),
+
+    
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
