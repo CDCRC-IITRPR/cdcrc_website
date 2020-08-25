@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+<title>{{title}} | CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+    <div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+        <div class="col-12">
+            <h2 style="padding:1em;">{{title}}</h2>
+        </div>
+    </div>
+    <div class="books row" style="padding: 3% 8%;">
+        {% for book in books %}
+        <div class="col-sm-4 col-md-3 col-lg-3" style="padding: 1%; text-align:center; height:auto;">
+            <div class="book" style="border: 0.5px solid black; height: 60vh; padding:0; width:100%; overflow:auto">
+                <img src={{book.photo.url}} alt="#" style="width: 100%; height: 80%;">
+                <p style="margin: 0;">{{book.title}}</p>
+                <p style="margin: 0%;"><i>{{book.writer}}</i></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

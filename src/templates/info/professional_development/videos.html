@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+<title>{{title}} | CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+
+<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+    <div class="col-12">
+        <h2 style="padding:1em;">{{title}}</h2>
+    </div>
+</div>
+
+<div class="row" style="text-align: center; padding: 5% 10%">
+    <p style="font-size:5vh;">Undergraduate students may find some of these videos to be useful for their career aspirations:</p>
+    {% for video in videos %}
+    <div class="col-sm-12 col-md-6 col-lg-6" style="height:auto; margin:1% 0%; padding:0% 1%">
+    <div class="embed-responsive embed-responsive-16by9" style="width: 100%; height: 53vh;">
+        <iframe class="embed-responsive-item" src={{video.Videoocation}}></iframe>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

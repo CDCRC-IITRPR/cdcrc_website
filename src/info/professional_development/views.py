@@ -3,7 +3,7 @@ Views for the professional development section
 """
 
 from django.shortcuts import render
-from info.models import ProfessionalDevelopmentActivity
+from info.models import ProfessionalDevelopmentActivity, ProfessionalDevelopmentBook, ProfessionalDevelopmentVideo
 from recruiter.models import Recruiter
 from utils.metadata import resource_category_choices
 from django.db.models import Q
@@ -29,3 +29,17 @@ def activity_detail(request, pk):
         'title': 'Activity Detail',
     }
     return render(request, 'info/professional_development/activity_detail.html', context=context)
+
+def books(request):
+    context = {
+        'title' : 'Library',
+        'books': ProfessionalDevelopmentBook.objects.all()
+    }
+    return render(request, 'info/professional_development/books.html', context=context)
+
+def videos(request):
+    context = {
+        'title' : 'Resources for UG Students',
+        'videos' : ProfessionalDevelopmentVideo.objects.all()
+    }
+    return render(request, 'info/professional_development/videos.html', context=context)
