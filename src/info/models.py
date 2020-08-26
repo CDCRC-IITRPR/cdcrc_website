@@ -53,5 +53,9 @@ class ProfessionalDevelopmentBook(models.Model):
         return self.title
 
 class ProfessionalDevelopmentVideo(models.Model):
-    Videoocation = models.CharField(max_length=200, null=False, blank=False)
+    title = models.CharField(max_length=200, null=False, blank=False)
+    youtube_embed_url = models.CharField(max_length=200, null=False, blank=False)
+
+    def __str__(self):
+        return self.title
 

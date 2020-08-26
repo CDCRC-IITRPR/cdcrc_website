@@ -8,19 +8,18 @@
 
 {% block body_content %}
 
-<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center; margin:0;" >
     <div class="col-12">
         <h2 style="padding:1em;">{{title}}</h2>
     </div>
 </div>
 
-<div class="row" style="text-align: center; padding: 5% 10%">
-    <p style="font-size:5vh;">Undergraduate students may find some of these videos to be useful for their career aspirations:</p>
+<div class="row" style="text-align: center;  margin:0;">
     {% for video in videos %}
-    <div class="col-sm-12 col-md-6 col-lg-6" style="height:auto; margin:1% 0%; padding:0% 1%">
-    <div class="embed-responsive embed-responsive-16by9" style="width: 100%; height: 53vh;">
-        <iframe class="embed-responsive-item" src={{video.Videoocation}}></iframe>
-    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6" style='text-align:center; padding-left:6rem; padding-top:2rem; padding-bottom:2em;'>
+        <div class="embed-responsive embed-responsive-16by9" style=" width:80%; text-align:center;">
+            <iframe  height="30vh;"  src="{{video.youtube_embed_url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
     {% endfor %}
 </div>

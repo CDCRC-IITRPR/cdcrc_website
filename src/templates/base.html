@@ -52,8 +52,8 @@
 </head>
 
 <body style="background-color: #dbe1e6;">
-	<div class="container-fluid text-white" style="background-color: #26445a;">
-		<div class="row">
+	<div class="container-fluid; padding:0;" >
+		<div class="row" style=" color:white; background-color: #26445a; margin:0;">
 			<div class="col-md-1" style="padding: 8px 0px 0px 0px;"><img id="cdcrc_logo"
 					src="{% static 'base/cdcrc_logo.png' %}"></div>
 			<div class="col-md-9" id="title">
@@ -76,156 +76,165 @@
 				{% endif %} 
 			</div>
 		</div>
-	</div>
-	<section>
-		<nav class="navbar navbar-expand-lg" style="background-color:rgb(34, 76, 169); padding: 2px 6px 2px 6px;">
-			<a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon" style="color: white; padding-top: 5px;">Menu</span>
-		</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"> <i class="fas fa-bars fa-1x" style="color: white; padding-top: 5px;"></i></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav custom-navbar">
-					<!-- <div class="custom-navbar"> -->
-					<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
-					{% comment %} <a class="nav-item nav-link" href="{% url 'info:pd_about' %}">Professional Development</a> {% endcomment %}
-					<div class="custom-dropdown nav-item" style="text-align: center;">
-						<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Professional Development
-							<i class="fa fa-caret-down"></i>
-						</button>
-						<div class="custom-dropdown-content">
-							<a href="{% url 'info:pd_about' %}">About</a>
-							<a href="{% url 'info:pd_activities' %}">Activities</a>
+	
+	{% comment %} <div class="container-fluid" style=""> {% endcomment %}
+		<section>
+			<nav class="navbar navbar-expand-lg" style="background-color:rgb(34, 76, 169); padding: 2px 6px 2px 6px;">
+				<a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon" style="color: white; padding-top: 5px;">Menu</span>
+			</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"> <i class="fas fa-bars fa-1x" style="color: white; padding-top: 5px;"></i></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav custom-navbar">
+						<!-- <div class="custom-navbar"> -->
+						<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
+						{% comment %} <a class="nav-item nav-link" href="{% url 'info:pd_about' %}">Professional Development</a> {% endcomment %}
+						<div class="custom-dropdown nav-item" style="text-align: center;">
+							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Professional Development
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="custom-dropdown-content">
+								<a href="{% url 'info:pd_about' %}">About</a>
+								<a href="{% url 'info:pd_activities' %}">Activities</a>
+							</div>
 						</div>
-					</div>
-					<a class="nav-item nav-link" href="{% url 'info:cr_about' %}">Corporate Relations</a>
-					<div class="custom-dropdown nav-item" style="text-align: center;">
-						<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">For Recruiters
-							<i class="fa fa-caret-down"></i>
-						</button>
-						<div class="custom-dropdown-content">
-							<a href="{% url 'recruiter:why' %}">Why Recruit</a>
-							<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
-							<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
-							<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
-							<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;<i class="fa fa-download" aria-hidden="true"></i>
-</a>
-							<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;<i class="fa fa-download" aria-hidden="true"></i>
-</a>
-							{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
-							{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
-							<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
-							{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a> {% endcomment %}
+						<a class="nav-item nav-link" href="{% url 'info:cr_about' %}">Corporate Relations</a>
+						<div class="custom-dropdown nav-item" style="text-align: center;">
+							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">For Recruiters
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="custom-dropdown-content">
+								<a href="{% url 'recruiter:why' %}">Why Recruit</a>
+								<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
+								<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
+								<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
+								<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
+								{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
+								<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a> {% endcomment %}
+							</div>
 						</div>
-					</div>
-					<div class="custom-dropdown">
-						<button class="custom-dropbtn nav-item nav-link">The Team
-							<i class="fa fa-caret-down"></i>
-						</button>
-						<div class="custom-dropdown-content">
-							<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
-							<a href="{% url 'info:student_team' %}">Student Team</a>
+						<div class="custom-dropdown">
+							<button class="custom-dropbtn nav-item nav-link">The Team
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="custom-dropdown-content">
+								<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
+								<a href="{% url 'info:student_team' %}">Student Team</a>
+							</div>
 						</div>
+						<a class="nav-item nav-link" href="{% url 'info:contacts' %}">Contact Us</a>
+						{% if user.is_authenticated %}
+						<a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a>
+						{% endif %}
 					</div>
-					<a class="nav-item nav-link" href="{% url 'info:contacts' %}">Contact Us</a>
-					{% if user.is_authenticated %}
-					<a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a>
-					{% endif %}
 				</div>
-			</div>
-			<!-- </div> -->
-		</nav>
-	</section>
-	{% block body_content %}
+				<!-- </div> -->
+			</nav>
+		</section>
+	{% comment %} </div> {% endcomment %}
+	{% comment %} <div class="container-fluid" style=""> {% endcomment %}
+		{% block body_content %}
 
 
-	{% endblock %}
+		{% endblock %}
+	</div>
 </body>
 
 
-<div class="row justify-content-center">
-	<footer class="panel-footer" style="background-color:#232f3e;">
+<div class="container-fluid" style="">
+	<div class="row justify-content-center">
+		<footer class="panel-footer" style="background-color:#232f3e;">
 
-		<div class="footer">
-			<div class="container-fluid mainContainer">
-				<div class="row" style="padding: 3%;">
-					<div class="col-lg-4">
-						<h3 class="fot-white">About</h3>
-						<p class="fot-white">
+			<div class="footer">
+				<div class="container-fluid mainContainer">
+					<div class="row" style="padding: 3%;">
+						<div class="col-lg-4">
+							<h3 class="fot-white">About</h3>
+							<p class="fot-white">
 
-							Career Development and Corporate Relations Center (CDCRC), IIT Ropar aims to guide students
-							to
-							to success in their careers, helps students with Professional Development, Training and
-							Placement.
-							The Corporate Relations department also engages with Industry for the development of the
-							institute and its students.
+								Career Development and Corporate Relations Center (CDCRC), IIT Ropar aims to guide students
+								to
+								to success in their careers, helps students with Professional Development, Training and
+								Placement.
+								The Corporate Relations department also engages with Industry for the development of the
+								institute and its students.
 
-						</p>
+							</p>
+						</div>
+						<div class="col-lg-4">
+							<h3 class="fot-white">Address</h3>
+							<p class="fot-white">
+
+								Career Development and Corporate Relations Center<br>
+								3rd Floor, M. Visvesvaraya Block (East Wing)<br>
+								Indian Institute of Technology Ropar<br>
+								Ropar, Punjab<br>
+								India - 140001
+						</div>
+						<div class="col-lg-4">
+							<h3 class="fot-white">Quick Links</h3>
+							<a href="http://www.iitrpr.ac.in/" style="color: white;">IIT Ropar</a>
+							<br><a  style="color: white;" href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
+							<br><a  style="color: white;" href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
+							<br><a  style="color: white;" href="{% static 'recruiter/IITRPR_INF.docx' %}" style="color: white;">INF</a>
+							{% if user.is_authenticated %}
+								<br><a  style="color: white;" href="{% url 'logout' %}">Logout</a>
+							{% else %}
+								<br><a  style="color: white;" href="{% url 'login' %}">Login</a>
+							{%endif%}
+							<br><a style="color: white;" href="{% url 'internal:home' %}" style="color: white;">Internal</a>
+						</div>
+
 					</div>
-					<div class="col-lg-4">
-						<h3 class="fot-white">Address</h3>
-						<p class="fot-white">
-
-							Career Development and Corporate Relations Center<br>
-							3rd Floor, M. Visvesvaraya Block (East Wing)<br>
-							Indian Institute of Technology Ropar<br>
-							Ropar, Punjab<br>
-							India - 140001
-					</div>
-					<div class="col-lg-4">
-						<h3 class="fot-white">Quick Links</h3>
-						<a href="http://www.iitrpr.ac.in/" style="color: white;">IIT Ropar</a>
-						<br><a  style="color: white;" href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
-						<br><a  style="color: white;" href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
-						<br><a  style="color: white;" href="{% static 'recruiter/IITRPR_INF.docx' %}" style="color: white;">INF</a>
-						{% if user.is_authenticated %}
-							<br><a  style="color: white;" href="{% url 'logout' %}">Logout</a>
-						{% else %}
-							<br><a  style="color: white;" href="{% url 'login' %}">Login</a>
-						{%endif%}
-						<br><a style="color: white;" href="{% url 'internal:home' %}" style="color: white;">Internal</a>
-					</div>
-
 				</div>
 			</div>
+
+		</footer>
+	</div>
+{% comment %} </div> {% endcomment %}
+
+{% comment %} <div class="container-fluid" style=""> {% endcomment %}
+	<div class="row" style="padding-bottom:1em; background-color: #232f3e">
+
+		<div class="col-1" style="text-align:center;"></div>
+		<div class="col-2" style="text-align:center;">
+			<a href="https://www.facebook.com/iitrpr" target="_blank">
+				<i class="fab fa-facebook-square fa-3x" style="color:white;"></i>
+			</a>
 		</div>
+		<div class="col-2" style="text-align:center;">
+			<a href="mailto:placement@iitrpr.ac.in" target="_blank">
+				<i class="fas fa-envelope-square fa-3x" style="color:white;"></i>
+			</a>
+		</div>
+		<div class="col-2" style="text-align:center;">
+			<a href="https://www.instagram.com/iitropar/?hl=en" target="_blank">
+				<i class="fab fa-instagram-square fa-3x" style="color:white;"></i>
+			</a>
+		</div>
+		<div class="col-2" style="text-align:center;">
+			<a href="https://www.linkedin.com/in/cdcrciitrpr/" target="_blank">
+				<i class="fab fa-linkedin fa-3x" style="color:white;"></i>
+			</a>
+		</div>
+		<div class="col-2" style="text-align:center;">
+			<a href="https://twitter.com/iitrpr?lang=en" target="_blank">
+				<i class="fab fa-twitter-square fa-3x" style="color:white;"></i>
+			</a>
+		</div>
+		<div class="col-1" style="text-align:center;"></div>
+	</div>
+{% comment %} </div> {% endcomment %}
 
-	</footer>
-</div>
-
-<div class="row justify-content-center" style="padding-bottom:1em; background-color: #232f3e">
-
-	<div class="col-1" style="text-align:center;"></div>
-	<div class="col-2" style="text-align:center;">
-		<a href="https://www.facebook.com/iitrpr" target="_blank">
-			<i class="fab fa-facebook-square fa-3x" style="color:white;"></i>
-		</a>
+{% comment %} <div class="container-fluid" style="padding:0;"> {% endcomment %}
+	<div class="row justify-content-center" style="padding:0.1em; background-color: white">
+		<a href="https://github.com/vinx-2105/cdcrc_website" style="color:black; font-size:0.7em;">Developed with <i class="fas fa-heart"></i> by Vineet Madan and Team</a>
 	</div>
-	<div class="col-2" style="text-align:center;">
-		<a href="mailto:placement@iitrpr.ac.in" target="_blank">
-			<i class="fas fa-envelope-square fa-3x" style="color:white;"></i>
-		</a>
-	</div>
-	<div class="col-2" style="text-align:center;">
-		<a href="https://www.instagram.com/iitropar/?hl=en" target="_blank">
-			<i class="fab fa-instagram-square fa-3x" style="color:white;"></i>
-		</a>
-	</div>
-	<div class="col-2" style="text-align:center;">
-		<a href="https://www.linkedin.com/in/cdcrciitrpr/" target="_blank">
-			<i class="fab fa-linkedin fa-3x" style="color:white;"></i>
-		</a>
-	</div>
-	<div class="col-2" style="text-align:center;">
-		<a href="https://twitter.com/iitrpr?lang=en" target="_blank">
-			<i class="fab fa-twitter-square fa-3x" style="color:white;"></i>
-		</a>
-	</div>
-	<div class="col-1" style="text-align:center;"></div>
-</div>
-<div class="row justify-content-center" style="padding:0.1em; background-color: white">
-<a href="https://github.com/vinx-2105/cdcrc_website" style="color:black; font-size:0.7em;">Developed with <i class="fas fa-heart"></i> by Vineet Madan and Team</a>
 </div>
