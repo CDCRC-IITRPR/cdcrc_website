@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'config',
     'bootstrap_datepicker_plus',
     'django_extensions',
-    # 'accounts',
+    'accounts',
 ]
 
 

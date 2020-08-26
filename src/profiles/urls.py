@@ -7,4 +7,6 @@ app_name = 'profiles'
 urlpatterns = [
     path('view_profile/', views.view_profile, name='view_profile'),
     path('update_student_profile/', views.update_student_profile, name='update_student_profile'),
+    path('update_team_profile/', views.update_team_profile, name='update_team_profile'),
+
 ]
