@@ -69,9 +69,9 @@
 				{% if user.is_authenticated %}
 					<span>{{request.user.username}}</span>
 					<br>
-					<a href="{% url 'profiles:view_profile' %}">View Profile</a>
+					<a style="color:white;" href="{% url 'profiles:view_profile' %}">View Profile</a>
 					<br>
-					<a href="{% url 'logout' %}">Logout</a>
+					<a style="color:white;" href="{% url 'logout' %}">Logout</a>
 					<br><br>
 				{% endif %} 
 			</div>
@@ -94,17 +94,7 @@
 						<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
 						{% comment %} <a class="nav-item nav-link" href="{% url 'info:pd_about' %}">Professional Development</a> {% endcomment %}
 						<div class="custom-dropdown nav-item" style="text-align: center;">
-							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Professional Development
-								<i class="fa fa-caret-down"></i>
-							</button>
-							<div class="custom-dropdown-content">
-								<a href="{% url 'info:pd_about' %}">About</a>
-								<a href="{% url 'info:pd_activities' %}">Activities</a>
-							</div>
-						</div>
-						<a class="nav-item nav-link" href="{% url 'info:cr_about' %}">Corporate Relations</a>
-						<div class="custom-dropdown nav-item" style="text-align: center;">
-							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">For Recruiters
+							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Training & Placement
 								<i class="fa fa-caret-down"></i>
 							</button>
 							<div class="custom-dropdown-content">
@@ -112,6 +102,7 @@
 								<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
 								<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
 								<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
+								<a href="{% url 'recruiter:student_demographics' %}">Student Demographics</a>
 								<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
 								<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
 								{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
@@ -120,6 +111,25 @@
 								{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a> {% endcomment %}
 							</div>
 						</div>
+						<div class="custom-dropdown nav-item" style="text-align: center;">
+							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Professional Development
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="custom-dropdown-content">
+								<a href="{% url 'info:pd_about' %}">About</a>
+								<a href="{% url 'info:pd_activities' %}">Activities</a>
+							</div>
+						</div>
+						<div class="custom-dropdown nav-item" style="text-align: center;">
+							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Corporate Relations
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="custom-dropdown-content">
+								<a href="{% url 'info:cr_about' %}">About</a>
+								<a href="{% url 'info:cr_activities' %}">Activities</a>
+							</div>
+						</div>
+						
 						<div class="custom-dropdown">
 							<button class="custom-dropbtn nav-item nav-link">The Team
 								<i class="fa fa-caret-down"></i>

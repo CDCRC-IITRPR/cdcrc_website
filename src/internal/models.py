@@ -7,14 +7,14 @@ from django.contrib.sites.shortcuts import get_current_site
 
 
 class Contact(models.Model):
-    first_name = models.CharField(max_length=50, null=True, blank=True)
-    last_name = models.CharField(max_length=50, null=True, blank=True)
-    suffix = models.CharField(max_length=50, null=True, blank=True)
-    job_title = models.CharField(max_length=50, null=True, blank=True)
+    first_name = models.CharField(max_length=128, null=True, blank=True)
+    last_name = models.CharField(max_length=128, null=True, blank=True)
+    suffix = models.CharField(max_length=254, null=True, blank=True)
+    job_title = models.CharField(max_length=254, null=True, blank=True)
     phone_one = models.CharField(max_length=15, null=True, blank=True)
     phone_two = models.CharField(max_length=15, null=True, blank=True)
     email = models.EmailField(max_length=254, null=True, blank=True)
-    recruiter = models.ForeignKey(Recruiter, on_delete=models.SET_NULL, null=True, blank=True, related_name='recruiter_contacts')
+    recruiter = models.CharField(max_length=254, null=True, blank=True)
     remark = models.CharField(max_length=512, null=True, blank=True)
     linkedin_url = models.URLField(null=True, blank=True)
     approved = models.BooleanField(default=False)

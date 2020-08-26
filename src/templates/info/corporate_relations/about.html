@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block head_content %}
+<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+<title>{{title}} | CDCRC IIT Ropar</title>
+{% endblock %}
+
+
+{% block body_content %}
+<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
+		<div class="col-12">
+			<h2 style="padding:1em;">{{title}}</h2>
+		</div>
+</div>
+<div class="row"><br></div>
+<div class="container-fluid">
+
+    <div class="row" style="margin-top:1em; margin-bottom:1em;">
+      <div class="col-md-1"></div>
+      <div class="col-md-10" style="background-color:white; padding:1em;">
+        <h5>The Professional Development department at IIT Ropar caters to the following needs for the IIT Ropar student community: </h5>
+        <ul style="list-style-type:disc;">
+            <li><p >Facilitating discovery of potential, interests and aptitudes (self-discovery).</p></li>
+            <li><p >Organizing opportunities for students on developing effective communication skills (e.g. resumes, group discussions and interviews) and gearing them up for lifelong learning.</p></li>
+            <li><p >Organizing speaking opportunities and workshops by professionals (e.g. IIT alumni, faculty, Human Resource Professionals, Entrepreneurs, Industries, Research Organizations-Domestic and International) who are interested in inspiring and enabling achievement-oriented and talented IIT Ropar students.</p></li>
+            <li><p >Recommending and developing resources for professional development (e.g. library development, peer-learning initiatives, adult learning)  for the future scientific and technical workforce.</p></li>
+        </ul>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class='col-md-1'></div>
+      <div class='col-md-10'>
+        <div class="row">
+            <div class="col-md-12" style="background-color:white; padding:1em; text-align:center; margin-top:1em;">
+                <h5 class="card-title">Learning Community</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="row" style='background-color:white; padding:0.5em; margin-bottom:1em;'>
+            <div class='col-md-4' style="height:15em; text-align:center;">
+                <img src="{% static 'info/pd/images/learning_community.png' %}" alt="Learning Community" style="height:100%;">
+            </div>
+            <div class="col-md-8">
+                <div style="width:100%">
+                    <p class="card-text" style="text-align: justify; padding-left:0.5em; text-justify: inter-word;">
+                    Placement and Corporate Relations Centre students were encouraged to begin a “Learning Community”.
+                     A Learning Community is a student-led study group where initial encouragement
+                      is provided by Professional Development @IIT Ropar through a small development grant in the
+                       form of support for books periodicals.
+                            The philosophy behind a “Learning Community” is to help students
+                    achieve their dreams and aspirations which may not be addressed through a typical placement
+                     activity in a technology school. The Learning Communities are useful
+                      to address career options like preparation for management and serving the country through Administrative and Defence
+                       Services. We encourage students for ideas and interested personnel to get in touch
+                        with us for participation in panel discussion or sessions. 
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class='col-md-1'></div>
+    </div>
+
+    <div class="row">
+      <div class='col-md-1'></div>
+      <div class='col-md-10'>
+        <div class="row">
+            <div class="col-md-12" style="background-color:white; padding:1em; text-align:center; margin-top:1em;">
+                <h5 class="card-title">Bridging Connections</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="row" style='background-color:white; padding:0.5em; margin-bottom:1em;'>
+            <div class='col-md-4' style="height:15em; text-align:center;">
+                <img src="{% static 'info/pd/images/bridging_connections.jpeg' %}" alt="Bridging Connections" style="height:100%;">
+            </div>
+            <div class="col-md-8">
+                <div style="width:100%">
+                    <p class="card-text" style="text-align: justify; padding-left:0.5em; text-justify: inter-word;">
+                    An important aspect of Professional Development @ IIT Ropar is to bridge connections between IIT Ropar and institutions. 
+                    In association with the Corporate Relations section we strive to identify learning opportunities between organizations 
+                    and IIT Ropar. These learning opportunities could be in the form of supporting organizations of professional interest 
+                    (e.g. Lean-In, Toastmasters and Society for Women Engineers: planned for 2018-19) to visiting academic and research institutions 
+                    to learn and engage from the best and share with our community.
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class='col-md-1'></div>
+    </div>
+
+    <div class="row">
+      <div class='col-md-1'></div>
+      <div class='col-md-10'>
+        <div class="row">
+            <div class="col-md-12" style="background-color:white; padding:1em; text-align:center; margin-top:1em;">
+                <h5 class="card-title">Enhancing Student Mobility</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="row" style='background-color:white; padding:0.5em; margin-bottom:1em;'>
+            <div class='col-md-4' style="height:15em; text-align:center;">
+                <img src="{% static 'info/pd/images/enhancing_mobility.jpg' %}" alt="Enhancing Mobility" style="height:100%;">
+            </div>
+            <div class="col-md-8">
+                <div style="width:100%">
+                    <p class="card-text" style="text-align: justify; padding-left:0.5em; text-justify: inter-word;">
+                    The Professional Development section of the Career Development and Corporate Relations Centre is working continually
+                     on connecting students to best available opportunities beyond the rich academic environment of IIT Ropar. In 2018,
+                      our students have participated in various initiatives ranging from representing their research in industry forums to
+                       sharing their opinion on issues of global and national importance. At IIT Ropar we always encourage
+                     interested organizations to share opportunities where our talented students could showcase their potential.
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class='col-md-1'></div>
+    </div>
+  
+    <div class="row">
+      <br>
+    </div>
+</div>
+    
+</div>
+
+{% endblock %}

@@ -80,7 +80,7 @@ def activate(request, uidb64, token):
             'The activation link is invalid!'
         )
 
-@team_user_required
+# @team_user_required
 def check_account_status(request):
     message = str(request.user.get_user_name()) + " " + str(request.user.is_team_member()) + " " + str(request.user.student_profile_completed())
     return render_message(request, 'User Status', message)

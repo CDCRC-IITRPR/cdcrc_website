@@ -36,12 +36,25 @@ class INF(models.Model):
     def __str__(self):
         return str(self.pk) + " " +self.recruiter.name
 
-# class Studentdata(models.Model):
-#     # category_choices = [
-#     #     'UG Grad',
-#     #     '',
-#     # ]
-#     category = models.CharField(max_length=10, unique=False, null=True)
-#     dept = models.CharField(max_length=100, unique=False, null=True)
-#     students = models.IntegerField(null=True)
+class StudentDemographic(models.Model):
+    category_choices = [
+        ('ugp', 'UG for Placement'),
+        ('pgp', 'PG for Placement'),
+        ('ugi', 'UG for Internships'),
+        ('pgi', 'PG for Internships'), 
+    ]
+    department_choices = [
+        ('cse',  'Computer Science & Engineering'),
+        ('ee', 'Electrical Engineering')
+    ]
+    category = models.CharField(max_length=10, null=False, choices=category_choices)
+    department = models.CharField(max_length=100, null=False, choices=department_choices)
+    strength = models.IntegerField(default=0, null=False)
 
+    def __str__(self):
+        return self.category + " " + self.department
+
+    def get_category_display(self):
+        return dict(self.category_choices)[self.category]
+    def get_department_display(self):
+        return dict(self.department_choices)[self.department]

@@ -14,27 +14,34 @@
         <div class="col-md-10">
             {% if not user.student_profile_completed %}
                 <div class="alert alert-warning" role="alert">
-                    Your profile is not completed! Please complete it ASAP!
+                    Your student profile is not completed! Please complete it ASAP!
                 </div>
             {% else %}
                 <div class="alert alert-success" role="alert">
-                    Your profile is complete!
+                    Your student profile is complete!
                 </div>
             {% endif %}
 
             <div class="card" style="width:100%; padding:0.5rem;">
                 <a href="{% url 'profiles:update_student_profile' %}" style="color:black;"><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Update Profile (for students)</a>
             </div>
+
+            {% if user.is_team_member %}
+                <div class="card" style="width:100%; padding:0.5rem; margin-top:0.5rem;">
+                    <a href="{% url 'profiles:update_team_profile' %}" style="color:black;"><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Update Team Profile (for CDCRC members)</a>
+                </div>
+            {% endif %}
             
             <br>
             {% if user.has_student_profile %}
                 <div class="card" style="width: 100%;">
                     <div class="card-body">
-                        <h5 class="card-title">My Profile</h5>
+                        <h5 class="card-title">My Student Profile</h5>
                         <p class="card-text">Name: {{user.get_user_name|default:"NA"}}</p>
                         <p class="card-text">Entry Number: {{user.student_profile.entry_number|default:"NA"}}</p>
                         <p class="card-text">Phone: {{user.student_profile.phone|default:"NA"}}</p>
                         <p class="card-text">Graduating Year: {{user.student_profile.graduating_year|default:"NA"}}</p>
+                        <p class="card-text">Linkedin Profile: {{user.student_profile.linkedin_profile|default:"NA"}}</p>
 
                     </div>
                 </div>
@@ -51,6 +58,8 @@
                         <p class="card-text">Category: {{user.team_profile.category|default:"NA"}}</p>
                         
                         <p class="card-text">Phone: {{user.team_profile.phone|default:"NA"}}</p>
+                        <p class="card-text">Linkedin Profile: {{user.team_profile.linkedin_profile|default:"NA"}}</p>
+                        <p class="card-text">Visible: {{user.team_profile.visible}}</p>
             
                     </div>
                 </div>
