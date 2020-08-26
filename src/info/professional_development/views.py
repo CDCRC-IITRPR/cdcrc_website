@@ -7,16 +7,20 @@ from info.models import ProfessionalDevelopmentActivity, ProfessionalDevelopment
 from recruiter.models import Recruiter
 from utils.metadata import resource_category_choices
 from django.db.models import Q
-
+from config.utils import get_page_visibility_status
 
 
 def about(request):
+    if(get_page_visibility_status('pd_about')==False):
+        return render(request, 'under_construction.html')
     context = {
         'title': 'About the Professional Development Department'
     }
     return render(request, 'info/professional_development/about.html', context=context)
 
 def activities(request):
+    if(get_page_visibility_status('pd_activities')==False):
+        return render(request, 'under_construction.html')
     context = {
         'activities': ProfessionalDevelopmentActivity.objects.order_by('-date'),
         'title': 'Professional Development Activities',
@@ -31,6 +35,8 @@ def activity_detail(request, pk):
     return render(request, 'info/professional_development/activity_detail.html', context=context)
 
 def books(request):
+    if(get_page_visibility_status('pd_books')==False):
+        return render(request, 'under_construction.html')
     context = {
         'title' : 'Library',
         'books': ProfessionalDevelopmentBook.objects.all()
@@ -38,6 +44,8 @@ def books(request):
     return render(request, 'info/professional_development/books.html', context=context)
 
 def videos(request):
+    if(get_page_visibility_status('pd_videos')==False):
+        return render(request, 'under_construction.html')
     context = {
         'title' : 'Resources for UG Students',
         'videos' : ProfessionalDevelopmentVideo.objects.all()

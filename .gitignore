@@ -11,6 +11,7 @@ src/recruiter/migrations/**
 src/profiles/migrations/**
 src/internal/migrations/**
 src/accounts/migrations/**
+src/config/migrations/**
 src/cdcrc_website/settings.py
 
 !src/*/migrations/__init__.py

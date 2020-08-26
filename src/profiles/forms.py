@@ -1,5 +1,5 @@
 from django import forms
-from profiles.models import StudentProfile
+from profiles.models import StudentProfile, TeamMemberProfile
 from django.contrib.auth import password_validation
 
 class StudentProfileForm(forms.ModelForm):
@@ -17,4 +17,25 @@ class StudentProfileForm(forms.ModelForm):
             'entry_number': forms.TextInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
             'graduating_year': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class TeamMemberProfileForm(forms.ModelForm):
+    class Meta:
+        model = TeamMemberProfile
+        fields = ('level', 'phone', 'domain', 'category', 'designation', 'photo', 'visible')
+
+        labels = {
+            'level': 'Level',
+            'phone': 'Phone',
+            'domain': 'Domain',
+            'category': 'Category',
+            'designation': 'Designation',
+            'photo':'Photo',
+            'visible': 'Display on Team Page'
+        }
+
+        widgets = {
+            'level': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'domain': forms.TextInput(attrs={'class': 'form-control'}),
         }
