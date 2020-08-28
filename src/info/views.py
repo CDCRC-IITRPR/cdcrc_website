@@ -61,11 +61,3 @@ def vision_statement(request):
 def corporate_relations_home(request):
     return render(request, 'under_construction.html')
 
-def hod_dhiraj_sir_message(request):
-    return render(request, 'info/hod_dhiraj_sir_message.html')
-
-def cr_hod_message(request):
-    return render(request, 'under_construction.html')
-
-def pd_hod_message(request):
-    return render(request, 'info/pd_hod_message.html')
