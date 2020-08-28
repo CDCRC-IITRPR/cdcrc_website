@@ -1,0 +1,43 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{marvosym}
+\usepackage{fontspec}
+\usepackage{xunicode,xltxtra,url,parskip}
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{fullpage}
+\usepackage{supertabular}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\hyphenation{im-pre-se}
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+\begin{document}
+\pagestyle{empty}
+\font\fb=''[cmr10]''
+\par{\centering
+		{\Huge Chirag Khurana
+	}\bigskip\par}
+\section{Personal Data}
+\begin{tabular}{rl}
+\textsc{Address:}&Rohtak, Haryana\\
+\textsc{Mob:}&237478783\\
+\textsc{DOB:}&15/06/1998\\
+\end{tabular}
+\section{Education}
+\begin{tabular}{rl}
+\end{tabular}
+\end{document}

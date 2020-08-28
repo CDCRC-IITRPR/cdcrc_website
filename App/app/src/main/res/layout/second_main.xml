@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:adjustViewBounds="true"
+    android:visibility="visible"
+    tools:context=".secondAcitivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/CDCRC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CDCRC"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/round_button"
+            android:onClick="openHome"/>
+        <Button
+            android:id="@+id/button5"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/round_button"
+            android:onClick="openAboutus"
+            android:text="About us" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/round_button"
+            android:onClick="openAboutus"
+            android:text="For Students" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/round_button"
+            android:onClick="openAboutus"
+            android:text="For Recruiters" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:onClick="openStudents"
+            android:background="@drawable/round_button"
+            android:text="Contact"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:onClick="openFacebook"
+                app:srcCompat="@drawable/facebook" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:onClick="openInsta"
+                app:srcCompat="@drawable/insta" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:onClick="openLinked"
+                app:srcCompat="@drawable/linkedin" />
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:onClick="openTwitter"
+                app:srcCompat="@drawable/twitter" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

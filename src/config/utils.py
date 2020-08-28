@@ -8,6 +8,9 @@ def get_default_page_visibility_status():
         'pd_videos': False,
         'cr_about': True, 
         'cr_activities': False,
+        'hod_T&Pcell_message': False,
+        'cr_hod_message': False,
+        'pd_hod_message': False,
     }
     return PAGE_VISIBILITY_SETTINGS_INIT
 

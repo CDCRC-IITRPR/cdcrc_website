@@ -1,0 +1,1 @@
+<div style="text-align:center;"><img src="images/structurecdcrc.jpg" alt="" style="width:80%; height:100vh"></div>

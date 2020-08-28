@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Training and Placement | IIT Ropar</title>
+<link rel="shortcut icon" href="images/iitlogo.png" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/courses_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/courses_responsive.css">
+<style>
+body
+{font-size:2px;}
+</style>
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			<!-- Logo -->
+			<div class="logo_container">
+				<div class="logo">
+					<img src="images/iitlogo.png" alt="" height="50" width="50">
+					<span>IIT Ropar</span>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav_container">
+				<div class="main_nav">
+					<ul class="main_nav_list">
+						<li class="main_nav_item dropdown">
+							<a href="index.php" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">home</a>
+							<div class="dropdown-menu" style="background: #21618C; color: #FFFFFF">
+                                <a class="dropdown-item" href="tnp.php">T&P Home</a>
+                                <a class="dropdown-item" href="index.php">CDCRC Home</a>
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/TP/index.php/msg-from-fic/">From The T&P Head</a>
+                            </div>
+						</li>
+						<li class="main_nav_item"><a href="#">Students</a></li>
+						<li class="main_nav_item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Academics</a>
+                            <div class="dropdown-menu" style="background: #21618C; color: #FFFFFF">
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/academic">Academics</a>
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/departments-schools">Department</a>
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/handbook-information">Course Description</a>
+                                 <a class="dropdown-item" href="http://www.iitrpr.ac.in/research-iit-ropar">Research & Development</a>
+                            </div>
+						</li>
+						<li class="main_nav_item"><a href="recruiters.php">For Recruiters</a></li>
+						<li class="main_nav_item"><a href="placementsummary.php">Summary</a></li>
+						<li class="main_nav_item"><a href="contacts.php">contact</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			<img src="images/phone-call.svg" alt="">
+			<span>+91 78142 52244</span>
+		</div>
+
+		<!-- Hamburger -->
+		<div class="hamburger_container">
+			<i class="fas fa-bars trans_200"></i>
+		</div>
+
+	</header>
+	
+	<!-- Menu -->
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+				<ul class="menu_list menu_mm">
+                                        <li class="menu_item menu_mm dropdown">
+							<a href="index.php" class="dropdown-toggle" id="navbardrop" data-toggle="dropdown">Home</a>
+							<div class="dropdown-menu">
+                                <a class="dropdown-item" href="tnp.php">T&P Home</a>
+                                <a class="dropdown-item" href="index.php">CDCRC Home</a>
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/TP/index.php/msg-from-fic/">From The T&P Head</a>
+                            </div>
+						</li>
+						<li class="menu_item menu_mm"><a href="students.php">Students</a></li>
+						<li class="menu_item menu_mm dropdown">
+							<a href="#" class=" dropdown-toggle" id="navbardrop" data-toggle="dropdown">Academics</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/academic">Academics</a>
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/departments-schools">Department</a>
+                                <a class="dropdown-item" href="http://www.iitrpr.ac.in/handbook-information">Course Description</a>
+                                 <a class="dropdown-item" href="http://www.iitrpr.ac.in/research-iit-ropar">Research & Development</a>
+                            </div>
+						</li>
+						<li class="menu_item menu_mm"><a href="recruiters.php">For Recruiters</a></li>
+						<li class="menu_item menu_mm"><a href="placementsummary.php">Placement Staticstics</a></li>
+						<li class="menu_item menu_mm"><a href="contacts.php">Contacts</a></li>
+                                        
+						</ul>
+
+				<!-- Menu Social -->
+				
+				<div class="menu_social_container menu_mm">
+					<ul class="menu_social menu_mm">
+						<!--<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>-->
+						<li class="menu_social_item menu_mm"><a target="_blank" href="https://in.linkedin.com/company/placementcelliitropar"><i class="fab fa-linkedin-in"></i></a></li>
+						<li class="menu_social_item menu_mm"><a target="_blank" href="https://www.youtube.com/channel/UCvAgHSpVV8yfmu75OFBbomA"><i class="fab fa-youtube"></i></a></li>
+						<li class="menu_social_item menu_mm"><a target="_blank" href="https://www.facebook.com/Career-Development-Corporate-Relations-Center-IIT-Ropar-169217773601805/"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item menu_mm"><a target="_blank" href=""><i class="fab fa-twitter"></i></a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background_container prlx_parent">
+			<div class="home_background prlx" style="background-image:url(images/courses_background.jpg)"></div>
+		</div>
+		<div class="home_content">
+			<h1>Training and Placement</h1>
+		</div>
+
+	</div>
+<marquee style="color: #FFFFFF; background: #21618C;" onMouseOver="this.stop()" onMouseOut="this.start()"><h3><a href="#" style="color: #FFFFFF">Events</a></h3></marquee>
+	<!-- Popular -->
+
+	<div class="popular page_section">
+		<div class="container">
+			<div class="row" style="color:#535b60;">
+				  <div class="col-md-10 col-sm-12">
+                                       <h1 style="color:#21618C;font-style:italic; margin-left: 70px;"> PLACEMENT PROCEDURE :</h1>
+                         <div style="display: table; width: 100%;">
+                         <div style="display: table-cell;">
+                         	<img src="images/message.png" style="width: 60px; height: auto; margin-right: 10px; margin-top: 30px;">
+                         </div>
+                         <div style="display: table-cell;">
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#21618C; border-radius: 10px;"><strong>Step 1</strong>.   The Training &amp; Placement Cell (nodal point for placements at IIT Ropar), sends invitations to companies along with relevant information like Placement Brochure, Job Announcement Form (JAF), etc.</h3></div>
+						</div>
+						<div style="display: table; width: 100%;">
+                         <div style="display: table-cell;">
+                         	<img src="images/email.png" style="width: 60px; height: auto; margin-right: 10px; margin-top: 30px;">
+                         </div>
+                         <div style="display: table-cell;">
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#21618C; border-radius: 10px;">Step 2. Company can register by sending the filled JAF attached with an e-mail to placement @iitrpr.ac.in or fill the online JAF available on T&P webpage.<a style="color:white;" href="https://drive.google.com/file/d/1eZza_gCHrIis2TsSWn8gwOYv7cuWtFiD/view?usp=sharing"> <u><br>Download JAF </u></a></h3></div></div>
+						<!--<h3 style="color:black;"><strong>Step 3</strong>. After receiving filled in Job Announcement Form (JAF) and relevant information from a company T&amp;P Cell will reply within 2-3 working days through email. The dates for campus interviews are allotted on the basis of information provided in JAF.</p>
+						-->
+						<div style="display: table; width: 100%;">
+                         <div style="display: table-cell;">
+                         	<img src="images/date.png" style="width: 60px; height: auto; margin-right: 10px; margin-top: 30px;">
+                         </div>
+                         <div style="display: table-cell;">
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#21618C; border-radius: 10px;"><strong>Step 3</strong>. A suitable date for the Placement Process is decided by the discussions between the companies and the T&amp;P Cell. After confirmation from the companies, students are notified of the date.</h3></div></div>
+						<div style="display: table; width: 100%;">
+                         <div style="display: table-cell;">
+                         	<img src="images/reg.png" style="width: 60px; height: auto; margin-right: 10px;">
+                         </div>
+                         <div style="display: table-cell;">
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#21618C; border-radius: 10px; margin-top: 20px;">Step 4. Interested students register for a particular company online through an internal website.</h3></div></div>
+						<div style="display: table; width: 100%;">
+                         <div style="display: table-cell;">
+                         	<img src="images/folder.png" style="width: 60px; height: auto; margin-right: 10px; margin-top: 20px;">
+                         </div>
+                         <div style="display: table-cell;">
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#21618C; border-radius: 10px; margin-top: 20px;"><strong>Step 5</strong>. Data of the registered students along with their CV are made available to the companies for short listing.</h3>
+						</div></div>
+						<!--<h3 style="color:black;"><strong>Step 7</strong>. Companies are required to send the list of shortlisted students by email to the T&amp;P Cell, prior to the campus visit for final interviews.</p>
+						-->
+						<div style="display: table; width: 100%;">
+                         <div style="display: table-cell;">
+                         	<img src="images/visitor.png" style="width: 60px; height: auto; margin-right: 10px; margin-top: 30px;">
+                         </div>
+                         <div style="display: table-cell;">
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#21618C; border-radius: 10px;"><strong>Step 6</strong>. The companies visit the campus for placements on the allotted dates and conduct Pre-placement talks/ Group Discussions/ Aptitude Test/ Technical Test/ Personal Interviews etc., as part of their preferred selection procedure.</h3></div></div>
+						<div style="display: table; width: 100%;">
+                         <div style="display: table-cell;">
+                         	<img src="images/test.png" style="width: 60px; height: auto; margin-right: 10px; margin-top: 30px;">
+                         </div>
+                         <div style="display: table-cell;">
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#21618C; border-radius: 10px;"><strong>Step 7. </strong>The companies may also, if interested, conduct selections for summer internships of the pre-final year students during the placement drive. The companies are requested to send us the filled in Internship Notification Form (INF) for it on placement@iitrpr.ac.in <a style="color:white;" href="https://drive.google.com/open?id=1idFnfF8ZxCAPkY-R8aXAPnA0RyO-Wcm2"> <u><br>Download INF </u></a></h3></div></div>
+
+						<h2 style="color:#191970;font-style:italic; margin-top: 10px;">IMPORTANT NOTE :</p>
+						 
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#191970; border-radius: 10px;">...The companies are expected to furnish the final list of selected students on the same day after the selection procedure is completed.
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#191970; border-radius: 10px;">...The JAF provides the primary basis for communicating the details of the positions offered by the company to the candidates. It is, therefore, highly desirable that the form is completed in all respects.
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#191970; border-radius: 10px;">...The decision regarding the dates is at the discretion of the T&amp;P cell. Companies are expected to strictly adhere to the time and dates slots allowed to them. Any change must be notified in advance.
+
+						<h3 style="color:white;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-color:#191970; border-radius: 10px;" style="text-align: justify;">...Please note that the facility of video conferencing is available on the campus and can be availed for the purpose of interviewing candidates in case the company is unable to visit the campus.</p>
+						<h3 style=>&nbsp;</p>
+<h1 style="color:#21618C;font-style:italic;margin-top:70px;">INTERNSHIPS :</h1>
+<!--<div class="region region-content">
+<div id="block-system-main" class="block block-system">
+<div class="content">
+<div class="content node-page">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden">
+<div class="field-items">
+<div class="field-item even">-->
+
+<!--<h3 style="color:black;">&nbsp;</p>-->
+<!--<h3 style="color:black;">Internships and industrial training are known to be one of the most learning experiences in an undergraduate&#8217;s period of study. It is during this internship where students gain first exposure to the industry as their first step towards becoming a competent professional. At IIT Ropar, as a part of the curriculum, pre-final year students of the B.Tech. programme undergo at least 40 working days of compulsory summer internships in various leading organisations. Students are also exposed to latest industrial experience by regular industry visits. Second-year students also gain valuable industrial exposure through internships in the industry. Students have been pursuing internships and projects in various national and international academic institutions and companies.</p>
+</p>-->
+<h3 style="color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;background-color:#21618C;margin-top:30px;margin-bottom:100px;">Intern hiring process can be conducted from September 2018 or later on a mutually convenient date for the mandatory industrial training of B.Tech students for a minimum period of 40 working days(about 2 months) from May to July 2018. </h3>
+
+<pre><h1 style="color:#191970;font-style:italic;">       <strong> Summer Internship-Organizations/Universities </strong></h1></pre>
+<pre><h3 style="color:white;padding-top:40px;padding-bottom:0px;;background-color:#21618C;"> Amazon Development Centre Pvt. Ltd.              Microsoft India                           University of Duisburg- Essen Germany</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">     Otsuka Pharmaceuticals, Japan                           Expedia                                        Ruhr-Universität Bochum Germany</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">    Indian Register of Shipping                                    DRDO LA                                     Mitacs, University of Alberta, Canada</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">   University of Toledo, Ohio, USA                                Comezo                                 Bhabha Atomic Research Centre (BARC)</p>                                                                                      
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">   DAAD WISE Program, Germany                                     JCB                                      National University of Singapore</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">   Harley Davidson, New Delhi                                         Yodlee                                         S.N. Bose Scholars Program, USA</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">   DCM Engineering Products                                      L&amp;T Surat                           École Polytechnique de Montréal, Canada</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">    Hero MotoCorp Ltd.                                             Arista Networks                         Weizmann Institute of Sciences, Israel</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">     NTPC Limited, New Delhi                                        Videocon                                                 University of Buffalo, USA</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">    Ernst &amp; Young Hyderabad                                            BHEL                               LISIS Unit at Paris-Est University France</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">    SML ISUZU Limited                                                  Innoplexus                                                  TT Consultants Pvt. Ltd.</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">    DGM GAIL Jaipur                                                    Gemini Solutions                                          Tonichi Instatu, Japan   </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">    Tonichi Instatu, Japan                                                TAL Pune                                                   NIMS Programme Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">    TT Consultants Pvt. Ltd.                                           Lucid Software                                         SMS Data Tech, Japan          </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">         Accenture Poland                                            Phillips Netherland                                           Fuji Film, Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">          IISc Bangalore                                                   TCS Pune                                  Bharat Heavy Electrical Limited, Haridwar </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">         ONGC Mehsan                                                  Lucid Software                                                  Tonichi Instatu, Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">          TATA Power                                                           Ericsson                                                           ONGC Mehsana   </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">         Guru Gobind Singh Super Thermal Power Plant                                  Punjab State Power Corporation Limited</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                                                       Viterbi-India Program, University of Southern California, USA     </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                                             Institute for Development and Research in Banking Technology (IDRBT)       </p>
+<!--<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                                                                                                               </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                                                                                                              </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                                                                                                                                    </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                                                                                                                                         </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                                                                                       </p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;;background-color:#21618C;text-align:center;"></p>-->
+<!--<h3 style="color:black;">DGM GAIL Jaipur</p>
+<h3 style="color:black;">Ericsson</p>
+<h3 style="color:black;">TATA Power</p>
+<h3 style="color:black;">Indian Register of Shipping</p>
+<h3 style="color:black;">JCB</p>
+<h3 style="color:black;">ONGC Mehsana</p>
+<h3 style="color:black;">BHEL</p>
+<h3 style="color:black;">Harley Davidson, New Delhi</p>
+<h3 style="color:black;">Tonichi Instatu, Japan</p>
+<h3 style="color:black;">SMS Data Tech, Japan</p>
+<h3 style="color:black;">Fuji Film, Japan</p>
+<h3 style="color:black;">Otsuka Pharmaceuticals, Japan</p>
+<h3 style="color:black;">NIMS Programme Japan</p>
+<h3 style="color:black;">IISc Bangalore</p>
+<h3 style="color:black;">National University of Singapore</p>
+<h3 style="color:black;">LISIS Unit at Paris-Est University France</p>
+<h3 style="color:black;">University of Buffalo, USA</p>
+<h3 style="color:black;">Weizmann Institute of Sciences, Israel</p>
+<h3 style="color:black;">École Polytechnique de Montréal, Canada</p>
+<h3 style="color:black;">S.N. Bose Scholars Program, USA</p>
+<h3 style="color:black;">DAAD WISE Program, Germany</p>
+<h3 style="color:black;">Viterbi-India Program, University of Southern California, USA</p>
+<h3 style="color:black;">Chulalongkorn University Bangkok</p>
+<h3 style="color:black;">University of Toledo, Ohio, USA</p>
+<h3 style="color:black;">Mitacs, University of Alberta, Canada.</p>
+<h3 style="color:black;">Ruhr-Universität Bochum Germany</p>
+<h3 style="color:black;">University of Duisburg- Essen Germany</h3>--></pre>
+
+
+<!--<pre><h3 style="color:white;padding-top:40px;padding-bottom:0px;;background-color:#21618C;">     Amazon Development Centre Pvt. Ltd.                                                 University of Duisburg- Essen Germany</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                        Microsoft India                                                                                 Ruhr-Universität Bochum Germany</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                         DRDO LABS                                                                                      Mitacs, University of Alberta, Canada</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                     Arista Networks                                                                                        University of Toledo, Ohio, USA</p>                                                                                      
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                  Phillips Netherland                                                                         DAAD WISE Program, Germany</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                       TCS Pune                                                                                     S.N. Bose Scholars Program, USA</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                      L&amp;T Surat                                                                                     École Polytechnique de Montréal, Canada</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                       Comezo                                                                                           Weizmann Institute of Sciences, Israel</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                  Gemini Solutions                                                                                       University of Buffalo, USA</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">               Ernst &amp; Young Hyderabad                                                                LISIS Unit at Paris-Est University France</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                        Videocon                                                                                               National University of Singapore</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                      TAL Pune                                                                                                             IISc Bangalore</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                      Yodlee                                                                                                              NIMS Programme Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                 TT Consultants Pvt. Ltd.                                                                              Otsuka Pharmaceuticals, Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                   Accenture Poland                                                                                                             Fuji Film, Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">         Bharat Heavy Electrical Limited, Haridwar                                                                SMS Data Tech, Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                NTPC Limited, New Delhi                                                                                             Tonichi Instatu, Japan</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                  Lucid Software                                                                                                           Harley Davidson, New Delhi</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">         Punjab State Power Corporation Limited                                                                                   BHEL</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">      Guru Gobind Singh Super Thermal Power Plant                                                                 ONGC Mehsana</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">           Bhabha Atomic Research Centre (BARC)                                                                                       JCB</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                 Hero MotoCorp Ltd.                                                                                               Indian Register of Shipping</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">            DCM Engineering Products                                                                                                     TATA Power</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                 SML ISUZU Limited                                                                                                                  Ericsson</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#21618C;">                   Innoplexus                                                                                                                        DGM GAIL Jaipur</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;background-color:#191970;">                         Expedia                                                               Viterbi-India Program, University of Southern California, USA</p>
+<h3 style="color:white;padding-top:40px;padding-bottom:0px;;background-color:#21618C;text-align:center;">Institute for Development and Research in Banking Technology (IDRBT)</p>
+<h3 style="color:black;">DGM GAIL Jaipur</p>
+<h3 style="color:black;">Ericsson</p>
+<h3 style="color:black;">TATA Power</p>
+<h3 style="color:black;">Indian Register of Shipping</p>
+<h3 style="color:black;">JCB</p>
+<h3 style="color:black;">ONGC Mehsana</p>
+<h3 style="color:black;">BHEL</p>
+<h3 style="color:black;">Harley Davidson, New Delhi</p>
+<h3 style="color:black;">Tonichi Instatu, Japan</p>
+<h3 style="color:black;">SMS Data Tech, Japan</p>
+<h3 style="color:black;">Fuji Film, Japan</p>
+<h3 style="color:black;">Otsuka Pharmaceuticals, Japan</p>
+<h3 style="color:black;">NIMS Programme Japan</p>
+<h3 style="color:black;">IISc Bangalore</p>
+<h3 style="color:black;">National University of Singapore</p>
+<h3 style="color:black;">LISIS Unit at Paris-Est University France</p>
+<h3 style="color:black;">University of Buffalo, USA</p>
+<h3 style="color:black;">Weizmann Institute of Sciences, Israel</p>
+<h3 style="color:black;">École Polytechnique de Montréal, Canada</p>
+<h3 style="color:black;">S.N. Bose Scholars Program, USA</p>
+<h3 style="color:black;">DAAD WISE Program, Germany</p>
+<h3 style="color:black;">Viterbi-India Program, University of Southern California, USA</p>
+<h3 style="color:black;">Chulalongkorn University Bangkok</p>
+<h3 style="color:black;">University of Toledo, Ohio, USA</p>
+<h3 style="color:black;">Mitacs, University of Alberta, Canada.</p>
+<h3 style="color:black;">Ruhr-Universität Bochum Germany</p>
+<h3 style="color:black;">University of Duisburg- Essen Germany</h3></pre>-->
+
+
+
+
+
+
+                                        
+
+	                          </div>
+                        </div> 
+               </div>
+       </div>
+
+
+<div class="col-md-12 col-sm-12" style="padding-top:30px; color: #535b60;">
+	        		<center><h1 style="color:black;">Past Recruiters</h1>
+	        		<marquee>
+	        		<ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
+					    <li style="float: left; margin-left: 30px"><img src="images/c1.png" style="height:65px;max-width:150px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c2.jpg" style="height:65px;max-width:150px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c9.jpg" style="height:65px;max-width:100px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c8.jpg" style="height:65px;max-width:150px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c11.jpg" style="height:65px;max-width:150px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c3.jpg" style="height:65px;max-width:100px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c10.jpg" style="height:65px;max-width:150px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c4.jpg" style="height:65px;max-width:100px;" /></li>
+                        <li style="float: left; margin-left: 30px"><img src="images/c6.jpg" style="height:65px;max-width:100px;" ></li>
+					</ul>
+					</marquee></center>
+					<br>
+				<div class="col-md-12" style="padding:12px;padding-left:0px;"><a href="companies.php" class="newslinks" target="_blank">See More &nbsp;<i class="fa fa-angle-double-right"></i></a></div>
+	        	</div>
+
+
+	        </div>
+
+
+
+<!-- Footer -->
+
+	<?php include 'footer.php';?>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
