@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>T&P cell, HOD's Message | CDCRC IIT Ropar</title>
+    <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+
+
+	<style>
+		#hod_dhiraj_sir_message_heading{
+			background-image: url('/static/info/images/symbol_3.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+	</style>
+{% endblock %}
+
+{% block body_content %}
+    <div class="container-fluid">
+		<div class="row">
+			<div id="hod_dhiraj_sir_message_heading" class="col-md-5">
+				<h1 style="margin-top:1em; margin-bottom:1em; color:white;">A Message<br> from the<br> Head, T&P Cell</h1>
+			</div>
+			<div class="col-md-7" style="padding:0;">
+				<img style="object-fit:cover;height:20em; width:100%;" src="{% static 'info/images/hod_image.jpg' %}" alt="HOD's Image" style="width:100%;">
+            </div>
+        
+        </div>
+		<div class="row">
+			{% comment %} <div class="col-md-1"></div> {% endcomment %}
+			<div class="col-md-12" style="background-color:white;">
+				<p style="color:black; padding:1em;" >
+					Dear Friends<br><br>
+                    It gives me great pleasure to invite you to 
+                    Institute of Technology Ropar campus
+                    for 2020-21 placement and internship sessions. 
+                    The IIT brand name is world-renowned and needs
+                    no introduction. In accordance with the high 
+                    expectations from IITians, our students and 
+                    graduates have earned numerous accolades
+                    from the organisations that they worked 
+                    with as interns or as employees and I am certain that
+                    your recruitment team will have a very 
+                    productive and satisfying visit to our institute.
+                    <br><br>
+                    The curriculum at IIT Ropar is designed to 
+                    not only provide students with extremely strong technical
+                    knowledge but to also hone their personal 
+                    development so that they become well rounded individuals
+                    who are an asset to any organisation that 
+                    they are part of. Our students receive
+                    opportunities to learn not just through well 
+                    designed classroom and laboratory activities but
+                    also through active participation in research 
+                    and industrial collaboration projects, student societies
+                    and competitions, social service activities, 
+                    and through exposure to enterpreneurship from an early stage.
+                    <br><br>
+                    Apart from our exceptioal students, our rather
+                    great strength lies in our faculty
+                    , who have performed years of cutting edge 
+                    research in highly reputed organisations 
+                    around the world. With the active mentoring 
+                    from the faculty members, our students are exposed to the 
+                    latest technological developments in their field, 
+                    enabling them to achieve their full potential.
+                    Once again I cordially invite you to our campus 
+                    for placements and I look forward to continuing a fruitful relationship
+                    between your organisation and IIT Ropar.
+                    <br><br>
+					धियो यो नः प्रचोदयात् <br><br>
+					(Deploy our intellect on the right path).
+					<br><br>
+
+					Jai Hind!
+				</p>
+			</div>
+			{% comment %} <div class="col-md-6"></div>
+			<div class="col-md-1"></div> {% endcomment %}
+
+		</div>
+	</div>
+
+{% endblock %}
