@@ -12,6 +12,8 @@ urlpatterns = [
     path('unapproved_contacts_list/', views.unapproved_contacts_list, name='unapproved_contacts_list'),
     path('contact_detail/<int:pk>/', views.contact_detail, name='contact_detail'),
     path('add_contact/', views.add_contact, name='add_contact'),
+    path('update_contact/<int:pk>/', views.update_contact, name='update_contact'),
+    
     path('import_contacts_from_csv/', views.import_contacts_from_csv, name='import_contacts_from_csv'),
     path('reject_contact_merge/', views.reject_contact_merge, name='reject_contact_merge'),
     path('approve_contact_merge/', views.approve_contact_merge, name='approve_contact_merge'),

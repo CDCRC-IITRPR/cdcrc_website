@@ -35,7 +35,7 @@ def activity_detail(request, pk):
     return render(request, 'info/professional_development/activity_detail.html', context=context)
 
 def books(request):
-    if(get_page_visibility_status('pd_books')==False):
+    if(get_page_visibility_status('pd_library')==False):
         return render(request, 'under_construction.html')
     context = {
         'title' : 'Library',
@@ -47,7 +47,12 @@ def videos(request):
     if(get_page_visibility_status('pd_videos')==False):
         return render(request, 'under_construction.html')
     context = {
-        'title' : 'Resources for UG Students',
+        'title' : 'Video Resources for Students',
         'videos' : ProfessionalDevelopmentVideo.objects.all()
     }
     return render(request, 'info/professional_development/videos.html', context=context)
+
+def hod_message(request):
+    if(get_page_visibility_status('pd_hod_message')==False):
+        return render(request, 'under_construction.html')
+    return render(request, 'info/professional_development/hod_message.html')

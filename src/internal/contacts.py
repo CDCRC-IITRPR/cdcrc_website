@@ -17,7 +17,7 @@ class ContactsCSVHandler:
         phone_number = phone_number.replace('-', '')
         phone_number = phone_number.replace('+', '')
         if phone_number.startswith('91'):
-            phone_number = phone_number[2:]
+            phone_number = phone_number[2:] 
 
         return phone_number
 
@@ -34,19 +34,19 @@ class ContactsCSVHandler:
 
     def check_approval(self, contact_obj):
         similar_first_name_exists = Contact.objects.filter(first_name__iexact=contact_obj['first_name']).exists()
-        recruiter_exists = Recruiter.objects.filter(name__iexact=contact_obj['recruiter']).exists()
+        recruiter_exists = Contact.objects.filter(recruiter__iexact=contact_obj['recruiter']).exists()
         if similar_first_name_exists==False and recruiter_exists==True:
             return True
         else: return False
 
-    def get_recruiter_obj(self, recruiter_name):
-        try:
-            recruiter = Recruiter.objects.get(name=recruiter_name)
-            return recruiter
-        except:
-            recruiter = Recruiter(name=recruiter_name)
-            recruiter.save()
-            return recruiter
+    # def get_recruiter_obj(self, recruiter_name):
+    #     try:
+    #         recruiter = Recruiter.objects.get(name=recruiter_name)
+    #         return recruiter
+    #     except:
+    #         recruiter = Recruiter(name=recruiter_name)
+    #         recruiter.save()
+    #         return recruiter
 
     
     def import_from_file(self):
@@ -78,6 +78,10 @@ class ContactsCSVHandler:
                     first_name_idx, last_name_idx, suffix_idx, job_title_idx, email_idx, recruiter_idx, phone_one_idx, phone_two_idx
                 ])
 
+                remark_idx = self.get_header_idx_from_key_words(row, ['remark'], excluded_header_indices=[
+                    first_name_idx, last_name_idx, suffix_idx, job_title_idx, email_idx, recruiter_idx, phone_one_idx, phone_two_idx, linkedin_idx
+                ])
+
             else:
                 curr_contact = {}
                 curr_contact['first_name'] = row[first_name_idx] if first_name_idx!=None else  None
@@ -89,7 +93,7 @@ class ContactsCSVHandler:
                 curr_contact['phone_one'] = self.clean_phone_number(row[phone_one_idx]) if phone_one_idx!=None else  None
                 curr_contact['phone_two'] = self.clean_phone_number(row[phone_two_idx]) if phone_two_idx!=None else  None
                 curr_contact['linkedin_url'] = row[linkedin_idx] if linkedin_idx!=None else None 
-
+                curr_contact['remark'] = row[remark_idx] if remark_idx!=None else None
 
                 approved = self.check_approval(curr_contact)
 
@@ -103,7 +107,8 @@ class ContactsCSVHandler:
                     email = curr_contact['email'],
                     approved = approved,
                     linkedin_url = curr_contact['linkedin_url'],
-                    recruiter = self.get_recruiter_obj(curr_contact['recruiter']),
+                    recruiter =curr_contact['recruiter'],
+                    remark = curr_contact['remark']
                 )
                 
                 contact_db_obj.save()

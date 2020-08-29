@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
-from internal.forms import ImportContactsForm, AddContactForm, IssueFollowupForm, IssueForm
+from internal.forms import ImportContactsForm, ContactForm, IssueFollowupForm, IssueForm
 from utils.login_decorators import team_user_required
 from internal.contacts import ContactsCSVHandler
 from profiles.models import TeamMemberProfile
@@ -9,6 +8,8 @@ from internal.models import Contact, Issue, IssueFollowUp
 from django.urls import reverse
 from utils.mailer import Mailer
 import datetime
+from utils.utils import render_message
+
 # Create your views here.
 
 @team_user_required
@@ -17,14 +18,26 @@ def internal_home(request):
     return render(request, 'internal/home.html', context={'team_member_profile_obj':team_member_profile_obj})
 
 @team_user_required
+def update_contact(request, pk):
+    contact = Contact.objects.get(pk = pk)
+    if request.method=='POST':
+        form = ContactForm(request.POST,  instance=contact)
+        if form.is_valid():
+            form.save(commit=True)
+            return HttpResponseRedirect(reverse('internal:approved_contacts_list'))
+    else:
+        form = ContactForm(instance=contact)
+    return render(request, 'internal/update_contact.html', context={'form':form})
+
+@team_user_required
 def add_contact(request):
     if request.method=='POST':
-        form = AddContactForm(request.POST)
+        form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('internal:unapproved_contacts_list'))
     else:
-        form = AddContactForm()
+        form = ContactForm()
     return render(request, 'internal/add_contact.html', context={'form':form})
 
 @team_user_required

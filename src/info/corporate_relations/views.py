@@ -33,3 +33,9 @@ def activity_detail(request, pk):
         'title': 'Activity Detail',
     }
     return render(request, 'info/corporate_relations/activity_detail.html', context=context)
+
+
+def hod_message(request):
+    if(get_page_visibility_status('cr_hod_message')==False):
+        return render(request, 'under_construction.html')
+    return render(request, 'info/corporate_relations/hod_message.html')

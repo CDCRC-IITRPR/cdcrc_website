@@ -9,4 +9,5 @@ urlpatterns = [
     path('about/', views.about, name='cr_about'),
     path('activities/', views.activities, name='cr_activities'),
     path('activity_detail/<int:pk>/', views.activity_detail, name='cr_activity_detail'),
+    path('hod_message/', views.hod_message, name='cr_hod_message'),
 ]

@@ -45,7 +45,7 @@ def signup(request):
             message = render_to_string('accounts/activate_account_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+                'uid':urlsafe_base64_encode(force_bytes(user.pk)).decode(),
                 'token':account_activation_token.make_token(user),
             })
             
@@ -62,10 +62,15 @@ def signup(request):
 
 def activate(request, uidb64, token):
     try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
+        t = urlsafe_base64_decode(uidb64)
+        uid = force_text(t)
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
+        return render_message(request,
+            'Error',
+            'An error occurred!'
+        )
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
@@ -80,7 +85,6 @@ def activate(request, uidb64, token):
             'The activation link is invalid!'
         )
 
-# @team_user_required
 def check_account_status(request):
     message = str(request.user.get_user_name()) + " " + str(request.user.is_team_member()) + " " + str(request.user.student_profile_completed())
     return render_message(request, 'User Status', message)

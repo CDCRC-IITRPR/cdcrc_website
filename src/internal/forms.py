@@ -6,7 +6,8 @@ from bootstrap_datepicker_plus import DateTimePickerInput
 class ImportContactsForm(forms.Form):
     contacts_file = forms.FileField() 
 
-class AddContactForm(forms.ModelForm):
+
+class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ['first_name', 'last_name', 'phone_one', 'phone_two', 'email', 'recruiter', 'linkedin_url', 'remark']
@@ -27,7 +28,7 @@ class AddContactForm(forms.ModelForm):
             'phone_two': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.TextInput(attrs={'class': 'form-control'}),
             'linkedin_url': forms.TextInput(attrs={'class': 'form-control'}),
-            'recruiter': forms.Select(attrs={'class': 'form-control'}),
+            'recruiter': forms.TextInput(attrs={'class': 'form-control'}),
             'remark': forms.Textarea(attrs={'class': 'form-control'}),
         }
 

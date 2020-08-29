@@ -11,6 +11,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <h1>Import contacts from csv</h1>
+            <p>The format of csv should be [first_name, last_name, suffix, job, email, company, phone 1, phone 2, linkedin, remark]</p>
             <form method='post' enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}

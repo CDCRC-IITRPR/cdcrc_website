@@ -6,5 +6,6 @@ def run():
         try:
             pvc = PageVisibilityConfig(page=page, visible=visible)
             pvc.save()
+            print("{} visibility variable setting created".format(page))
         except:
             print("{} setting already exists".format(page))
