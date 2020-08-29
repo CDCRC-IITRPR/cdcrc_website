@@ -36,8 +36,16 @@
                 {% if member.phone %}
                   <p class="card-text">Phone: {{member.phone}}</p>
                 {% endif %}
-                {% if member.url %}
+                {% comment %} {% if member.url %}
                   <a href="#" class="card-link">{{member.url}}</a>
+                {% endif %} {% endcomment %}
+                
+                {% if member.linkedin_profile %}
+                  <hr>
+                  <div style="text-align:center;">
+                    <a href="mailto:{{member.user.email}}" style="margin-left:0.5rem; margin-right:0.5rem;"><i class="fas fa-envelope"></i></a>
+                    <a href="{{ member.linkedin_profile }}" style="margin-left:0.5rem; margin-right:0.5rem;" class="card-link"><i class="fab fa-linkedin"></i></a>
+                  </div>
                 {% endif %}
               </div>
             </div>

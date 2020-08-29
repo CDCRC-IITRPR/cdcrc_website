@@ -5,6 +5,7 @@ from recruiter.models import Recruiter
 from utils.metadata import resource_category_choices
 from profiles.models import TeamMemberProfile
 from django.db.models import Q
+from config.utils import get_page_visibility_status
 # Create your views here.
 def home(request):
     news = News.objects.all()
@@ -61,11 +62,13 @@ def vision_statement(request):
 def corporate_relations_home(request):
     return render(request, 'under_construction.html')
 
-def pd_hod_message(request):
-    return render(request, 'info/pd_hod_message.html')
+# def pd_hod_message(request):
+#     return render(request, 'info/pd_hod_message.html')
 
-def cr_hod_message(request):
-    return render(request, 'under_construction.html')
+# def cr_hod_message(request):
+#     return render(request, 'under_construction.html')
 
-def hod_message(request):
-    return render(request, 'info/hod_message.html')
+def tnp_hod_message(request):
+    if(get_page_visibility_status('tnp_hod_message')==False):
+        return render(request, 'under_construction.html')
+    return render(request, 'info/tnp_hod_message.html')
