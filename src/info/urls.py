@@ -21,6 +21,9 @@ urlpatterns = [
     path('events/events-detail/<int:pk>',views.events_detail, name='events-detail'),
     path('directors_message/', views.directors_message, name='directors_message'),
     path('vision_statement/', views.vision_statement, name='vision_statement'),
+    path('hod_message/', views.hod_message, name='hod_message'),
+    path('cr_hod_message/', views.cr_hod_message, name='cr_hod_message'),
+    path('pd_hod_message/', views.pd_hod_message, name='pd_hod_message'),
 
     path('professional_development/', include('info.professional_development.urls')),
     path('corporate_relations/', include('info.corporate_relations.urls')),
