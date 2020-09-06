@@ -208,7 +208,7 @@ def create_issue_followup(request, pk):
     if request.method=='POST':
         form = IssueFollowupForm(request.POST)
         if form.is_valid():
-            next_reminder = datetime.datetime.strptime(request.POST['next_reminder'], '%d/%m/%Y %H:%M').strftime('%Y-%d-%m %H:%M')
+            next_reminder = datetime.datetime.strptime(request.POST['next_reminder'], '%m/%d/%Y %H:%M').strftime('%Y-%m-%d %H:%M')
             print(next_reminder)
             followup_obj = form.save(commit=False)
             issue_obj = Issue.objects.get(pk=pk)

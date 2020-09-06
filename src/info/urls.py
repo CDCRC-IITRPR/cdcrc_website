@@ -11,8 +11,8 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     
     path('resources/',views.resources, name='resources'),
-    path('resources/<str:category>/', views.resources_by_category, name='resources_by_category'),
-    path('resource_detail/<int:pk>/', views.resource_detail, name='resource_detail'),
+    path('resources/create/',views.create_resource, name='create_resource'),
+    path('resources/detail/<int:pk>/', views.resource_detail, name='resource_detail'),
 
     path('faculty_team/',views.faculty_team, name='faculty_team'),
     path('student_team/',views.student_team, name='student_team'),

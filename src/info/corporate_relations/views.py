@@ -5,7 +5,6 @@ Views for the professional development section
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from recruiter.models import Recruiter
-from utils.metadata import resource_category_choices
 from django.db.models import Q
 from info.models import CorporateRelationsActivity
 from config.utils import get_page_visibility_status

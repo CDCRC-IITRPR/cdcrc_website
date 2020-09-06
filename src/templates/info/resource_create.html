@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Create Resource | CDCRC IIT Ropar</title>
+{% endblock %}
+
+{% block body_content %}
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <br>
+            <h1>Create Resource</h1>
+            <hr>
+            <form method='POST' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Create Resource" class="btn btn-primary" style='margin:0 44%;'>
+            </form>
+            <br>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock %}

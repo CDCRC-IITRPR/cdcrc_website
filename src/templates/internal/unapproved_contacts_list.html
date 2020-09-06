@@ -24,6 +24,7 @@
                         <th scope="col">Email</th>
                         <th scope="col">Company</th>
                         <th scope="col">Detail</th>
+                        <th scope="col">Update</th>
                         <th scope="col">Approve</th>
                         <th scope="col">Reject</th>
                     </tr>
@@ -37,6 +38,7 @@
                             <td>{{contact.email}}</td>
                             <td>{{contact.recruiter}}</td>
                             <td><button class='btn btn-primary btn-sm'><a href="{% url 'internal:contact_detail' pk=contact.pk%}">Detail</a></button></td>
+                            <td><button class='btn btn-primary btn-sm'><a href="{% url 'internal:update_contact' pk=contact.pk%}">Update</a></button></td>
                             <td>
                                 <form method='post' action="{%url 'internal:approve_contact_merge' %}">
                                     {% csrf_token %}

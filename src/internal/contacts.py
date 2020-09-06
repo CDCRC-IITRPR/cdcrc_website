@@ -56,7 +56,7 @@ class ContactsCSVHandler:
 
         for row_idx, row in enumerate(contacts, 0):
             if row_idx==0:
-                first_name_idx = self.get_header_idx_from_key_words(row, ['first'])
+                first_name_idx = self.get_header_idx_from_key_words(row, ['name'])
                 last_name_idx = self.get_header_idx_from_key_words(row, ['last'], excluded_header_indices=[first_name_idx])
                 suffix_idx = self.get_header_idx_from_key_words(row, ['suffix'], excluded_header_indices=[first_name_idx, last_name_idx])
                 job_title_idx = self.get_header_idx_from_key_words(row, ['job', 'title'], excluded_header_indices=[first_name_idx, last_name_idx, suffix_idx])

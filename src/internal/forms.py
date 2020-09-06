@@ -22,14 +22,14 @@ class ContactForm(forms.ModelForm):
             'remark': 'Remark',
         }
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'phone_one': forms.TextInput(attrs={'class': 'form-control'}),
-            'phone_two': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control'}),
-            'linkedin_url': forms.TextInput(attrs={'class': 'form-control'}),
-            'recruiter': forms.TextInput(attrs={'class': 'form-control'}),
-            'remark': forms.Textarea(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'required':True}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control',  }),
+            'phone_one': forms.TextInput(attrs={'class': 'form-control', }),
+            'phone_two': forms.TextInput(attrs={'class': 'form-control', }),
+            'email': forms.TextInput(attrs={'class': 'form-control', }),
+            'linkedin_url': forms.TextInput(attrs={'class': 'form-control',}),
+            'recruiter': forms.TextInput(attrs={'class': 'form-control',}),
+            'remark': forms.Textarea(attrs={'class': 'form-control', }),
         }
 
 class IssueForm(forms.ModelForm):
@@ -46,7 +46,7 @@ class IssueForm(forms.ModelForm):
         ]
 
         labels = {
-            'title': 'Summary',
+            'title': 'Title',
             'recruiter': 'Company',
             'student_concerned': 'Student Concerned',
             'assignees': 'Assignees',
@@ -56,12 +56,12 @@ class IssueForm(forms.ModelForm):
         }
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'recruiter': forms.Select(attrs={'class': 'form-control'}),
-            'student_concerned': forms.Select(attrs={'class': 'form-control'}),
-            'assignees': forms.SelectMultiple(attrs={'class': 'form-control'}),
-            'priority': forms.Select(attrs={'class': 'form-control'}),
-            'initial_comment': forms.Textarea(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'required':True}),
+            'recruiter': forms.Select(attrs={'class': 'form-control',}),
+            'student_concerned': forms.Select(attrs={'class': 'form-control',}),
+            'assignees': forms.SelectMultiple(attrs={'class': 'form-control', 'required':True}),
+            'priority': forms.Select(attrs={'class': 'form-control', 'required':True}),
+            'initial_comment': forms.Textarea(attrs={'class': 'form-control', 'required':True}),
             'next_reminder': DateTimePickerInput(),
         }
 
@@ -84,7 +84,7 @@ class IssueFollowupForm(forms.ModelForm):
             'assignees': 'Assignees',
         }
         widgets = {
-            'comment': forms.Textarea(attrs={'class': 'form-control'}),
-            'assignees': forms.SelectMultiple(attrs={'class': 'form-control'}),
+            'comment': forms.Textarea(attrs={'class': 'form-control', 'required':True}),
+            'assignees': forms.SelectMultiple(attrs={'class': 'form-control', 'required':True}),
         }
 

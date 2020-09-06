@@ -7,8 +7,11 @@ import os
 
 from cdcrc_website.settings import BASE_DIR
 
+import _thread
+
 
 CREDS_PATH = os.path.join(BASE_DIR, 'creds.json')
+
 
 class Mailer:
     sender_name = None
@@ -47,6 +50,7 @@ class Mailer:
         msg.attach(MIMEText(body, 'html'))
 
         try:
+            # _thread.start_new_thread( self.server.sendmail, (self.sender_email, to_list, msg.as_string() ) )
             self.server.sendmail(self.sender_email, to_list, msg.as_string())
             print('sending email to', to_list)
             return 'ok'
