@@ -1,11 +1,19 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from info.models import News, Events, Resource
+from info.models import News, Events, Resource, ResourceCategory, ResourceImage
 from recruiter.models import Recruiter
-from utils.metadata import resource_category_choices
 from profiles.models import TeamMemberProfile
 from django.db.models import Q
 from config.utils import get_page_visibility_status
+from info.forms import ResourceForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from utils.utils import render_message
+from utils.mailer import Mailer
+from utils.metadata import CDCRC_MEDIA_EMAIL
+from django.db import transaction
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def home(request):
     news = News.objects.all()
@@ -16,21 +24,41 @@ def home(request):
 def contacts(request):
     return render(request, 'info/contacts.html')
 
-def resources_by_category(request, category):
-    resources = Resource.objects.filter(category=category)
-    context = {'resources': resources, 'category': category}
+@login_required
+def resources(request):
+    resources = Resource.objects.filter(approved=True).order_by('-datetime')
+    resource_remainder_4 = resources.count()
+    context = {'resources': resources,  'resources_remainder_4': range(1, resource_remainder_4+1)}
     return render(request, 'info/resources.html', context=context)
 
+@login_required
 def resource_detail(request, pk):
     resource = Resource.objects.get(pk=pk)
     context = {'resource': resource}
     return render(request, 'info/resource_detail.html', context=context)
 
-
-def resources(request):
-    resource_categories = resource_category_choices
-    context = {'resource_categories': resource_categories}
-    return render(request, 'info/resource_categories.html', context=context)
+@login_required
+def create_resource(request): 
+    if request.method=='POST':
+        form = ResourceForm(request.POST, request.FILES)
+        files = request.FILES.getlist('images')
+        if form.is_valid():
+            with transaction.atomic():
+                res = form.save(commit=True)
+                res.author = request.user
+                res.save()
+                for file in files:
+                    file = ResourceImage(image=file)
+                    file.resource = res
+                    file.save()
+            mailer = Mailer()
+            mailer.send_email(CDCRC_MEDIA_EMAIL, 'Approval Request for New Resource {}'.format(res.title), '{} has added a resource titled {}. Please take a look.'.format(res.author.username, res.title))
+            return render_message(request, 'Approval Pending', 'Thanks for sharing the resource...it will be posted on the website after being approved by our team!')
+        else:
+            return render_message(request, 'Error', 'There was an error in creating the resource')
+    else:
+        form = ResourceForm()
+        return render(request, 'info/resource_create.html', context={'form': form})
 
 def news_detail(request, pk):    
     news = News.objects.get(pk=pk)    
@@ -62,11 +90,6 @@ def vision_statement(request):
 def corporate_relations_home(request):
     return render(request, 'under_construction.html')
 
-# def pd_hod_message(request):
-#     return render(request, 'info/pd_hod_message.html')
-
-# def cr_hod_message(request):
-#     return render(request, 'under_construction.html')
 
 def tnp_hod_message(request):
     if(get_page_visibility_status('tnp_hod_message')==False):

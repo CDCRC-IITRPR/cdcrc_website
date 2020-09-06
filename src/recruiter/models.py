@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from info.models import Department
 # Create your models here.
 
 class Recruiter(models.Model):
@@ -43,18 +44,14 @@ class StudentDemographic(models.Model):
         ('ugi', 'UG for Internships'),
         ('pgi', 'PG for Internships'), 
     ]
-    department_choices = [
-        ('cse',  'Computer Science & Engineering'),
-        ('ee', 'Electrical Engineering')
-    ]
     category = models.CharField(max_length=10, null=False, choices=category_choices)
-    department = models.CharField(max_length=100, null=False, choices=department_choices)
+    department = models.ForeignKey(Department, null=False, blank=False, on_delete=models.CASCADE)
     strength = models.IntegerField(default=0, null=False)
 
     def __str__(self):
-        return self.category + " " + self.department
+        return self.category + " " + str(self.department)
 
     def get_category_display(self):
         return dict(self.category_choices)[self.category]
     def get_department_display(self):
-        return dict(self.department_choices)[self.department]
+        return str(self.department)

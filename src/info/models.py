@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import date
-from utils.metadata import resource_category_choices
-
+from django.contrib.auth.models import User
+from utils.validators import validate_file_extension, validate_file_size
 class News(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     body = models.TextField(blank=True, null=True)
@@ -20,18 +20,41 @@ class Events(models.Model):
     url=models.URLField(null=True, blank=True)
 
     def __str__(self):
-        return self.title
+        return self.title 
+
+
+class ResourceCategory(models.Model):
+    name = models.CharField(max_length=256, null=False, blank=False, unique=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Resource(models.Model):
     title = models.CharField(max_length=256, null=False, blank=False)
-    category = models.CharField(max_length=256, choices=resource_category_choices, null = False, blank = False)
+    author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    categories = models.ManyToManyField(ResourceCategory, related_name='resources')
     url = models.URLField(null=True, blank=True)
-    brief = models.TextField()
+    brief = models.CharField(max_length=2000)
+    detail = models.TextField()
+    datetime = models.DateTimeField(auto_now=True)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
 
+class ResourceImage(models.Model):
+    image = models.ImageField(upload_to='resources/images/')
+    resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='images', validators=[validate_file_extension, validate_file_size])
+
+    def __str__(self):
+        return str(self.file)
+
+class Department(models.Model):
+    name = models.CharField(max_length=256, unique=True, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
 
 class ProfessionalDevelopmentActivity(models.Model):
     title = models.CharField(max_length=256, null=False, blank=False)

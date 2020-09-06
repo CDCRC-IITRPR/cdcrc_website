@@ -67,9 +67,13 @@
 			<div class="col-md-2" id="info" style="text-align:left;">
 				<br><br>
 				{% if user.is_authenticated %}
-					<span>{{request.user.username}}</span>
+					<span><strong>{{request.user.get_user_name}}</strong></span>
 					<br>
-					<a style="color:white;" href="{% url 'profiles:view_profile' %}">View Profile</a>
+					{% if user.is_staff %}
+						<a style="color:white;" href="{% url 'admin:index' %}">Admin Panel</a>
+					{% endif %}
+					<br>
+					<a style="color:white;" href="{% url 'profiles:view_profile' %}">My Profile</a>
 					<br>
 					<a style="color:white;" href="{% url 'logout' %}">Logout</a>
 					<br><br>
@@ -104,11 +108,13 @@
 								<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
 								<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
 								<a href="{% url 'recruiter:student_demographics' %}">Student Demographics</a>
-								<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
-								<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
 								{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
 								{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
-								<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								<a href="{% static 'recruiter/AIPC_Guidelines.pdf' %}">AIPC Guidelines&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+								
 								{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a> {% endcomment %}
 							</div>
 						</div>
@@ -146,7 +152,16 @@
 						</div>
 						<a class="nav-item nav-link" href="{% url 'info:contacts' %}">Contact Us</a>
 						{% if user.is_authenticated %}
-						<a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a>
+							<div class="custom-dropdown">
+								<button class="custom-dropbtn nav-item nav-link">Resources
+									<i class="fa fa-caret-down"></i>
+								</button>
+								<div class="custom-dropdown-content">
+									<a class="nav-item nav-link" href="{% url 'info:resources' %}">All Resources</a>
+									<a class="nav-item nav-link" href="{% url 'info:create_resource' %}">Add Resource</a>
+								</div>
+							</div>
+							{% comment %} <a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a> {% endcomment %}
 						{% endif %}
 					</div>
 				</div>
@@ -203,6 +218,8 @@
 								<br><a  style="color: white;" href="{% url 'logout' %}">Logout</a>
 							{% else %}
 								<br><a  style="color: white;" href="{% url 'login' %}">Login</a>
+								<br><a  style="color: white;" href="{% url 'signup' %}">Sign Up</a>
+
 							{%endif%}
 							<br><a style="color: white;" href="{% url 'internal:home' %}" style="color: white;">Internal</a>
 						</div>
