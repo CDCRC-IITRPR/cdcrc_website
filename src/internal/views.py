@@ -45,9 +45,14 @@ def import_contacts_from_csv(request):
     if request.method=='POST':
         form = ImportContactsForm(request.POST, request.FILES)
         if form.is_valid():
-            contact_handler = ContactsCSVHandler(request.FILES['contacts_file'], request.encoding)
-            contact_handler.import_from_file()
-            return HttpResponse('Contacts Uploaded') 
+            try:
+                contact_handler = ContactsCSVHandler(request.FILES['contacts_file'], request.encoding)
+                contact_handler.import_from_file()
+                return HttpResponseRedirect(reverse('internal:unapproved_contacts_list'))
+            except:
+                return render_message(request, 'Error', 'There was an error...pls check the format of your file')
+        else:
+            return render_message(request, 'Error', 'There was an error...pls check the format of your file')
 
     else:
         form = ImportContactsForm()
