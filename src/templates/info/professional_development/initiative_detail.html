@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block head_content %}
 <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
 <title>{{title}} | CDCRC IIT Ropar</title>
@@ -19,31 +21,26 @@
     <div class="row">
       <div class='col-md-1'></div>
       <div class='col-md-10'>
-        {% for activity in activities %}
-          <div class="row">
+        <div class="row">
             <div class="col-md-12" style="background-color:white; padding:2em; text-align:center; margin-top:1em;">
-                <h5 class="card-title">{{activity.title}}</h5>
-                <hr style="margin-bottom:0;">
+                <h5 class="card-title">{{initiative.title}}</h5>
+                <hr>
             </div>
         </div>
-        <div class="row" style='background-color:white;  padding-bottom:0.5em; margin-bottom:1em;'>
-            <div class='col-md-4' style="height:20em; text-align:center;">
-                <img src="{{activity.photo.url}}" alt="Activity Image" style="height:100%;">
+        <div class="row" style='background-color:white; padding:0.5em; margin-bottom:1em;'>
+            <div class='col-md-4' style="height:27em; text-align:center;">
+                <img src="{{initiative.photo.url}}" alt="Initiative Image" style="height:100%;">
             </div>
             <div class="col-md-8">
                 <div style="width:100%">
                     <br>
-                    <div style='text-align:center;'><h6 class=" text-muted">{{activity.date}}</h6></div>
+                    <div style='text-align:center;'><h6 class=" text-muted">{{initiative.date}}</h6></div>
                     {% autoescape off %}
-                    <p class="card-text">{{activity.brief}}</p>
+                    <p class="card-text">{{initiative.detail | safe}}</p>
                     {% endautoescape %}
-                    {% if activity.detail %}
-                        <a style="color:grey;" href="{% url 'info:pd_activity_detail' pk=activity.pk %}" >Read More</a>
-                    {% endif %}
                 </div>
             </div>
         </div>
-        {% endfor %}
       </div>
       <div class='col-md-1'></div>
     </div>
