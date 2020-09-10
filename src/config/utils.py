@@ -11,6 +11,7 @@ def get_default_page_visibility_status():
         'cr_hod_message': False,
         'pd_hod_message': False,
         'tnp_hod_message': False,
+        'pd_initiatives': True,
     }
     return PAGE_VISIBILITY_SETTINGS_INIT
 
