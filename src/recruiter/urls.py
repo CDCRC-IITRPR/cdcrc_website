@@ -22,6 +22,8 @@ urlpatterns = [
     path('demographics/',views.student_demographics,name='student_demographics'), 
     path('six_month_internship/',views.six_month_internship, name='six_month_internship'), 
     path('joint_master_thesis/',views.joint_master_thesis, name='joint_master_thesis'),
+    path('past_recruiters/',views.past_recruiters, name='past_recruiters'),
+
 
     
 

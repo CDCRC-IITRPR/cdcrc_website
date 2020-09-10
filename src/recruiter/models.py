@@ -55,3 +55,9 @@ class StudentDemographic(models.Model):
         return dict(self.category_choices)[self.category]
     def get_department_display(self):
         return str(self.department)
+
+class PastRecruiter(models.Model):
+    company = models.CharField(max_length=100, null=False)
+
+    def __str__(self):
+        return self.company

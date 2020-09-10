@@ -36,7 +36,7 @@ class Resource(models.Model):
     categories = models.ManyToManyField(ResourceCategory, related_name='resources')
     url = models.URLField(null=True, blank=True)
     brief = models.CharField(max_length=2000)
-    detail = models.TextField()
+    detail = models.TextField(default='DEFAULT VALUE')
     datetime = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
 
