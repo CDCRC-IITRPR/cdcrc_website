@@ -27,5 +27,7 @@ urlpatterns = [
 
     path('professional_development/', include('info.professional_development.urls')),
     path('corporate_relations/', include('info.corporate_relations.urls')),
+    path('tnp/', include('info.tnp.urls')),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from pymongo import MongoClient
-from recruiter.models import Recruiter, JAF, INF, StudentDemographic, PastRecruiter
+from recruiter.models import Recruiter, JAF, INF, StudentDemographic
 from django.http import HttpResponse
 from utils.login_decorators import team_user_required
 from bson.objectid import ObjectId
@@ -35,9 +35,6 @@ def joint_master_thesis(request):
     }
     return render(request, 'recruiter/joint_master_thesis.html', context=context)
 
-def past_recruiters(request):
-    companies = PastRecruiter.objects.all()
-    return render(request, 'recruiter/past_recruiters.html',{'companies':companies})
 
 
 # @team_user_required

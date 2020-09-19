@@ -95,3 +95,5 @@ def tnp_hod_message(request):
     if(get_page_visibility_status('tnp_hod_message')==False):
         return render(request, 'under_construction.html')
     return render(request, 'info/tnp_hod_message.html')
+
+

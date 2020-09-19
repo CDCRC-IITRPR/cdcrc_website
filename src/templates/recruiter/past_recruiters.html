@@ -2,38 +2,41 @@
 {% load static %}
 
 {% block head_content %}
-
-<link href="{% static 'info/css/past_recruiters.css' %}" rel="stylesheet" type="text/css" />
-
-<title>Past Recruiters | CDCRC IIT Ropar</title>
-
+    <title>{{title}} | CDCRC IIT Ropar</title>
 {% endblock %}
 
 {% block body_content %}
-    <div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
-        <div class="col-12">
-            <h2 style="padding:1em;">List of Past Recruiters</h2>
+    <div class="container-fluid">
+        <div class="row" style="background-color: rgb(226, 221, 200); text-align:center;" >
+            <div class="col-12">
+                <h2 style="padding:1em;">Past Recruiters</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"><br></div>
         </div>
     </div>
 
-    <div class="box">
-        <div class="companies">
-            <script>
-                var count=1;
-                var companies=[]
-                "{% for company in companies %}"
-                {
-                    document.write(count+". "+"{{ company.company|safe }}")
-                    document.write("<br>");
-                    //let company = count+". "+"{{ company.company|safe }}";
-                    //companies.push(company);
-                    count = count + 1;
-                }
-                "{% endfor %}"
+    <div class="container-fluid" style="background-color:white; margin:0.25rem;">
+        {% for company in companies %}
+            {% if forloop.counter0|divisibleby:"4" %}
+                <div class="row justify-content-center">
+            {% endif %}
+            <div class="col-md-3" style="text-align:center;">
+                <p style="padding:0.2rem;">{{company.name}}</p>
+            </div>
 
-            </script>
-        </div>
+            {% if forloop.counter0|add:"1"|divisibleby:"4" %}
+                </div>
+            {% endif %}
+
+            {% if forloop.last %}
+                {% for i in companies_remainder_4 %}
+                    <div class="col-md-3"></div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
-
 
 {% endblock %}
