@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recruiter, JAF, INF, StudentDemographic, PastRecruiter#Studentdata #,JobOpportunity,InternshipOpportunity
+from .models import Recruiter, JAF, INF, StudentDemographic#Studentdata #,JobOpportunity,InternshipOpportunity
 # Register your models here.
 
 
@@ -19,4 +19,3 @@ admin.site.register(Recruiter, RecruiterAdmin)
 admin.site.register(JAF)
 admin.site.register(INF)
 admin.site.register(StudentDemographic)
-admin.site.register(PastRecruiter)

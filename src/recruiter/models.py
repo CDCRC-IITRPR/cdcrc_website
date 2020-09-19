@@ -4,7 +4,7 @@ from info.models import Department
 # Create your models here.
 
 class Recruiter(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=256, unique=True)
     email=models.EmailField(null=True, blank=True)
     website = models.URLField(max_length=200,null=True)
     address = models.TextField(null=True)
@@ -56,8 +56,3 @@ class StudentDemographic(models.Model):
     def get_department_display(self):
         return str(self.department)
 
-class PastRecruiter(models.Model):
-    company = models.CharField(max_length=100, null=False)
-
-    def __str__(self):
-        return self.company

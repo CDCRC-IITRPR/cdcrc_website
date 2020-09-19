@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from pymongo import MongoClient
-from recruiter.models import Recruiter, JAF, INF, StudentDemographic, PastRecruiter
+from recruiter.models import Recruiter, JAF, INF, StudentDemographic
 from django.http import HttpResponse
 from utils.login_decorators import team_user_required
 from bson.objectid import ObjectId
@@ -35,9 +35,26 @@ def joint_master_thesis(request):
     }
     return render(request, 'recruiter/joint_master_thesis.html', context=context)
 
-def past_recruiters(request):
-    companies = PastRecruiter.objects.all()
-    return render(request, 'recruiter/past_recruiters.html',{'companies':companies})
+def why_recruit(request):
+    return render(request, 'recruiter/why_recruit.html')
+
+def recruiter_guide(request):
+    return render(request, 'recruiter/recruiter_guide.html')
+
+
+def six_month_internship(request):
+    context = {
+        'title': '6 Month Internship'
+    }
+    return render(request, 'recruiter/six_month_internship.html', context=context)
+
+def joint_master_thesis(request):
+    context = {
+        'title': 'Joint Master Thesis'
+    }
+    return render(request, 'recruiter/joint_master_thesis.html', context=context)
+
+
 
 
 # @team_user_required
@@ -345,28 +362,5 @@ def past_recruiters(request):
 #     inf_details['timestamp'] = inf_timestamp
 #     pdf =  render_to_pdf('recruiter/inf_details_simple_html.html', context_dict={'inf_details':inf_details})
 #     return HttpResponse(pdf, content_type='application/pdf')
-
-
-def why_recruit(request):
-    return render(request, 'recruiter/why_recruit.html')
-
-def recruiter_guide(request):
-    return render(request, 'recruiter/recruiter_guide.html')
-
-# def student_demographics(request):
-#     student = Studentdata.objects.all()
-#     return render(request, 'recruiter/student_demographics.html',{'stu': student})
-
-def six_month_internship(request):
-    context = {
-        'title': '6 Month Internship'
-    }
-    return render(request, 'recruiter/six_month_internship.html', context=context)
-
-def joint_master_thesis(request):
-    context = {
-        'title': 'Joint Master Thesis'
-    }
-    return render(request, 'recruiter/joint_master_thesis.html', context=context)
 
 

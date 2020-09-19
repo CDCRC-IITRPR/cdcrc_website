@@ -2,6 +2,16 @@ from django.db import models
 from datetime import date
 from django.contrib.auth.models import User
 from utils.validators import validate_file_extension, validate_file_size
+class ContactUsResponse(models.Model):
+    name = models.CharField(max_length=256, null=False, blank=False)
+    organization = models.CharField(max_length=256, null=True, blank=True)
+    email = models.EmailField(null=False, blank=False)
+    phone = models.CharField(max_length=13, null=True, blank=True)
+
+    def __str__(self):
+        return self.name + " " + self.organization
+
+
 class News(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     body = models.TextField(blank=True, null=True)
@@ -101,3 +111,4 @@ class ProfessionalDevelopmentInitiatives(models.Model):
 
     def __str__(self):
         return self.title
+

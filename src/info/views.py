@@ -5,12 +5,12 @@ from recruiter.models import Recruiter
 from profiles.models import TeamMemberProfile
 from django.db.models import Q
 from config.utils import get_page_visibility_status
-from info.forms import ResourceForm
+from info.forms import ResourceForm, ContactUsForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from utils.utils import render_message
 from utils.mailer import Mailer
-from utils.metadata import CDCRC_MEDIA_EMAIL
+from utils.metadata import CDCRC_MEDIA_EMAIL, PRIMARY_ALERT_EMAILS, PRIMARY_PHONE
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 
@@ -52,7 +52,11 @@ def create_resource(request):
                     file.resource = res
                     file.save()
             mailer = Mailer()
-            mailer.send_email(CDCRC_MEDIA_EMAIL, 'Approval Request for New Resource {}'.format(res.title), '{} has added a resource titled {}. Please take a look.'.format(res.author.username, res.title))
+            mailer.send_email(
+                CDCRC_MEDIA_EMAIL,
+                'Approval Request for New Resource {}'.format(res.title),
+                '{} has added a resource titled {}. Please take a look.'.format(res.author.username, res.title)
+            )
             return render_message(request, 'Approval Pending', 'Thanks for sharing the resource...it will be posted on the website after being approved by our team!')
         else:
             return render_message(request, 'Error', 'There was an error in creating the resource')
@@ -95,3 +99,24 @@ def tnp_hod_message(request):
     if(get_page_visibility_status('tnp_hod_message')==False):
         return render(request, 'under_construction.html')
     return render(request, 'info/tnp_hod_message.html')
+
+
+def contact_us_form(request):
+    if request.method=='POST':
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            contact_us_obj = form.save(commit=True)
+            mailer = Mailer()
+            mailer.send_email(
+                PRIMARY_ALERT_EMAILS,
+                '[ALERT] New Registration on Website:  {}'.format(contact_us_obj.name), 
+                'Please reach out to {} from {} who has registered on the CDCRC Website. Contact Info - {}, {}'.format(contact_us_obj.name, contact_us_obj.organization, contact_us_obj.email, contact_us_obj.phone),
+                # cc = SECONDARY_ALERT_EMAILS
+            )
+            return render_message(request, 'Thanks!', 'Our team will reach out to you shortly. You can also call us at {} whenever you want!'.format(PRIMARY_PHONE))
+        else:
+            return render_message(request, 'Error', 'There was an error in filling the form..')
+    else:
+        title = 'Contact Us Form'
+        form = ContactUsForm()
+        return render(request, 'info/contact_us_form.html', context={'title': title, 'form':form})
