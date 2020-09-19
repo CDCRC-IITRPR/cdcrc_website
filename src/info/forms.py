@@ -1,5 +1,5 @@
 from django import forms
-from info.models import Resource
+from info.models import Resource, ContactUsResponse
 
 class ResourceForm(forms.ModelForm):
     images = forms.ImageField( widget=forms.ClearableFileInput(attrs={'multiple': True}))
@@ -21,3 +21,13 @@ class ResourceForm(forms.ModelForm):
             'detail': forms.Textarea(attrs={'class': 'form-control', 'required': True}),
         }
 
+class ContactUsForm(forms.ModelForm):
+    class Meta:
+        model = ContactUsResponse
+        fields = ['name', 'organization', 'email', 'phone']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'required':True, 'placeholder': 'Your Name'}),
+            'organization': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Organization'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'required':True, 'placeholder': 'Your Email' }),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'required': False, 'placeholder': 'Your Phone Number'}),
+        }

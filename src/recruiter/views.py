@@ -35,6 +35,26 @@ def joint_master_thesis(request):
     }
     return render(request, 'recruiter/joint_master_thesis.html', context=context)
 
+def why_recruit(request):
+    return render(request, 'recruiter/why_recruit.html')
+
+def recruiter_guide(request):
+    return render(request, 'recruiter/recruiter_guide.html')
+
+
+def six_month_internship(request):
+    context = {
+        'title': '6 Month Internship'
+    }
+    return render(request, 'recruiter/six_month_internship.html', context=context)
+
+def joint_master_thesis(request):
+    context = {
+        'title': 'Joint Master Thesis'
+    }
+    return render(request, 'recruiter/joint_master_thesis.html', context=context)
+
+
 
 
 # @team_user_required
@@ -342,28 +362,5 @@ def joint_master_thesis(request):
 #     inf_details['timestamp'] = inf_timestamp
 #     pdf =  render_to_pdf('recruiter/inf_details_simple_html.html', context_dict={'inf_details':inf_details})
 #     return HttpResponse(pdf, content_type='application/pdf')
-
-
-def why_recruit(request):
-    return render(request, 'recruiter/why_recruit.html')
-
-def recruiter_guide(request):
-    return render(request, 'recruiter/recruiter_guide.html')
-
-# def student_demographics(request):
-#     student = Studentdata.objects.all()
-#     return render(request, 'recruiter/student_demographics.html',{'stu': student})
-
-def six_month_internship(request):
-    context = {
-        'title': '6 Month Internship'
-    }
-    return render(request, 'recruiter/six_month_internship.html', context=context)
-
-def joint_master_thesis(request):
-    context = {
-        'title': 'Joint Master Thesis'
-    }
-    return render(request, 'recruiter/joint_master_thesis.html', context=context)
 
 

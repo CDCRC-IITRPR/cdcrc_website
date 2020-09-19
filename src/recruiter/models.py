@@ -55,3 +55,4 @@ class StudentDemographic(models.Model):
         return dict(self.category_choices)[self.category]
     def get_department_display(self):
         return str(self.department)
+

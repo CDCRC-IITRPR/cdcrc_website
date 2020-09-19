@@ -11,4 +11,4 @@ def past_recruiters(request):
     companies = Recruiter.objects.filter(visible=True).order_by('name')
     companies_remainder_4 = companies.count()
     context = {'companies': companies, 'companies_remainder_4': range(1, companies_remainder_4+1), 'title': 'Past Recruiters'}
-    return render(request, 'recruiter/past_recruiters.html',{'companies':companies})
+    return render(request, 'recruiter/past_recruiters.html',{'title': 'Past Recuiters',  'companies':companies})
