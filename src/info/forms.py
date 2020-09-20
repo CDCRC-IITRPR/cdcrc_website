@@ -24,10 +24,11 @@ class ResourceForm(forms.ModelForm):
 class ContactUsForm(forms.ModelForm):
     class Meta:
         model = ContactUsResponse
-        fields = ['name', 'organization', 'email', 'phone']
+        fields = ['name', 'organization', 'email', 'phone', 'message']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'required':True, 'placeholder': 'Your Name'}),
             'organization': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Organization'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'required':True, 'placeholder': 'Your Email' }),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'required': False, 'placeholder': 'Your Phone Number'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'required': False, 'placeholder': 'Your Message for Us'}),
         }

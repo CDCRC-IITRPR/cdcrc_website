@@ -7,6 +7,7 @@ class ContactUsResponse(models.Model):
     organization = models.CharField(max_length=256, null=True, blank=True)
     email = models.EmailField(null=False, blank=False)
     phone = models.CharField(max_length=13, null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name + " " + self.organization

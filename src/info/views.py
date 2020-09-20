@@ -110,8 +110,7 @@ def contact_us_form(request):
             mailer.send_email(
                 PRIMARY_ALERT_EMAILS,
                 '[ALERT] New Registration on Website:  {}'.format(contact_us_obj.name), 
-                'Please reach out to {} from {} who has registered on the CDCRC Website. Contact Info - {}, {}'.format(contact_us_obj.name, contact_us_obj.organization, contact_us_obj.email, contact_us_obj.phone),
-                # cc = SECONDARY_ALERT_EMAILS
+                'Please reach out to {} from {} who has registered on the CDCRC Website.\n Contact Info - {}, {}.\nMessage- {}'.format(contact_us_obj.name, contact_us_obj.organization, contact_us_obj.email, contact_us_obj.phone, contact_us_obj.message),
             )
             return render_message(request, 'Thanks!', 'Our team will reach out to you shortly. You can also call us at {} whenever you want!'.format(PRIMARY_PHONE))
         else:
