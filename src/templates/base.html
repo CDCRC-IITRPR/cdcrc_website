@@ -52,133 +52,149 @@
 </head>
 
 <body style="background-color: #dbe1e6;">
-	<div class="container-fluid; padding:0;" >
-		<div class="row" style=" color:white; background-color: #26445a; margin:0;">
-			<div class="col-md-1" style="padding: 8px 0px 0px 0px;"><img id="cdcrc_logo"
-					src="{% static 'base/cdcrc_logo.png' %}"></div>
-			<div class="col-md-9" id="title">
+	<div class="container-fluid; padding:0;">
+		<div class="row" style=" color:white; background-color: #26445a; margin:0; padding: 5px 0px 0px 0px; overflow-x: auto;">
+			<div class="col-md-1"><a href="/"><img id="cdcrc_logo"
+				src="{% static 'base/cdcrc_logo.png' %}"></a></div>
+			<div class="col-md-10" id="title">
 				<span>
-					<h1><strong>Career Development and Corporate Relations Center</strong></h1>
+					<a href="/"><div class="main-heading">Career Development and Corporate Relations Center</div></a>
 				</span>
 				<span>
-					<h3>Indian Institute of Technology Ropar</h3>
+					<div class="insti-name">Indian Institute of Technology Ropar</div>
 				</span>
 			</div>
-			<div class="col-md-2" id="info" style="text-align:left;">
+			<div class="col-md-1" id="info" style="text-align:left;">
 				<br><br>
 				{% if user.is_authenticated %}
-					<span><strong>{{request.user.get_user_name}}</strong></span>
-					<br>
-					{% if user.is_staff %}
-						<a style="color:white;" href="{% url 'admin:index' %}">Admin Panel</a>
-					{% endif %}
-					<br>
-					<a style="color:white;" href="{% url 'profiles:view_profile' %}">My Profile</a>
-					<br>
-					<a style="color:white;" href="{% url 'logout' %}">Logout</a>
-					<br><br>
-				{% endif %} 
+				<span><strong>{{request.user.get_user_name}}</strong></span>
+				<br>
+				{% if user.is_staff %}
+				<a style="color:white;" href="{% url 'admin:index' %}">Admin Panel</a>
+				{% endif %}
+				<br>
+				<a style="color:white;" href="{% url 'profiles:view_profile' %}">My Profile</a>
+				<br>
+				<a style="color:white;" href="{% url 'logout' %}">Logout</a>
+				<br><br>
+				{% endif %}
 			</div>
 		</div>
-	
-	{% comment %} <div class="container-fluid" style=""> {% endcomment %}
-		<section>
-			<nav class="navbar navbar-expand-lg" style="background-color:rgb(34, 76, 169); padding: 2px 6px 2px 6px;">
-				<a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-					aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon" style="color: white; padding-top: 5px;">Menu</span>
-			</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-					aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"> <i class="fas fa-bars fa-1x" style="color: white; padding-top: 5px;"></i></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div class="navbar-nav custom-navbar">
-						<!-- <div class="custom-navbar"> -->
-						<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
-						{% comment %} <a class="nav-item nav-link" href="{% url 'info:pd_about' %}">Professional Development</a> {% endcomment %}
-						<div class="custom-dropdown nav-item" style="text-align: center;">
-							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Training & Placement
-								<i class="fa fa-caret-down"></i>
-							</button>
-							<div class="custom-dropdown-content">
-								<a href="{% url 'info:tnp_hod_message' %}">HoD's Message</a>
-								<a href="{% url 'recruiter:why' %}">Why Recruit</a>
-								<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
-								<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
-								<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
-								<a href="{% url 'recruiter:student_demographics' %}">Student Demographics</a>
-								<a href="{% url 'info:tnp_past_recruiters' %}">Past Recruiters</a>
-								<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
-								<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
-								{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
-								{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
-								<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
-								<a href="{% static 'recruiter/AIPC_Guidelines.pdf' %}">AIPC Guidelines&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
-								
-								{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a> {% endcomment %}
-							</div>
-						</div>
-						<div class="custom-dropdown nav-item" style="text-align: center;">
-							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Professional Development
-								<i class="fa fa-caret-down"></i>
-							</button>
-							<div class="custom-dropdown-content">
-								<a href="{% url 'info:pd_about' %}">About</a>
-								<a href="{% url 'info:pd_hod_message' %}">HoD's Bio</a>
-								<a href="{% url 'info:pd_activities' %}">Activities</a>
-								<a href="{% url 'info:pd_books' %}">Library Resources</a>
-								<a href="{% url 'info:pd_videos' %}">Video Resources</a>
-								<a href="{% url 'info:pd_pg_resources' %}">Resources for PG Students</a>
-								<a href="{% url 'info:pd_initiatives' %}">Initiatives</a>
 
+		{% comment %} <div class="container-fluid"> {% endcomment %}
+			<section>
+				<nav class="navbar navbar-expand-lg"
+					style="background-color:rgb(34, 76, 169); padding: 2px 6px 2px 6px;">
+					<a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+						aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon" style="color: white; padding-top: 5px;">Menu</span>
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"> <i class="fas fa-bars fa-1x"
+								style="color: white; padding-top: 5px;"></i></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						<div class="navbar-nav custom-navbar">
+							<!-- <div class="custom-navbar"> -->
+							<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
+							{% comment %} <a class="nav-item nav-link" href="{% url 'info:pd_about' %}">Professional
+								Development</a> {% endcomment %}
+							<div class="custom-dropdown nav-item" style="text-align: center;">
+								<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Training &
+									Placement
+									<i class="fa fa-caret-down"></i>
+								</button>
+								<div class="custom-dropdown-content">
+									<a href="{% url 'info:tnp_hod_message' %}">HoD's Message</a>
+									<a href="{% url 'recruiter:why' %}">Why Recruit</a>
+									<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
+									<a href="{% url 'info:placement_stats' %}">Placement Statistics</a>
+									<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
+									<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
+									<a href="{% url 'recruiter:student_demographics' %}">Student Demographics</a>
+									<a href="{% url 'info:tnp_past_recruiters' %}">Past Recruiters</a>
+									<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+											class="fa fa-download" aria-hidden="true"></i></a>
+									<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+											class="fa fa-download" aria-hidden="true"></i></a>
+									{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
+									{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
+									<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">Brochure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+											class="fa fa-download" aria-hidden="true"></i></a>
+									<a href="{% static 'recruiter/AIPC_Guidelines.pdf' %}">AIPC
+										Guidelines&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download"
+											aria-hidden="true"></i></a>
+
+									{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a>
+									{% endcomment %}
+								</div>
 							</div>
-						</div>
-						<div class="custom-dropdown nav-item" style="text-align: center;">
-							<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Corporate Relations
-								<i class="fa fa-caret-down"></i>
-							</button>
-							<div class="custom-dropdown-content">
-								<a href="{% url 'info:cr_about' %}">About</a>
-								<a href="{% url 'info:cr_hod_message' %}">HoD's Message</a>
-								<a href="{% url 'info:cr_activities' %}">Activities</a>
+							<div class="custom-dropdown nav-item" style="text-align: center;">
+								<button class="custom-dropbtn nav-item nav-link"
+									style="text-align: center;">Professional Development
+									<i class="fa fa-caret-down"></i>
+								</button>
+								<div class="custom-dropdown-content">
+									<a href="{% url 'info:pd_about' %}">About</a>
+									<a href="{% url 'info:pd_hod_message' %}">HoD's Bio</a>
+									<a href="{% url 'info:pd_activities' %}">Activities</a>
+									<a href="{% url 'info:pd_books' %}">Library Resources</a>
+									<a href="{% url 'info:pd_videos' %}">Video Resources</a>
+									<a href="{% url 'info:pd_pg_resources' %}">Resources for PG Students</a>
+									<a href="{% url 'info:pd_initiatives' %}">Initiatives</a>
+
+								</div>
 							</div>
-						</div>
-						
-						<div class="custom-dropdown">
-							<button class="custom-dropbtn nav-item nav-link">The Team
-								<i class="fa fa-caret-down"></i>
-							</button>
-							<div class="custom-dropdown-content">
-								<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
-								<a href="{% url 'info:student_team' %}">Student Team</a>
+							<div class="custom-dropdown nav-item" style="text-align: center;">
+								<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Corporate
+									Relations
+									<i class="fa fa-caret-down"></i>
+								</button>
+								<div class="custom-dropdown-content">
+									<a href="{% url 'info:cr_about' %}">About</a>
+									<a href="{% url 'info:cr_hod_message' %}">HoD's Message</a>
+									<a href="{% url 'info:cr_activities' %}">Activities</a>
+								</div>
 							</div>
-						</div>
-						<a class="nav-item nav-link" href="{% url 'info:contacts' %}">Contact Us</a>
-						{% if user.is_authenticated %}
+
+							<div class="custom-dropdown">
+								<button class="custom-dropbtn nav-item nav-link">The Team
+									<i class="fa fa-caret-down"></i>
+								</button>
+								<div class="custom-dropdown-content">
+									<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
+									<a href="{% url 'info:student_team' %}">Student Team</a>
+								</div>
+							</div>
+							<a class="nav-item nav-link" href="{% url 'info:contacts' %}">Contact Us</a>
+							{% if user.is_authenticated %}
 							<div class="custom-dropdown">
 								<button class="custom-dropbtn nav-item nav-link">Resources
 									<i class="fa fa-caret-down"></i>
 								</button>
 								<div class="custom-dropdown-content">
 									<a class="nav-item nav-link" href="{% url 'info:resources' %}">All Resources</a>
-									<a class="nav-item nav-link" href="{% url 'info:create_resource' %}">Add Resource</a>
+									<a class="nav-item nav-link" href="{% url 'info:create_resource' %}">Add
+										Resource</a>
 								</div>
 							</div>
-							{% comment %} <a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a> {% endcomment %}
-						{% endif %}
+							{% comment %} <a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a>
+							{% endcomment %}
+							{% endif %}
+						</div>
 					</div>
-				</div>
-				<!-- </div> -->
-			</nav>
-		</section>
-	{% comment %} </div> {% endcomment %}
-	{% comment %} <div class="container-fluid" style=""> {% endcomment %}
-		{% block body_content %}
+					<!-- </div> -->
+				</nav>
+			</section>
+			{% comment %} </div> {% endcomment %}
+		{% comment %} <div class="container-fluid" style=""> {% endcomment %}
+			{% block body_content %}
 
 
-		{% endblock %}
-	</div>
+			{% endblock %}
+		</div>
 </body>
 
 
@@ -192,8 +208,8 @@
 						<div class="col-lg-4">
 							<h3 class="fot-white">About</h3>
 							<p class="fot-white">
-
-								Career Development and Corporate Relations Center (CDCRC), IIT Ropar aims to guide students
+								Career Development and Corporate Relations Center (CDCRC), IIT Ropar aims to guide
+								students
 								to
 								to success in their careers, helps students with Professional Development, Training and
 								Placement.
@@ -215,17 +231,20 @@
 						<div class="col-lg-4">
 							<h3 class="fot-white">Quick Links</h3>
 							<a href="http://www.iitrpr.ac.in/" style="color: white;">IIT Ropar</a>
-							<br><a  style="color: white;" href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
-							<br><a  style="color: white;" href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
-							<br><a  style="color: white;" href="{% static 'recruiter/IITRPR_INF.docx' %}" style="color: white;">INF</a>
+							<br><a style="color: white;"
+								href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
+							<br><a style="color: white;" href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
+							<br><a style="color: white;" href="{% static 'recruiter/IITRPR_INF.docx' %}"
+								style="color: white;">INF</a>
 							{% if user.is_authenticated %}
-								<br><a  style="color: white;" href="{% url 'logout' %}">Logout</a>
+							<br><a style="color: white;" href="{% url 'logout' %}">Logout</a>
 							{% else %}
-								<br><a  style="color: white;" href="{% url 'login' %}">Login</a>
-								<br><a  style="color: white;" href="{% url 'signup' %}">Sign Up</a>
+							<br><a style="color: white;" href="{% url 'login' %}">Login</a>
+							<br><a style="color: white;" href="{% url 'signup' %}">Sign Up</a>
 
 							{%endif%}
-							<br><a style="color: white;" href="{% url 'internal:home' %}" style="color: white;">Internal</a>
+							<br><a style="color: white;" href="{% url 'internal:home' %}"
+								style="color: white;">Internal</a>
 						</div>
 
 					</div>
@@ -234,7 +253,8 @@
 
 		</footer>
 	</div>
-{% comment %} </div> {% endcomment %}
+	{% comment %}
+</div> {% endcomment %}
 
 {% comment %} <div class="container-fluid" style=""> {% endcomment %}
 	<div class="row" style="padding-bottom:1em; background-color: #232f3e">
@@ -267,10 +287,11 @@
 		</div>
 		<div class="col-1" style="text-align:center;"></div>
 	</div>
-{% comment %} </div> {% endcomment %}
+	{% comment %} </div> {% endcomment %}
 
 {% comment %} <div class="container-fluid" style="padding:0;"> {% endcomment %}
 	<div class="row justify-content-center" style="padding:0.1em; background-color: white">
-		<a href="https://github.com/vinx-2105/cdcrc_website" style="color:black; font-size:0.7em;">Developed with <i class="fas fa-heart"></i> by Vineet Madan and Team</a>
+		<a href="https://github.com/vinx-2105/cdcrc_website" style="color:black; font-size:13px; padding: 5px;">Developed with <i
+				class="fas fa-heart"></i> by Vineet Madan and Team</a>
 	</div>
 </div>

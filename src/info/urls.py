@@ -28,7 +28,8 @@ urlpatterns = [
     path('professional_development/', include('info.professional_development.urls')),
     path('corporate_relations/', include('info.corporate_relations.urls')),
     path('tnp/', include('info.tnp.urls')),
-    path('contact_us_form/', views.contact_us_form, name='contact_us_form')
+    path('contact_us_form/', views.contact_us_form, name='contact_us_form'),
+    path('placement-statistics/', views.placement_stats, name='placement_stats')
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

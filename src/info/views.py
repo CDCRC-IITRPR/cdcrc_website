@@ -119,3 +119,12 @@ def contact_us_form(request):
         title = 'Contact Us Form'
         form = ContactUsForm()
         return render(request, 'info/contact_us_form.html', context={'title': title, 'form':form})
+
+
+
+
+
+def placement_stats(request):
+    return render(request, 'info/placement_stats.html')
+
+
