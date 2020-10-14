@@ -43,6 +43,16 @@ transform: scale(1.1);
   padding: 1%;
   background-color:rgb(239, 239, 248);
 }
+
+#infographic{
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.catchy-heading{
+  margin: 40px 10px;
+  font-size: x-large;
+}
 /* Style the buttons that are used to open the tab content */
 .tab button {
   background-color: inherit;
@@ -346,4 +356,9 @@ align-items: center;
   transition: background 70ms cubic-bezier(0, 0, 0.38, 0.9),border-color 70ms cubic-bezier(0, 0, 0.38, 0.9),outline 70ms cubic-bezier(0, 0, 0.38, 0.9),-webkit-box-shadow 70ms cubic-bezier(0, 0, 0.38, 0.9);
   transition: background 70ms cubic-bezier(0, 0, 0.38, 0.9),box-shadow 70ms cubic-bezier(0, 0, 0.38, 0.9),border-color 70ms cubic-bezier(0, 0, 0.38, 0.9),outline 70ms cubic-bezier(0, 0, 0.38, 0.9);
   transition: background 70ms cubic-bezier(0, 0, 0.38, 0.9),box-shadow 70ms cubic-bezier(0, 0, 0.38, 0.9),border-color 70ms cubic-bezier(0, 0, 0.38, 0.9),outline 70ms cubic-bezier(0, 0, 0.38, 0.9),-webkit-box-shadow 70ms cubic-bezier(0, 0, 0.38, 0.9);
+}
+
+.main-btn-home:hover{
+  background: #ffd700 !important;
+  color: black
 }
