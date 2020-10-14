@@ -174,9 +174,14 @@ a.header-link:active {
 
 @media screen and (max-width: 770px) {
   .main-heading {
-    font-size: 15px;
+    font-size: 20px;
   }
   .insti-name {
-    font-size: 13px;
+    font-size: 16px;
+  }
+  #cdcrc_logo {
+    margin: 0.5rem;
+    width: 100%;
+    max-width: 5rem !important;
   }
 }
