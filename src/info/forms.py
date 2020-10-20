@@ -2,7 +2,7 @@ from django import forms
 from info.models import Resource, ContactUsResponse
 
 class ResourceForm(forms.ModelForm):
-    images = forms.ImageField( widget=forms.ClearableFileInput(attrs={'multiple': True}))
+    images = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
     class Meta:
         model = Resource
         fields = ['title', 'categories', 'url', 'brief', 'detail']
