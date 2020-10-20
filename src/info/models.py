@@ -47,7 +47,7 @@ class Resource(models.Model):
     categories = models.ManyToManyField(ResourceCategory, related_name='resources')
     url = models.URLField(null=True, blank=True)
     brief = models.CharField(max_length=2000)
-    detail = models.TextField(default='DEFAULT VALUE')
+    detail = models.TextField(default='')
     datetime = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
 
@@ -59,7 +59,7 @@ class ResourceImage(models.Model):
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='images', validators=[validate_file_extension, validate_file_size])
 
     def __str__(self):
-        return str(self.file)
+        return str(self.image)
 
 class Department(models.Model):
     name = models.CharField(max_length=256, unique=True, null=False, blank=False)
