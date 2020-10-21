@@ -2,6 +2,7 @@ from django.db import models
 from datetime import date
 from django.contrib.auth.models import User
 from utils.validators import validate_file_extension, validate_file_size
+import random
 class ContactUsResponse(models.Model):
     name = models.CharField(max_length=256, null=False, blank=False)
     organization = models.CharField(max_length=256, null=True, blank=True)
@@ -55,7 +56,7 @@ class Resource(models.Model):
         return self.title
 
 class ResourceImage(models.Model):
-    image = models.ImageField(upload_to='resources/images/')
+    image = models.ImageField(upload_to='resources/images/{}/'.format(random.randint(1, 100000000)))
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='images', validators=[validate_file_extension, validate_file_size])
 
     def __str__(self):
