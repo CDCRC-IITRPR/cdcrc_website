@@ -23,7 +23,7 @@
                 <br>
                 <p>{{resource.detail|safe}}</p>
                 {% for rs_image_obj in resource.images.all %}
-                    <img src="{{ rs_image_obj.image.url }}" style="height: 10rem; width:10rem;">
+                    <a href="{{ rs_image_obj.image.url }}"><img src="{{ rs_image_obj.image.url }}" style="height: 10rem; width:10rem;"></a>
                 {% endfor %}
             </div>
             <div class="col-1"></div>

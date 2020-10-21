@@ -2,16 +2,16 @@ from django import forms
 from info.models import Resource, ContactUsResponse
 
 class ResourceForm(forms.ModelForm):
-    images = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+    images = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}), required=False)
     class Meta:
         model = Resource
         fields = ['title', 'categories', 'url', 'brief', 'detail']
         labels = {
-            'title': 'Title',
-            'categories': 'Categories',
+            'title': 'Title *',
+            'categories': 'Categories (Multiple) *',
             'url': 'URL',
-            'brief': 'Brief',
-            'detail': 'Detail',
+            'brief': 'Brief *',
+            'detail': 'Detail (Markdown for Styling) *',
         }
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'required':True}),
