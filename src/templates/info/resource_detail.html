@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block head_content %}
-    <link href="{% static 'info/css/for_recruiters.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
     <title>Resource | CDCRC IIT Ropar</title>
 {% endblock %}
@@ -11,22 +10,24 @@
 
 <section class="bodySectionStart">
     <div class="mainContainer container-fluid">
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10" style="background-color:white; padding-top:1rem; padding-bottom:1rem;">
+        <div class="row" style="margin-top:1rem; margin-bottom:1rem;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" style="background-color:white; padding-top:1rem; padding-bottom:1rem;">
                 <h1>{{resource.title}}</h1>
                 {% if resource.url %}
-                    <a href="{{resource.url}}" style="color:DodgerBlue;">External Link</a>
+                    <a href="{{resource.url}}" style="color:black;">External Link</a>
                 {% endif %}
                 <hr>
                 <p>{{resource.brief}}</p>
                 <br>
                 <p>{{resource.detail|safe}}</p>
+                <br>
                 {% for rs_image_obj in resource.images.all %}
                     <a href="{{ rs_image_obj.image.url }}"><img src="{{ rs_image_obj.image.url }}" style="height: 10rem; width:10rem;"></a>
+                    <br>
                 {% endfor %}
             </div>
-            <div class="col-1"></div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 </section>
