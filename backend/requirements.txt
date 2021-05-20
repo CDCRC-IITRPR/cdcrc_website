@@ -10,3 +10,5 @@ django-extensions
 django-bootstrap-datepicker-plus==3.0.5
 python-dotenv==0.17.1
 sendgrid
+gunicorn
+psycopg2

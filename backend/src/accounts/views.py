@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.sites.shortcuts import get_current_site
+from utils.get_current_site_from_env import get_current_site_from_env
 from utils.token_generator import TokenGenerator, account_activation_token
 from accounts.forms import SignupForm
 from utils.mailer import Mailer
@@ -27,10 +27,10 @@ def signup(request):
             user.username = to_email
             try:
                 user.save()
-                current_site = get_current_site(request)
+                current_site = get_current_site_from_env()
                 message = render_to_string('accounts/activate_account_email.html', {
                     'user': user,
-                    'domain': current_site.domain,
+                    'domain': current_site,
                     'uid':urlsafe_base64_encode(force_bytes(user.pk)),
                     'token':account_activation_token.make_token(user),
                 })
@@ -87,7 +87,7 @@ def activate(request, uidb64, token):
         )
     else:
         return render_message(request,
-            'Invlalid Activation Link',
+            'Invalid Activation Link',
             'The activation link is invalid!'
         )
 

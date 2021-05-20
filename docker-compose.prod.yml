@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile.prod
+        command: sh -c "gunicorn cdcrc_website.wsgi:application --bind 0.0.0.0:5000"
+        env_file:
+            - ./.env
+        environment:
+            # This is necessary for collect static
+            - DEBUG=0
+        volumes:
+            - 'WebAssets/:/backend/static/'
+            - 'WebAssets/:/backend/media/'
+        depends_on:
+            - postgres_db
+
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile.prod
+        # Mapping Container PORT 80 to Host PORT 5000
+        ports:
+            - 8000:80
+        depends_on:
+            - backend
+        volumes:
+            - WebAssets/:/static/
+            - WebAssets/:/media/
+
+    postgres_db:
+        image: postgres:12.0-alpine
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        env_file:
+            - ./.env
+
+volumes:
+    WebAssets:
+    postgres_data:
+

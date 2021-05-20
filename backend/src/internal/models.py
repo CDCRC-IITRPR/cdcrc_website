@@ -2,8 +2,8 @@ from django.db import models
 from profiles.models import TeamMemberProfile, StudentProfile
 from recruiter.models import Recruiter
 from django.urls import reverse
-from django.contrib.sites.shortcuts import get_current_site
-# Create your models here.
+from utils.get_current_site_from_env import get_current_site_from_env
+
 
 
 class Contact(models.Model):
@@ -50,8 +50,8 @@ class Issue(models.Model):
         return self.title
 
     def get_detail_url(self, request):
-        curr_site = get_current_site(request)
-        full_url = "http://"+curr_site.domain+str(reverse('internal:issue_detail', kwargs={'pk': self.pk}))
+        curr_site = get_current_site_from_env()
+        full_url = "http://"+curr_site+str(reverse('internal:issue_detail', kwargs={'pk': self.pk}))
         return full_url
 
 class IssueFollowUp(models.Model):
@@ -62,8 +62,8 @@ class IssueFollowUp(models.Model):
     
 
     def get_detail_url(self, request):
-        curr_site = get_current_site(request)
-        full_url = "http://"+curr_site.domain+str(reverse('internal:issue_detail', kwargs={'pk': self.issue.pk}))
+        curr_site = get_current_site_from_env()
+        full_url = "http://"+curr_site+str(reverse('internal:issue_detail', kwargs={'pk': self.issue.pk}))
         print(full_url)
         return full_url
 
