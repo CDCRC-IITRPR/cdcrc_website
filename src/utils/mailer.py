@@ -1,63 +1,52 @@
-import json 
-import smtplib
-
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import os
-
-from cdcrc_website.settings import BASE_DIR
-
-import _thread
-
-
-CREDS_PATH = os.path.join(BASE_DIR, 'creds.json')
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from sendgrid.helpers.mail.email import Email
+from sendgrid.helpers.mail.personalization import Personalization
 
 
 class Mailer:
     sender_name = None
     sender_email = None
-    sender_password = None
-    server = None
 
     def __init__(self):
-        with open(CREDS_PATH, 'r') as f:
-            creds = json.load(f)
-            self.sender_name  = creds['SENDER_NAME']
-            self.sender_email  = creds['SENDER_EMAIL']
-            self.sender_password  = creds['SENDER_PASSWORD']
-
-        self.server = smtplib.SMTP('smtp.gmail.com', 587)  # or your smtp server
-        self.server.ehlo()
-        self.server.starttls()
-        self.server.login(self.sender_email, self.sender_password)
-
+        '''
+        Instantiating the sender email and sender name from env variables
+        '''
+        self.sender_name = os.environ.get('SENDER_NAME')
+        self.sender_email = os.environ.get('SENDER_EMAIL')
 
     def send_email(self, to, subject,  body, cc=None, bcc=None,):
-
+        '''
+        Function to send email. It supports miltiple clients, and email body can be an HTML message
+        '''
         # convert TO into list if string
         if type(to) is not list:
             to = to.split()
 
-        to_list = to  # remove null emails
-
-        msg = MIMEMultipart('alternative')
-        msg['From'] = self.sender_name +' <'+self.sender_email+'>'
-        msg['Subject'] = subject
-        msg['To'] = ','.join(to)
-        msg['Cc'] = cc
-        msg['Bcc'] = bcc
-
-        msg.attach(MIMEText(body, 'html'))
+        message = Mail(
+            from_email=(self.sender_email, self.sender_name),
+            subject=subject,
+            html_content=body
+        )
+        for x in to:
+            person = Personalization()
+            person.add_to(Email(x))
+            if cc:
+                person.add_cc(Email(cc))
+            if bcc:
+                person.add_bcc(Email(bcc))
+            message.add_personalization(person)
 
         try:
-            # _thread.start_new_thread( self.server.sendmail, (self.sender_email, to_list, msg.as_string() ) )
-            self.server.sendmail(self.sender_email, to_list, msg.as_string())
-            print('sending email to', to_list)
+            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            sg.send(message)
             return 'ok'
         except Exception as e:
-            print('Error sending email')
+            print("Some error occured in mail service")
             print(str(e))
             return 'fail'
+
 
     def send_issue_create_alert_to_assignee(self, to_list, concerned_name, subject, issue_title, issue_priority, issue_detail_url):
         print(issue_detail_url)
@@ -153,6 +142,3 @@ class Mailer:
             <br>""".format(follower_name, issue_title, followup_comment, issue_detail_url)
 
         self.send_email(to_list, subject, message_body)
-
-    
-        

@@ -9,19 +9,21 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-import json
 import os
+from dotenv import load_dotenv
+
+from utils.mailer import Mailer
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CREDS_PATH = os.path.join(BASE_DIR, 'creds.json')
+# .env file path
+ENV_PATH = os.path.join(BASE_DIR, "..", ".env")
 
-creds = None
-with open(CREDS_PATH) as f:
-   creds = json.load(f)
+# Loading env variables
+load_dotenv(ENV_PATH)
 
-SECRET_KEY =  creds['SECRET_KEY']
-DEBUG = True
+SECRET_KEY =  os.environ.get("DJANGO_SECRET_KEY")
+DEBUG = int(os.environ.get("DEBUG", 1))
 
 ALLOWED_HOSTS = ['*']
 
