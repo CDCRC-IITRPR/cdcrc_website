@@ -50,29 +50,29 @@ window.onload = function () {
                                 degree) in Mechanical Engineering programme in the following disciplines:.</p>
                             <ul>
                                 <li>
-                                    <p style="color: black; font-family: Calibri; font-size: 16px;">Chemical Engineering
+                                    <p style="color: black;  font-size: 16px;">Chemical Engineering
                                     </p>
                                 </li>
                                 <li>
-                                    <p style="color: black; font-family: Calibri; font-size: 16px;">Civil Engineering
+                                    <p style="color: black;  font-size: 16px;">Civil Engineering
                                     </p>
                                 </li>
                                 <li>
-                                    <p style="color: black; font-family: Calibri; font-size: 16px;">Computer Science and
+                                    <p style="color: black;  font-size: 16px;">Computer Science and
                                         Engineering</p>
                                 </li>
                                 <li>
-                                    <p style="color: black; font-family: Calibri; font-size: 16px;"> Electrical
+                                    <p style="color: black;  font-size: 16px;"> Electrical
                                         Engineering
                                     </p>
                                 </li>
                                 <li>
-                                    <p style="color: black; font-family: Calibri; font-size: 16px;">Mechanical
+                                    <p style="color: black;  font-size: 16px;">Mechanical
                                         Engineering.
                                     </p>
                                 </li>
                                 <li>
-                                    <p style="color: black; font-family: Calibri; font-size: 16px;">Metallurgical and
+                                    <p style="color: black;  font-size: 16px;">Metallurgical and
                                         Materials Engineering.</p>
                                 </li>
                             </ul>
@@ -84,21 +84,21 @@ window.onload = function () {
                                         programme in the following disciplines:</p>
                                     <ul>
                                         <li>
-                                            <p style="color: black; font-family: Calibri; font-size: 16px;">Biomedical
+                                            <p style="color: black;  font-size: 16px;">Biomedical
                                                 Engineering</p>
                                         </li>
                                         <li>
-                                            <p style="color: black; font-family: Calibri; font-size: 16px;">Computer
+                                            <p style="color: black;  font-size: 16px;">Computer
                                                 Science
                                                 and Engineering </p>
                                         </li>
                                         <li>
-                                            <p style="color: black; font-family: Calibri; font-size: 16px;">Electrical
+                                            <p style="color: black;  font-size: 16px;">Electrical
                                                 Engineering with specialization in Power Engineering,communication &amp;
                                                 signal Processing.</p>
                                         </li>
                                         <li>
-                                            <p style="color: black; font-family: Calibri; font-size: 16px;">Mechanical
+                                            <p style="color: black;  font-size: 16px;">Mechanical
                                                 Engineering with specialization in Thermal Engineering,Manufacturing
                                                 Engineering,Mechanics &amp; Design Engineering</p>
                                         </li>
@@ -114,16 +114,16 @@ window.onload = function () {
                                                 Institute also offers M.Sc programme in the following disciplines:</p>
                                             <ul>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Physics
                                                     </p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Chemistry</p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Mathematics</p>
                                                 </li>
                                             </ul>
@@ -143,11 +143,11 @@ window.onload = function () {
                                             </p>
                                             <ul>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Computer Science and Engineering </p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Electrical Engineering</p>
                                                 </li>
                                             </ul>
@@ -168,66 +168,66 @@ window.onload = function () {
 
                                             </p>
                                             <p
-                                                style="color: black; font-family: Calibri; font-size: 20px;font-weight:bold;">
+                                                style="color: black;  font-size: 20px;font-weight:bold;">
                                                 Engineering:<br></p>
                                             <ul>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Chemical Engineering</p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Civil Engineering </p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Computer Science and Engineering</p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Electrical Engineering</p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Mechanical Engineering</p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Metallurgical and Materials Engineering</p>
                                                 </li>
                                             </ul>
                                             <p
-                                                style="color: black; font-family: Calibri; font-size: 20px;font-weight:bold;">
+                                                style="color: black;  font-size: 20px;font-weight:bold;">
                                                 Science :<br></p>
                                             <ul>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Chemistry</p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Physics </p>
                                                 </li>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Mathematics</p>
                                                 </li>
                                             </ul>
                                             <p
-                                                style="color: black; font-family: Calibri; font-size: 20px;font-weight:bold;">
+                                                style="color: black;  font-size: 20px;font-weight:bold;">
                                                 Humanities:</p>
                                             <ul>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Humanities and Social Sciences</p>
                                                 </li>
                                             </ul>
                                             <p
-                                                style="color: black; font-family: Calibri; font-size: 20px;font-weight:bold;">
+                                                style="color: black;  font-size: 20px;font-weight:bold;">
                                                 Centers:<br></p>
                                             <ul>
                                                 <li>
-                                                    <p style="color: black; font-family: Calibri; font-size: 16px;">
+                                                    <p style="color: black;  font-size: 16px;">
                                                         Biomedical Engineering</p>
                                                 </li>
                                             </ul>
