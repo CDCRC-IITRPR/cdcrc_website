@@ -8,6 +8,9 @@
 
 set -e
 
+# TODO: Add Logic to see if Commit ID Changed
+
+
 echo "Cloning the repo"
 # Remove the directory if it exist
 rm -rf cdcrc_website
