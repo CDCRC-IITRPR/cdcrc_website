@@ -1,136 +1,16 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block head_content %}
+{% extends 'base.html' %} {% load static %} {% block head_content %}
 <title>CDCRC IIT Ropar</title>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The official website of the Career Development and Corporate Relations Center, IIT Ropar. CDCRC operates through it's 
-3 departments i.e Training and Placement, Professional Development and Corporate Relations. While handling the vital function of training, placement and professional development 
-of the students of IIT Ropar, it is also the main point of interaction with the Corporate World for all kinds of activities and engagements for the institute." />
-<meta name="keywords"
-	content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
-<link rel="shortcut icon" href="../favicon.ico">
 
+<link
+  href="{% static 'info/css/home.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
 
-<style>
-	/* Make the image fully responsive */
-	.carousel-inner img {
-		width: 100%;
-		height: 100%;
-	}
-</style>
+{% endblock %} {% block body_content %}
 
-<!-- <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
-			<script type="text/javascript" src="js/modernizr.custom.46884.js"></script> -->
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<!-- <script src="{% static 'info/js/index.js' %}"></script>
-<script src="{% static 'info/js/index2.js' %}"></script> -->
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link href="{% static 'info/css/index.css' %}" rel="stylesheet" type="text/css" />
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-
-<style>
-	#about_iit_ropar {
-		background-image: url('/static/info/images/symbol_3.jpg');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-	}
-
-	#directors_message {
-		background-image: url('/static/info/images/campus_top_front.jpg');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-	}
-
-	#vision_statement {
-		background-image: url('/static/info/images/campus_grounds.jpg');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-	}
-
-	#main_panel_home {
-		background-image: url('/static/spiraliitropar.jpg');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-		text-align: center;
-
-		width: 100%;
-		height: 35em;
-	}
-
-	.main-btn-home {
-		color: #fff;
-		margin-top: 15rem;
-		background-color: #0f62fe;
-		border-color: rgba(0, 0, 0, 0);
-		border-style: solid;
-		border-width: 1px;
-		font-weight: bold;
-	}
-
-	@media screen and (max-width: 470px) {
-		.main-btn-home {
-			font-size: 12px;
-		}
-
-	}
-
-	@media screen and (max-width: 373px) {
-		.main-btn-home {
-			font-size: 9.5px;
-
-		}
-	}
-</style>
-
-<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
-
-<script>
-	$(document).ready(function () {
-		$('.nav-tabs a[href="#home"]').tab('show');
-		$("#news_tab").attr("style", "background-color:#e6ab95;color:black;  padding:0.5rem 1rem 0.8rem 1rem;");
-
-		$("#news_tab").click(function () {
-			$("#news_tab").attr("style", "background-color:#e6ab95;color:black;  padding:0.5rem 1rem 0.8rem 1rem;");
-			$("#events_tab").attr("style", "background-color:Coral;color:black;  padding:0.5rem 1rem 0.8rem 1rem;");
-		});
-		$("#events_tab").click(function () {
-			$("#events_tab").attr("style", "background-color:#e6ab95;color:black;  padding:0.5rem 1rem 0.8rem 1rem;");
-			$("#news_tab").attr("style", "background-color:Coral;color:black;  padding:0.5rem 1rem 0.8rem 1rem;");
-		});
-	});
-</script>
-
-{% endblock %}
-
-
-{% block body_content %}
-
-<div class="container-fluid" style="background-color: white ;">
-	<div class="row">
+<div>
+  <!-- <div class="row">
 		<div class="col-md-12" id="main_panel_home">
 			<a href="{% url 'info:contact_us_form' %}">
 				<div class="btn btn-sm btn-success main-btn-home">
@@ -138,8 +18,190 @@ of the students of IIT Ropar, it is also the main point of interaction with the 
 				</div>
 			</a>
 		</div>
-	</div>
+	</div> -->
+
+  <div class="custom_container">
+    <div class="about_iit_ropar_wrapper">
+      <img src="/static/spiraliitropar.jpg" class="banner-image" alt="banner" />
+      <div class="about_iit_ropar">
+        <div class="heading">About IIT Ropar</div>
+        <p>
+          Indian Institute of Technology, Ropar is one of the eight IITs set up
+          by the Ministry of Human Resource Development (MHRD), Government of
+          India, in 2008 to expand the reach and enhance the quality of
+          technical education in the country. This institute is committed to
+          providing state-of-the-art technical education in a variety of fields
+          and also for facilitating transmission of knowledge in keeping with
+          latest developments in pedagogy. These two areas of focus will enable
+          students to gain exposure to recent trends in their chosen domains of
+          study and gain practical experience through a wide variety of
+          activities the institute facilitates in its own campus and arranges
+          for in collaboration with industry and other institutes.
+        </p>
+      </div>
+    </div>
+
+    <div class="newroom_stats_wrapper">
+      <div class="newsroom_wrapper">
+        <div class="heading">
+          <span>
+            <img
+              src="{% static 'info/images/news_icon.svg' %}"
+              class="heading_wrapper_img" /></span
+          ><span>Newsroom</span>
+        </div>
+        <div>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="News-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#News"
+                type="button"
+                role="tab"
+                aria-controls="News"
+                aria-selected="true"
+              >
+                News
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="Events-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#Events"
+                type="button"
+                role="tab"
+                aria-controls="Events"
+                aria-selected="false"
+              >
+                Events
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active home-tab"
+              id="News"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              {% for news_item in news %}
+              <div></div>
+              <div class="content">
+                <h6 style="color: black" class="title">{{news_item.title}}</h6>
+                <p class="data">- {{news_item.brief}}</p>
+              </div>
+              {% endfor %}
+            </div>
+            <div
+              class="tab-pane fade"
+              id="Events"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              {% for event in events %}
+
+              <div>
+                <h6 style="color: black">{{event.title}}</h6>
+                {% if event.venue %}
+                <p>{{event.date}} at {{event.venue}}</p>
+                {% else %}
+                <p>{{event.date}}</p>
+                {% endif %}
+                <hr />
+                <p align="justify">{{event.brief}}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="some_stats">
+        <div class="heading">
+          <span
+            ><img
+              class="heading_wrapper_img"
+              src="data:image/png;base64,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" /></span
+          ><span>Key Highlights</span>
+        </div>
+        <div class="content">
+          <p>
+            &gt; IIT Ropar is the first IIT to introduce a 6 Month Internship
+            Program for B.Tech students.
+          </p>
+          <p>
+            &gt; IIT Ropar offers joint master thesis which allows our MTech
+            students to work on an industrial project with the possibility of
+            staying in the company for up to 1 year.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="directors_message">
+      <div class="heading">The Director's Message</div>
+      <p>
+        Dear Friends<br /><br />
+        IIT Ropar is on a fascinating path of growth and development. As you are
+        aware, it has already established itself as one of the top technological
+        institutes in the country, but that is just the tip of the iceberg
+        compared to the huge initiatives and progress the institute is making.
+        The institute’s own campus on 500 acres pristine land, on the bank of
+        river Satluj is fast getting ready to be operational. We are going to
+        occupy the first phase of the campus within the next quarter. The
+        institute has increased its student strength from a meager 650 in 2015
+        to over 1100 today which is likely to be increased to 2500 by 2019.
+        <br /><br />
+        Our faculty strength has increased during the last two years from 65 to
+        170.. Apart from existing departments of Computer Science, Electrical
+        Engineering and Mechanical Engineering, we have recently started the
+        department of Civil Engineering and Chemical Engineering. We have
+        expanded our Post Graduate Programmes (M.Tech) to the domains of
+        Mechanical Engineering, Electrical Engineering and Computer Science
+        Engineering. IIT Ropar has got a very strong basic science component
+        with MSc. degrees being taught in Physics, Chemistry and Mathematics
+        department. We have also started MTech programme in Biomedical
+        Engineering.....
+        <br />
+        <br />
+        <a href="{% url 'info:directors_message' %}">Read More...</a>
+      </p>
+    </div>
+    <div class="industrial_partners_wrapper">
+      <div class="heading">
+        <span
+          ><img
+            class="heading_wrapper_img"
+            src="data:image/png;base64,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"
+        /></span>
+        <span>Our Industrial Partners</span>
+      </div>
+      <div class="content">
+        <div style="padding: 0; margin: 0">
+          {% if not recruiters %}
+          <h3 class="text-center">No Data available. 😢😢</h3>
+          {% endif %}
+          <marquee behavior="scroll" direction="left" style="height: 100%">
+            {% for recruiter in recruiters %} {% if recruiter.logo %}
+            <img
+              style="height: 16em; width: 24em; padding: 2em"
+              src="{{recruiter.logo.url}}"
+              alt="{{recruiter.logo.url}}"
+            />
+            {% endif %} {% endfor %}
+          </marquee>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
 	<div class="row">
+	
+			<div class="row">
 		<div class="col-lg-7" style="width:100%; padding:0; margin:0;">
 			<a href="{% static 'info/images/infographic.png' %}" target="__blank"><img
 					src="{% static 'info/images/infographic.png' %}" alt='infographic' id='infographic'></a>
@@ -154,24 +216,6 @@ of the students of IIT Ropar, it is also the main point of interaction with the 
 
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6" id="about_iit_ropar">
-			<h3 style="margin-top:1em; color:white;">About IIT Ropar</h3><br>
-			<p style="color:white;">
-				Indian Institute of Technology, Ropar is one of the eight IITs set up by the
-				Ministry of Human Resource Development (MHRD), Government of India, in 2008 to expand the
-				reach and enhance the quality of technical education in the country. This institute is committed to
-				providing
-				state-of-the-art technical education in a variety of fields and also for facilitating transmission of
-				knowledge
-				in keeping with latest developments in pedagogy. These two areas of focus will enable students to gain
-				exposure
-				to recent trends in their chosen domains of study and gain practical experience through a wide variety
-				of activities
-				the institute facilitates in its own campus and arranges for in collaboration with industry and other
-				institutes.
-			</p>
-		</div>
 		<div class="col-md-6" style="padding:0;">
 			<ul class="nav nav-tabs"
 				style="padding:0.5rem 0.5rem 0.68rem 0.5rem; width:100%; margin-bottom:0rem; background-color:Coral;">
@@ -181,82 +225,11 @@ of the students of IIT Ropar, it is also the main point of interaction with the 
 						style="color:black; padding:0.5rem 1rem 0.8rem 1rem;"><strong>Events</strong></a></li>
 			</ul>
 
-			<div class="tab-content"
-				style="overflow-x: hidden;overflow-y:auto; max-height:20rem; background-color:LightGray; padding-top:0.7rem;">
-				<div id="home" class="tab-pane fade in active">
-					{% for news_item in news %}
-					<div class="row">
-						<div class="col-1" style="text-align: center;"><i style="margin-left:0.5rem;"
-								class="fa fa-newspaper-o" aria-hidden="true"></i></div>
-						<div class="col-10">
-							<h6 style="color:black;">{{news_item.title}}</h6>
-							<p align="justify">{{news_item.brief}}</p>
-						</div>
-						<div class="col-1"></div>
-					</div>
-					{% endfor %}
-				</div>
-				<div id="events" class="tab-pane fade">
-					{% for event in events %}
-					<div class="row">
-						<div class="col-1" style="text-align: center;"><i style="margin-left:0.5rem;"
-								class="fa fa-calendar" aria-hidden="true"></i></div>
-						<div class="col-10">
-							<h6 style="color:black;">{{event.title}}</h6>
-							{% if event.venue %}
-							<p>{{event.date}} at {{event.venue}}</p>
-							{% else %}
-							<p>{{event.date}}</p>
-							{% endif %}
-							<hr>
-							<p align="justify">{{event.brief}}</p>
-						</div>
-						<div class="col-1"></div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
+
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12" id="directors_message">
-			<h3 style="margin-top:1em; color:white;">The Director's Message</h3>
-			<p style="color:white;">
-				Dear Friends<br><br>
-				IIT Ropar is on a fascinating path of growth
-				and development. As you are aware, it has
-				already established itself as one of the top
-				technological institutes in the country, but
-				that is just the tip of the iceberg compared
-				to the huge initiatives and progress the
-				institute is making. The institute’s own
-				campus on 500 acres pristine land, on the
-				bank of river Satluj is fast getting ready
-				to be operational. We are going to occupy
-				the first phase of the campus within the
-				next quarter. The institute has increased
-				its student strength from a meager 650 in
-				2015 to over 1100 today which is likely to
-				be increased to 2500 by 2019. <br><br>
-				Our faculty strength has increased during
-				the last two years from 65 to 170.. Apart
-				from existing departments of Computer
-				Science, Electrical Engineering and
-				Mechanical Engineering, we have recently
-				{% comment %}started the department of Civil Engineering
-				and Chemical Engineering. We have expanded
-				our Post Graduate Programmes (M.Tech) to the
-				domains of Mechanical Engineering,
-				Electrical Engineering and Computer Science
-				Engineering. IIT Ropar has got a very strong
-				basic science component with MSc. degrees
-				being taught in Physics, Chemistry and
-				Mathematics department. We have also started
-				MTech programme in Biomedical Engineering {% endcomment %}
-				<br>
-				<a style="color:white; font-weight:bold;" href="{% url 'info:directors_message' %}">Read More...</a>
-			</p>
-		</div>
+		
 
 		<div class="col-md-4" style="background-color:#e3d4d3;">
 
@@ -305,24 +278,7 @@ of the students of IIT Ropar, it is also the main point of interaction with the 
 		</div> {% endcomment %}
 	</div>
 
-	<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;">
-		<div class="col-12">
-			<h2 style="padding:1em;">Our Industrial Partners</h2>
-		</div>
-	</div>
+	 -->
 
-	<div class="row">
-		<div class="col-md-12" style="padding:0; margin:0;">
-			<marquee behavior="scroll" direction="left" style="background-color:LightGray; height:100%;">
-				{% for recruiter in recruiters %}
-				{% if recruiter.logo %}
-				<img style="height:16em; width:24em; padding:2em;" src="{{recruiter.logo.url}}"
-					alt="{{recruiter.logo.url}}">
-				{% endif %}
-				{% endfor %}
-			</marquee>
-		</div>
-	</div>
-
-
-	{% endblock %}
+  {% endblock %}
+</div>

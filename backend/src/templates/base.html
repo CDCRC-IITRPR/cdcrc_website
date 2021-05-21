@@ -2,296 +2,556 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The official website of the Career Development and Corporate Relations Center, IIT Ropar. CDCRC operates through it's 
+	3 departments i.e Training and Placement, Professional Development and Corporate Relations. While handling the vital function of training, placement and professional development 
+	of the students of IIT Ropar, it is also the main point of interaction with the Corporate World for all kinds of activities and engagements for the institute."
+    />
+    <meta
+      name="keywords"
+      content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic"
+    />
+    <link rel="shortcut icon" href="../favicon.ico" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{% comment %} bootsrap 4.5.0 {% endcomment %}
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	{% comment %}
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script> {% endcomment %}
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-	{% comment %} css file for base.html {% endcomment %}
-	<link href="{% static 'base/base.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      href="{% static 'base/base.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="icon"
+      href="{% static 'base/cdcrc_logo_small.jpg' %}"
+      type="image/x-icon"
+    />
+    {% block head_content %} {% endblock %}
+  </head>
 
-	{% comment %} font awesome {% endcomment %}
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- CSS only -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-		crossorigin="anonymous"></script>
-	<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
+  <body>
+    <div class="header_wrapper">
+      <div class="contact-info-wrapper">
+        <div class="contact-info">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              class="img_icon"
+              viewBox="0 0 172 172"
+              style="fill: #000000"
+            >
+              <g
+                fill="none"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#ffffff">
+                  <path
+                    d="M63.57617,10.75c-3.59033,0 -6.96021,1.39624 -9.50073,3.93677l-17.88867,17.88867c-2.54053,2.54053 -3.93677,5.9104 -3.93677,9.50073v18.21411l-22.96973,13.78393c-2.40405,1.43823 -3.90527,4.09424 -3.90527,6.90772v72.20557c0,4.44067 3.62183,8.0625 8.0625,8.0625h145.125c4.44067,0 8.0625,-3.62183 8.0625,-8.0625v-72.20557c0,-2.81348 -1.50122,-5.46948 -3.90527,-6.90772l-22.96973,-13.78393v-41.47778c0,-4.44067 -3.62183,-8.0625 -8.0625,-8.0625zM64.5,16.125h67.1875c1.48022,0 2.6875,1.20728 2.6875,2.6875v64.5c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-16.75488l20.19824,12.12524c0.80835,0.48291 1.30176,1.36474 1.30176,2.29907v3.27539l-71.95361,32.2605c-2.08911,0.93433 -4.50366,0.93433 -6.59277,0l-71.95361,-32.2605v-3.27539c0,-0.93433 0.49341,-1.82666 1.30176,-2.29907l20.19824,-12.12524v16.75488c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-40.3125h18.8125c4.44067,0 8.0625,-3.62183 8.0625,-8.0625zM59.125,17.46875v17.46875c0,1.48022 -1.20728,2.6875 -2.6875,2.6875h-17.46875c0.29395,-0.44092 0.62988,-0.86084 1.01831,-1.24927l17.88867,-17.88867c0.38843,-0.38843 0.80835,-0.72436 1.24927,-1.01831zM83.3125,43c-10.37207,0 -18.8125,8.44043 -18.8125,18.8125v16.125c0,10.37207 8.44043,18.8125 18.8125,18.8125h16.125c1.49072,0 2.6875,-1.20728 2.6875,-2.6875c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875h-16.125c-7.41162,0 -13.4375,-6.02588 -13.4375,-13.4375v-16.125c0,-7.41162 6.02588,-13.4375 13.4375,-13.4375h5.375c7.41162,0 13.4375,6.02588 13.4375,13.4375v16.125c0,1.48022 -1.20728,2.6875 -2.6875,2.6875c-1.48022,0 -2.6875,-1.20728 -2.6875,-2.6875v-13.4375c0,-5.9314 -4.8186,-10.75 -10.75,-10.75c-5.9314,0 -10.75,4.8186 -10.75,10.75v10.75c0,5.9314 4.8186,10.75 10.75,10.75c2.82397,0 5.375,-1.11279 7.29614,-2.89746c1.48022,1.75317 3.66382,2.89746 6.14136,2.89746c4.44067,0 8.0625,-3.62183 8.0625,-8.0625v-16.125c0,-10.37207 -8.44043,-18.8125 -18.8125,-18.8125zM86,59.125c2.96045,0 5.375,2.41455 5.375,5.375v10.75c0,2.96045 -2.41455,5.375 -5.375,5.375c-2.96045,0 -5.375,-2.41455 -5.375,-5.375v-10.75c0,-2.96045 2.41455,-5.375 5.375,-5.375zM10.75,90.15723l69.74902,31.26318c1.75317,0.77685 3.63233,1.16528 5.50098,1.16528c1.86865,0 3.7478,-0.38843 5.50098,-1.16528l69.74902,-31.26318v63.03027c0,1.48022 -1.20728,2.6875 -2.6875,2.6875h-145.125c-1.48022,0 -2.6875,-1.20728 -2.6875,-2.6875zM18.8125,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM32.25,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM45.6875,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM59.125,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM72.5625,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM86,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM99.4375,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM112.875,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM126.3125,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM139.75,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875zM153.1875,134.375c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875v5.375c0,1.48022 1.19678,2.6875 2.6875,2.6875c1.49072,0 2.6875,-1.20728 2.6875,-2.6875v-5.375c0,-1.48022 -1.19678,-2.6875 -2.6875,-2.6875z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <a href="mailto:placement@iitrpr.ac.in">placement@iitrpr.ac.in</a>
+          </div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              class="img_icon"
+              viewBox="0 0 172 172"
+              style="fill: #000000"
+            >
+              <g
+                fill="none"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#ffffff">
+                  <path
+                    d="M75.75391,5.68994c-0.69287,-0.0105 -1.38574,0.24145 -1.92114,0.75586l-7.73706,7.47461c-1.0603,1.02881 -1.0918,2.72949 -0.05249,3.80029c0.5249,0.5354 1.21777,0.81885 1.93164,0.81885c0.67188,0 1.34375,-0.25195 1.85815,-0.75586l7.73706,-7.47461c1.0708,-1.02881 1.0918,-2.72949 0.06299,-3.80029c-0.5144,-0.5249 -1.19678,-0.79785 -1.87915,-0.81885zM42.27564,16.125c-5.8999,0 -11.11743,1.88965 -14.30884,5.18604l-0.31494,0.31494c-3.84229,3.92627 -12.84961,13.13306 -12.84961,31.22119c0,15.52661 9.22778,30.52832 14.71826,38.09741l0.20996,0.27295c0.12598,0.16797 0.34643,0.49341 0.67188,0.96582c17.44776,25.44727 39.01074,44.44873 60.7417,53.49805c19.28491,8.04151 29.48901,10.18311 36.47021,10.18311c2.94995,0 5.32251,-0.37793 7.56909,-0.86084c10.01514,-2.17309 22.44483,-9.54272 25.74121,-18.93848c2.6875,-7.63208 3.51685,-16.21948 1.86865,-19.11694c-1.0918,-1.93164 -3.10742,-2.90796 -5.8999,-4.26221c-0.60889,-0.29395 -1.27026,-0.60889 -1.98413,-0.97632c-0.20996,-0.10498 -20.62866,-10.33008 -24.39746,-11.64233c-4.73462,-1.80566 -8.93384,-0.5249 -11.8313,3.60083l-1.48022,2.09961c-2.86597,4.04175 -5.57446,7.86304 -7.76855,10.2356c-1.39624,1.50122 -3.78979,1.43823 -5.53247,0.71387l-1.12329,-0.46191c-4.69263,-1.91065 -14.45581,-5.87891 -26.52857,-16.6919c-9.6582,-8.65039 -16.58691,-19.62085 -19.10645,-23.90405c-1.0498,-1.80566 -0.60889,-2.45654 1.18628,-4.57715c0.96582,-1.20728 1.91065,-2.21509 2.85547,-3.2229c0.78735,-0.82935 1.56421,-1.65869 2.35156,-2.58252l0.36743,-0.40942c1.58521,-1.85815 2.72949,-3.19141 3.90527,-5.70044c1.97363,-3.86328 0.13647,-7.70557 -0.46191,-8.97583c-0.59839,-1.24927 -4.74512,-11.36938 -7.76855,-18.76001l-3.06543,-7.47461l-0.0105,-0.0105c-2.85547,-6.88672 -5.71094,-7.4956 -10.01514,-7.67407c-1.24927,-0.07349 -2.65601,-0.14697 -4.20972,-0.14697zM93.34863,20.28223c-0.34643,0 -0.70337,0.06299 -1.0498,0.19946l-14.94922,6.03638c-1.38574,0.5564 -2.03662,2.1311 -1.48022,3.50635c0.41992,1.0498 1.42773,1.67969 2.48804,1.67969c0.33594,0 0.67188,-0.06299 1.00781,-0.19946l14.94922,-6.03637c1.37524,-0.5564 2.03662,-2.12061 1.48022,-3.50635c-0.40942,-1.02881 -1.39624,-1.65869 -2.44604,-1.67969zM43.23096,21.521c1.0603,0.02099 2.05762,0.06299 2.99194,0.11548c2.94995,0.12598 3.56934,0.14697 5.31201,4.35669l3.06543,7.47461c4.09424,10.00464 7.27515,17.7522 7.88403,19.03296c0.91333,1.91065 1.0708,3.17041 0.50391,4.3042c-0.91333,1.93164 -1.66919,2.80298 -3.15991,4.54565l-0.12598,0.15747zM37.71948,22.00391c0.04199,0.17847 0.03149,0.35693 0.10498,0.5249l17.85718,43.36743c-0.5144,0.57739 -1.03931,1.18628 -1.5957,1.86865c-1.71118,2.02612 -4.58765,5.41699 -1.5957,10.59253c3.29639,5.62695 10.30908,16.38745 20.16675,25.21631c12.76563,11.43237 23.50513,15.79956 28.08228,17.65771l1.0813,0.45142c4.23071,1.76367 8.76587,0.97632 11.55835,-2.02612c1.54321,-1.66919 3.2544,-3.91577 5.03906,-6.37232l38.05542,19.02246c-0.18896,0.65088 -0.37793,1.30176 -0.61938,1.98413c-2.51953,7.17017 -13.28003,13.60547 -21.80445,15.45313c-5.34351,1.14429 -12.68164,2.71899 -40.8374,-9.02832c-20.77564,-8.66089 -41.50928,-26.96948 -58.36914,-51.56641c-0.39893,-0.57739 -0.68237,-0.97632 -0.78735,-1.12329l-0.17847,-0.25195c-5.11255,-7.03369 -13.69995,-20.92261 -13.69995,-34.9375c0,-15.89404 7.64258,-23.70459 11.31689,-27.45239l0.32544,-0.33594c1.36474,-1.40674 3.44336,-2.45654 5.8999,-3.04443zM80.03711,43.0105c-1.49072,0 -2.6875,1.20728 -2.6875,2.6875c0,1.49072 1.19678,2.6875 2.6875,2.6875h10.75c1.48022,0 2.6875,-1.19678 2.6875,-2.6875c0,-1.48022 -1.20728,-2.6875 -2.6875,-2.6875zM47.43018,82.39917c-0.34644,0.04199 -0.69287,0.15747 -1.00781,0.34644c-1.28076,0.75586 -1.71118,2.40405 -0.95532,3.67432c0.88184,1.51172 2.45654,3.82129 4.22021,6.19385c0.5249,0.71387 1.34375,1.0813 2.1626,1.0813c0.5564,0 1.11279,-0.16797 1.5957,-0.5249c1.19678,-0.88184 1.44873,-2.57202 0.5564,-3.7583c-2.44604,-3.30688 -3.60083,-5.20703 -3.90527,-5.71094c-0.5564,-0.96582 -1.6272,-1.43823 -2.6665,-1.30176zM59.29297,97.2959c-0.69287,-0.04199 -1.39624,0.17847 -1.94214,0.67188c-1.11279,0.97632 -1.21777,2.677 -0.23096,3.78979c3.10742,3.50635 6.27783,6.71875 9.42725,9.53223c7.38013,6.61377 14.80224,11.86279 22.06689,15.6001c0.38843,0.19946 0.81885,0.29395 1.22827,0.29395c0.97632,0 1.91064,-0.5249 2.38305,-1.45923c0.69287,-1.31226 0.16797,-2.93945 -1.14429,-3.61133c-6.86572,-3.53784 -13.90991,-8.52441 -20.9541,-14.82324c-2.99194,-2.6875 -6.01538,-5.74243 -8.98633,-9.10181c-0.49341,-0.5459 -1.16528,-0.86084 -1.84766,-0.89233zM126.18652,104.65503c0.73486,-0.05249 1.54321,0.10498 2.47754,0.45142c2.88696,1.00781 18.69702,8.82886 23.80957,11.41138c0.74536,0.36743 1.43823,0.70337 2.07861,1.01831c1.46973,0.70337 3.29639,1.58521 3.50635,1.93164c0.28345,0.76636 0.35693,3.59033 -0.29395,7.47461l-36.16577,-18.08814l1.48022,-2.07861c0.92383,-1.32276 1.90015,-2.01562 3.10742,-2.12061z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <a href="tel:+918699020183">+918699020183</a>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="logo_title_wrapper">
+          <div class="logo_wrapper">
+            <a href="/"
+              ><img id="cdcrc_logo" src="{% static 'base/cdcrc_logo.png' %}"
+            /></a>
+          </div>
 
-	<script type="text/javascript" src="{% static 'base/base.js' %}"></script>
+          <div class="title">
+            <span>
+              <div class="main-heading">
+                Career Development and Corporate Relations Center
+              </div>
+            </span>
+            <span>
+              <div class="insti-name">Indian Institute of Technology Ropar</div>
+            </span>
+          </div>
+        </div>
 
-	<link rel="icon" href="{% static 'base/cdcrc_logo_small.jpg' %}" type="image/x-icon">
+        {% if user.is_authenticated %}
+        <div class="user_profile_details">
+          <span><strong>{{request.user.get_user_name}}</strong></span>
+          {% if user.is_staff %}
+          <a href="{% url 'admin:index' %}">Admin Panel</a>
+          {% endif %}
+          <a href="{% url 'profiles:view_profile' %}">My Profile</a>
+          <a href="{% url 'logout' %}">Logout</a>
+        </div>
+        {% endif %}
+      </div>
 
-	{% block head_content %}
+      <div class="navbar_wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul
+                class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="{% url 'info:home' %}"
+                    >Home</a
+                  >
+                </li>
 
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="training_and_placement_container"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Training & Placement
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="training_and_placement_container"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:tnp_hod_message' %}"
+                        >HoD's Message</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'recruiter:why' %}"
+                        >Why Recruit</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'recruiter:guide' %}"
+                        >Recruiter Guide</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:placement_stats' %}"
+                        >Placement Statistics</a
+                      >
+                    </li>
 
-	{% endblock %}
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'recruiter:six_month_internship' %}"
+                        >6 Month Internship</a
+                      >
+                    </li>
 
-</head>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'recruiter:joint_master_thesis' %}"
+                        >Joint Master Thesis</a
+                      >
+                    </li>
 
-<body style="background-color: #dbe1e6;">
-	<div class="container-fluid; padding:0;">
-		<div class="row" style=" color:white; background-color: #26445a; margin:0; padding: 5px 0px 20px 0px; overflow-x: auto;">
-			<div class="col-md-1"><a href="/"><img id="cdcrc_logo"
-				src="{% static 'base/cdcrc_logo.png' %}"></a></div>
-			<div class="col-md-9" id="title">
-				<span>
-					<div class="main-heading">Career Development and Corporate Relations Center</div>
-				</span>
-				<span>
-					<div class="insti-name">Indian Institute of Technology Ropar</div>
-				</span>
-			</div>
-			{% if user.is_authenticated %}
-			<div class="col-md-2" id="info" style="text-align:left;">
-				<br><br>
-				<span><strong>{{request.user.get_user_name}}</strong></span>
-				<br>
-				{% if user.is_staff %}
-				<a style="color:white;" href="{% url 'admin:index' %}">Admin Panel</a>
-				{% endif %}
-				<br>
-				<a style="color:white;" href="{% url 'profiles:view_profile' %}">My Profile</a>
-				<br>
-				<a style="color:white;" href="{% url 'logout' %}">Logout</a>
-				<br><br>
-			</div>
-			{% endif %}
-		</div>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'recruiter:student_demographics' %}"
+                        >Student Demographics</a
+                      >
+                    </li>
 
-		{% comment %} <div class="container-fluid"> {% endcomment %}
-			<section>
-				<nav class="navbar navbar-expand-lg"
-					style="background-color:rgb(34, 76, 169); padding: 2px 6px 2px 6px;">
-					<a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-						aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon" style="color: white; padding-top: 5px;">Menu</span>
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse"
-						data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"> <i class="fas fa-bars fa-1x"
-								style="color: white; padding-top: 5px;"></i></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-						<div class="navbar-nav custom-navbar">
-							<!-- <div class="custom-navbar"> -->
-							<a class="nav-item nav-link" href="{% url 'info:home' %}">Home</a>
-							{% comment %} <a class="nav-item nav-link" href="{% url 'info:pd_about' %}">Professional
-								Development</a> {% endcomment %}
-							<div class="custom-dropdown nav-item" style="text-align: center;">
-								<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Training &
-									Placement
-									<i class="fa fa-caret-down"></i>
-								</button>
-								<div class="custom-dropdown-content">
-									<a href="{% url 'info:tnp_hod_message' %}">HoD's Message</a>
-									<a href="{% url 'recruiter:why' %}">Why Recruit</a>
-									<a href="{% url 'recruiter:guide' %}">Recruiter Guide</a>
-									<a href="{% url 'info:placement_stats' %}">Placement Statistics</a>
-									<a href="{% url 'recruiter:six_month_internship' %}">6 Month Internship</a>
-									<a href="{% url 'recruiter:joint_master_thesis' %}">Joint Master Thesis</a>
-									<a href="{% url 'recruiter:student_demographics' %}">Student Demographics</a>
-									<a href="{% url 'info:tnp_past_recruiters' %}">Past Recruiters</a>
-									<a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-											class="fa fa-download" aria-hidden="true"></i></a>
-									<a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-											class="fa fa-download" aria-hidden="true"></i></a>
-									{% comment %} <a href="{% url 'recruiter:jaf' %}">JAF</a> {% endcomment %}
-									{% comment %} <a href="{% url 'recruiter:inf' %}">INF</a> {% endcomment %}
-									<a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}"  target="__blank">Brochure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-											class="fa fa-download" aria-hidden="true"></i></a>
-									<a href="{% static 'recruiter/AIPC_Guidelines.pdf' %}" target="__blank">AIPC
-										Guidelines&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-download"
-											aria-hidden="true"></i></a>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:tnp_past_recruiters' %}"
+                        >Past Recruiters</a
+                      >
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
 
-									{% comment %} <a href="{% url 'recruiter:demographics' %}">Student Demographics</a>
-									{% endcomment %}
-								</div>
-							</div>
-							<div class="custom-dropdown nav-item" style="text-align: center;">
-								<button class="custom-dropbtn nav-item nav-link"
-									style="text-align: center;">Professional Development
-									<i class="fa fa-caret-down"></i>
-								</button>
-								<div class="custom-dropdown-content">
-									<a href="{% url 'info:pd_about' %}">About</a>
-									<a href="{% url 'info:pd_hod_message' %}">HoD's Bio</a>
-									<a href="{% url 'info:pd_activities' %}">Activities</a>
-									<a href="{% url 'info:pd_books' %}">Library Resources</a>
-									<a href="{% url 'info:pd_videos' %}">Video Resources</a>
-									<a href="{% url 'info:pd_pg_resources' %}">Resources for PG Students</a>
-									<a href="{% url 'info:pd_initiatives' %}">Initiatives</a>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% static 'recruiter/IITRPR_JAF.docx' %}"
+                        >JAF
+                      </a>
+                    </li>
 
-								</div>
-							</div>
-							<div class="custom-dropdown nav-item" style="text-align: center;">
-								<button class="custom-dropbtn nav-item nav-link" style="text-align: center;">Corporate
-									Relations
-									<i class="fa fa-caret-down"></i>
-								</button>
-								<div class="custom-dropdown-content">
-									<a href="{% url 'info:cr_about' %}">About</a>
-									<a href="{% url 'info:cr_hod_message' %}">HoD's Message</a>
-									<a href="{% url 'info:cr_activities' %}">Activities</a>
-								</div>
-							</div>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% static 'recruiter/IITRPR_INF.docx' %}"
+                        >INF</a
+                      >
+                    </li>
 
-							<div class="custom-dropdown">
-								<button class="custom-dropbtn nav-item nav-link">The Team
-									<i class="fa fa-caret-down"></i>
-								</button>
-								<div class="custom-dropdown-content">
-									<a href="{% url 'info:faculty_team' %}">Faculty Team</a>
-									<a href="{% url 'info:student_team' %}">Student Team</a>
-								</div>
-							</div>
-							<a class="nav-item nav-link" href="{% url 'info:contacts' %}">Contact Us</a>
-							{% if user.is_authenticated %}
-							<div class="custom-dropdown">
-								<button class="custom-dropbtn nav-item nav-link">Resources
-									<i class="fa fa-caret-down"></i>
-								</button>
-								<div class="custom-dropdown-content">
-									<a class="nav-item nav-link" href="{% url 'info:resources' %}">&nbsp;All Resources</a>
-									<a class="nav-item nav-link" href="{% url 'info:create_resource' %}">&nbsp;Add Resource</a>
-								</div>
-							</div>
-							{% comment %} <a class="nav-item nav-link" href="{% url 'info:resources' %}">Resources</a>
-							{% endcomment %}
-							{% endif %}
-						</div>
-					</div>
-					<!-- </div> -->
-				</nav>
-			</section>
-			{% comment %} </div> {% endcomment %}
-		{% comment %} <div class="container-fluid" style=""> {% endcomment %}
-			{% block body_content %}
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}"
+                        target="__blank"
+                        >Brochure</a
+                      >
+                    </li>
 
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% static 'recruiter/AIPC_Guidelines.pdf' %}"
+                        target="__blank"
+                        >AIPC Guidelines</a
+                      >
+                    </li>
+                  </ul>
+                </li>
 
-			{% endblock %}
-		</div>
-</body>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="professional_development_container"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Professional Development
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="professional_development_container"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="{% url 'info:pd_about' %}"
+                        >About</a
+                      >
+                    </li>
 
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:pd_hod_message' %}"
+                        >HoD's Bio</a
+                      >
+                    </li>
 
-<div class="container-fluid" style="">
-	<div class="row justify-content-center">
-		<footer class="panel-footer" style="background-color:#232f3e;">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:pd_activities' %}"
+                        >Activities</a
+                      >
+                    </li>
 
-			<div class="footer">
-				<div class="container-fluid mainContainer">
-					<div class="row" style="padding: 3%;">
-						<div class="col-lg-4">
-							<h3 class="fot-white">About</h3>
-							<p class="fot-white">
-								Career Development and Corporate Relations Center (CDCRC), IIT Ropar aims to guide
-								students
-								to
-								to success in their careers, helps students with Professional Development, Training and
-								Placement.
-								The Corporate Relations department also engages with Industry for the development of the
-								institute and its students.
+                    <li>
+                      <a class="dropdown-item" href="{% url 'info:pd_books' %}"
+                        >Library Resources</a
+                      >
+                    </li>
 
-							</p>
-						</div>
-						<div class="col-lg-4">
-							<h3 class="fot-white">Contact Us</h3>
-							<p class="fot-white">
-								<span style="font-size: 18px;"><b>Mr. Subodh Sharma:</b> +91-8699020183</span>
-								<br>
-								Career Development and Corporate Relations Center<br>
-								3rd Floor, M. Visvesvaraya Block (East Wing)<br>
-								Indian Institute of Technology Ropar<br>
-								Ropar, Punjab<br>
-								India - 140001
-						</div>
-						<div class="col-lg-4">
-							<h3 class="fot-white">Quick Links</h3>
-							<a href="http://www.iitrpr.ac.in/" style="color: white;">IIT Ropar</a>
-							<br><a style="color: white;"
-								href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}">CDCRC Brochure</a>
-							<br><a style="color: white;" href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
-							<br><a style="color: white;" href="{% static 'recruiter/IITRPR_INF.docx' %}"
-								style="color: white;">INF</a>
-							{% if user.is_authenticated %}
-							<br><a style="color: white;" href="{% url 'logout' %}">Logout</a>
-							{% else %}
-							<br><a style="color: white;" href="{% url 'login' %}">Login</a>
-							<br><a style="color: white;" href="{% url 'signup' %}">Sign Up</a>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'info:pd_videos' %}"
+                        >Video Resources</a
+                      >
+                    </li>
 
-							{%endif%}
-							<br><a style="color: white;" href="{% url 'internal:home' %}"
-								style="color: white;">Internal</a>
-						</div>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:pd_pg_resources' %}"
+                        >Resources for PG Students</a
+                      >
+                    </li>
 
-					</div>
-				</div>
-			</div>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:pd_initiatives' %}"
+                        >Initiatives</a
+                      >
+                    </li>
+                  </ul>
+                </li>
 
-		</footer>
-	</div>
-	{% comment %}
-</div> {% endcomment %}
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="corporate_relation_container"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Corporate Relation
+                  </a>
 
-{% comment %} <div class="container-fluid" style=""> {% endcomment %}
-	<div class="row" style="padding-bottom:1em; background-color: #232f3e">
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="corporate_relation_container"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="{% url 'info:cr_about' %}"
+                        >About</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:cr_hod_message' %}"
+                        >HoD's Message</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:cr_activities' %}"
+                        >Activities</a
+                      >
+                    </li>
+                  </ul>
+                </li>
 
-		<div class="col-1" style="text-align:center;"></div>
-		<div class="col-2" style="text-align:center;">
-			<a href="https://www.facebook.com/iitrpr" target="_blank">
-				<i class="fab fa-facebook-square fa-3x" style="color:white;"></i>
-			</a>
-		</div>
-		<div class="col-2" style="text-align:center;">
-			<a href="mailto:placement@iitrpr.ac.in" target="_blank">
-				<i class="fas fa-envelope-square fa-3x" style="color:white;"></i>
-			</a>
-		</div>
-		<div class="col-2" style="text-align:center;">
-			<a href="https://www.instagram.com/iitropar/?hl=en" target="_blank">
-				<i class="fab fa-instagram-square fa-3x" style="color:white;"></i>
-			</a>
-		</div>
-		<div class="col-2" style="text-align:center;">
-			<a href="https://www.linkedin.com/in/cdcrciitrpr/" target="_blank">
-				<i class="fab fa-linkedin fa-3x" style="color:white;"></i>
-			</a>
-		</div>
-		<div class="col-2" style="text-align:center;">
-			<a href="https://twitter.com/iitrpr?lang=en" target="_blank">
-				<i class="fab fa-twitter-square fa-3x" style="color:white;"></i>
-			</a>
-		</div>
-		<div class="col-1" style="text-align:center;"></div>
-	</div>
-	{% comment %} </div> {% endcomment %}
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="team_container"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    The Team
+                  </a>
 
-{% comment %} <div class="container-fluid" style="padding:0;"> {% endcomment %}
-	<div class="row justify-content-center" style="padding:0.1em; background-color: white">
-		<a href="https://github.com/vinx-2105/cdcrc_website" style="color:black; font-size:13px; padding: 5px;">Developed with <i
-				class="fas fa-heart"></i> by Vineet Madan and Team</a>
-	</div>
-</div>
+                  <ul class="dropdown-menu" aria-labelledby="team_container">
+                    <a
+                      class="dropdown-item"
+                      href="{% url 'info:faculty_team' %}"
+                      >Faculty Team</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="{% url 'info:student_team' %}"
+                      >Student Team</a
+                    >
+                  </ul>
+                </li>
+
+                <li>
+                  <a class="nav-item nav-link" href="{% url 'info:contacts' %}"
+                    >Contact Us</a
+                  >
+                </li>
+
+                {% if not user.is_authenticated %}
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="resources_container"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Resources
+                  </a>
+
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="resources_container"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="{% url 'info:resources' %}"
+                        >All Resources</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'info:create_resource' %}"
+                        >Add Resource</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="main_content">{% block body_content %} {% endblock %}</div>
+    <div class="footer_wrapper">
+      <footer>
+        <div class="mainContainer">
+          <div class="section">
+            <div class="heading">About</div>
+            <p class="content">
+              Career Development and Corporate Relations Center (CDCRC), IIT
+              Ropar aims to guide students to to success in their careers, helps
+              students with Professional Development, Training and Placement.
+              The Corporate Relations department also engages with Industry for
+              the development of the institute and its students.
+            </p>
+          </div>
+          <div class="section">
+            <div class="heading">Contact Us</div>
+            <p class="content">
+              <span><b>Mr. Subodh Sharma:</b> +91-8699020183</span>
+              Career Development and Corporate Relations Center 3rd Floor, M.
+              Visvesvaraya Block (East Wing) Indian Institute of Technology
+              Ropar Ropar, Punjab India - 140001
+            </p>
+          </div>
+
+          <div class="section quick_links">
+            <div class="heading">Quick Links</div>
+            <a href="http://www.iitrpr.ac.in/">IIT Ropar</a>
+            <a href="{% static 'recruiter/IIT_Ropar_CDCRC_Brochure.pdf' %}"
+              >CDCRC Brochure</a
+            >
+            <a href="{% static 'recruiter/IITRPR_JAF.docx' %}">JAF</a>
+            <a href="{% static 'recruiter/IITRPR_INF.docx' %}">INF</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+
+            {%endif%}
+            <a href="{% url 'internal:home' %}">Internal</a>
+          </div>
+        </div>
+      </footer>
+
+      <div class="social_links_wrapper">
+        <div>
+          <a href="https://www.facebook.com/iitrpr" target="_blank">
+            <img
+              class="social-icon"
+              src="https://img.icons8.com/wired/64/000000/facebook-new.png"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="mailto:placement@iitrpr.ac.in" target="_blank">
+            <img
+              class="social-icon"
+              src="https://img.icons8.com/carbon-copy/100/000000/new-post.png"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/iitropar/?hl=en" target="_blank">
+            <img
+              class="social-icon"
+              src="https://img.icons8.com/cute-clipart/64/000000/instagram-new.png"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/in/cdcrciitrpr/" target="_blank">
+            <img
+              class="social-icon"
+              src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://twitter.com/iitrpr?lang=en" target="_blank">
+            <img
+              class="social-icon"
+              src="https://img.icons8.com/doodle/48/000000/twitter--v1.png"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

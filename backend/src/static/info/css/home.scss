@@ -1,0 +1,109 @@
+
+@import "../../variables";
+
+
+$home_page_border_radius: 10px;
+
+.custom_container {
+  width: 98%;
+  margin: auto;
+  .heading{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
+
+
+.about_iit_ropar_wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1.7fr;
+  align-items: center;
+  gap: 15px;
+  .banner-image {
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .about_iit_ropar {
+    padding: 18px 0px;
+    display: flex;
+    line-height: 1.5;
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width:846px){
+  .about_iit_ropar_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.directors_message {
+  margin-top: 1.2rem;
+  background: #faf6e9;
+  border-radius: $home_page_border_radius;
+  display: flex;
+  padding: 10px 12px;
+  flex-direction: column;
+  line-height: 1.5;
+  text-align: justify;
+  a {
+    color: $primarycolor-700;
+  }
+}
+
+.industrial_partners_wrapper {
+  background: #fcea90;
+  margin-top: 10px;
+  padding: 1.2rem !important;
+  border-radius: $home_page_border_radius;
+}
+
+.heading_wrapper_img{
+  height: 50px;
+}
+
+.newroom_stats_wrapper{
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 15px;
+  .newsroom_wrapper{
+    background: #fde9df;
+    margin-top: 10px;
+    padding: 1.2rem !important;
+    border-radius: $home_page_border_radius;
+
+    .home-tab{
+      display: flex;
+      gap: 15px;
+      .content{
+        display: flex;
+        flex-direction: column;
+        .title{
+          font-size: 1.5rem;
+        }
+        .data{
+          font-size: 1.2rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  .some_stats{
+    background: #ffcdb5;
+    margin-top: 10px;
+    padding: 1.2rem !important;
+    border-radius: $home_page_border_radius;
+  }
+}
+
+@media all and (max-width:600px){
+  .newroom_stats_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
