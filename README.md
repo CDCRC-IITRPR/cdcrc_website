@@ -4,6 +4,33 @@
 
 The following repository contains the source code of the official website of Career Development and Corporate Relations Center, IIT Ropar.
 
+
+## Directory Overview
+
+
+```
+.
+├── backend
+│   ├── Dockerfile 
+│   ├── Dockerfile.prod
+│   ├── requirements.txt
+│   └── src # contains the whole backend source code
+├── docker-compose.prod.yml
+├── docker-compose.yml
+├── _docs # documentation assets  
+│   └── prod.png
+├── nginx # nginx configuration to be used  
+│   │        while building the production version
+│   ├── Dockerfile.prod
+│   └── nginx.conf
+├── prod # Contains the main script which should be \
+│   │        executed to clone the repo, build & start the containers
+│   └── main.sh
+├── README.md
+└── startup.sh
+```
+
+
 ## Development setup without Docker
 Before proceeding further, ensure that you have `python3` and `PostgreSQL` installed on your computer! In case you don't, you can download python3 from [here](https://www.python.org/downloads/).
 
@@ -44,6 +71,8 @@ docker-compose build
 ```bash
 docker-compose up
 ```
+> You may use `-d` flag to run in detach mode.
+
 > It will start the backend server at [localhost:8000](http://localhost:8000).
 3. You may use the following command to stop the containers.
 ```bash
@@ -61,6 +90,8 @@ docker-compose -f docker-compose.prod.yml build
 ```bash
 docker-compose -f docker-compose.prod.yml up
 ```
+> You may use `-d` flag to run in detach mode.
+
 > It will start the backend server at [localhost:8000](http://localhost:8000).
 3. You may use the following command to stop the containers.
 ```bash
