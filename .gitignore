@@ -151,3 +151,8 @@ dmypy.json
 
 
 !src/*/migrations/_init_.py
+
+
+*.css.map
+*.css
+media/
