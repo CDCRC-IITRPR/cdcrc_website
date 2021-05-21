@@ -5,6 +5,9 @@
 The following repository contains the source code of the official website of Career Development and Corporate Relations Center, IIT Ropar.
 
 
+![](./_docs/landing.png)
+
+
 ## Directory Overview
 
 
@@ -40,6 +43,8 @@ Before proceeding further, ensure that you have `python3` and `PostgreSQL` insta
 pip install -r requirements.txt
 ```
 > The root directory should have a file named `.env.example`. Before proceeding to the next step, you must make a .env file and fill in all the values mentioned. Alternately, you may add all these values in your `.bashrc` script too.
+
+> Head over to [compiling the stylesheets](#compiling-the-stylesheets) section to know how to compile the sass stylesheets.
 3. Change the directory into `src/`.
 ```bash
 cd src/
@@ -74,6 +79,9 @@ docker-compose up
 > You may use `-d` flag to run in detach mode.
 
 > It will start the backend server at [localhost:8000](http://localhost:8000).
+
+> Head over to [compiling the stylesheets](#compiling-the-stylesheets) section to know how to compile the sass stylesheets.
+
 3. You may use the following command to stop the containers.
 ```bash
 docker-compose down
@@ -139,6 +147,29 @@ These are the following scripts which are used in the `prod`.
     </tr>
 <table>
 
+
+## Compiling the stylesheets
+
+We recently migrated all our stylesheets to `sass` for ease in development. Unlike `css`, `sass` cannot be understood by the browser and thus, it needs to be compiled to css. The following steps are needed to compile the stylesheets.
+
+
+> :warning: **Please note that all the `sass` stylesheets are inside `backend/src/static/styles`, at any point of development don't start editing `css` files inside `backend/src/static/_styles_build`**
+
+### Key Points:
+- Please note that incase of production build appropriate changes are already done in the Dockerfile.prod.
+- You need to follow the steps incase of development only 
+- Before moving futher ensure that you have `nodejs` and `npm` installed.
+
+
+1. Now install the `sass` package globally with the following command:
+```bash
+npm install -g sass
+```
+2. Now assuming the current directory to be the `root`, run the following command.
+```bash
+sass -w ./backend/src/static/styles/:./backend/src/static/_styles_build
+```
+3. It automatically compiles whenever you make any changes inside any of the `sass` files in `backend/src/static/styles`.
 
 
 ## Contributing

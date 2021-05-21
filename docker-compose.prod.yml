@@ -12,8 +12,8 @@ services:
             # This is necessary for collect static
             - DEBUG=0
         volumes:
-            - 'WebAssets/:/backend/static/'
-            - 'WebAssets/:/backend/media/'
+            - static_webassets/:/backend/static/
+            - media_webassets/:/backend/media/
         depends_on:
             - postgres_db
 
@@ -27,8 +27,8 @@ services:
         depends_on:
             - backend
         volumes:
-            - WebAssets/:/static/
-            - WebAssets/:/media/
+            - static_webassets/:/static/
+            - media_webassets/:/media/
 
     postgres_db:
         image: postgres:12.0-alpine
@@ -38,6 +38,7 @@ services:
             - ./.env
 
 volumes:
-    WebAssets:
+    static_webassets:
     postgres_data:
+    media_webassets:
 

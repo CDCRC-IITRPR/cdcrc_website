@@ -14,6 +14,20 @@ RUN pip install -r ./requirements.txt
 # copy project
 COPY ./src/ ./
 
+RUN ls static
+RUN ls static/_styles_build
+
+# build the stylesheets
+# Installing nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+# updating npm
+RUN npm install -g npm@latest
+# gloablly installing sass
+RUN npm install -g sass
+
+RUN sass ./static/styles/:./static/_styles_build --no-source-map
+
 EXPOSE 8000
 
 CMD ["gunicorn", "cdcrc_website.wsgi:application", "--bind", "0.0.0.0:5000"]

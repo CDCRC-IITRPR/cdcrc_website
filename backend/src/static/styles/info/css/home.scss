@@ -77,18 +77,25 @@ $home_page_border_radius: 10px;
     padding: 1.2rem !important;
     border-radius: $home_page_border_radius;
 
-    .home-tab{
-      display: flex;
-      gap: 15px;
+    .home-tab, .events-tab{
       .content{
+        margin: 14px 0px;
         display: flex;
-        flex-direction: column;
+        gap: 10px;
+        .calender_icon{
+          width: 50px;
+        }
         .title{
-          font-size: 1.5rem;
+          font-size: 1rem;
+          font-weight: bold;
         }
         .data{
-          font-size: 1.2rem;
+          font-size: 0.8rem;
           text-align: justify;
+        }
+        .text_content{
+          display: flex;
+          flex-direction: column;
         }
       }
     }

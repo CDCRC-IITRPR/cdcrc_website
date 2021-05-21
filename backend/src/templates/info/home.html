@@ -10,16 +10,6 @@
 {% endblock %} {% block body_content %}
 
 <div>
-  <!-- <div class="row">
-		<div class="col-md-12" id="main_panel_home">
-			<a href="{% url 'info:contact_us_form' %}">
-				<div class="btn btn-sm btn-success main-btn-home">
-					Click Here for Placement 2020-21 Related Queries
-				</div>
-			</a>
-		</div>
-	</div> -->
-
   <div class="custom_container">
     <div class="about_iit_ropar_wrapper">
       <img src="/static/spiraliitropar.jpg" class="banner-image" alt="banner" />
@@ -81,7 +71,7 @@
               </button>
             </li>
           </ul>
-          <div class="tab-content" id="myTabContent">
+          <div class="tab-content">
             <div
               class="tab-pane fade show active home-tab"
               id="News"
@@ -89,30 +79,45 @@
               aria-labelledby="home-tab"
             >
               {% for news_item in news %}
-              <div></div>
               <div class="content">
-                <h6 style="color: black" class="title">{{news_item.title}}</h6>
-                <p class="data">- {{news_item.brief}}</p>
+                <div>
+                  <img
+                    class="calender_icon"
+                    src="{% static 'info/images/calender.svg' %}"
+                  />
+                </div>
+                <div class="text_content">
+                  <h6 style="color: black" class="title">
+                    {{news_item.title}}
+                  </h6>
+                  <p class="data">{{news_item.brief}}</p>
+                </div>
               </div>
               {% endfor %}
             </div>
             <div
-              class="tab-pane fade"
+              class="tab-pane fade events-tab"
               id="Events"
               role="tabpanel"
-              aria-labelledby="profile-tab"
+              aria-labelledby="events-tab"
             >
               {% for event in events %}
-
-              <div>
-                <h6 style="color: black">{{event.title}}</h6>
-                {% if event.venue %}
-                <p>{{event.date}} at {{event.venue}}</p>
-                {% else %}
-                <p>{{event.date}}</p>
-                {% endif %}
-                <hr />
-                <p align="justify">{{event.brief}}</p>
+              <div class="content">
+                <div>
+                  <img
+                    class="calender_icon"
+                    src="{% static 'info/images/calender.svg' %}"
+                  />
+                </div>
+                <div class="text_content">
+                  <h6 style="color: black" class="title">{{event.title}}</h6>
+                  {% if event.venue %}
+                  <p class="data">{{event.date}} at {{event.venue}}</p>
+                  {% else %}
+                  <p class="data">{{event.date}}</p>
+                  {% endif %}
+                  <p class="data">{{news_item.brief}}</p>
+                </div>
               </div>
               {% endfor %}
             </div>
@@ -197,88 +202,6 @@
       </div>
     </div>
   </div>
-
-  <!-- 
-	<div class="row">
-	
-			<div class="row">
-		<div class="col-lg-7" style="width:100%; padding:0; margin:0;">
-			<a href="{% static 'info/images/infographic.png' %}" target="__blank"><img
-					src="{% static 'info/images/infographic.png' %}" alt='infographic' id='infographic'></a>
-		</div>
-		<div class="col-lg-5">
-			<div class="catchy-heading">&gt; IIT Ropar is the <b>first IIT</b> to introduce a 6 Month Internship Program for B.Tech students.
-			</div>
-			<div class="catchy-heading">
-				&gt; IIT Ropar offers joint master thesis which allows our MTech students to work on an industrial project
-				with the possibility of staying in the company for up to <b>1 year</b>.
-			</div>
-
-		</div>
-	</div>
-		<div class="col-md-6" style="padding:0;">
-			<ul class="nav nav-tabs"
-				style="padding:0.5rem 0.5rem 0.68rem 0.5rem; width:100%; margin-bottom:0rem; background-color:Coral;">
-				<li class="active"><a id="news_tab" data-toggle="tab" href="#home"
-						style="color:black; padding:0.5rem 1rem 0.8rem 1rem;"><strong>News</strong></a></li>
-				<li><a id="events_tab" data-toggle="tab" href="#events"
-						style="color:black; padding:0.5rem 1rem 0.8rem 1rem;"><strong>Events</strong></a></li>
-			</ul>
-
-
-		</div>
-	</div>
-	<div class="row">
-		
-
-		<div class="col-md-4" style="background-color:#e3d4d3;">
-
-			<br><br>
-			{% comment %} <div style="text-align:center;"><a class="btn btn-primary" style="color:white;">Click Here to
-					Know More</a></div> {% endcomment %}
-		</div>
-
-		{% comment %} <div class="col-md-6" id="vision_statement">
-			<h3 style="margin-top:1em; color:white;">Our Vision Statement</h3>
-			<p style="color:white;">
-				Dear Friends<br><br>
-				IIT Ropar is on a fascinating path of growth
-				and development. As you are aware, it has
-				already established itself as one of the top
-				technological institutes in the country, but
-				that is just the tip of the iceberg compared
-				to the huge initiatives and progress the
-				institute is making. The institute’s own
-				campus on 500 acres pristine land, on the
-				bank of river Satluj is fast getting ready
-				to be operational. We are going to occupy
-				the first phase of the campus within the
-				next quarter. The institute has increased
-				its student strength from a meager 650 in
-				2015 to over 1100 today which is likely to
-				be increased to 2500 by 2019. <br><br>
-				Our faculty strength has increased during
-				the last two years from 65 to 170.. Apart
-				from existing departments of Computer
-				Science, Electrical Engineering and
-				Mechanical Engineering, we have recently
-				started the department of Civil Engineering
-				and Chemical Engineering. We have expanded
-				our Post Graduate Programmes (M.Tech) to the
-				domains of Mechanical Engineering,
-				Electrical Engineering and Computer Science
-				Engineering. IIT Ropar has got a very strong
-				basic science component with MSc. degrees
-				being taught in Physics, Chemistry and
-				Mathematics department. We have also started
-				MTech programme in Biomedical Engineering
-				<br>
-				<a style="color:white; font-weight:bold;" href="{% url 'info:vision_statement' %}">Read More...</a>
-			</p>
-		</div> {% endcomment %}
-	</div>
-
-	 -->
 
   {% endblock %}
 </div>
