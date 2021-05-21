@@ -1,0 +1,3 @@
+> SASS compiler will push all the css files here.
+> None of the .css or .css.map will get into the source control as they are part of gitignore.
+
