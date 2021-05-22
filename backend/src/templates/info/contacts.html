@@ -4,13 +4,21 @@
 {% block head_content %}
 {% comment %} css file for contacts.html {% endcomment %}
 <link href="{% static '_styles_build/info/css/contacts.css' %}" rel="stylesheet" type="text/css" />
+<style>
+    .border {
+        border-radius: 20px;
+    }
+    a {
+        color: tomato;
+    }
+</style>
 <title>Contact Us | CDCRC IIT Ropar</title>
 {% endblock %}
 
 
 {% block body_content %}
 <div class="container-fluid page-contact">
-    <div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;">
+    <div class="row justify-content-center" style="background-color:#DBE1E6; text-align:center;">
         <div class="col-12">
             <h2 style="padding:1em;">Contact Us</h2>
         </div>
@@ -20,7 +28,7 @@
     <div class="row head-contact-row">
 
         <div class="col-md-4 ">
-            <div class="border zoom contact" style="height:18rem;">
+            <div class="border zoom contact">
 
                 <h4 class="head-contact">Dr. Dhiraj K. Mahajan</h4>
                 <span>

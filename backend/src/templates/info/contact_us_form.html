@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block head_content %}
-    <title>{{title}} | CDCRC IIT Ropar</title>
+<title>{{title}} | CDCRC IIT Ropar</title>
 {% endblock %}
 
 {% block body_content %}
-<div class="container-fluid" style="background-color: rgb(226, 221, 200); text-align:center;" >
+<div class="container-fluid" style="background-color: #DBE1E6; text-align:center;">
     <div class="row">
         <div class="col-md-12">
             <h2 style="padding:1em;">Contact Form</h2>
@@ -14,9 +14,8 @@
         </div>
     </div>
 </div>
-
-<div class="container-fluid" >
-    <div class="row">
+<div class="container-fluid" style="background-color: #DBE1E6;">
+    <div class="row" style="margin-left: -60px;margin-right: 25px;">
         <div class="col-12" style="text-align:center;">
             <form method='post'>
                 {% csrf_token %}
@@ -24,14 +23,13 @@
                 <div class="row">
                     <div class="col-1">
                         <br>
-                        {{ field.label_tag }}
                         <br>
                     </div>
                     <div class="col-11">
                         <br>
                         {{ field }}
                         {% for error in field.errors %}
-                            <p style="color: red">{{ error }}</p>
+                        <p style="color: red">{{ error }}</p>
                         {% endfor %}
                         <br>
                     </div>
@@ -43,10 +41,9 @@
                         <input class="btn btn-primary" type="submit" value="Submit">
                         <br><br>
                     </div>
-                <div>
+                    <div>
             </form>
         </div>
     </div>
 </div>
-
 {% endblock body_content %}
