@@ -1,220 +1,164 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head_content %}
-<title>CDCRC IIT Ropar</title>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Career Development and Corporate Relations Center, IIT Ropar" />
-<meta name="keywords"
-    content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
-<link rel="shortcut icon" href="../favicon.ico">
-
-
-<style>
-    /* Make the image fully responsive */
-    .carousel-inner img {
-        width: 100%;
-        height: 100%;
-    }
-</style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<title>CDCRC IIT Ropar | Placment Statistics</title>
 <link href="{% static '_styles_build/info/css/index.css' %}" rel="stylesheet" type="text/css" />
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/de322c85e6.js" crossorigin="anonymous"></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-
-<style>
-    .heading {
-        display: flex;
-        justify-content: center;
-        font-weight: bolder;
-        font-size: 30px;
-        margin-top: 15px;
-        margin-bottom: 20px;
-    }
-
-    .subheading {
-        margin-left: 20px;
-        font-weight: bold;
-        font-size: 22px;
-    }
-
-    .table-section{
-        margin-top: 55px !important;
-        margin-bottom: 20px;
-    }
-</style>
-
-<link href="{% static 'no-style-links.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static '_styles_build/no-style-links.css' %}" rel="stylesheet" type="text/css" />
 
 {% endblock %}
 
 
 {% block body_content %}
 
-<div class="heading">
-    Placement Statistics
-</div>
-
-<div class="table-section">
-    <div class="subheading">B.Tech Placement 2019-20</div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col" colspan="3"></th>
-                <th scope="col">CSE</th>
-                <th scope="col">EE</th>
-                <th scope="col">ME</th>
-                <th scope="col">CEB</th>
-
-                <th scope="col">Overall</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th colspan="3">No of Students Registered</th>
-                <td>40</td>
-                <td>28</td>
-                <td>29</td>
-                <td>16</td>
-                <td>113</td>
-            </tr>
-            <tr>
-                <th colspan="3">No of Students Placed</th>
-                <td>39</td>
-                <td>24</td>
-                <td>23</td>
-                <td>10</td>
-                <td>96</td>
-            </tr>
-            <tr>
-                <th colspan="3">Placement Percentage(%)</th>
-                <td>97.5</td>
-                <td>85.71</td>
-                <td>79.31 </td>
-                <td>62.5</td>
-                <td>84.96</td>
-            </tr>
-            <tr>
-                <th colspan="7">Average Package</th>
-                <td>15.85 LPA</td>
-            </tr>
-            <tr>
-                <th colspan="7">Median Package</td>
-                <td>12.4 LPA</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div class="table-section">
-    <div class="subheading">B.Tech Placement 2018-19</div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col" colspan="3"></th>
-                <th scope="col">CSE</th>
-                <th scope="col">EE</th>
-                <th scope="col">ME</th>
-                <th scope="col">Overall</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th colspan="3">No of Students Registered</th>
-                <td>37</td>
-                <td>27</td>
-                <td>24</td>
-                <td>88</td>
-            </tr>
-            <tr>
-
-                <th colspan="3">No of Students Placed</th>
-                <td>34</td>
-                <td>24</td>
-                <td>16</td>
-                <td>74</td>
-            </tr>
-            <tr>
-                <th colspan="3">Placement Percentage(%)</th>
-                <td>91.89</td>
-                <td>88.89</td>
-                <td>66.67</td>
-                <td>84.09</td>
-            </tr>
-            <tr>
-                <th colspan="6">Average Package</th>
-                <td>14.56 LPA</td>
-            </tr>
-            <tr>
-                <th colspan="6">Median Package</td>
-                <td>11.2 LPA</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-
-<div class="table-section">
-    <div class="subheading">B.Tech Placement 2017-18</div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col" colspan="3"></th>
-                <th scope="col">CSE</th>
-                <th scope="col">EE</th>
-                <th scope="col">ME</th>
-                <th scope="col">Overall</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th colspan="3">No of Students Registered</th>
-                <td>35</td>
-                <td>22</td>
-                <td>25</td>
-                <td>82</td>
-            </tr>
-            <tr>
-                <th colspan="3">No of Students Placed</th>
-                <td>33</td>
-                <td>18</td>
-                <td>23</td>
-                <td>74</td>
-            </tr>
-            <tr>
-                <th colspan="3">Placement Percentage(%)</th>
-                <td>94.29</td>
-                <td>81.82</td>
-                <td>92</td>
-                <td>90.24</td>
-            </tr>
-            <tr>
-                <th colspan="6">Average Package</th>
-                <td>11.7 LPA</td>
-            </tr>
-            <tr>
-                <th colspan="6">Median Package</td>
-                <td>9.6 LPA</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="placement_stats_wrapper">
+    <div class="heading">
+        Placement Statistics
+    </div>
+    
+    <div class="table-section">
+        <div class="subheading">B.Tech Placement 2019-20</div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="3"></th>
+                    <th scope="col">CSE</th>
+                    <th scope="col">EE</th>
+                    <th scope="col">ME</th>
+                    <th scope="col">CEB</th>
+    
+                    <th scope="col">Overall</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="3">No of Students Registered</th>
+                    <td>40</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>16</td>
+                    <td>113</td>
+                </tr>
+                <tr>
+                    <th colspan="3">No of Students Placed</th>
+                    <td>39</td>
+                    <td>24</td>
+                    <td>23</td>
+                    <td>10</td>
+                    <td>96</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Placement Percentage(%)</th>
+                    <td>97.5</td>
+                    <td>85.71</td>
+                    <td>79.31 </td>
+                    <td>62.5</td>
+                    <td>84.96</td>
+                </tr>
+                <tr>
+                    <th colspan="7">Average Package</th>
+                    <td>15.85 LPA</td>
+                </tr>
+                <tr>
+                    <th colspan="7">Median Package</td>
+                    <td>12.4 LPA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="table-section">
+        <div class="subheading">B.Tech Placement 2018-19</div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="3"></th>
+                    <th scope="col">CSE</th>
+                    <th scope="col">EE</th>
+                    <th scope="col">ME</th>
+                    <th scope="col">Overall</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="3">No of Students Registered</th>
+                    <td>37</td>
+                    <td>27</td>
+                    <td>24</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+    
+                    <th colspan="3">No of Students Placed</th>
+                    <td>34</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>74</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Placement Percentage(%)</th>
+                    <td>91.89</td>
+                    <td>88.89</td>
+                    <td>66.67</td>
+                    <td>84.09</td>
+                </tr>
+                <tr>
+                    <th colspan="6">Average Package</th>
+                    <td>14.56 LPA</td>
+                </tr>
+                <tr>
+                    <th colspan="6">Median Package</td>
+                    <td>11.2 LPA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <div class="table-section">
+        <div class="subheading">B.Tech Placement 2017-18</div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="3"></th>
+                    <th scope="col">CSE</th>
+                    <th scope="col">EE</th>
+                    <th scope="col">ME</th>
+                    <th scope="col">Overall</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="3">No of Students Registered</th>
+                    <td>35</td>
+                    <td>22</td>
+                    <td>25</td>
+                    <td>82</td>
+                </tr>
+                <tr>
+                    <th colspan="3">No of Students Placed</th>
+                    <td>33</td>
+                    <td>18</td>
+                    <td>23</td>
+                    <td>74</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Placement Percentage(%)</th>
+                    <td>94.29</td>
+                    <td>81.82</td>
+                    <td>92</td>
+                    <td>90.24</td>
+                </tr>
+                <tr>
+                    <th colspan="6">Average Package</th>
+                    <td>11.7 LPA</td>
+                </tr>
+                <tr>
+                    <th colspan="6">Median Package</td>
+                    <td>9.6 LPA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 
