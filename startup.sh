@@ -10,16 +10,16 @@ if [ -z "$1" ];
 fi
 
 # Making migrations files
-docker-compose -f $1 exec backend python manage.py makemigrations
+docker-compose -f $1 exec -T backend python manage.py makemigrations
 # Migrating changes into the database
-docker-compose -f $1 exec backend python manage.py migrate
+docker-compose -f $1 exec -T backend python manage.py migrate
 
 
 if [ "$2" = "--collect-static" ];
 then 
     echo "Performing Collect Static"
     # Calling collectstatic to dump all the static files
-    docker-compose -f $1 exec backend python manage.py collectstatic --no-input
+    docker-compose -f $1 exec -T backend python manage.py collectstatic --no-input
 else
     echo "Skipping collect static"
 fi
