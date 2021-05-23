@@ -1,25 +1,37 @@
-.box{
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: azure;
-}
-
-.heading{
-    color: #126aee; 
-    text-align: center;
-}
-
 .subheading{
     text-align: center;
-    color: darkolivegreen;
+    margin:20px auto;
+    font-weight: 600;
+    font-family: 'Poppins';
 }
 
-#chartdiv1, #chartdiv2, #chartdiv3 {
+.chartwrap{
+    background-color:rgb(230, 234, 236);
+    box-shadow: 0px 10px 80px 10px rgba(0,0,0,0.1);
+    border-radius: 30px;
+    transition: all 0.5s cubic-bezier(0,.26,.56,1);
+    margin: 40px 0px;
+    padding: 20px 5px;
+}
+
+.chartwrap:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 10px 80px 10px rgba(0, 0, 0, 0.15);
+}
+
+.chartdiv {
     width: 100%;
     height: 20rem;
+}
+
+@media screen and (max-width: 700px) {
+    .subheading{
+        font-size:1em;
+    }
+    .chartwrap{
+        margin: 20px 0px;
+    }
+    .chartdiv {
+        height: auto;
+    }
 }

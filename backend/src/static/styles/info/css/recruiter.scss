@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+// Base theme for 
+
+.theme-col{
+    color:rgb(13, 110, 253);
+}
+
+.al-center{
+    text-align:center;
+}
+
+.margin-before{
+    margin-top:30px;
+}
+
+.recruiter_container {
+    background-color: #f3f4ed;
+    padding: 20px 0px 50px 0px;
+    margin: 0;
+    margin-bottom:-20px;
+}
+
+.recruiter_box{
+    width: 80%;
+    margin: 0px auto;
+}
+
+.recruiter_head{
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 2.5em;
+    padding: 15px;
+    margin: auto;
+    border-radius: 20px;
+    width: fit-content;
+    color: #ff7b54;
+}
+
+.recruiter_text {
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-bottom:10px;
+    text-align: justify;
+}
+
+.recruiter_text .row{
+    margin: 15px auto;
+}
+
+.ol-num-wrap{
+    width: 50px; 
+    padding:0; 
+    margin:0;
+}
+
+.ol-num {
+    display: table-cell;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    background-color: rgb(13, 110, 253);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 600;
+}
+.l-wrap{
+    padding:0;
+    display:inline;
+    width:100%;
+    font-size: inherit;
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: calc(var(--bs-gutter-x)/ 2 + 40px);
+}
+ul{
+    margin:0;
+    padding:0;
+
+}
+ul li{
+    padding:5px 0px 5px 10px;
+    margin:0;
+}
+
+@media screen and (max-width: 700px) {
+    .recruiter_box{
+        width:95%;
+    }
+    .recruiter_head {
+        font-size: 2em;
+    }
+    .recruiter_text {
+        font-size: 1.2em;
+    }
+    .ol-num-wrap{
+        width: 30px; 
+    }
+    .ol-num {
+        width: 30px;
+        height: 30px;
+    }
+    .l-wrap{
+        padding-left: calc(var(--bs-gutter-x)/ 2 + 15px);
+    }
+    ul li{
+        padding:5px 0px 5px 5px;
+        margin:0;
+    }
+}
