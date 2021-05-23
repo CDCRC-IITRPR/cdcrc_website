@@ -1,65 +1,75 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block head_content %}
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-{% endblock head_content %}
-
-{% block body_content %}
+{% extends 'base.html' %} {% load static %} {% block head_content %}
+<title>CDCRC IIT Ropar | Login</title>
+{% endblock head_content %} {% block body_content %}
 <link
   href="{% static '_styles_build/info/css/login.css' %}"
   rel="stylesheet"
   type="text/css"
 />
 <style>
-    body{background-color: #DBE1E6;}
+  body {
+    background-color: #dbe1e6;
+  }
 </style>
 <div class="login_wrapper">
+  <div class="form_wrapper">
+    {% if user.is_authenticated %}
+    <h3>You are already logged in</h3>
+    {% else %}
+    <div class="heading">Login for Students and Team Members</div>
+    <hr />
+    <form method="POST" actions="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_username"> Username </label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          autofocus=""
+          autocapitalize="none"
+          autocomplete="username"
+          maxlength="150"
+          required=""
+          placeholder="Your Username"
+          id="id_username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="id_password"> Password </label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          autocomplete="current-password"
+          placeholder="Your Password"
+          required=""
+          id="id_password"
+        />
+      </div>
+      <button
+        class="button login-btn"
+        input
+        type="submit"
+        value="Login"
+        style="vertical-align: middle"
+      >
+        <span>Log In </span>
+      </button>
+    </form>
+    <a href="{% url 'password_reset' %}" class="forgot_password">
+      Forgot Password
+    </a>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <br>
-                <div class="jumbotron">
-                    {% if user.is_authenticated %}
-                        <h3>You are already logged in</h3>
-                    {% else %}
-                        <h1>Login for Students and Team Members</h1>
-                        <hr>
-                        <form method="POST" actions="">
-                            {% csrf_token %}
-                            <div class="form-group row">
-                                <label for="id_username" class="col-sm-2 col-form-label" style="padding: 1px;" ><strong>Username</strong></label> 
-                                <div class="col-sm-10">
-                                    {{ form.username }} 
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="id_password" class="col-sm-2 col-form-label" style="padding: 1px;"> <strong>Password</strong></label> 
-                                <div class="col-sm-10">
-                                    {{ form.password }} 
-                                </div>
-                            </div>  
-                            <br>
-                            <div class="g-recaptcha" data-sitekey="6LeKN8gZAAAAACof92pVS7E9U1cWX4N-lGLJux4W" style="width:25rem;"></div>
-                            <br>
-                             <button class="button" input type="submit" value="Login" style="vertical-align:middle;"><span>Log In </span></button>
-                        </form>
-                        <br>
-                        <a href="{% url 'password_reset' %}"><button class="button" style="vertical-align:middle;"><span>Forgot Password </span></button></a> 
-                        <br><br>
-                        <a href="{% url 'signup' %}" ><button class="button" style="vertical-align:middle;"><span>Sign Up</span></button></a>
-                    {% endif %}
-                    
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-    
+    <div class="dropdown-divider"></div>
+    <a href="{% url 'signup' %}" class="signup_btn_wrapper"
+      ><button class="button signup-btn" style="vertical-align: middle">
+        <span>Sign Up</span>
+      </button></a
+    >
+  </div>
 
+  {% endif %}
 </div>
-
 
 {% endblock %}
