@@ -1,0 +1,41 @@
+@import "../global_mixins";
+
+body {
+  background: #f0f2f5;
+}
+
+.login_wrapper {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  .form_wrapper {
+    @include form_wrapper_styles;
+    .heading {
+      font-weight: bolder;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    @include animated_button;
+
+    @include form_group_styles;
+
+    .forgot_password {
+      text-align: center;
+      color: #1877f2;
+    }
+    .login-btn {
+      width: 100%;
+    }
+    .signup_btn_wrapper {
+      display: flex;
+      justify-content: center;
+      .signup-btn {
+        background-color: #42b72a;
+        width: 80%;
+        margin: auto;
+      }
+    }
+
+    margin-bottom: 20px;
+  }
+}
