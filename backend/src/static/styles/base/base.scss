@@ -39,13 +39,16 @@ a {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     margin-bottom: 2px;
   }
+
+
   .contact-info-wrapper {
     background: #0074d9;
     .contact-info {
+      font-size: 0.8rem;
       width: 95%;
       max-width: 1000px;
       margin: auto;
-      padding: 8px 0px;
+      padding: 4px 0px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -92,7 +95,7 @@ a {
 }
 
 .header .logo_title_wrapper #cdcrc_logo {
-  width: 100px;
+  width: 60px;
 }
 
 .header .logo_title_wrapper .title .main-heading {
@@ -116,12 +119,7 @@ a {
 
 @media all and (max-width: 448px) {
   .header .logo_title_wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
   }
 }
@@ -144,13 +142,8 @@ a {
 }
 
 @media all and (max-width: 712px) {
-  .header {
-    display: -webkit-box;
-    display: -ms-flexbox;
+  .header_wrapper .header {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
   .header .user_profile_details {
@@ -162,12 +155,16 @@ a {
 }
 
 .navbar_wrapper {
-  background: #fdfaf6 !important;
+  .nav-item .nav-link {
+    color: $primarycolor-100 !important;
+    &:hover {
+      color: #fff !important;
+    }
+  }
 }
 
 .footer_wrapper {
   width: 100%;
-  margin-top: 1rem;
 }
 
 .footer_wrapper footer {

@@ -16,7 +16,7 @@
       name="keywords"
       content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic"
     />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="../favicon.ico" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -146,7 +146,7 @@
       </div>
 
       <div class="navbar_wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
             <button
               class="navbar-toggler"
@@ -160,9 +160,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
-              <ul
-                class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-              >
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                 <li class="nav-item">
                   <a
                     class="nav-link"
@@ -416,13 +414,13 @@
                   </ul>
                 </li>
 
-                <li>
-                  <a class="nav-item nav-link" href="{% url 'info:contacts' %}"
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'info:contacts' %}"
                     >Contact Us</a
                   >
                 </li>
 
-                {% if not user.is_authenticated %}
+                {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
