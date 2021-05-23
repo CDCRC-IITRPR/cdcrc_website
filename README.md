@@ -106,12 +106,6 @@ docker-compose -f docker-compose.prod.yml up
 docker-compose -f docker-compose.prod.yml down
 ```
 
-## Continuous Integration Logic
-
-Here a pictorial overview of the continuous integration. Please note that the team doesn't have `ssh` access to the system. Suggestions are welcome to improve the existing design.
-![](./_docs/prod.png)
-
-
 ### Scripts
 
 These are the following scripts which are used in the `prod`.
