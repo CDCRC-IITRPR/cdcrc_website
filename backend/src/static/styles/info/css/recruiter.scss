@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+// Base theme for 
+
 .theme-col{
     color:rgb(13, 110, 253);
 }
@@ -13,7 +15,7 @@
 }
 
 .recruiter_container {
-    background-color: rgb(219, 225, 230);
+    background-color: #f3f4ed;
     padding: 20px 0px 50px 0px;
     margin: 0;
     margin-bottom:-20px;
@@ -24,21 +26,21 @@
     margin: 0px auto;
 }
 
-.recruiter_head h2{
+.recruiter_head{
     font-family: 'Poppins';
-    font-weight: 800;
-    font-size: 3em;
-    margin: 0;
-    padding: 30px 0;
+    font-weight: bolder;
+    font-size: 2.5em;
+    padding: 15px;
+    margin: auto;
+    border-radius: 20px;
+    width: fit-content;
+    color: #ff7b54;
 }
 
 .recruiter_text {
-    font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
     font-weight: 400;
-    
-    padding-bottom:50px;
-    
+    padding-bottom:10px;
     text-align: justify;
 }
 
@@ -65,9 +67,9 @@
 }
 .l-wrap{
     padding:0;
-    margin:0 0 20px 0;
     display:inline;
     width:100%;
+    font-size: inherit;
     padding-right: calc(var(--bs-gutter-x)/ 2);
     padding-left: calc(var(--bs-gutter-x)/ 2 + 40px);
 }
@@ -85,8 +87,8 @@ ul li{
     .recruiter_box{
         width:95%;
     }
-    .recruiter_head h2 {
-        font-size: 2em !important;
+    .recruiter_head {
+        font-size: 2em;
     }
     .recruiter_text {
         font-size: 1.2em;
