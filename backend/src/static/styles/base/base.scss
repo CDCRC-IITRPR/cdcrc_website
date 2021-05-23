@@ -9,6 +9,8 @@
   box-sizing: border-box;
 }
 
+$footer_height: 350px;
+
 body {
   font-family: "Poppins", sans-serif !important;
   font-size: 14px;
@@ -165,6 +167,8 @@ a {
 
 .footer_wrapper {
   width: 100%;
+  height: 350px;
+  margin-bottom: -350px;
 }
 
 .footer_wrapper footer {
