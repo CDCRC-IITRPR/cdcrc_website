@@ -3,47 +3,32 @@
 
 {% block head_content %}
 <title>{{title}} | CDCRC IIT Ropar</title>
+<link href="{% static '_styles_build/internal/contact_us_form.css' %}" rel="stylesheet" type="text/css" />
+
 {% endblock %}
 
 {% block body_content %}
-<div class="container-fluid" style="background-color: #DBE1E6; text-align:center;">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 style="padding:1em;">Contact Form</h2>
-            <p>Fill this simple form and we'll reach out to you!</p>
-        </div>
-    </div>
-</div>
-<div class="container-fluid" style="background-color: #DBE1E6;">
-    <div class="row" style="margin-left: -60px;margin-right: 25px;">
-        <div class="col-12" style="text-align:center;">
-            <form method='post'>
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="row">
-                    <div class="col-1">
-                        <br>
-                        <br>
-                    </div>
-                    <div class="col-11">
-                        <br>
-                        {{ field }}
-                        {% for error in field.errors %}
-                        <p style="color: red">{{ error }}</p>
-                        {% endfor %}
-                        <br>
-                    </div>
-                    <br>
+<div class="contact_us_wrapper">
+    <div class="contact_us_form_wrapper">
+        <form method='post' class="form_wrapper">
+            <div class="heading">Contact Form</div>
+            <div class="heading_subtext">Fill this simple form and we'll reach out to you!</div>
+            {% csrf_token %}
+            {% for field in form %}
+            <div>
+                <div>
+                    {{ field }}
+                    {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-                <div class="row">
-                    <div class="col-12">
-                        <input class="btn btn-primary" type="submit" value="Submit">
-                        <br><br>
-                    </div>
-                    <div>
-            </form>
-        </div>
+                <br />
+            </div>
+            {% endfor %}
+            <button class="button login-btn" input type="submit" value="Login" style="vertical-align: middle">
+                <span>Submit</span>
+            </button>
+        </form>
     </div>
 </div>
 {% endblock body_content %}

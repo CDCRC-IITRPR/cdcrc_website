@@ -1,0 +1,31 @@
+@import "../global_mixins";
+
+body {
+    background: #f0f2f5;
+}
+
+.signup_wrapper {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    .form_wrapper {
+        @include form_wrapper_styles;
+        .heading {
+            font-weight: bolder;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        @include animated_button;
+
+        @include form_group_styles;
+
+
+        .register-btn {
+            width: 100%;
+        }
+
+    }
+
+    margin-bottom: 20px;
+}
