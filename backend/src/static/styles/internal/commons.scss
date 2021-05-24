@@ -1,0 +1,11 @@
+@mixin already_logged_in_styles {
+    .already_logged_in_message {
+        min-height: 30vh;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+}

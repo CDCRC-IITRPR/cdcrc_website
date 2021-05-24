@@ -9,6 +9,8 @@
   box-sizing: border-box;
 }
 
+$navbar_footer_color: #03506f;
+
 $footer_height: 350px;
 
 body {
@@ -21,12 +23,18 @@ a {
   text-decoration: none;
 }
 
-.header_wrapper {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background: $primarycolor-800;
+a:hover {
+  color: $color-accent;
+}
 
+
+@mixin navbar_header_sync {
+  margin: 0px 2.5%;
+}
+
+.header_wrapper {
+  height: fit-content;
+  background: $navbar_footer_color;
   .header {
     color: #fff;
     display: -ms-grid;
@@ -37,18 +45,18 @@ a {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.15);
+    @include navbar_header_sync;
+    padding-top: 0.5rem;
+    padding-top: 0.5rem;
     margin-bottom: 2px;
   }
-
 
   .contact-info-wrapper {
     background: #0074d9;
     .contact-info {
       font-size: 0.8rem;
-      width: 95%;
-      max-width: 1000px;
+      width: 90%;
       margin: auto;
       padding: 4px 0px;
       display: -webkit-box;
@@ -157,6 +165,7 @@ a {
 }
 
 .navbar_wrapper {
+  @include navbar_header_sync;
   .nav-item .nav-link {
     color: $primarycolor-100 !important;
     &:hover {
@@ -173,7 +182,7 @@ a {
 
 .footer_wrapper footer {
   padding: 10px 16px;
-  background: $primarycolor-800;
+  background: $navbar_footer_color;
 }
 
 .footer_wrapper footer .mainContainer {

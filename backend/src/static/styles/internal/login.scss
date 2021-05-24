@@ -1,8 +1,13 @@
 @import "../global_mixins";
+@import "./commons.scss";
+
 
 body {
   background: #f0f2f5;
 }
+
+@include already_logged_in_styles;
+
 
 .login_wrapper {
   width: 90%;

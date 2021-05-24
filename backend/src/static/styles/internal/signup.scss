@@ -1,8 +1,10 @@
 @import "../global_mixins";
+@import "./commons.scss";
 
 body {
     background: #f0f2f5;
 }
+@include already_logged_in_styles;
 
 .signup_wrapper {
     width: 90%;
@@ -20,11 +22,9 @@ body {
 
         @include form_group_styles;
 
-
         .register-btn {
             width: 100%;
         }
-
     }
 
     margin-bottom: 20px;

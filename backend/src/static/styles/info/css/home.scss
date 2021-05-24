@@ -119,3 +119,7 @@ $home_page_border_radius: 10px;
     flex-direction: column;
   }
 }
+
+#News-tab.active, #Events-tab.active{
+  background: #ff8474; 
+}
