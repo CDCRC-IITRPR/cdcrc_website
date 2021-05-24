@@ -6,17 +6,13 @@ body {
 
 .signup_wrapper {
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
-
-   
     .form_wrapper {
         @include form_wrapper_styles;
- 
-
         .heading {
             font-weight: bolder;
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             text-align: center;
         }
 

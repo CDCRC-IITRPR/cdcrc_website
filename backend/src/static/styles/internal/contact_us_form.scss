@@ -1,0 +1,41 @@
+@import "../global_mixins";
+
+body {
+    background: #f0f2f5;
+}
+
+.contact_us_wrapper {
+    .contact_us_form_wrapper {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+
+        
+        .form_wrapper {
+            @include form_wrapper_styles;
+            .heading {
+                font-weight: bolder;
+                font-size: 1.6rem;
+                text-align: center;
+                padding-bottom: 1rem;
+            }
+            .heading_subtext{
+                font-size: 0.9rem;
+                color: #0d6efd;
+                padding-bottom: 0.5rem;
+            }
+
+            @include animated_button;
+
+            @include form_group_styles;
+
+            .register-btn {
+                width: 100%;
+            }
+        }
+
+        margin-bottom: 20px;
+    }
+}
