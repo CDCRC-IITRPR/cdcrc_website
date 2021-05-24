@@ -8,13 +8,13 @@ class SignupForm(UserCreationForm):
     password1 = forms.CharField(
         label="Password",
         strip=False,
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Create Password'}),
         help_text=password_validation.password_validators_help_text_html(),
     )
     password2 = forms.CharField(
         label="Confirm Password",
         strip=False,
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm Password'}),
         help_text=password_validation.password_validators_help_text_html(),
     )
     class Meta:
@@ -28,7 +28,7 @@ class SignupForm(UserCreationForm):
         }
 
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control', 'required':True}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control',  }),
-            'email': forms.EmailInput(attrs={'class': 'form-control',  'required':True}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your First Name', 'required':True}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Last Name' }),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email', 'required':True}),
         }

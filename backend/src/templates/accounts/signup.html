@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body_content %}
-
+<link
+  href="{% static '_styles_build/internal/signup.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
+<div class="signup_wrapper">
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-1"></div>
@@ -11,8 +16,11 @@
                 {% if user.is_authenticated %}
                     <h3>You are already logged in</h3>
                 {% else %}
-                    <h1>Signup</h1>
+                    <div class="form_wrapper">
+                      <div class="heading">
+                      <h1>Sign Up</h1>
                     <hr>
+                     </div>
                     <form method="post">
                         {% csrf_token %}
                         {% for field in form %}
@@ -27,14 +35,22 @@
                         </p>
                         {% endfor %}
                         <div style="text-align: center;">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                          <button
+                          class="button register-btn"
+                          input
+                          type="submit"
+                          style="vertical-align: middle"
+                          >
+                          <span>Register</span>
+                        </button>
                         </div>
                     </form>
+                  </div>
                 {% endif %}
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
 </div>
-
+</div>
 {% endblock %}
