@@ -1,5 +1,21 @@
+# build environment
+FROM node:13.12.0-alpine as builder
+
+RUN apk add --no-cache git
+
+# build the stylesheets
+# updating npm
+RUN npm install -g npm@latest
+# gloablly installing sass
+RUN npm install -g sass
+
+# copy project
+COPY ./src/static/styles ./styles
+RUN sass ./styles/:./_styles_build --no-source-map
+
+
 # pull official base image
-FROM python:3.8.10-buster
+FROM python:3.8.10-buster as runner
 
 # setting the work directory
 WORKDIR /backend
@@ -13,20 +29,7 @@ RUN pip install -r ./requirements.txt
 
 # copy project
 COPY ./src/ ./
-
-RUN ls static
-RUN ls static/_styles_build
-
-# build the stylesheets
-# Installing nodejs
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt-get install -y nodejs
-# updating npm
-RUN npm install -g npm@latest
-# gloablly installing sass
-RUN npm install -g sass
-
-RUN sass ./static/styles/:./static/_styles_build --no-source-map
+COPY --from=builder /_styles_build ./static/_styles_build
 
 EXPOSE 8000
 

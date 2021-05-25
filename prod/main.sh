@@ -23,6 +23,12 @@ cp $ENV_PATH ./
 
 sudo chmod +x startup.sh
 
+# adding the command in nginx/Dockerfile.prod to use the ssl config
+cat <<'EOT' >> nginx/Dockerfile.prod
+COPY nginx_with_ssl.conf /etc/nginx/conf.d/nginx.conf
+EOT
+
+
 # Building 
 echo "Build the application"
 docker-compose -f docker-compose.prod.yml build
