@@ -7,7 +7,7 @@ services:
         build:
             context: ./backend
             dockerfile: Dockerfile
-        command: sh -c "ls -al && python manage.py runserver 0.0.0.0:8000"
+        command: sh -c "python manage.py runserver 0.0.0.0:8000"
         # Mapping Container PORT 8000 to Host PORT 8000
         ports:
             - 8000:8000

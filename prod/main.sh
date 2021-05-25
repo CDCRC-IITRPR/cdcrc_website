@@ -31,5 +31,6 @@ echo "Start the application"
 docker-compose -f docker-compose.prod.yml up -d
 
 echo "Executing the startup script"
-./startup.sh
+./startup.sh docker-compose.prod.yml --collect-static
+
 
