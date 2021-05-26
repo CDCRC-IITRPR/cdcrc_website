@@ -9,6 +9,6 @@ django-import-export==2.3.0
 django-extensions
 django-bootstrap-datepicker-plus==3.0.5
 python-dotenv==0.17.1
-sendgrid
 gunicorn
 psycopg2
+django-sendgrid-v5

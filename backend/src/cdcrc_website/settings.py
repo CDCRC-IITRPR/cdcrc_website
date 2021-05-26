@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import os
 from dotenv import load_dotenv
-
-from utils.mailer import Mailer
+from distutils import util
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +21,7 @@ ENV_PATH = os.path.join(BASE_DIR, "..", "..", ".env")
 # Loading env variables
 load_dotenv(ENV_PATH)
 
-SECRET_KEY =  os.environ.get("DJANGO_SECRET_KEY")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG = int(os.environ.get("DEBUG", 1))
 
 ALLOWED_HOSTS = ['*']
@@ -46,6 +45,14 @@ INSTALLED_APPS = [
 ]
 
 
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+SENDGRID_SANDBOX_MODE_IN_DEBUG = bool(util.strtobool(
+    os.environ.get('SENDGRID_SANDBOX_MODE_IN_DEBUG')))
+DEFAULT_FROM_EMAIL = os.environ.get('SENDER_EMAIL')
+SENDGRID_TRACK_CLICKS_PLAIN = False
+SENDGRID_TRACK_CLICKS_HTML = False
+SENDGRID_TRACK_EMAIL_OPENS = False
 
 
 MIDDLEWARE = [
@@ -71,7 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'metadata.context_processors.categories_processor',
+                # 'metadata.context_processors.categories_processor',
             ],
         },
     },
@@ -138,15 +145,15 @@ if DEBUG:
         os.path.join(BASE_DIR, "static"),
     ]
 else:
-    STATIC_ROOT='static'
+    STATIC_ROOT = 'static'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/' #this is the url to access media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'  # this is the url to access media
 
-LOGIN_REDIRECT_URL='home'
-LOGOUT_REDIRECT_URL='home'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
-TIME_ZONE =  'Asia/Kolkata'
+TIME_ZONE = 'Asia/Kolkata'
 
 BOOTSTRAP4 = {
     'include_jquery': True,

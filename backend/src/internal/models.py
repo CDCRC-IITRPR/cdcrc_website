@@ -64,7 +64,6 @@ class IssueFollowUp(models.Model):
     def get_detail_url(self, request):
         curr_site = get_current_site_from_env()
         full_url = "http://"+curr_site+str(reverse('internal:issue_detail', kwargs={'pk': self.issue.pk}))
-        print(full_url)
         return full_url
 
     def __str__(self):

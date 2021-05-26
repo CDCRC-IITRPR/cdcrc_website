@@ -13,12 +13,12 @@ from django.db import IntegrityError
 from utils.utils import render_message
 from utils.login_decorators import team_user_required
 
+
 def signup(request):
-    if request.method=='POST':
+    if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
             to_email = form.cleaned_data.get('email')
-            print(to_email)
             if not to_email.endswith('@iitrpr.ac.in'):
                 return render_message(request, 'Access Denied', 'Sorry ... only IIT Ropar domain emails can be used to sign up!')
             mailer = Mailer()
@@ -31,35 +31,35 @@ def signup(request):
                 message = render_to_string('accounts/activate_account_email.html', {
                     'user': user,
                     'domain': current_site,
-                    'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-                    'token':account_activation_token.make_token(user),
+                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                    'token': account_activation_token.make_token(user),
                 })
-                
-                response=mailer.send_email(to_email, 'CDCRC User Registration Activation', message )
+
+                response = mailer.send_email(
+                    to_email, 'CDCRC User Registration Activation', message)
                 print("Mail Response: ", response)
-                if(response=='fail'):
+                if(response == 'fail'):
                     raise Exception('Mail Service is down! 😢')
 
                 return render_message(request,
-                    'Email Confirmation',
-                    'To activate your account, please see your email!'
-                )
-            except IntegrityError as e: 
+                                      'Email Confirmation',
+                                      'Thank you for joining CDCRC Internal Network. We have sent an activation link to your email. Once verified, you can access plethora of resources on the webpage. Hope to see you onboard soon!'
+                                      )
+            except IntegrityError as e:
                 if 'UNIQUE constraint failed' in str(e):
                     return render_message(request,
-                        'User Exists',
-                        'An account with this user already exists!'
-                    )
+                                          'User Exists',
+                                          'An account with this user already exists!'
+                                          )
                 else:
                     raise Exception('DB Integrity Error Occurred')
             except Exception as e:
                 # Deleting the user
                 user.delete()
                 return render_message(request,
-                    'An error occurred while creating your account',
-                    'Trace: '+ str(e)
-                )
-            
+                                      'An error occurred while creating your account',
+                                      'Trace: ' + str(e)
+                                      )
 
     else:
         form = SignupForm()
@@ -74,23 +74,25 @@ def activate(request, uidb64, token):
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
         return render_message(request,
-            'Error',
-            'An error occurred!'
-        )
+                              'Error',
+                              'An error occurred!'
+                              )
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
         login(request, user)
         return render_message(request,
-            'Account Activated',
-            'Congratulations, your account was successfully activated!'
-        )
+                              'Account Activated',
+                              'Congratulations, your account was successfully activated!'
+                              )
     else:
         return render_message(request,
-            'Invalid Activation Link',
-            'The activation link is invalid!'
-        )
+                              'Invalid Activation Link',
+                              'The activation link is invalid!'
+                              )
+
 
 def check_account_status(request):
-    message = str(request.user.get_user_name()) + " " + str(request.user.is_team_member()) + " " + str(request.user.student_profile_completed())
+    message = str(request.user.get_user_name()) + " " + str(request.user.is_team_member()
+                                                            ) + " " + str(request.user.student_profile_completed())
     return render_message(request, 'User Status', message)

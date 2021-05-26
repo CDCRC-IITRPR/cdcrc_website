@@ -1,15 +1,13 @@
 {% autoescape off %}
-
-<h1>CDCRC User Registration Confirmation</h1>
+<h3>CDCRC User Registration Confirmation</h3>
 <hr>
 
 Hi {{ user.get_user_name }}
 <br>
-Please click on the link to confirm your registration on the IIT Ropar CDCRC system.
+Thanks a lot for joining the CDCRC Internal network. Please click on the link to confirm your registration.
 <br>
-http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{{ domain }}{% url 'activate' uidb64=uid token=token %}
 <br>
 Sincerely
-<br>
 CDCRC Team
 {% endautoescape %}

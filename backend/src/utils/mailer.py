@@ -1,8 +1,5 @@
 import os
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
-from sendgrid.helpers.mail.email import Email
-from sendgrid.helpers.mail.personalization import Personalization
+from django.core.mail import EmailMultiAlternatives
 
 
 class Mailer:
@@ -24,23 +21,15 @@ class Mailer:
         if type(to) is not list:
             to = to.split()
 
-        message = Mail(
-            from_email=(self.sender_email, self.sender_name),
+        message = EmailMultiAlternatives(
             subject=subject,
-            html_content=body
+            from_email=self.sender_email,
+            to=to,
         )
-        for x in to:
-            person = Personalization()
-            person.add_to(Email(x))
-            if cc:
-                person.add_cc(Email(cc))
-            if bcc:
-                person.add_bcc(Email(bcc))
-            message.add_personalization(person)
+        message.attach_alternative(body, "text/html")
 
         try:
-            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-            sg.send(message)
+            message.send(fail_silently=False)
             return 'ok'
         except Exception as e:
             print("Some error occured in mail service")
