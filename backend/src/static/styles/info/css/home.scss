@@ -9,7 +9,7 @@ $home_page_border_radius: 10px;
 }
 
 .custom_container {
-  width: 98%;
+  width: 95%;
   margin: auto;
   .heading {
     font-size: 1.8rem;
@@ -75,10 +75,34 @@ $home_page_border_radius: 10px;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   .newsroom_wrapper {
+    word-break: break-all;
     background: #fde9df;
     margin-top: 10px;
     padding: 1.2rem !important;
+    padding-right: 0rem !important;
     border-radius: $home_page_border_radius;
+
+    #News{
+      max-height: 400px;
+      height: 40vh;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 10px;
+        height: 15px;
+       }
+       &::-webkit-scrollbar-thumb {
+        background: linear-gradient(13deg, #f9d4ff 14%,#c7ceff 64%);
+        border-radius: 10px;
+       }
+       &::-webkit-scrollbar-thumb:hover{
+        background: linear-gradient(13deg, #c7ceff 14%,#f9d4ff 64%);
+       }
+       &::-webkit-scrollbar-track{
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: inset 7px 10px 12px #f0f0f0;
+       }
+    }
 
     .home-tab,
     .events-tab {
