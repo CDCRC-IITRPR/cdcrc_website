@@ -15,13 +15,15 @@ set -e
 
 
 echo "Cloning the repo"
-# Remove the directory if it exist
-rm -rf cdcrc_website
-git clone https://github.com/vinx-2105/cdcrc_website
-
+# Clone the repo if the directory doesn't exist
+[ ! -d "./cdcrc_website/" ] && git clone "$REPO_URL"
 
 cd cdcrc_website
+
 git checkout prod --
+git fetch --all
+# changing the branch
+git reset --hard origin/prod
 
 echo "Moving the env file from the \$ENV_PATH to current directory"
 cp $ENV_PATH ./.env
@@ -37,9 +39,15 @@ EOT
 
 # Building 
 echo "Build the application"
-docker-compose -f docker-compose.prod.yml build --no-cache
+docker-compose -f docker-compose.prod.yml build 
 
-echo "Start the application"
+echo "Stopping all containers"
+docker-compose -f docker-compose.prod.yml down
+
+echo "Removing static_webassets volume"
+docker volume rm cdcrc_website_static_webassets
+
+echo "Starting the application....."
 docker-compose -f docker-compose.prod.yml up -d
 
 echo "Executing the startup script"
