@@ -56,7 +56,7 @@ class Resource(models.Model):
         return self.title
 
 class ResourceImage(models.Model):
-    image = models.ImageField(upload_to='resources/images/{}/'.format(random.randint(1, 100000000)))
+    image = models.ImageField(upload_to='resources/images/% Y/% m/% d/')
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE, related_name='images', validators=[validate_file_extension, validate_file_size])
 
     def __str__(self):

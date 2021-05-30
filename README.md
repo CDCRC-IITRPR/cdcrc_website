@@ -8,6 +8,12 @@ The following repository contains the source code of the official website of Car
 ![](./_docs/landing.png)
 
 
+## Branches
+
+* `prod` -> This branch is currently deployed on the remote server. Don't make any PRs here.
+* `master` -> This is the development branch. 
+
+
 ## Directory Overview
 
 
@@ -45,6 +51,9 @@ pip install -r requirements.txt
 > The root directory should have a file named `.env.example`. Before proceeding to the next step, you must make a .env file and fill in all the values mentioned. Alternately, you may add all these values in your `.bashrc` script too.
 
 > Head over to [compiling the stylesheets](#compiling-the-stylesheets) section to know how to compile the sass stylesheets.
+
+> Head over to [migrations](#migrations) section to know about migrations.
+
 3. Change the directory into `src/`.
 ```bash
 cd src/
@@ -81,6 +90,8 @@ docker-compose up
 > It will start the backend server at [localhost:8000](http://localhost:8000).
 
 > Head over to [compiling the stylesheets](#compiling-the-stylesheets) section to know how to compile the sass stylesheets.
+
+> Head over to [migrations](#migrations) section to know about migrations.
 
 3. You may use the following command to stop the containers.
 ```bash
@@ -140,6 +151,21 @@ These are the following scripts which are used in the `prod`.
         </td>
     </tr>
 <table>
+
+
+## Migrations
+
+Django requires you to migrate all the changes in the `models.py` to the database. This step is required during the initial setup and whenever there are any changes in any `models.py` files.
+
+1. Development Mode: Command to make migrations and migrate the changes without any collect static
+```bash
+./startup.sh docker-compose.yml
+```
+2. Production Mode: Command to make migrations, migrate the changes and collect all static assets.
+```bash
+./startup.sh docker-compose.prod.yml --collect-static
+```
+
 
 
 ## Compiling the stylesheets
