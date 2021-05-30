@@ -15,15 +15,13 @@ set -e
 
 
 echo "Cloning the repo"
-# Clone the repo if the directory doesn't exist
-[ ! -d "./cdcrc_website/" ] && git clone "$REPO_URL"
+# Remove the directory if it exist
+rm -rf cdcrc_website
+git clone https://github.com/vinx-2105/cdcrc_website
+
 
 cd cdcrc_website
-
-git fetch --all
-
-# changing the branch
-git reset --hard origin/prod
+git checkout prod --
 
 echo "Moving the env file from the \$ENV_PATH to current directory"
 cp $ENV_PATH ./.env
@@ -36,9 +34,10 @@ COPY nginx_with_ssl.conf /etc/nginx/conf.d/nginx.conf
 EOT
 
 
+
 # Building 
 echo "Build the application"
-docker-compose -f docker-compose.prod.yml build
+docker-compose -f docker-compose.prod.yml build --no-cache
 
 echo "Start the application"
 docker-compose -f docker-compose.prod.yml up -d

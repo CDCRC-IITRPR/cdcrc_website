@@ -5,13 +5,18 @@ RUN apk add --no-cache git
 
 # build the stylesheets
 # updating npm
+ARG CACHEBUST=1
 RUN npm install -g npm@latest
 # gloablly installing sass
+ARG CACHEBUST=1
 RUN npm install -g sass
 
 # copy project
+ARG CACHEBUST=1
 COPY ./src/static/styles ./styles
-RUN sass ./styles/:./_styles_build --no-source-map
+
+ARG CACHEBUST=1
+RUN sass ./styles/:./_styles_build --verbose
 
 
 # pull official base image
@@ -28,9 +33,14 @@ COPY ./requirements.txt .
 RUN pip install -r ./requirements.txt
 
 # copy project
+ARG CACHEBUST=1
 COPY ./src/ ./
+ARG CACHEBUST=1
+RUN rm -rf ./static/_styles_build
+ARG CACHEBUST=1
 COPY --from=builder /_styles_build ./static/_styles_build
 
 EXPOSE 8000
 
 CMD ["gunicorn", "cdcrc_website.wsgi:application", "--bind", "0.0.0.0:8000"]
+
