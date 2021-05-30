@@ -1,0 +1,36 @@
+name: Deploy to prod
+
+on:
+  workflow_dispatch:
+  
+  push:
+    branches: [ prod ]
+    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to remote server
+        run: |
+          docker build -t deploy_to_prod deploy_action/
+          docker run -e VPN_SERVER_IP="$VPN_SERVER_IP" \
+            -e VPN_USERNAME="$VPN_USERNAME" \
+            -e VPN_PASSWORD="$VPN_PASSWORD" \
+            -e VPN_SERVER_CERT="$VPN_SERVER_CERT" \
+            -e AUTH_GROUP="$AUTH_GROUP" \
+            -e SSH_KEY="$SSH_KEY" \
+            -e REMOTE_IP="$REMOTE_IP"  \
+            -e REMOTE_USERNAME="$REMOTE_USERNAME" \
+            --privileged \
+            deploy_to_prod
+        env:
+          VPN_SERVER_IP: ${{secrets.VPN_SERVER_IP}}
+          VPN_USERNAME: ${{secrets.VPN_USERNAME}}
+          VPN_PASSWORD: ${{secrets.VPN_PASSWORD}}
+          VPN_SERVER_CERT: ${{secrets.VPN_SERVER_CERT}}
+          AUTH_GROUP: ${{secrets.AUTH_GROUP}}
+          SSH_KEY: ${{secrets.SSH_KEY}}
+          REMOTE_IP: ${{ secrets.REMOTE_IP }}
+          REMOTE_USERNAME: ${{ secrets.REMOTE_USERNAME }}

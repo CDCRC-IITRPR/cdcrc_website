@@ -6,17 +6,24 @@
 
 # Ensure that docker is installed
 
+
+REPO_URL=https://github.com/CDCRC-IITRPR/cdcrc_website
+
 set -e
 
 # TODO: Add Logic to see if Commit ID Changed
 
 
 echo "Cloning the repo"
-# Remove the directory if it exist
-rm -rf cdcrc_website
-git clone https://github.com/vinx-2105/cdcrc_website
+# Clone the repo if the directory doesn't exist
+[ ! -d "/path/to/dir" ] && git clone "$REPO_URL"
 
 cd cdcrc_website
+
+git fetch --all
+
+# changing the branch
+git reset --hard origin/prod
 
 echo "Moving the env file from the \$ENV_PATH to current directory"
 cp $ENV_PATH ./
@@ -38,5 +45,4 @@ docker-compose -f docker-compose.prod.yml up -d
 
 echo "Executing the startup script"
 ./startup.sh docker-compose.prod.yml --collect-static
-
 
