@@ -16,7 +16,7 @@ set -e
 
 echo "Cloning the repo"
 # Clone the repo if the directory doesn't exist
-[ ! -d "/path/to/dir" ] && git clone "$REPO_URL"
+[ ! -d "./cdcrc_website/" ] && git clone "$REPO_URL"
 
 cd cdcrc_website
 
@@ -26,7 +26,7 @@ git fetch --all
 git reset --hard origin/prod
 
 echo "Moving the env file from the \$ENV_PATH to current directory"
-cp $ENV_PATH ./
+cp $ENV_PATH ./.env
 
 sudo chmod +x startup.sh
 
