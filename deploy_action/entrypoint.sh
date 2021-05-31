@@ -39,8 +39,10 @@ chmod +x remote_leader.sh
 # waiting for 5 seconds
 sleep 5
 
+
+echo "Connecting to remote server..."
 # ssh into the server
-ssh -o StrictHostKeyChecking=no "$REMOTE_USERNAME@$REMOTE_IP" env ENV_PATH="$ENV_PATH" "/bin/bash -s " < remote_leader.sh
+ssh -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no "$REMOTE_USERNAME@$REMOTE_IP" env ENV_PATH="$ENV_PATH" "/bin/bash -s " < remote_leader.sh
 
 # TODO: Push the logs file
 

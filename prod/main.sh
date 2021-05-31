@@ -10,6 +10,7 @@
 REPO_URL=https://github.com/CDCRC-IITRPR/cdcrc_website
 
 set -e
+set -o pipefail
 
 # Clone the repo if the directory doesn't exist
 if [ ! -d "./cdcrc_website/" ] 
@@ -37,7 +38,6 @@ sudo chmod +x startup.sh
 cat <<'EOT' >> nginx/Dockerfile.prod
 COPY nginx_with_ssl.conf /etc/nginx/conf.d/nginx.conf
 EOT
-
 
 
 # Building 

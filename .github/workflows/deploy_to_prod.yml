@@ -1,4 +1,4 @@
-name: Deploy to prod
+name: deploy_to_prod
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
   push:
     branches: [ prod ]
     
-
 jobs:
   build:
     runs-on: ubuntu-latest
