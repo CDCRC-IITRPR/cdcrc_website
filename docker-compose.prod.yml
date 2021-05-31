@@ -2,22 +2,23 @@ version: '3'
 
 services:
     backend:
+        restart: unless-stopped
         build:
             context: ./backend
             dockerfile: Dockerfile.prod
-        command: sh -c "gunicorn cdcrc_website.wsgi:application --bind 0.0.0.0:8000"
-        restart: unless-stopped
+        command: sh -c "mkdir -p gunicorn_logs && gunicorn cdcrc_website.wsgi:application --bind 0.0.0.0:8000 --error-logfile gunicorn_logs/error.log --access-logfile gunicorn_logs/access.log --log-level debug --capture-output"
         env_file:
             - ./.env
         # ***for testing only
         # ports:
         #     - 2587:8000
         environment:
-            # This is necessary for collect static
+            - PYTHONUNBUFFERED=TRUE
             - DEBUG=0
         volumes:
             - static_webassets:/backend/static/
             - media_webassets:/backend/media/
+            - './gunicorn_logs/:/backend/gunicorn_logs/'
         depends_on:
             - postgres_db
 

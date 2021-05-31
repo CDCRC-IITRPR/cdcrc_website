@@ -82,7 +82,7 @@ $home_page_border_radius: 10px;
     padding-right: 0rem !important;
     border-radius: $home_page_border_radius;
 
-    #News{
+    #News, #Events{
       max-height: 400px;
       height: 40vh;
       overflow-y: scroll;

@@ -11,4 +11,4 @@ django-bootstrap-datepicker-plus==3.0.5
 python-dotenv==0.17.1
 gunicorn
 psycopg2
-django-sendgrid-v5
+django-anymail[sendgrid]

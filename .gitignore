@@ -156,3 +156,4 @@ dmypy.json
 *.css.map
 *.css
 media/
+gunicorn_logs/

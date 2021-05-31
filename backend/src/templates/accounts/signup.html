@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block body_content %}
+
+{% block head_content %}
+<title>CDCRC IIT Ropar | Signup</title>
 <link href="{% static '_styles_build/internal/signup.css' %}" rel="stylesheet" type="text/css" />
+{% endblock head_content %}
+
+
+{% block body_content %}
 <div class="signup_wrapper">
-  <div class="container-fluid">
+  <div>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <br>
-        <div class="jumbotron">
+        <div>
           <div class="form_wrapper">
             {% if user.is_authenticated %}
             <div class="already_logged_in_message">You are already logged in</div>

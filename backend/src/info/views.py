@@ -52,7 +52,7 @@ def create_resource(request):
                     file.resource = res
                     file.save()
             mailer = Mailer()
-            mailer.send_email(
+            mailer._send_email(
                 CDCRC_MEDIA_EMAIL,
                 'Approval Request for New Resource {}'.format(res.title),
                 '{} has added a resource titled {}. Please take a look.'.format(res.author.username, res.title)
@@ -107,7 +107,7 @@ def contact_us_form(request):
         if form.is_valid():
             contact_us_obj = form.save(commit=True)
             mailer = Mailer()
-            mailer.send_email(
+            mailer._send_email(
                 PRIMARY_ALERT_EMAILS,
                 '[ALERT] New Registration on Website:  {}'.format(contact_us_obj.name), 
                 'Please reach out to {} from {} who has registered on the CDCRC Website.\n Contact Info - {}, {}.\nMessage- {}'.format(contact_us_obj.name, contact_us_obj.organization, contact_us_obj.email, contact_us_obj.phone, contact_us_obj.message),

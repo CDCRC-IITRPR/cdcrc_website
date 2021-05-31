@@ -35,7 +35,7 @@ def signup(request):
                     'token': account_activation_token.make_token(user),
                 })
 
-                response = mailer.send_email(
+                response = mailer._send_email(
                     to_email, 'CDCRC User Registration Activation', message)
                 print("Mail Response: ", response)
                 if(response == 'fail'):
@@ -45,17 +45,12 @@ def signup(request):
                                       'Email Confirmation',
                                       'Thank you for joining CDCRC Internal Network. We have sent an activation link to your email. Once verified, you can access plethora of resources on the webpage. Hope to see you onboard soon!'
                                       )
-            except IntegrityError as e:
-                if 'UNIQUE constraint failed' in str(e):
-                    return render_message(request,
-                                          'User Exists',
-                                          'An account with this user already exists!'
-                                          )
-                else:
-                    raise Exception('DB Integrity Error Occurred')
             except Exception as e:
                 # Deleting the user
-                user.delete()
+                if user.id != None:
+                    print("Deleting user: ", user.id)
+                    user.delete()
+
                 return render_message(request,
                                       'An error occurred while creating your account',
                                       'Trace: ' + str(e)
@@ -71,11 +66,11 @@ def activate(request, uidb64, token):
         t = urlsafe_base64_decode(uidb64)
         uid = force_text(t)
         user = User.objects.get(pk=uid)
-    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
         user = None
         return render_message(request,
-                              'Error',
-                              'An error occurred!'
+                              'Error in activating the account',
+                              'Trace: '+str(e),
                               )
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True

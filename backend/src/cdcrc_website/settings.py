@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import os
 from dotenv import load_dotenv
-from distutils import util
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +25,22 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG = int(os.environ.get("DEBUG", 1))
 
 ALLOWED_HOSTS = ['*']
+
+
+# Mail gun config
+EMAIL_BACKEND = 'anymail.backends.sendgrid.EmailBackend'
+
+ANYMAIL = {
+    "SENDGRID_API_KEY": os.environ.get('SENDGRID_SERVICE_API_KEY'),
+    "SEND_DEFAULTS": {
+        "track_clicks": False,
+        "track_opens": False,
+    },
+}
+
+DEFAULT_FROM_EMAIL = os.environ.get('SENDER_EMAIL')  
+SERVER_EMAIL = os.environ.get('SENDER_EMAIL')  
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,17 +58,8 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',
     'django_extensions',
     'accounts',
+    'anymail'
 ]
-
-
-EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-SENDGRID_SANDBOX_MODE_IN_DEBUG = bool(util.strtobool(
-    os.environ.get('SENDGRID_SANDBOX_MODE_IN_DEBUG')))
-DEFAULT_FROM_EMAIL = os.environ.get('SENDER_EMAIL')
-SENDGRID_TRACK_CLICKS_PLAIN = False
-SENDGRID_TRACK_CLICKS_HTML = False
-SENDGRID_TRACK_EMAIL_OPENS = False
 
 
 MIDDLEWARE = [
@@ -158,3 +165,4 @@ TIME_ZONE = 'Asia/Kolkata'
 BOOTSTRAP4 = {
     'include_jquery': True,
 }
+
