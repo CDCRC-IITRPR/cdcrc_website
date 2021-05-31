@@ -9,6 +9,9 @@
 # SSH_KEY
 # REMOTE_IP
 # REMOTE_USERNAME
+# ENV_PATH
+
+set -e
 
 # Logging in to the VPN Client
 echo -e $VPN_PASSWORD |  openconnect $VPN_SERVER_IP \
@@ -37,6 +40,8 @@ chmod +x remote_leader.sh
 sleep 5
 
 # ssh into the server
-ssh -t -o StrictHostKeyChecking=no "$REMOTE_USERNAME@$REMOTE_IP" "/bin/bash -s " < remote_leader.sh
+ssh -o StrictHostKeyChecking=no "$REMOTE_USERNAME@$REMOTE_IP" env ENV_PATH="$ENV_PATH" "/bin/bash -s " < remote_leader.sh
 
 # TODO: Push the logs file
+
+echo "Terminating Entrypoint..."

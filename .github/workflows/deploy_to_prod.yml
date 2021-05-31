@@ -23,6 +23,7 @@ jobs:
             -e SSH_KEY="$SSH_KEY" \
             -e REMOTE_IP="$REMOTE_IP"  \
             -e REMOTE_USERNAME="$REMOTE_USERNAME" \
+            -e ENV_PATH="$ENV_PATH" \
             --privileged \
             deploy_to_prod
         env:
@@ -34,3 +35,4 @@ jobs:
           SSH_KEY: ${{secrets.SSH_KEY}}
           REMOTE_IP: ${{ secrets.REMOTE_IP }}
           REMOTE_USERNAME: ${{ secrets.REMOTE_USERNAME }}
+          ENV_PATH: ${{ secrets.ENV_PATH }}
