@@ -27,7 +27,7 @@ DEBUG = int(os.environ.get("DEBUG", 1))
 ALLOWED_HOSTS = ['*']
 
 
-# Mail gun config
+# Sendgrid config
 EMAIL_BACKEND = 'anymail.backends.sendgrid.EmailBackend'
 
 ANYMAIL = {
