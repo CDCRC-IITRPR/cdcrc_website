@@ -6,7 +6,7 @@ services:
         build:
             context: ./backend
             dockerfile: Dockerfile.prod
-        command: sh -c "mkdir -p gunicorn_logs && gunicorn cdcrc_website.wsgi:application --bind 0.0.0.0:8000 --error-logfile gunicorn_logs/error.log --access-logfile gunicorn_logs/access.log --log-level debug --capture-output"
+        command: sh -c "mkdir -p gunicorn_logs && gunicorn cdcrc_website.wsgi:application --workers=8 --bind 0.0.0.0:8000 --error-logfile gunicorn_logs/error.log --access-logfile gunicorn_logs/access.log --log-level debug --capture-output"
         env_file:
             - ./.env
         # ***for testing only
