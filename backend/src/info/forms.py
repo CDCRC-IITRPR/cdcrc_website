@@ -1,24 +1,25 @@
 from django import forms
 from info.models import Resource, ContactUsResponse
+from martor.fields import MartorFormField
+
 
 class ResourceForm(forms.ModelForm):
-    images = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}), required=False)
+    detail = MartorFormField()
     class Meta:
         model = Resource
         fields = ['title', 'categories', 'url', 'brief', 'detail']
         labels = {
             'title': 'Title *',
-            'categories': 'Categories (Multiple) *',
+            'categories': 'Categories (Multiple)*',
             'url': 'URL',
-            'brief': 'Brief *',
-            'detail': 'Detail (Markdown for Styling) *',
+            'brief': 'Brief Overview*',
+            # 'detail': '',
         }
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'required':True}),
             'categories': forms.SelectMultiple(attrs={'class': 'form-control', 'required':True, }),
             'url': forms.TextInput(attrs={'class': 'form-control',}),
             'brief': forms.TextInput(attrs={'class': 'form-control', 'required':True, }),
-            'detail': forms.Textarea(attrs={'class': 'form-control', 'required': True}),
         }
 
 class ContactUsForm(forms.ModelForm):

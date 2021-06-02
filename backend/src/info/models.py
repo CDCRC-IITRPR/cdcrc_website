@@ -3,6 +3,8 @@ from datetime import date
 from django.contrib.auth.models import User
 from utils.validators import validate_file_extension, validate_file_size
 import random
+from martor.models import MartorField
+
 class ContactUsResponse(models.Model):
     name = models.CharField(max_length=256, null=False, blank=False)
     organization = models.CharField(max_length=256, null=True, blank=True)
@@ -45,10 +47,10 @@ class ResourceCategory(models.Model):
 class Resource(models.Model):
     title = models.CharField(max_length=256, null=False, blank=False)
     author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    categories = models.ManyToManyField(ResourceCategory, related_name='resources')
+    categories = models.ManyToManyField(ResourceCategory, related_name='resources', help_text="Use Ctrl key and select as many categories you wish to choose. 😎")
     url = models.URLField(null=True, blank=True)
     brief = models.CharField(max_length=2000)
-    detail = models.TextField(default='')
+    detail = MartorField()
     datetime = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
 

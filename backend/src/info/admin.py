@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import News,Events, Resource, ProfessionalDevelopmentActivity, ProfessionalDevelopmentBook, ProfessionalDevelopmentVideo, CorporateRelationsActivity
 from .models import ResourceCategory, Department, ProfessionalDevelopmentInitiatives, ResourceImage, ContactUsResponse
-# Register your models here.
+from martor.widgets import AdminMartorWidget
+from django.db import models
+
 
 def approve_resources(modeladmin, request, queryset):
     for resource in queryset:
@@ -11,6 +13,9 @@ def approve_resources(modeladmin, request, queryset):
 approve_resources.short_description = "Approve resources"
 
 class ResourceAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': AdminMartorWidget},
+    }
     list_display = ( 'title', 'author', 'approved', 'datetime')
     actions = [approve_resources]
     search_fields = ('title', 'author', 'approved', 'datetime')

@@ -12,3 +12,5 @@ python-dotenv==0.17.1
 gunicorn
 psycopg2
 django-anymail[sendgrid]
+martor
+

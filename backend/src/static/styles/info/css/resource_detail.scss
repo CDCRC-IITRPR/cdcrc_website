@@ -1,0 +1,28 @@
+@import "../../variables";
+
+
+.martor-preview {
+  width: 95%;
+  margin: 1rem auto;
+
+  .data-group {
+    display: flex;
+    margin: 0.8rem 0rem;
+    gap: 10px;
+  }
+  .keyName {
+    font-weight: bold;
+    font-size: 1rem;
+    color: $color-accent-hover;
+  }
+  .value {
+    font-size: 0.9rem;
+  }
+
+  .flex-col {
+    gap: 5px;
+    flex-direction: column;
+  }
+}
+
+

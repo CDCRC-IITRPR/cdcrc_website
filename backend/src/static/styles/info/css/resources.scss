@@ -1,0 +1,38 @@
+@import "../../variables";
+
+.resource_container {
+  width: 95%;
+  margin: auto;
+  .resource_wrapper {
+    width: 100%;
+    display: grid;
+    // grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    .loc_card {
+      display: flex;
+      flex-direction: column;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+      width: 100%;
+
+      .card-body {
+        padding: 1rem 1rem;
+      }
+      .detail-btn {
+          width: 95%;
+          margin: 0.3rem auto;
+      }
+
+      .loc_card_footer {
+        margin-top: 10px;
+        padding: 0.5rem 1rem;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+      }
+    }
+  }
+}

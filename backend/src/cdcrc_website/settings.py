@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import os
 from dotenv import load_dotenv
-
+import time
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',
     'django_extensions',
     'accounts',
-    'anymail'
+    'anymail',
+    'martor'
 ]
 
 
@@ -146,13 +147,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-if DEBUG:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static"),
-    ]
-else:
-    STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'  # this is the url to access media
@@ -166,3 +161,29 @@ BOOTSTRAP4 = {
     'include_jquery': True,
 }
 
+
+
+# Martor Configuration
+MARTOR_THEME = 'bootstrap'  # semantic
+MARTOR_ENABLE_LABEL = True
+
+MARTOR_UPLOAD_PATH = 'images/uploads/{}'.format(time.strftime("%Y/%m/%d/"))
+MARTOR_UPLOAD_URL = '/api/uploader/'  # change to local uploader
+MAX_IMAGE_UPLOAD_SIZE = 10485760  # 5MB
+
+MARTOR_ENABLE_CONFIGS = {
+    'emoji': 'true',        # to enable/disable emoji icons.
+    'imgur': 'false',        # to enable/disable imgur/custom uploader.
+    'mention': 'true',      # to enable/disable mention
+    'jquery': 'true',       # to include/revoke jquery (require for admin default django)
+    'living': 'false',      # to enable/disable live updates in preview
+    'spellcheck': 'false',  # to enable/disable spellcheck in form textareas
+    'hljs': 'true',         # to enable/disable hljs highlighting in preview
+}
+
+MARTOR_TOOLBAR_BUTTONS = [
+    'bold', 'italic', 'horizontal', 'heading', 'pre-code',
+    'blockquote', 'unordered-list', 'ordered-list',
+    'link', 'image-link', 'image-upload', 'emoji',
+    'direct-mention', 'toggle-maximize', 'help'
+]

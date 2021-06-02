@@ -1,36 +1,59 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load martortags %}
+
 
 {% block head_content %}
-    <link href="{% static '_styles_build/no-style-links.css' %}" rel="stylesheet" type="text/css" />
-    <title>Resource | CDCRC IIT Ropar</title>
+<title>Resource | CDCRC IIT Ropar</title>
+<link href="{% static '_styles_build/info/css/resource_detail.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+<link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+<link href="{% static '_styles_build/no-style-links.css' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block body_content %}
 
-<section class="bodySectionStart">
-    <div class="mainContainer container-fluid">
-        <div class="row" style="margin-top:1rem; margin-bottom:1rem;">
-            <div class="col-md-1"></div>
-            <div class="col-md-10" style="background-color:white; padding-top:1rem; padding-bottom:1rem;">
-                <h1>{{resource.title}}</h1>
-                {% if resource.url %}
-                    <a href="{{resource.url}}" style="color:black;">External Link</a>
-                {% endif %}
-                <hr>
-                <p>{{resource.brief}}</p>
-                <br>
-                <p>{{resource.detail|safe}}</p>
-                <br>
-                {% for rs_image_obj in resource.images.all %}
-                    <a href="{{ rs_image_obj.image.url }}"><img src="{{ rs_image_obj.image.url }}" style="height: 10rem; width:10rem;"></a>
-                    <br>
-                {% endfor %}
+<section>
+    <div class="martor-preview">
+        <div>
+            <div class="global_heading">Title: {{resource.title}}</div>
+            {% if resource.url %}
+            <div class="data-group">
+                <div class="keyName">External Link:</div>
+                <div class="value"><a target="_blank" href="{{resource.url}}">URL</a></div>
             </div>
-            <div class="col-md-1"></div>
+            {% endif %}
+            <div class="data-group">
+                <div class="keyName">Author:</div>
+                <div class="value">{{resource.author}}</div>
+            </div>
+
+            <div class="data-group">
+                <div class="keyName">Brief:</div>
+                <div class="value">{{resource.brief}}</div>
+            </div>
+            <br/>
+            <hr class="dropdown-divider" />
+            <div class="data-group">
+                <div class="markdown_details">
+                    {{resource.detail|safe_markdown}}
+                </div>
+            </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
 </section>
 
 
+{% endblock %}
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'plugins/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+<script>
+    $('.martor-preview pre').each(function (i, block) {
+        hljs.highlightBlock(block);
+    });
+</script>
 {% endblock %}

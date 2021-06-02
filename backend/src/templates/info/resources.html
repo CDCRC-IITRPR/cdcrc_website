@@ -2,88 +2,75 @@
 {% load static %}
 
 {% block head_content %}
-    <link href="{% static '_styles_build/no-style-links.css' %}" rel="stylesheet" type="text/css" />
-    <title>Resources | CDCRC IIT Ropar</title>
-    <script>
-        jQuery.expr[':'].case_insensitive_contains = function(a, i, m) {
-            return jQuery(a).text().toUpperCase()
-                .indexOf(m[3].toUpperCase()) >= 0;
-        };
-        $(document).ready(function(){
-            $('#search').keyup(function(){
-                // Search text
-                var text = $(this).val();
-                // Hide all content class element
-                $('.resource-card').hide();
-                // Search and show
-                $('.resource-card:case_insensitive_contains("'+text+'")').show();
-            });
-        });
-
-    </script>
-    
+<title>Resources | CDCRC IIT Ropar</title>
+<link href="{% static '_styles_build/info/css/resources.css' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block body_content %}
 
-<section class="bodySectionStart">
-    <div class="mainContainer container-fluid">
-        <div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center; margin-bottom:1rem;" >
-            <div class="col-12">
-                <h2 style="padding:1em;">Resources</h2>
-            </div>
-        </div>
-        <div class="row"><br></div>
-        <div class="row">
-            <div class="col-md-12">
-                <input type="text" placeholder="Search.." id="search" style="width:100%;">
-                <br>
-                <br>
-            </div>
-        </div>
-        {% for resource in resources %}
+<section class="resource_container">
+    <div class="global_heading">Resources</div>
 
-            {% if forloop.counter0|divisibleby:"4" %}
-                <div class="row justify-content-center">
-            {% endif %}
-            
-            <div class="col-md-3">
-                <div class="card resource-card" style="height:24rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{resource.title}}</h5>
-                        <h6 class="card-subtitle" style="color:grey;">{{resource.author.get_user_name}}, {{resource.datetime}}</h6>
-                        {% for category in resource.categories.all %}
-                            {% if forloop.counter0|divisibleby:"2" %}
-                                <span class="badge badge-success">{{category}}</span>
-                            {% else %}
-                                <span class="badge badge-warning">{{category}}</span>
-                            {% endif %}
-                        {% endfor %}
-                        <hr>
-                        <p class="card-text">{{resource.brief|slice:"0:200"}}</p>
-                        <a href="{% url 'info:resource_detail' resource.pk %}" class="btn btn-sm btn-primary" style="width:100%;">Detail</a>
-                    </div>
-                </div>
-                <br>
-            </div>
-
-            {% if forloop.counter0|add:"1"|divisibleby:"4" %}
-            </div>
-            {% endif %}
-
-            {% if forloop.last %}
-            {{resource_remainder_4}}
-            {% for i in resource_remainder_4 %}
-                <div class="col-md-3"></div>
-            {% endfor %}
-            </div>
-            {% endif %}
-        {% endfor %}
-        <div class="row" style="margin-top:1rem;">
-            <br>
-        </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Search.." id="search" aria-label="search"
+            aria-describedby="basic-addon2" />
     </div>
+    <br>
+    <br>
+
+    <div class="resource_wrapper">
+        {% for resource in resources %}
+        <div class="loc_card resource-card">
+            <div class="card-body">
+                <h5 class="card-title">{{resource.title}}</h5>
+                <h6 class="card-subtitle">By: {{resource.author}}</h6>
+                <div>
+                    {% for category in resource.categories.all %}
+                    {% if forloop.counter0|divisibleby:"2" %}
+                    <span class="badge bg-success">{{category}}</span>
+                    {% else %}
+                    <span class="badge bg-danger">{{category}}</span>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+                <hr>
+                <p class="card-text">{{resource.brief|slice:"0:200"}}</p>
+
+
+            </div>
+                <a href="{% url 'info:resource_detail' resource.pk %}" class="detail-btn btn btn-primary">Detail</a>
+            <div class="loc_card_footer text-muted">
+                {{resource.datetime}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+
 </section>
 
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'plugins/js/jquery.min.js' %}"></script>
+<script>
+    jQuery.expr[':'].case_insensitive_contains = function (a, i, m) {
+        return jQuery(a).text().toUpperCase()
+            .indexOf(m[3].toUpperCase()) >= 0;
+    };
+    $(document).ready(function () {
+        $('#search').keyup(function () {
+            // Search text
+            var text = $(this).val();
+            // Hide all content class element
+            $('.resource-card').hide();
+            // Search and show
+            $('.resource-card:case_insensitive_contains("' + text + '")').show();
+        });
+    });
+
+</script>
 
 {% endblock %}

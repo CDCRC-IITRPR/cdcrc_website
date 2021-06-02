@@ -16,7 +16,7 @@ services:
             - PYTHONUNBUFFERED=TRUE
             - DEBUG=0
         volumes:
-            - static_webassets:/backend/static/
+            - static_webassets:/backend/static_cdn/
             - media_webassets:/backend/media/
             - './gunicorn_logs/:/backend/gunicorn_logs/'
         depends_on:

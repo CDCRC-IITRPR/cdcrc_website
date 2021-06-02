@@ -19,6 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 import info.views
 from django.contrib.auth import views as auth_views
+from cdcrc_website.views import markdown_uploader
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +29,11 @@ urlpatterns = [
     path('recruiter/', include('recruiter.urls')),
     path('accounts/', include('accounts.urls')),
     path('profiles/', include('profiles.urls')),
-    path('', info.views.home, name='home')
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', info.views.home, name='home'),
+    path('martor/', include('martor.urls')),
+    path(
+        'api/uploader/', markdown_uploader, name='markdown_uploader_page'
+    ),
+]
     
+

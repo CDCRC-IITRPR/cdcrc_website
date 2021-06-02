@@ -9,14 +9,25 @@ services:
             dockerfile: Dockerfile
         command: sh -c "python manage.py runserver 0.0.0.0:8000"
         # Mapping Container PORT 8000 to Host PORT 8000
-        ports:
-            - 8000:8000
         env_file:
             - ./.env
         volumes:
             - './backend/src/:/backend/'
         depends_on:
             - postgres_db
+
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile
+        # Mapping Container PORT 80 to Host PORT 8000
+        ports:
+            - 8000:80
+        depends_on:
+            - backend
+        volumes:
+            - './backend/src/static/:/static/'
+            - './backend/src/media/:/media/'
 
 
     postgres_db:

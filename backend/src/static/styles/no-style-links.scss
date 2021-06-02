@@ -1,18 +1,20 @@
-a:link {
+@import "./variables";
+
+a, a:link {
     text-decoration: none;
+    color: #007bff;
 }
-  
+
 a:visited {
     text-decoration: none;
+    color: #007bff;
 }
 
 a:hover {
     text-decoration: none;
-    color:white;
+    color: $color-accent;
 }
 
 a:active {
     text-decoration: none;
 }
-
-a{color:white;}

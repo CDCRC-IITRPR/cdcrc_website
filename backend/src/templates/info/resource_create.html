@@ -1,26 +1,57 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% load static %}
 
 {% block head_content %}
-    <title>Create Resource | CDCRC IIT Ropar</title>
+<title>Create Resource | CDCRC IIT Ropar</title>
+
+<link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+<link href="{% static 'plugins/css/resizable.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+<link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+
+<style>
+    .helptext{
+        color: grey;
+        font-size: 0.8rem;
+    }
+</style>
 {% endblock %}
 
+
+
+
 {% block body_content %}
-<div class='container-fluid'>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+
+<div class="ui container main-container">
+    <div class="main-content">
+        <div class="global_heading">Create Resource</div>
+        <form class="form" method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <input type="submit" value="Submit Resource for Approval" class="btn btn-primary" />
+            </div>
+        </form>
         <br>
-            <h1>Create Resource</h1>
-            <hr>
-            <form method='POST' enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <div style="text-align:center;"><input type="submit" value="Submit Resource for Approval" class="btn btn-primary"></div>
-            </form>
-            <br>
-        </div>
-        <div class="col-md-1"></div>
     </div>
+    <div class="col-md-1"></div>
 </div>
+
+
+{% endblock %}
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'plugins/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/ace.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/typo.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/spellcheck.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/resizable.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/emojis.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'martor/js/martor.bootstrap.min.js' %}"></script>
 {% endblock %}

@@ -27,6 +27,23 @@ a:hover {
   color: $color-accent;
 }
 
+.global_heading {
+  font-family: "Poppins";
+  font-weight: bolder;
+  font-size: 2.5em;
+  padding: 15px;
+  margin: auto;
+  border-radius: 20px;
+  width: fit-content;
+  color: #ff7b54;
+}
+
+@media screen and (max-width: 700px) {
+  .global_heading {
+    font-size: 2em;
+  }
+}
+
 @mixin navbar_header_sync {
   margin: 0px 2.5%;
 }
@@ -190,7 +207,7 @@ a:hover {
   width: 100%;
   height: 350px;
   margin-bottom: -350px;
-  .divider{
+  .divider {
     border-top: 1px solid $primarycolor-300;
     width: 50vw;
     margin: auto;
@@ -206,9 +223,9 @@ a:hover {
     span {
       padding-right: 3px;
     }
-    a{
+    a {
       color: royalblue !important;
-      &:hover{
+      &:hover {
         color: $color-accent !important;
       }
     }
