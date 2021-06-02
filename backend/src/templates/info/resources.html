@@ -23,7 +23,7 @@
         <div class="loc_card resource-card">
             <div class="card-body">
                 <h5 class="card-title">{{resource.title}}</h5>
-                <h6 class="card-subtitle">By: {{resource.author}}</h6>
+                <h6 class="card-subtitle text-muted">By: {{resource.author}}</h6>
                 <div>
                     {% for category in resource.categories.all %}
                     {% if forloop.counter0|divisibleby:"2" %}

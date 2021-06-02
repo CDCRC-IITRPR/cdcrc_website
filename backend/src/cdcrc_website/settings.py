@@ -164,6 +164,7 @@ BOOTSTRAP4 = {
 
 
 # Martor Configuration
+CSRF_COOKIE_HTTPONLY = False
 MARTOR_THEME = 'bootstrap'  # semantic
 MARTOR_ENABLE_LABEL = True
 
@@ -173,7 +174,7 @@ MAX_IMAGE_UPLOAD_SIZE = 10485760  # 5MB
 
 MARTOR_ENABLE_CONFIGS = {
     'emoji': 'true',        # to enable/disable emoji icons.
-    'imgur': 'false',        # to enable/disable imgur/custom uploader.
+    'imgur': 'true',        # to enable/disable imgur/custom uploader.
     'mention': 'true',      # to enable/disable mention
     'jquery': 'true',       # to include/revoke jquery (require for admin default django)
     'living': 'false',      # to enable/disable live updates in preview

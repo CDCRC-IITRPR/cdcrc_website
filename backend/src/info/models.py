@@ -49,7 +49,7 @@ class Resource(models.Model):
     author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     categories = models.ManyToManyField(ResourceCategory, related_name='resources', help_text="Use Ctrl key and select as many categories you wish to choose. 😎")
     url = models.URLField(null=True, blank=True)
-    brief = models.CharField(max_length=2000)
+    brief = models.CharField(max_length=2000, help_text='Try to keep it less than 300 chars')
     detail = MartorField()
     datetime = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)

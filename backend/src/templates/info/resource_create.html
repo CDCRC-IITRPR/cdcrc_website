@@ -10,7 +10,7 @@
 <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
 
 <style>
-    .helptext{
+    .helptext {
         color: grey;
         font-size: 0.8rem;
     }
@@ -27,6 +27,38 @@
         <div class="global_heading">Create Resource</div>
         <form class="form" method='POST' enctype="multipart/form-data">
             {% csrf_token %}
+            <div class="alert alert-info" role="alert">
+                We really appreciate you taking the time to share your interview experience or any helpful tips with the
+                students.
+                <br/>
+                <br/>
+                Please consider the following points before proceeding further:
+                <ol>
+                    <li>
+                        At the bottom, we have a <strong>markdown</strong> editor. You can upload emojis, images, link to other articles
+                        etc.
+                    </li>
+                    <li>
+                        You can make yourself familiar with markdown syntax <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">here</a>. It's straightforward and will be a
+                        cakewalk for you. 🙂
+                    </li>
+                    <li>
+                        Please don't upload any image >10MB size. The server won't accept it. 😥
+                    </li>
+                    <li>
+                        Ensure that the image extension is any one of the png, jpg, jpeg, pjpeg, or gif.
+                    </li>
+                    <li>
+                        You are good to go now! All the best, and Thank you again for helping your institute "IIT
+                        Ropar". 🎉🎉
+                    </li>
+
+                </ol>
+
+
+
+
+            </div>
             {{ form.as_p }}
             <div class="form-group">
                 <input type="submit" value="Submit Resource for Approval" class="btn btn-primary" />

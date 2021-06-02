@@ -8,7 +8,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
-
 from martor.utils import LazyEncoder
 
 
@@ -33,7 +32,7 @@ def markdown_uploader(request):
                 return HttpResponse(
                     data, content_type='application/json', status=405)
 
-            if image._size > settings.MAX_IMAGE_UPLOAD_SIZE:
+            if image.size > settings.MAX_IMAGE_UPLOAD_SIZE:
                 to_MB = settings.MAX_IMAGE_UPLOAD_SIZE / (1024 * 1024)
                 data = json.dumps({
                     'status': 405,

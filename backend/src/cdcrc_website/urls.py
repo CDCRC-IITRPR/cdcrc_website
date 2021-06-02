@@ -31,9 +31,7 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
     path('', info.views.home, name='home'),
     path('martor/', include('martor.urls')),
-    path(
-        'api/uploader/', markdown_uploader, name='markdown_uploader_page'
-    ),
+    path('api/uploader/', markdown_uploader, name='markdown_uploader_page'),
 ]
     
 
