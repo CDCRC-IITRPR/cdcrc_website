@@ -1,4 +1,4 @@
-asgiref
+﻿asgiref
 Django==3.1.9
 pytz==2020.1
 sqlparse==0.3.1

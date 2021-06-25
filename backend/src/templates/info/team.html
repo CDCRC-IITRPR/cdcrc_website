@@ -30,7 +30,7 @@
                 <h5 class="card-title">{{member.user.first_name}} {{member.user.last_name}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{member.designation}}</h6>
                 <hr>
-                {% if member.user.email %}
+                {% if member.user.email and show_email %}
                    <p class="card-text">Email: {{member.user.email}}</p>
                 {% endif %}
                 {% if member.phone %}
