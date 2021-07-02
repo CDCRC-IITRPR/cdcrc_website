@@ -27,9 +27,12 @@
           <div class="col-md-3">
             <div class="card" style="margin-top:0.5rem;margin-bottom:0.5rem; height:18rem;">
               <div class="card-body">
-                <h5 class="card-title">{{member.user.first_name}} {{member.user.last_name}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{member.designation}}</h6>
-                <hr>
+                <div style="height: 80px">
+
+                  <h5 class="card-title">{{member.user.first_name}} {{member.user.last_name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{member.designation}}</h6>
+                </div>
+                  <hr>
                 {% if member.user.email and show_email %}
                    <p class="card-text">Email: {{member.user.email}}</p>
                 {% endif %}
@@ -37,8 +40,7 @@
                   <p class="card-text">Phone: {{member.phone}}</p>
                 {% endif %}
                 {% if member.linkedin_profile %}
-                  <hr>
-                  <div style="text-align:center;">
+                  <div style="margin-top:auto">
                     <a href="mailto:{{member.user.email}}" style="margin-left:0.5rem; margin-right:0.5rem;"><i class="fas fa-envelope"></i></a>
                     <a href="{{ member.linkedin_profile }}" style="margin-left:0.5rem; margin-right:0.5rem;" class="card-link"><i class="fab fa-linkedin"></i></a>
                   </div>
