@@ -37,9 +37,13 @@ def resource_detail(request, pk):
     context = {'resource': resource}
     return render(request, 'info/resource_detail.html', context=context)
 
-@login_required
 def create_resource(request): 
     if request.method=='POST':
+        if not request.user.is_authenticated:
+            return render_message(request,
+                'Kindly authenticate',
+                'We are glad to see that you want to add resouce on this forum. Unfortunately we need you to authenticate before you add any resource.'
+            )
         form = ResourceForm(request.POST, request.FILES)
         files = request.FILES.getlist('images')
         if form.is_valid():
