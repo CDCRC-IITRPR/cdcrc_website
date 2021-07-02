@@ -60,9 +60,15 @@
 
             </div>
             {{ form.as_p }}
+            {% if user.is_authenticated %}
             <div class="form-group">
                 <input type="submit" value="Submit Resource for Approval" class="btn btn-primary" />
             </div>
+            {% else %}
+            <div class="form-group">
+                <input type="submit" value="Please authenticate" class="btn btn-primary" disabled />
+            </div>
+            {% endif %}
         </form>
         <br>
     </div>
