@@ -38,7 +38,7 @@ services:
         volumes:
             - static_webassets:/static/
             - media_webassets:/media/
-            - /etc/letsencrypt/live/cdcrc.iitrpr.ac.in/:/certs/iitrpr.ac.in/
+            - /etc/letsencrypt/:/certs/
 
     postgres_db:
         restart: unless-stopped
@@ -52,4 +52,3 @@ volumes:
     static_webassets:
     postgres_data:
     media_webassets:
-
