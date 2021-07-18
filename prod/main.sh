@@ -47,6 +47,9 @@ docker-compose -f docker-compose.prod.yml build
 echo "Stopping all containers"
 docker-compose -f docker-compose.prod.yml down
 
+echo "check if we need to renew any certificates"
+certbot renew
+
 echo "Removing static_webassets volume"
 docker volume rm cdcrc_website_static_webassets
 
