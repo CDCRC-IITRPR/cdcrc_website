@@ -1,13 +1,13 @@
 {% autoescape off %}
-<h3>CDCRC User Registration Confirmation</h3>
+<h3>CDPC User Registration Confirmation</h3>
 <hr>
 
 Hi {{ user.get_user_name }}
 <br>
-Thank you for joining the CDCRC Internal network. Please click on the link to confirm your registration.
+Thank you for joining the CDPC Internal network. Please click on the link to confirm your registration.
 <br>
 {{ domain }}{% url 'activate' uidb64=uid token=token %}
 <br>
 Sincerely
-CDCRC Team
+CDPC Team
 {% endautoescape %}
