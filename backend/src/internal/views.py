@@ -139,7 +139,7 @@ def create_issue(request):
             mailer.send_issue_create_alert_to_creator(
                 [request.user.email],
                 request.user.first_name + " " + request.user.last_name,
-                'CDCRC System Alert: ' +issue_obj.title,
+                'CDPC System Alert: ' +issue_obj.title,
                 issue_obj.title,
                 issue_obj.priority.upper(),
                 issue_obj.get_detail_url(request)
@@ -149,7 +149,7 @@ def create_issue(request):
                 mailer.send_issue_create_alert_to_assignee(
                     [assignee.user.email], 
                     assignee.user.first_name + " " + assignee.user.last_name,
-                    'CDCRC System Alert: ' +issue_obj.title,
+                    'CDPC System Alert: ' +issue_obj.title,
                     issue_obj.title,
                     issue_obj.priority.upper(),
                     issue_obj.get_detail_url(request)
@@ -171,7 +171,7 @@ def close_issue(request):
             [issue.creator.user.email], 
             issue.creator.user.first_name + " " + issue.creator.user.last_name,
             request.user.first_name + " " + request.user.last_name,
-            'CDCRC System Alert: '+ issue.title,
+            'CDPC System Alert: '+ issue.title,
             issue.title,
             issue.get_detail_url(request)
         )
@@ -179,7 +179,7 @@ def close_issue(request):
         mailer.send_issue_close_alert_to_closer(
             [issue.creator.user.email], 
             request.user.first_name + " " + request.user.last_name,
-            'CDCRC System Alert: '+ issue.title,
+            'CDPC System Alert: '+ issue.title,
             issue.title,
             issue.get_detail_url(request)
         )
@@ -201,7 +201,7 @@ def open_issue(request):
             [issue.creator.user.email], 
             issue.creator.user.first_name + " " + issue.creator.user.last_name,
             request.user.first_name + " " + request.user.last_name,
-            'CDCRC System Alert: '+ issue.title,
+            'CDPC System Alert: '+ issue.title,
             issue.title,
             issue.get_detail_url(request)
         )
@@ -233,7 +233,7 @@ def create_issue_followup(request, pk):
                 mailer.send_issue_followup_alert_to_assignee(
                     [assignee.user.email], 
                     assignee.user.first_name + " " + assignee.user.last_name,
-                    'CDCRC System Alert: '+ followup_obj.issue.title,
+                    'CDPC System Alert: '+ followup_obj.issue.title,
                     followup_obj.issue.title,
                     followup_obj.comment,
                     followup_obj.get_detail_url(request)
@@ -242,7 +242,7 @@ def create_issue_followup(request, pk):
             mailer.send_issue_followup_alert_to_creator(
                 [followup_obj.issue.creator.user.email], 
                 request.user.first_name + " " + request.user.last_name,
-                'CDCRC System Alert: '+ followup_obj.issue.title,
+                'CDPC System Alert: '+ followup_obj.issue.title,
                 followup_obj.issue.title,
                 followup_obj.comment,
                 followup_obj.get_detail_url(request)
@@ -251,7 +251,7 @@ def create_issue_followup(request, pk):
             mailer.send_issue_followup_alert_to_follower(
                 [request.user.email], 
                 request.user.first_name + " " + request.user.last_name,
-                'CDCRC System Alert: '+ followup_obj.issue.title,
+                'CDPC System Alert: '+ followup_obj.issue.title,
                 followup_obj.issue.title,
                 followup_obj.comment,
                 followup_obj.get_detail_url(request)

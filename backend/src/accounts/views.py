@@ -36,14 +36,14 @@ def signup(request):
                 })
 
                 response = mailer._send_email(
-                    to_email, 'CDCRC User Registration Activation', message)
+                    to_email, 'CDPC User Registration Activation', message)
                 print("Mail Response: ", response)
                 if(response == 'fail'):
                     raise Exception('Mail Service is down! 😢')
 
                 return render_message(request,
                                       'Email Confirmation',
-                                      'Thank you for joining CDCRC Internal Network. We have sent an activation link to your email. Once verified, you can access plethora of resources on the webpage. Hope to see you onboard soon!'
+                                      'Thank you for joining CDPC Internal Network. We have sent an activation link to your email. Once verified, you can access plethora of resources on the webpage. Hope to see you onboard soon!'
                                       )
             except Exception as e:
                 # Deleting the user

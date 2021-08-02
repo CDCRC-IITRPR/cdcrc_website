@@ -1,8 +1,8 @@
-# Official Website of CDCRC, IIT Ropar 
+# Official Website of CDPC, IIT Ropar 
 
 ## About
 
-The following repository contains the source code of the official website of Career Development and Corporate Relations Center, IIT Ropar.
+The following repository contains the source code of the official website of Career Development and Placement Cell, IIT Ropar.
 
 
 ![](./_docs/landing.png)

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head_content %}
-    <title> Profile | CDCRC IIT Ropar</title>
+    <title> Profile | CDPC IIT Ropar</title>
     <link href="{% static '_styles_build/no-style-links.css' %}" rel="stylesheet" type="text/css" />
 
 {% endblock head_content %}
@@ -28,7 +28,7 @@
 
             {% if user.is_team_member %}
                 <div class="card" style="width:100%; padding:0.5rem; margin-top:0.5rem;">
-                    <a href="{% url 'profiles:update_team_profile' %}" style="color:black;"><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Update Team Profile (for CDCRC members)</a>
+                    <a href="{% url 'profiles:update_team_profile' %}" style="color:black;"><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Update Team Profile (for CDPC members)</a>
                 </div>
             {% endif %}
             

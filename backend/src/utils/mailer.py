@@ -41,7 +41,7 @@ class Mailer:
     def send_issue_create_alert_to_assignee(self, to_list, concerned_name, subject, issue_title, issue_priority, issue_detail_url):
         print(issue_detail_url)
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>An issue has been assigned to you {}</h1>
             <p>Title: {}</p>
@@ -53,7 +53,7 @@ class Mailer:
     def send_issue_create_alert_to_creator(self, to_list, concerned_name, subject, issue_title, issue_priority, issue_detail_url):
         print(issue_detail_url)
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>An issue has been created by you {}</h1>
             <p>Title: {}</p>
@@ -65,7 +65,7 @@ class Mailer:
     def send_issue_close_alert_to_creator(self, to_list, creator_name, closer_name, subject, issue_title, issue_detail_url):
         print(issue_detail_url)
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>Issue created by you {} has been closed by {}</h1>
             <p>Title: {}</p>
@@ -76,7 +76,7 @@ class Mailer:
     def send_issue_open_alert_to_creator(self, to_list, creator_name, opener_name, subject, issue_title, issue_detail_url):
         print(issue_detail_url)
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>Issue created by you {} has been opened by {}</h1>
             <p>Title: {}</p>
@@ -87,7 +87,7 @@ class Mailer:
     def send_issue_close_alert_to_closer(self, to_list, closer_name, subject, issue_title, issue_detail_url):
         print(issue_detail_url)
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>Issue has been closed by you {}</h1>
             <p>Title: {}</p>
@@ -98,7 +98,7 @@ class Mailer:
     def send_issue_followup_alert_to_assignee(self, to_list, assignee_name, subject, issue_title, followup_comment, issue_detail_url):
         print(issue_detail_url)
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>Issue Follow Up has been assigned to you {}</h1>
             <p>Issue Title: {}</p>
@@ -111,7 +111,7 @@ class Mailer:
     def send_issue_followup_alert_to_follower(self, to_list, follower_name, subject, issue_title, followup_comment, issue_detail_url):
         print(issue_detail_url)
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>You {} followed up on an Issue</h1>
             <p>Issue Title: {}</p>
@@ -123,7 +123,7 @@ class Mailer:
 
     def send_issue_followup_alert_to_creator(self, to_list, follower_name, subject, issue_title, followup_comment, issue_detail_url):
         message_body = """
-            <h3>CDCRC System Generated Alert</h3>
+            <h3>CDPC System Generated Alert</h3>
             <hr>
             <h1>{} followed up on an Issue Created By You</h1>
             <p>Issue Title: {}</p>
