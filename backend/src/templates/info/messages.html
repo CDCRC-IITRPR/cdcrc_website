@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% load static %} {% block head_content %}
+<title>CDPC IIT Ropar</title>
+
+<link href="{% static '_styles_build/info/css/home.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %} {% block body_content %}
+
+<div class="home_page_container">
+    <div class="custom_container">
+        <div class="directors_message">
+            <div class="heading">The Director's Message</div>
+            <p>
+                Dear Friends<br /><br />
+                IIT Ropar is on a fascinating path of growth and development. As you are
+                aware, it has already established itself as one of the top technological
+                institutes in the country, but that is just the tip of the iceberg
+                compared to the huge initiatives and progress the institute is making.
+                The institute’s own campus on 500 acres pristine land, on the bank of
+                river Satluj is fast getting ready to be operational. We are going to
+                occupy the first phase of the campus within the next quarter. The
+                institute has increased its student strength from a meager 650 in 2015
+                to over 1100 today which is likely to be increased to 2500 by 2019.
+                <br /><br />
+                Our faculty strength has increased during the last two years from 65 to
+                170.. Apart from existing departments of Computer Science, Electrical
+                Engineering and Mechanical Engineering, we have recently started the
+                department of Civil Engineering and Chemical Engineering. We have
+                expanded our Post Graduate Programmes (M.Tech) to the domains of
+                Mechanical Engineering, Electrical Engineering and Computer Science
+                Engineering. IIT Ropar has got a very strong basic science component
+                with MSc. degrees being taught in Physics, Chemistry and Mathematics
+                department. We have also started MTech programme in Biomedical
+                Engineering.....
+                <br />
+                <br />
+                <a href="{% url 'info:directors_message' %}">Read More...</a>
+            </p>
+        </div>
+        <!-- <div class="directors_message">
+            <div class="heading">Associate Dean's Message</div>
+            <p>
+
+                <a href="{% url 'info:directors_message' %}">Read More...</a>
+            </p>
+        </div> -->
+        <div class="directors_message">
+            <div class="heading">Chairperson's Message</div>
+            <p>
+                Dear Friends
+                <br><br>
+                It gives me immense pleasure to invite you all to Indian Institute of Technology Ropar campus for 2021-22 placement and internship sessions. The IIT brand name is world-renowned and needs no introduction. In accordance with the high expectations from IITians, our students and graduates have earned numerous accolades from the organisations that they worked with as interns or as employees and I am certain that your recruitment team will have a very productive and satisfying visit to our institute.
+                <br><br>
+                The curriculum at IIT Ropar is designed to not only provide students with extremely strong technical knowledge but to also hone their personal development so that they become well rounded individuals who are an asset to any organisation that they are part of. Our students receive opportunities to learn not just through well designed classroom and laboratory activities but also through active participation in research and industrial collaboration projects, student societies and competitions, social service activities, and through exposure to enterpreneurship from an early stage...
+                <br><br>
+                <a href="{% url 'info:tnp_hod_message' %}">Read More...</a>
+            </p>
+        </div>
+        <div class="directors_message">
+            <div class="heading">Vice Chairperson's Message</div>
+            <p>
+                It is my pleasure to introduce and invite you to the Indian Institute of Technology Ropar for various
+				placement and internship options. IIT Ropar has evolved as one of the top-ranking institutes in India
+				and Globally in a short span of time. The global rank of IIT Ropar has improved over the years, and
+				one of the reasons for it is the excellent academic program offered in our campus. The backbone of
+				our institute is the students and the young faculty having new and innovative ideas. Our faculty
+				collaborates with highly reputed organizations that allow our students to learn from live R&amp;D
+				projects.
+				<br><br>
+				Students in our campus are engaged in well devised classroom and laboratory activities and active
+				participation in R&amp;D and industrial projects. IIT Ropar’s curriculum has been designed to provide
+				strong technical knowledge, and at the same time, it also nurtures a sense of responsibility and
+				leadership among students. Further, fostering leadership quality, students are encouraged to
+				participate in student societies, competitions, social service activities, and entrepreneurship from the
+				early stage...
+                <br><br>
+                <a href="{% url 'info:pd_hod_message' %}">Read More...</a>
+            </p>
+        </div>
+    </div>
+
+    {% endblock %}
+</div>

@@ -13,7 +13,7 @@ def about(request):
     if(get_page_visibility_status('pd_about')==False):
         return render(request, 'under_construction.html')
     context = {
-        'title': 'About the Professional Development Department'
+        'title': 'About the Career Development Cell'
     }
     return render(request, 'info/professional_development/about.html', context=context)
 
@@ -22,7 +22,7 @@ def activities(request):
         return render(request, 'under_construction.html')
     context = {
         'activities': ProfessionalDevelopmentActivity.objects.order_by('-date'),
-        'title': 'Professional Development Activities',
+        'title': 'Career Development Activities',
     }
     return render(request, 'info/professional_development/activities.html', context=context)
 
@@ -31,7 +31,7 @@ def initiatives(request):
         return render(request, 'under_construction.html')
     context = {
         'initiatives': ProfessionalDevelopmentInitiatives.objects.order_by('-date'),
-        'title': 'Professional Development Initiatives',
+        'title': 'Career Development Initiatives',
     }
     return render(request, 'info/professional_development/initiatives.html', context=context)
 
