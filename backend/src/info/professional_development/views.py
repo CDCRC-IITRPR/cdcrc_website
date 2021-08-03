@@ -20,9 +20,11 @@ def about(request):
 def activities(request):
     if(get_page_visibility_status('pd_activities')==False):
         return render(request, 'under_construction.html')
+    events = Events.objects.all()
     context = {
         'activities': ProfessionalDevelopmentActivity.objects.order_by('-date'),
         'title': 'Career Development Activities',
+        'events':events,
     }
     return render(request, 'info/professional_development/activities.html', context=context)
 
