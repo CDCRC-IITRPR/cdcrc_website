@@ -4,55 +4,107 @@
 {% block head_content %}
 <link href="{% static '_styles_build/no-style-links.css' %}" rel="stylesheet" type="text/css" />
 <title>{{title}} | CDPC IIT Ropar</title>
+<link
+  href="{% static '_styles_build/info/css/home.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
 {% endblock %}
 
 
 {% block body_content %}
-<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;" >
-		<div class="col-12">
-			<h2 style="padding:1em;">{{title}}</h2>
-		</div>
+<div class="row justify-content-center" style="background-color: rgb(226, 221, 200); text-align:center;">
+  <div class="col-12">
+    <h2 style="padding:1em;">{{title}}</h2>
+  </div>
 </div>
 <div class="row"><br></div>
+
+<div class="home_page_container">
+  <div class="custom_container">
+    <div class="newroom_stats_wrapper" style="display:block; max-width: 800px; margin: auto;">
+      <div class="newsroom_wrapper">
+        <div class="heading">
+          <span>
+            <img src="{% static 'info/images/news_icon.svg' %}"
+              class="heading_wrapper_img" /></span><span>Newsroom</span>
+        </div>
+        <div>
+          <ul class="nav nav-pills" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="Events-tab" data-bs-toggle="tab" data-bs-target="#Events" type="button"
+                role="tab" aria-controls="Events" aria-selected="true">
+                Events
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active events-tab" id="Events" role="tabpanel" aria-labelledby="events-tab">
+              {% for event in events %}
+              <div class="content">
+                <div>
+                  <img class="calender_icon" src="{% static 'info/images/calender.svg' %}" />
+                </div>
+                <div class="text_content">
+                  <h6 style="color: black" class="title">{{event.title}}</h6>
+                  {% if event.venue %}
+                  <p class="data">{{event.date}} at {{event.venue}}</p>
+                  {% else %}
+                  <p class="data">{{event.date}}</p>
+                  {% endif %}
+                  <p class="data">{{news_item.brief}}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid">
 
-    <div class="row">
-      <div class='col-md-1'></div>
-      <div class='col-md-10'>
-        {% for activity in activities %}
-          <div class="row">
-            <div class="col-md-12" style="background-color:white; padding:2em; text-align:center; margin-top:1em;">
-                <h5 class="card-title">{{activity.title}}</h5>
-                <hr style="margin-bottom:0;">
-            </div>
+  <div class="row">
+    <div class='col-md-1'></div>
+    <div class='col-md-10'>
+      {% for activity in activities %}
+      <div class="row">
+        <div class="col-md-12" style="background-color:white; padding:2em; text-align:center; margin-top:1em;">
+          <h5 class="card-title">{{activity.title}}</h5>
+          <hr style="margin-bottom:0;">
         </div>
-        <div class="row" style='background-color:white;  padding-bottom:0.5em; margin-bottom:1em;'>
-            <div class='col-md-4' style="height:20em; text-align:center;">
-                <img src="{{activity.photo.url}}" alt="Activity Image" style="height:100%;">
-            </div>
-            <div class="col-md-8">
-                <div style="width:100%">
-                    <br>
-                    <div style='text-align:center;'><h6 class=" text-muted">{{activity.date}}</h6></div>
-                    {% autoescape off %}
-                    <p class="card-text">{{activity.brief}}</p>
-                    {% endautoescape %}
-                    {% if activity.detail %}
-                        <a style="color:grey;" href="{% url 'info:pd_activity_detail' pk=activity.pk %}" >Read More</a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        {% endfor %}
       </div>
-      <div class='col-md-1'></div>
+      <div class="row" style='background-color:white;  padding-bottom:0.5em; margin-bottom:1em;'>
+        <div class='col-md-3' style="text-align:center;">
+          <img src="{{activity.photo.url}}" alt="Activity Image" style="width:100%; max-width:150px;">
+        </div>
+        <div class="col-md-9">
+          <div style="width:100%">
+            <br>
+            <div style='text-align:center;'>
+              <h6 class=" text-muted">{{activity.date}}</h6>
+            </div>
+            {% autoescape off %}
+            <p class="card-text">{{activity.brief}}</p>
+            {% endautoescape %}
+            {% if activity.detail %}
+            <a style="color:grey;" href="{% url 'info:pd_activity_detail' pk=activity.pk %}">Read More</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-  
-    <div class="row">
-      <br>
-    </div>
+    <div class='col-md-1'></div>
+  </div>
+
+  <div class="row">
+    <br>
+  </div>
 </div>
-    
+
 </div>
 
 {% endblock %}

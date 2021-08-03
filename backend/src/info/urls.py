@@ -8,6 +8,7 @@ app_name='info'
 
 urlpatterns = [
     path('home/', views.home, name='home'),
+    path('messages/', views.messages, name='messages'),
     path('contacts/', views.contacts, name='contacts'),
     
     path('resources/',views.resources, name='resources'),
@@ -25,7 +26,7 @@ urlpatterns = [
     # path('cr_hod_message/', views.cr_hod_message, name='cr_hod_message'),
     # path('pd_hod_message/', views.pd_hod_message, name='pd_hod_message'),
 
-    path('professional_development/', include('info.professional_development.urls')),
+    path('career_development/', include('info.professional_development.urls')),
     path('corporate_relations/', include('info.corporate_relations.urls')),
     path('tnp/', include('info.tnp.urls')),
     path('contact_us_form/', views.contact_us_form, name='contact_us_form'),

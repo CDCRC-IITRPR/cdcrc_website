@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="The official website of the Career Development and Placement Cell, IIT Ropar. CDPC operates through it's 
-	3 departments i.e Training and Placement, Professional Development and Corporate Relations. While handling the vital function of training, placement and professional development 
+	3 departments i.e Training and Placement, Career Development and Corporate Relations. While handling the vital function of training, placement and career development 
 	of the students of IIT Ropar, it is also the main point of interaction with the Corporate World for all kinds of activities and engagements for the institute." />
   <meta name="keywords"
     content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
@@ -110,9 +110,9 @@
                   Training & Placement
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="training_and_placement_container">
-                  <li>
+                  <!-- <li>
                     <a class="dropdown-item" href="{% url 'info:tnp_hod_message' %}">HoD's Message</a>
-                  </li>
+                  </li> -->
                   <li>
                     <a class="dropdown-item" href="{% url 'recruiter:why' %}">Why Recruit</a>
                   </li>
@@ -166,16 +166,16 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="professional_development_container" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
-                  Professional Development
+                  Career Development
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="professional_development_container">
                   <li>
                     <a class="dropdown-item" href="{% url 'info:pd_about' %}">About</a>
                   </li>
 
-                  <li>
+                  <!-- <li>
                     <a class="dropdown-item" href="{% url 'info:pd_hod_message' %}">HoD's Bio</a>
-                  </li>
+                  </li> -->
 
                   <li>
                     <a class="dropdown-item" href="{% url 'info:pd_activities' %}">Activities</a>
@@ -197,6 +197,10 @@
                     <a class="dropdown-item" href="{% url 'info:pd_initiatives' %}">Initiatives</a>
                   </li>
                 </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'info:messages' %}">Messages</a>
               </li>
 
               <!-- <li class="nav-item dropdown">
@@ -265,7 +269,7 @@
           <p class="content">
             Career Development and Placement Cell (CDPC), IIT
             Ropar aims to guide students to to success in their careers, helps
-            students with Professional Development, Training and Placement.
+            students with Career Development, Training and Placement.
             The Corporate Relations department also engages with Industry for
             the development of the institute and its students.
           </p>
