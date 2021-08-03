@@ -21,6 +21,9 @@ def home(request):
     recruiters = Recruiter.objects.filter(visible=True)
     return render(request, 'info/home.html',{'news':news,'events':events, 'recruiters': recruiters})
 
+def messages(request):
+    return render(request, 'info/messages.html')
+
 def contacts(request):
     return render(request, 'info/contacts.html')
 
