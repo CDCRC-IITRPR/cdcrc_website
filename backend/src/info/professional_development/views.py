@@ -7,6 +7,7 @@ from info.models import ProfessionalDevelopmentActivity, ProfessionalDevelopment
 from recruiter.models import Recruiter
 from django.db.models import Q
 from config.utils import get_page_visibility_status
+from info.models import Events
 
 
 def about(request):
