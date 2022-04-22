@@ -13,4 +13,4 @@ gunicorn
 psycopg2
 django-anymail[sendgrid]
 martor
-
+reportlab==3.6.6
