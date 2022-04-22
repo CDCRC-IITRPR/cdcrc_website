@@ -24,3 +24,13 @@ You need to setup the following variables as GitHub secrets for proper functioni
 * ENV_PATH: The ENV path, as explained in point 2 of [things to do](#things-to-do)
 
 
+## Known issues
+Sometimes [deploy_action] might fail, because of `SSL connection failure: Error in the certificate.`
+
+![](../_docs/deploy_action/ErrorLog.png)
+
+In that case, copy the given value for Server SSL certificate. For example in the image it's `pin-sha256:oc1XAIWtlODWRuMRh25lapnfS3VYF8yGlXcX8MilSp4=`.
+
+Finally update the secret.
+![](../_docs/deploy_action/UpdatingSecret.png)
+
