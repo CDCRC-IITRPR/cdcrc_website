@@ -87,10 +87,14 @@ def faculty_team(request):
     return render(request, 'info/team.html', context=context)
 
 def student_team(request):
-    student_team_members = TeamMemberProfile.objects.filter((Q(category='ug') | Q(category='pg')) & Q(visible=True)).order_by('-level')
-    members_remainder_4 = student_team_members.count()
-    context = {'team_members': student_team_members, 'team_members_remainder_4': range(1, members_remainder_4+1), 'title': 'Student Team', 'show_email': False}
-    return render(request, 'info/team.html', context=context)
+    return render(request, 'under_construction.html')
+    # student_team_members = TeamMemberProfile.objects.filter((Q(category='ug') | Q(category='pg')) & Q(visible=True)).order_by('-level')
+    # members_remainder_4 = student_team_members.count()
+    # context = {'team_members': student_team_members, 'team_members_remainder_4': range(1, members_remainder_4+1), 'title': 'Student Team', 'show_email': False}
+    # return render(request, 'info/team.html', context=context)
+
+def under_construction(request):
+    return render(request, 'under_construction.html')
 
 def directors_message(request):
     return render(request, 'info/directors_message.html')
