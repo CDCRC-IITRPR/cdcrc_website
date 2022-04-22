@@ -19,7 +19,7 @@ def home(request):
     news = News.objects.all()
     events = Events.objects.all()
     recruiters = Recruiter.objects.filter(visible=True)
-    return render(request, 'info/home.html',{'news':news,'events':events, 'recruiters': recruiters})
+    return render(request, 'info/home.html')
 
 def messages(request):
     return render(request, 'info/messages.html')
