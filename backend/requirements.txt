@@ -1,7 +1,7 @@
-﻿asgiref
+asgiref
 Django==3.1.14
 pytz==2020.1
-sqlparse==0.3.1
+sqlparse==0.4.4
 pymongo==3.5.1
 pdfkit==0.6.1
 xhtml2pdf==0.2.4
